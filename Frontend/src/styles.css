@@ -1,0 +1,10 @@
+.RouteSelectorBox  {
+width: fit-content;
+height: fit-content;
+padding: 1.5em;
+background-color: aquamarine;
+font-family: Arial, Helvetica, sans-serif;
+border-radius: 15px;
+
+
+}
