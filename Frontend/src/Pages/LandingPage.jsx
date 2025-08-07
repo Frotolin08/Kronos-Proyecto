@@ -6,7 +6,7 @@ export default function LandingPage() {
 const routes = ['/', '/home','/login','/register','*']
   return (
     <>
-    <h1>Hello World</h1>
+    <h1>landing page</h1>
     <RouteSelector routes={routes}/>
     </>
   )
