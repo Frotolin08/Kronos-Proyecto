@@ -2,12 +2,14 @@ import Register from "../Pages/Register";
 import { useForm } from "react-hook-form";
 
 export default function Form(props) {
-  const formFields = props.fields; //debe ser un array de objetos de la estructura {name: string, placeholder: string}
+  const formFields = props.fields; //debe ser un array de objetos de la estructura 
+  // {name: string, placeholder: string, isPasword: bool, requireMsg: string, validateWithPassword: bool}
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
+    watch
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -15,16 +17,20 @@ export default function Form(props) {
     reset();
     props.openModal && props.setTriggered(!props.triggered);
   };
+  const watchPassword = watch('password', '')
+  
 
   return (
     <>
-      <p>Login Page</p>
+      
       <form onSubmit={handleSubmit(onSubmit)}>
         {formFields.map((field) => (
           <div key={field.name}>
             <input
               type={field.isPassword && "password"}
-              {...register(field.name, { required: field.requireMsg })}
+              {...register(field.name, { required: field.requireMsg, 
+                validate: value =>  field.validateWithPassword? value=== watchPassword || 'passwords dont match' : true
+               })}
               placeholder={field.placeholder}
             />
             {errors[field.name] && (
