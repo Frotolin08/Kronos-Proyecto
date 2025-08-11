@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 export default function Form(props) {
   const formFields = props.fields; //debe ser un array de objetos de la estructura 
-  // {name: string, placeholder: string, isPasword: bool, requireMsg: string, validateWithPassword: bool}
+  // {name: string, placeholder: string, isPasword: bool, requireMsg: string, validateWithPassword: bool, onSubmit: function}
   const {
     register,
     handleSubmit,
@@ -16,6 +16,7 @@ export default function Form(props) {
     console.log(data);
     reset();
     props.openModal && props.setTriggered(!props.triggered);
+    props.onSubmit 
   };
   const watchPassword = watch('password', '')
   
