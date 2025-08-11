@@ -8,16 +8,18 @@ import Login from "./Pages/Login.jsx";
 import coconut from '../Public/coconut.jpg'
 import Register from "./Pages/Register.jsx";
 import ProjectSelectPage from "./Pages/ProjectSelectPage.jsx";
+import ProjectPage from "./Pages/ProjectPage.jsx";
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
   { path: "*", element: <ErrorPage /> },
   { path: "/home", element: <HomePage /> },
   { path: "/login", element: <Login /> },
   { path: "/Register", element: <Register /> },
-  { path: '/projects', element: <ProjectSelectPage/>}
+  { path: '/projects', element: <ProjectSelectPage/>},
+  { path: '/project/:id', element: <ProjectPage/>}
 ]);
 createRoot(document.getElementById("root")).render(
-  coconut && 
+ 
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode> 
