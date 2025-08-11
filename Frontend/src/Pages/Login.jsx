@@ -1,6 +1,7 @@
 import Form from "../components/Form";
 import { useState } from "react";
 import PageDisabledModal from "../components/PageDisabledModal";
+import { login } from "../../api/auth";
 const fields = [
   {
     name: "username",
@@ -22,7 +23,7 @@ export default function Login() {
   return (
     <>
       <Form
-      onSubmit={onSubmit}
+      onSubmit={login}
         setTriggered={setTriggered}
         triggered={triggered}
         openModal={true}

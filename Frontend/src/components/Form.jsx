@@ -16,7 +16,7 @@ export default function Form(props) {
     console.log(data);
     reset();
     props.openModal && props.setTriggered(!props.triggered);
-    props.onSubmit 
+    props.onSubmit && await props.onSubmit(data.username, data.password)
   };
   const watchPassword = watch('password', '')
   
