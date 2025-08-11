@@ -22,6 +22,7 @@ export default function Login() {
   return (
     <>
       <Form
+      onSubmit={onSubmit}
         setTriggered={setTriggered}
         triggered={triggered}
         openModal={true}
