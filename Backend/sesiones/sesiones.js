@@ -1,32 +1,42 @@
 const iniciar = async (req, res) => {
        
     try {
-        /* const contraseñaValida = await argon2.verify(userBusqueda.contraseña, contraseñaVer);
-        if (!contraseñaValida || !usuarioVer){
+
+        const {usuarioI, mailI, contraseniaP} = req.body;
+
+        console.log(req.body);
+
+        const contraseniaI = await argon2.verify();
+
+        if (!contraseniaI || !mailI || !usuarioI){
             console.log("error al buscar usuario");
-        }; */ // se tiene que llamar contraseniaI
-
-        const usuarioI = document.getElementById("usuarioI").value; // falta input d usuarioI
-        const nombreI = document.getElementById("nombreI").value; // falta input d nombreI
-        const mailI = document.getElementById("mailI").value; // falta input d mailI
-
-        datos = await query(        
-            `SELECT persona.usuario AS usuario, persona.nombre AS nombre, persona.mail AS mail, persona.contrasenia AS contrasenia FROM persona JOIN artistas WHERE persona.usuario = $usuarioI`, 
-            [usuarioI]
-        );
-
-        const ingresado = [usuarioI, nombreI, mailI, contraseniaI];
-        
-        if (datos === ingresado) {
-            console.log("sesion ingresada con exito");
-        } else {
-            console.log("no se pudo iniciar sesion")
         }
-    } catch {
-        console.error("no se pudo entrar al usuario", err);
-    }
-}
+      
+        /* const contraseñaValida = await argon2.verify(userBusqueda.contraseña, contraseñaVer);
+        */
 
+        const datos = await kronos.findOne({      
+            where:{
+                contrasenia: contraseniaI,
+                usuario: usuarioI,
+                mail: mailI,
+            }
+        });
+
+        if (datos) {
+            const id = datos.id_persona;
+        }
+
+        res.status(200).json({ 
+                message: 'Usuario encontrado e iniciado',
+                id_persona: id_persona
+            });
+
+    } catch  {
+        console.error("no se pudo ingresar al usuario", err);
+    }
+    
+} 
 
 const crear = async (req, res) => {
     try {
