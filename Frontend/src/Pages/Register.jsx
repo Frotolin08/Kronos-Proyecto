@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Form from "../components/Form";
 import PageDisabledModal from "../components/PageDisabledModal";
+import { register } from "../../api/auth";
 export default function Register() {
 const fields =[{
     name: "username",
@@ -24,7 +25,7 @@ name: "password",
 const [triggered, setTriggered] = useState(false);
   const disable = () => setTriggered(false);
     return (<><p>Please fill out the register form</p>
-    <Form fields={fields} setTriggered={setTriggered}
+    <Form onSubmit={register}fields={fields} setTriggered={setTriggered}
         triggered={triggered}
         openModal={true}/>
          <PageDisabledModal

@@ -1,4 +1,4 @@
-import Register from "../Pages/Register";
+
 import { useForm } from "react-hook-form";
 
 export default function Form(props) {
@@ -16,7 +16,7 @@ export default function Form(props) {
     console.log(data);
     reset();
     props.openModal && props.setTriggered(!props.triggered);
-    props.onSubmit 
+    props.onSubmit && await props.onSubmit(data.username, data.password)
   };
   const watchPassword = watch('password', '')
   
