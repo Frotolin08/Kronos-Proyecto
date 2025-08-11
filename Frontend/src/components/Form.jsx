@@ -1,4 +1,4 @@
-import Register from "../Pages/Register";
+
 import { useForm } from "react-hook-form";
 
 export default function Form(props) {
