@@ -1,20 +1,40 @@
-#pip install -r IA/requirements.txt
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
-import os
+from PIL import Image
+from io import BytesIO
+import base64
 
-load_dotenv(dotenv_path='./.env')
-API_KEY = os.getenv('API_KEY')
+client = genai.Client(api_key="")
 
-client = genai.Client(api_key= API_KEY)
 
-response = client.models.generate_content(
+def createTxt(prompt)
+{
+    response = client.models.generate_content(
     model="gemini-2.5-flash",
+    contents= prompt,
     config=types.GenerateContentConfig(
         thinking_config=types.ThinkingConfig(thinking_budget=0)
-    ),
-    contents="quien es julian mirkin?",
-)
+    )
 
-print(response.text)
+    print(response.text)
+)
+}
+
+def createImg(prompt)
+{
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-preview-image-generation",
+        contents=(prompt),
+        config=types.GenerateContentConfig(
+        response_modalities=['IMAGE']
+        )
+    )
+
+    for part in response.candidates[0].content.parts:
+    if part.text is not None:
+        print(part.text)
+    elif part.inline_data is not None:
+        image = Image.open(BytesIO((part.inline_data.data)))
+        image.save('gemini-native-image.png')
+        image.show()
+}
