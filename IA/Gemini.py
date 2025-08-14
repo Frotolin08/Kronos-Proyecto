@@ -9,7 +9,7 @@ import pandas as pd
 from typing import List
 import base64
 
-client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
+client = genai.Client(api_key="")
 
 #modelo para la tabla JSON
 class Board(BaseModel):
