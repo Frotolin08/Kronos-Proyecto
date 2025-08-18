@@ -1,0 +1,52 @@
+{
+    "columns": [
+        "Sitio Web",
+        "Tipografía",
+        "Colores",
+        "Formal o informal",
+        "Personajes-iconos-emblemas",
+        "Accesibilidad",
+        "Capacidad de navegación",
+        "Organización (botones importantes)",
+        "Funciones extras",
+        "Tutoriales o instrucciones"
+    ],
+    "rows": [
+        [
+            "Mercado Libre",
+            "Proxima Nova",
+            "Amarillo, Negro, Gris",
+            "Informal",
+            "Logo M, Corazón, Rayo",
+            "Buena (opciones de contraste, lectura)",
+            "Alta (menús claros, buscador)",
+            "Botones de 'Comprar', 'Vender', 'Mi cuenta' destacados",
+            "Mercado Pago, Mercado Envíos, Tiendas oficiales",
+            "Sección de ayuda extensa, FAQs"
+        ],
+        [
+            "Amazon",
+            "Amazon Ember, Bookerly",
+            "Negro, Naranja, Blanco",
+            "Formal/Profesional",
+            "Logo A-Z (flecha)",
+            "Muy buena (soporte para lectores de pantalla, etc.)",
+            "Alta (navegación por categorías, barra de búsqueda potente)",
+            "Botones de 'Añadir a la cesta', 'Comprar ahora' prominentes",
+            "Prime Video, Kindle, Alexa, AWS",
+            "Amplia sección de ayuda, guías de usuario"
+        ],
+        [
+            "PedidoYa",
+            "Inter",
+            "Rojo, Blanco, Gris",
+            "Informal y Dinámico",
+            "Logo de mano con bolsa, iconos de comida",
+            "Buena (interfaz limpia)",
+            "Alta (filtros, categorías de restaurantes)",
+            "Botones de 'Pedir ahora', 'Añadir al carrito' claros",
+            "Seguimiento de pedidos en tiempo real, promociones",
+            "Sección de preguntas frecuentes, soporte por chat"
+        ]
+    ]
+}

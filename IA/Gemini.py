@@ -1,24 +1,22 @@
 # pip install -r IA/requirements.txt
 import os
+import json
 from google import genai
 from google.genai import types
 from PIL import Image
 from io import BytesIO
 from pydantic import BaseModel
-import pandas as pd
 from typing import List
 import base64
 
-client = genai.Client(api_key="")
+client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
 
-#modelo para la tabla JSON
 class Board(BaseModel):
     columns: List[str]
     rows: List[List[str]]
 
-    SAVE_DIR = "tablas_generadas"
-    os.makedirs(SAVE_DIR, exist_ok=True)
-
+SAVE_DIR = "tablas_generadas"
+os.makedirs(SAVE_DIR, exist_ok=True)
 
 def createTxt(prompt):
     response = client.models.generate_content(
@@ -38,7 +36,6 @@ def createImg(prompt):
             response_modalities=['IMAGE']
         )
     )
-
     for part in response.candidates[0].content.parts:
         if hasattr(part, "text") and part.text is not None:
             print(part.text)
@@ -57,11 +54,16 @@ def createJson(prompt):
             "response_schema": Board
         },
     )
-    print("JSON crudo:\n", response.text)
     board: Board = response.parsed
-    df = pd.DataFrame(board.rows, columns=board.columns)
-    
-    csv_path = os.path.join(SAVE_DIR,"tablita.csv")
-    df.to_csv(csv_path, index=False)
+    board_dict = {
+        "columns": board.columns,
+        "rows": board.rows
+    }
+    json_path = os.path.join(SAVE_DIR, "tablita.json")
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(board_dict, f, ensure_ascii=False, indent=4)
+    print("json creado")
 
-createJson("haz una tabla analizando Tipografía, Colores, Formal o informal, Personajes, iconos o emblemas, Accesibilidad, Capacidad de navegación, Organización (donde pone botones importantes), Funciones extras y Tutoriales o instrucciones de las paginas web de MELI, amazon y pedido ya")
+createJson(
+    "Genera una tabla JSON con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon y una para PedidoYa. Asegúrate de que cada fila tenga exactamente 11 valores (contando el nombre), uno por cada columna."
+)
