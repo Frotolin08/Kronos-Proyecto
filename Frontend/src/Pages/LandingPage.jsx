@@ -1,13 +1,15 @@
-import RouteSelector from "../components/RouteSelector";
+import Navbar from "../components/NavBar"
 
 
 export default function LandingPage() {
  
-const routes = ['/', '/home','/login','/register','*','/projects']
+  const openSideBar = ()=> console.log('sidebar open!')
+   
+
   return (
     <>
-    <h1>landing page</h1>
-    <RouteSelector routes={routes}/>
+    <Navbar logo='../../public/coconut.jpg'
+    logoOnClick={openSideBar} button1Link='/login' button1Text='Log In' button2Link='/register' button2Text='Get Started'/>
     </>
   )
       
