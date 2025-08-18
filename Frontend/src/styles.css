@@ -1,10 +1,22 @@
 :root {
-  --secondaryColor: gray;
+  --secondaryColor: rgb(190, 190, 190);
   --mainColor: white;
+  --tertiaryColor: rgb(83, 77, 77);
   --textColor: rgb(255, 255, 255);
-  --font: arial
+  --font: arial;
+  --headerSize: 3.5vmin;
+  --defaultFontWeight: 100;
+  --decal: #575F1082;
 }
-
+a {
+  color: var(--textColor);
+  
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 .RouteSelectorBox {
   width: fit-content;
   height: fit-content;
@@ -47,23 +59,42 @@ top: 0px;
 left: 0px;
 box-sizing: border-box;
 background-color: var(--secondaryColor);
-height: 4em;
+height: 12vh;
 justify-content: space-between;
 padding: 0.5em;
 }
-.NavBar img {
+.NavBarLeftDiv img {
 height: 100%;
 cursor: pointer;
  object-fit: cover;
   
   }
-  .NavButton1 {
+  .NavBarRightDiv {
+gap: 1.5rem;
+    display: flex;
+    align-items: center;
 
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  }
+  .NavBarLeftDiv {
+height: 100%;
+align-items: center;
+gap: 1.5rem;
+display: flex;
+    
+  }
+  .NavButton1 {
     color:var(--textColor);
     font-family: var(--font);
     font-size: 15px;
-    margin-right: 2em;
+    font-size: var(--headerSize);
+
+    font-weight: var(--defaultFontWeight);
+  }
+  .NavButton2 {
+
+background-color: var(--tertiaryColor);
+padding: 0.5rem;
+color: var(--textColor);
+font-size: var(--headerSize);
+font-weight: var(--defaultFontWeight);
   }
