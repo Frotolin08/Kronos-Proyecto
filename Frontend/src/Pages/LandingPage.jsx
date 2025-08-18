@@ -9,7 +9,9 @@ export default function LandingPage() {
   return (
     <>
     <Navbar logo='../../public/coconut.jpg'
-    logoOnClick={openSideBar} button1Link='/login' button1Text='Log In' button2Link='/register' button2Text='Get Started'/>
+    logoOnClick={openSideBar} button1Link='/login' button1Text='Iniciar sesion' button2Link='/register' button2Text='Comenzar'
+    titleLink='/' titleText="Kronos"
+    />
     </>
   )
       

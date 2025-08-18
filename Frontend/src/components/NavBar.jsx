@@ -5,8 +5,13 @@ export default function Navbar(props) {
 return(
 
 <div className='NavBar'>
+    <div className="NavBarLeftDiv">
     <img onClick={props.logoOnClick}src={props.logo}/>
-    <div>
+    <Link to={props.titleLink}>
+        {props.titleText}
+    </Link>
+    </div>
+    <div className="NavBarRightDiv">
 <Link to={props.button1Link}>
     <button className='NavButton1'>{props.button1Text}</button>
     </Link>
