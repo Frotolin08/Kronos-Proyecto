@@ -1,13 +1,14 @@
 :root {
   --secondaryColor: #D9D9D9;
   --mainColor: white;
-  --tertiaryColor: rgb(83, 77, 77);
+  --tertiaryColor: #A2A2A2;
   --textColor: rgb(255, 255, 255);
   --font: arial;
   --classyFont: 'Castoro Titling';
   --headerSize: 3.5vmin;
   --defaultFontWeight: 100;
   --decal: #575F1082;
+  --textSize: 
 }
 a {
   color: var(--textColor);
@@ -108,4 +109,60 @@ height: 100%;
 display: flex;
 align-items: center;
 margin-top: 0.5rem;
+  }
+
+  .LandingTitle {
+width: 60rem;
+font-family: var(--classyFont);
+margin-top: 12vh;
+padding: 3rem;
+text-align: center;
+
+  }
+  .LandingTitle h1 {
+
+    font-size: 4.5rem;
+    font-weight: 50;
+    margin-bottom: 1rem;
+
+  }
+  .LandingTitle p {
+font-size: var(--headerSize);
+
+  }
+
+  .LandingPage {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+  }
+
+  .EmpezarBtn {
+
+    background-color: var(--tertiaryColor);
+font-family: var(--font);
+color: var(--textColor);
+width: 15rem;
+padding: 1rem;
+font-size: var(--headerSize);
+
+  }
+
+  .gallery {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 10px;
+    gap: 10px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    grid-row-end: span var(--rows, 20);
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
   }
