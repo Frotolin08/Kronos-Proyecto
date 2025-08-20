@@ -1,52 +1,64 @@
 {
-    "columns": [
-        "Sitio Web",
-        "Tipografía",
-        "Colores",
-        "Formal o informal",
-        "Personajes-iconos-emblemas",
-        "Accesibilidad",
-        "Capacidad de navegación",
-        "Organización (botones importantes)",
-        "Funciones extras",
-        "Tutoriales o instrucciones"
+  "columns": [
+    "Sitio Web",
+    "Tipografía",
+    "Colores",
+    "Formal o informal",
+    "Personajes-iconos-emblemas",
+    "Accesibilidad",
+    "Capacidad de navegación",
+    "Organización (botones importantes)",
+    "Funciones extras",
+    "Tutoriales o instrucciones"
+  ],
+  "rows": [
+    [
+      "Mercado Libre",
+      "Fuentes sans-serif, claras y legibles, como Roboto, para una lectura fluida.",
+      "Amarillo y negro dominan, con blanco y gris, transmitiendo dinamismo comercial.",
+      "Muy formal, diseño profesional enfocado en transacciones comerciales eficientes.",
+      "Logo mano-ratón, íconos sencillos para acciones rápidas y claras.",
+      "Opciones de contraste y tamaño de texto mejoran la experiencia para todos usuarios.",
+      "Alta, categorías claras, buscador potente, filtros avanzados simplifican exploración.",
+      "Compra/venta destacados, carrito, mi cuenta; navegación directa y eficiente.",
+      "Preguntas, seguimiento de envíos, reputación de vendedor, pagos seguros.",
+      "Amplia ayuda y guías para facilitar la interacción de usuarios."
     ],
-    "rows": [
-        [
-            "Mercado Libre",
-            "Proxima Nova",
-            "Amarillo, Negro, Gris",
-            "Informal",
-            "Logo M, Corazón, Rayo",
-            "Buena (opciones de contraste, lectura)",
-            "Alta (menús claros, buscador)",
-            "Botones de 'Comprar', 'Vender', 'Mi cuenta' destacados",
-            "Mercado Pago, Mercado Envíos, Tiendas oficiales",
-            "Sección de ayuda extensa, FAQs"
-        ],
-        [
-            "Amazon",
-            "Amazon Ember, Bookerly",
-            "Negro, Naranja, Blanco",
-            "Formal/Profesional",
-            "Logo A-Z (flecha)",
-            "Muy buena (soporte para lectores de pantalla, etc.)",
-            "Alta (navegación por categorías, barra de búsqueda potente)",
-            "Botones de 'Añadir a la cesta', 'Comprar ahora' prominentes",
-            "Prime Video, Kindle, Alexa, AWS",
-            "Amplia sección de ayuda, guías de usuario"
-        ],
-        [
-            "PedidoYa",
-            "Inter",
-            "Rojo, Blanco, Gris",
-            "Informal y Dinámico",
-            "Logo de mano con bolsa, iconos de comida",
-            "Buena (interfaz limpia)",
-            "Alta (filtros, categorías de restaurantes)",
-            "Botones de 'Pedir ahora', 'Añadir al carrito' claros",
-            "Seguimiento de pedidos en tiempo real, promociones",
-            "Sección de preguntas frecuentes, soporte por chat"
-        ]
+    [
+      "Amazon",
+      "Amazon Ember y Helvetica, optimizadas para legibilidad en pantallas digitales.",
+      "Azul, naranja, blanco crean ambiente de confianza y energía para la compra.",
+      "Formal, centrado en eficiencia y experiencia de compra estructurada.",
+      "Logo con flecha sonriente; íconos universales para funciones clave.",
+      "Soporte para lectores de pantalla, opciones visuales, promoviendo inclusión digital.",
+      "Excelente, menús intuitivos, búsqueda avanzada y filtros detallados disponibles.",
+      "\"Añadir al carrito\", \"Comprar ahora\"; accesos claros y visibles.",
+      "Reseñas, listas de deseos, suscripciones, seguimiento de precios detallado.",
+      "Extensa base de conocimiento, FAQs y videos explicativos accesibles."
+    ],
+    [
+      "PedidoYa",
+      "Fuentes sans-serif modernas y amigables, facilitando lectura rápida.",
+      "Rojo, blanco, gris; combinación energética y limpia para servicio express.",
+      "Informal y juvenil, con lenguaje cercano, reflejando su servicio rápido.",
+      "Iconos de comida, logo globo de diálogo; símbolos claros y divertidos.",
+      "Interfaz simple e intuitiva, diseñada para uso fácil y rápido para todos.",
+      "Muy buena, búsqueda por ubicación y filtros de comida específicos.",
+      "\"Pedir\", \"Ver carrito\", accesibles; navegación rápida y eficaz.",
+      "Seguimiento en tiempo real, reseñas, promociones personalizadas, pagos integrados.",
+      "Sección de ayuda con FAQs y guías básicas para la aplicación."
+    ],
+    [
+      "PCity (Imagen)",
+      "Sans-serif limpia y clara, utilizada en títulos y enlaces para legibilidad.",
+      "Azul vibrante, blanco dominante, texto negro; diseño moderno y directo.",
+      "Formal y funcional, enfocado claramente en la venta de componentes.",
+      "Logo de ratón sobre \"PCity\"; icono de persona para cuenta.",
+      "Diseño limpio, buen contraste de texto, interfaz sencilla y legible.",
+      "Barra de búsqueda grande, enlaces clave \"Arma tu PC\", \"Comparar\".",
+      "Búsqueda central, menú superior, perfil de usuario visible.",
+      "\"Arma tu PC\" y \"Comparar\" son herramientas valiosas para usuarios.",
+      "No visibles, pero \"Arma tu PC\" sugiere guías de montaje."
     ]
+  ]
 }
