@@ -9,14 +9,19 @@ from pydantic import BaseModel
 from typing import List
 import base64
 
-client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
+client = genai.Client(api_key="")
 
+#modelo de la tabla
 class Board(BaseModel):
     columns: List[str]
     rows: List[List[str]]
 
 SAVE_DIR = "tablas_generadas"
 os.makedirs(SAVE_DIR, exist_ok=True)
+
+#ingreso de img
+with open('image.jpg','rb') as f:
+    inserted_img = f.read()
 
 def createTxt(prompt):
     response = client.models.generate_content(
@@ -48,7 +53,13 @@ def createImg(prompt):
 def createJson(prompt):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents=prompt,
+        contents=[
+            prompt,
+            types.Part.from_bytes(
+                data=inserted_img,
+                mime_type='image/jpeg'
+            )
+        ],
         config={
             "response_mime_type": "application/json",
             "response_schema": Board
@@ -65,5 +76,5 @@ def createJson(prompt):
     print("json creado")
 
 createJson(
-    "Genera una tabla JSON con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon y una para PedidoYa. Asegúrate de que cada fila tenga exactamente 11 valores (contando el nombre), uno por cada columna."
+    "Genera una tabla JSON con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon, una para PedidoYa y otra para lo que puedes analizar de la img que te pase en el content. Asegúrate de que cada fila tenga exactamente 11 valores (contando el nombre), uno por cada columna. Cada tabla debe ser descriptiva y desarrollada, teniendo aprox 10 palabras"
 )
