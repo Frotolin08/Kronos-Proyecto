@@ -166,3 +166,20 @@ font-size: var(--headerSize);
     object-fit: cover;
     display: block;
   }
+
+  .login {
+width: 100%;
+text-align: center;
+display: flex;
+align-items: center;
+flex-direction: column;
+padding-top: 4rem;
+gap: 1rem;
+font-family: var(--font);
+
+  }
+  .login input {
+
+padding: 1rem
+
+  }

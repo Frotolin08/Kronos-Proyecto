@@ -3,7 +3,7 @@ const images = props.images
 return(
 
 <div className='gallery'>
-{images.map(image=> <img href={image.src} key={image.src} style={{'--rows': image.row}}/>)}
+{images.map(image=> <img src={image.src} key={image.src} style={{'--rows': image.row}}/>)}
 </div>
 
 )

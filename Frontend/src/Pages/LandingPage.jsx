@@ -7,11 +7,11 @@ import SimpleButton from "../components/SimpleButton"
 export default function LandingPage() {
  
 
-images= [{src='../../public/coconut.jpg', row: 20},
-{src='../../public/coconut.jpg', row: 20},
-{src='../../public/coconut.jpg', row: 20},
-{src='../../public/coconut.jpg', row: 20},
-{src='../../public/coconut.jpg', row: 20}]
+const images= [{src:'../../public/coconut.jpg', row: 20},
+{src:'../../public/coconut.jpg', row: 20},
+{src:'../../public/coconut.jpg', row: 30},
+{src:'../../public/coconut.jpg', row: 40},
+{src:'../../public/coconut.jpg', row: 50}]
   const openSideBar = ()=> console.log('sidebar open!')
    
 
