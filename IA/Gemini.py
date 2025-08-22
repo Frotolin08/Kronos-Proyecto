@@ -10,7 +10,7 @@ from typing import List
 import base64
 import pandas as pd
 
-client = genai.Client(api_key="")
+client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
 
 #modelo de la tabla
 class Board(BaseModel):
@@ -24,12 +24,19 @@ os.makedirs(SAVE_DIR, exist_ok=True)
 with open('image.jpg','rb') as f:
     inserted_img = f.read()
 
+#acceso a buscar en google
+grounding_tool = types.Tool(
+    google_search=types.GoogleSearch()
+)
+
+
+
 def createTxt(prompt):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=prompt,
-        config=types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(thinking_budget=0)
+        config = types.GenerateContentConfig(
+            tools=[grounding_tool]
         )
     )
     print(response.text)
@@ -39,7 +46,7 @@ def createImg(prompt):
         model="gemini-2.0-flash-preview-image-generation",
         contents=prompt,
         config=types.GenerateContentConfig(
-            response_modalities=['IMAGE']
+            response_modalities=['TEXT', 'IMAGE']
         )
     )
     for part in response.candidates[0].content.parts:
@@ -48,8 +55,39 @@ def createImg(prompt):
         elif hasattr(part, "inline_data") and part.inline_data is not None:
             image_data = base64.b64decode(part.inline_data.data)
             image = Image.open(BytesIO(image_data))
-            image.save('gemini-native-image.png')
+            image.save('gemini-image.png')
             image.show()
+
+def createImgSearching(prompt):
+    response_search = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents= prompt,
+        config=types.GenerateContentConfig(
+            tools=[grounding_tool]
+        )
+    )
+    info_actual = response_search.text
+
+    prompt_img= f"crea una img que represente de forma graciosa y chistosa el clima actual en bsas ({info_actual})"
+
+    response_img = client.models.generate_content(
+        model="gemini-2.0-flash-preview-image-generation",
+        contents=prompt_img,
+        config=types.GenerateContentConfig(
+            response_modalities=['TEXT', 'IMAGE']
+        )
+    )
+    for part in response_img.candidates[0].content.parts:
+        if hasattr(part, "text") and part.text is not None:
+            print(part.text)
+        elif hasattr(part, "inline_data") and part.inline_data is not None:
+        mime = getattr(part.inline_data, "mime_type", "")
+        if mime.startswith("image/"):
+            image_data = base64.b64decode(part.inline_data.data)
+            image = Image.open(BytesIO(image_data))
+            image.save("gemini-image.png")
+            image.show()
+            print("✅ Imagen generada en gemini-image.png")
 
 def createJson(prompt):
     response = client.models.generate_content(
@@ -83,6 +121,10 @@ def createJson(prompt):
     df.to_csv(csv_path, index=False, encoding="utf-8-sig")
     print("csv creado")
 
-createJson(
-    "Genera una tabla JSON con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon, una para PedidoYa y otra para lo que puedes analizar de la img que te pase en el content. Asegúrate de que hayan 10 filas, uno por cada columna. cada fila tendrá 5 columnas (4 para cada uno de los nombres de las páginas) y la última será con topico de Conclusion:. En este pondras que puedes observar que funciona bien en las primeras 3 páginas, y dirás que se puede mejorar de la que te pasé con la img. Debes poner conclusiones especificas por cada topico, no una general. Cada tabla debe ser descriptiva y desarrollada, teniendo aprox 15 palabras"
-)
+#createJson(
+ #   "Genera una tabla JSON con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon, una para PedidoYa y otra para lo que puedes analizar de la img que te pase en el content. Asegúrate de que hayan 10 filas, uno por cada columna. cada fila tendrá 5 columnas (4 para cada uno de los nombres de las páginas) y la última será con topico de Conclusion:. En este pondras que puedes observar que funciona bien en las primeras 3 páginas, y dirás que se puede mejorar de la que te pasé con la img. Debes poner conclusiones especificas por cada topico, no una general. Cada tabla debe ser descriptiva y desarrollada, teniendo aprox 15 palabras"
+#)
+
+#createTxt("quien es el presidente de usa")
+
+createImgSearching("cual es el clima ACTUAL en la ciudad de bsas")
