@@ -26,12 +26,13 @@ export default function(props) {
 return(
 
 <form onSubmit={handleSubmit(onSubmit)} className={props.class}>
+        <label>{currentField.label}</label>
         <input 
         type={currentField.isPassword && "password"} {...register(currentField.name, {required: currentField.requireMsg})}
         placeholder={currentField.placeholder}
         />
 
-      <button type='submit'> {step < formFields.length - 1 ? 'Next' : 'Submit'}</button>
+      <button type='submit'> {step < formFields.length - 1 ? 'Continuar' : props.submitBtn}</button>
       </form>
     
 

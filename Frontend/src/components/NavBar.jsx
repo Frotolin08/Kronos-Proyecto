@@ -4,9 +4,11 @@ export default function Navbar(props) {
 
 return(
 
-<div className='NavBar'>
+<div className={props.class? props.class :'NavBar'}>
     <div className="NavBarLeftDiv">
+    <Link to={props.titleLink}>
     <img onClick={props.logoOnClick}src={props.logo}/>
+    </Link>
     <Link to={props.titleLink}>
         {props.titleText}
     </Link>
