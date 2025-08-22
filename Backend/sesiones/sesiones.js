@@ -40,11 +40,14 @@ const iniciar = async (req, res) => {
 
 const crear = async (req, res) => {
     try {
+
+        const {usuario, nombre, mail, contraseniaPrior} = req.body;
+       /*
         const usuario = document.getElementById("usuario").value; // falta input d usuario 
         const nombre = document.getElementById("nombre").value; // falta input d nombre
         const mail = document.getElementById("mail").value; // falta input d mail
         const contraseniaPrior = document.getElementById("contrasenia").value; // falta input d contraseniaPrior
-
+        */
         const contrasenia = await argon2.hash(contraseniaPrior); // pendiente: instalar argon2
 
         await query(
