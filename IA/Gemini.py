@@ -46,7 +46,7 @@ def createImg(prompt):
         model="gemini-2.0-flash-preview-image-generation",
         contents=prompt,
         config=types.GenerateContentConfig(
-            response_modalities=['TEXT', 'IMAGE']
+            response_modalities=['TEXT','IMAGE']
         )
     )
     for part in response.candidates[0].content.parts:
@@ -61,14 +61,14 @@ def createImg(prompt):
 def createImgSearching(prompt):
     response_search = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents= prompt,
+        contents=prompt,
         config=types.GenerateContentConfig(
             tools=[grounding_tool]
         )
     )
     info_actual = response_search.text
 
-    prompt_img= f"crea una img que represente de forma graciosa y chistosa el clima actual en bsas ({info_actual})"
+    prompt_img = f"crea una img que represente de forma graciosa y chistosa el clima actual en BsAs ({info_actual})"
 
     response_img = client.models.generate_content(
         model="gemini-2.0-flash-preview-image-generation",
@@ -77,17 +77,25 @@ def createImgSearching(prompt):
             response_modalities=['TEXT', 'IMAGE']
         )
     )
+
+    img_count = 0
     for part in response_img.candidates[0].content.parts:
-        if hasattr(part, "text") and part.text is not None:
-            print(part.text)
-        elif hasattr(part, "inline_data") and part.inline_data is not None:
-        mime = getattr(part.inline_data, "mime_type", "")
-        if mime.startswith("image/"):
-            image_data = base64.b64decode(part.inline_data.data)
-            image = Image.open(BytesIO(image_data))
-            image.save("gemini-image.png")
-            image.show()
-            print("✅ Imagen generada en gemini-image.png")
+        if hasattr(part, "inline_data") and part.inline_data is not None:
+            mime = getattr(part.inline_data, "mime_type", "image/png")
+            try:
+                image_data = base64.b64decode(part.inline_data.data)
+                image = Image.open(BytesIO(image_data))
+                filename = f"gemini-image-{img_count+1}.png"
+                image.save(filename)
+                image.show()
+                print(f"Imagen guardada en {filename}")
+                img_count += 1
+            except Exception as e:
+                print("Error al procesar inline_data como imagen")
+
+    if img_count == 0:
+        print(" No se recibió ninguna imagen válida")
+
 
 def createJson(prompt):
     response = client.models.generate_content(
@@ -127,4 +135,5 @@ def createJson(prompt):
 
 #createTxt("quien es el presidente de usa")
 
-createImgSearching("cual es el clima ACTUAL en la ciudad de bsas")
+#createImgSearching("cual es el clima ACTUAL en la ciudad de bsas")
+createImg("create an image of a happy dog jumping on the grass")
