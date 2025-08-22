@@ -1,6 +1,4 @@
-html {
-  font-family: var(--font);
-}
+
 :root {
   --secondaryColor: #D9D9D9;
   --mainColor: white;
@@ -115,11 +113,11 @@ margin-top: 0.5rem;
   }
 
   .LandingTitle {
-width: 60rem;
+width: 100%;
 font-family: var(--classyFont);
-margin-top: 12vh;
-padding: 3rem;
+margin-top: 10rem;
 text-align: center;
+margin-bottom: 4rem;
 
   }
   .LandingTitle h1 {
