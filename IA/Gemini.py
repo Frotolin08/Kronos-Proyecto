@@ -12,6 +12,7 @@ import pandas as pd
 
 client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
 
+
 #modelo de la tabla
 class Board(BaseModel):
     columns: List[str]
@@ -30,7 +31,6 @@ grounding_tool = types.Tool(
 )
 
 
-
 def createTxt(prompt):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
@@ -40,61 +40,48 @@ def createTxt(prompt):
         )
     )
     print(response.text)
+    
 
 def createImg(prompt):
     response = client.models.generate_content(
         model="gemini-2.0-flash-preview-image-generation",
-        contents=prompt,
+        contents=(prompt),
         config=types.GenerateContentConfig(
-            response_modalities=['TEXT','IMAGE']
+        response_modalities=['TEXT', 'IMAGE']
         )
     )
     for part in response.candidates[0].content.parts:
-        if hasattr(part, "text") and part.text is not None:
+        if part.text is not None:
             print(part.text)
-        elif hasattr(part, "inline_data") and part.inline_data is not None:
-            image_data = base64.b64decode(part.inline_data.data)
-            image = Image.open(BytesIO(image_data))
+        elif part.inline_data is not None:
+            image = Image.open(BytesIO((part.inline_data.data)))
             image.save('gemini-image.png')
             image.show()
 
 def createImgSearching(prompt):
     response_search = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents=prompt,
+        contents="Actua como un prompt engineer y creame un prompt en ingles buscando en internet datos. Para generar la mejor imagen sobre esto: " + prompt,
         config=types.GenerateContentConfig(
             tools=[grounding_tool]
         )
     )
-    info_actual = response_search.text
-
-    prompt_img = f"crea una img que represente de forma graciosa y chistosa el clima actual en BsAs ({info_actual})"
+    prompt_img = response_search.text
 
     response_img = client.models.generate_content(
         model="gemini-2.0-flash-preview-image-generation",
-        contents=prompt_img,
+        contents=(prompt_img),
         config=types.GenerateContentConfig(
-            response_modalities=['TEXT', 'IMAGE']
+        response_modalities=['TEXT', 'IMAGE']
         )
     )
-
-    img_count = 0
     for part in response_img.candidates[0].content.parts:
-        if hasattr(part, "inline_data") and part.inline_data is not None:
-            mime = getattr(part.inline_data, "mime_type", "image/png")
-            try:
-                image_data = base64.b64decode(part.inline_data.data)
-                image = Image.open(BytesIO(image_data))
-                filename = f"gemini-image-{img_count+1}.png"
-                image.save(filename)
-                image.show()
-                print(f"Imagen guardada en {filename}")
-                img_count += 1
-            except Exception as e:
-                print("Error al procesar inline_data como imagen")
-
-    if img_count == 0:
-        print(" No se recibió ninguna imagen válida")
+        if part.text is not None:
+            print(part.text)
+        elif part.inline_data is not None:
+            image = Image.open(BytesIO((part.inline_data.data)))
+            image.save('gemini-image.png')
+            image.show()
 
 
 def createJson(prompt):
@@ -135,5 +122,6 @@ def createJson(prompt):
 
 #createTxt("quien es el presidente de usa")
 
-#createImgSearching("cual es el clima ACTUAL en la ciudad de bsas")
-createImg("create an image of a happy dog jumping on the grass")
+createImgSearching("como son las calles en Miramar, buenos aires, teniendo en cuenta el clima actual alli? esta lloviendo? soleado? nublado? se lo mas descriptivo y muestra a personas")
+
+#createImg("create an image of a happy dog jumping on the grass")
