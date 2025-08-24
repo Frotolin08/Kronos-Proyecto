@@ -12,6 +12,7 @@ import ProjectPage from "./Pages/ProjectPage.jsx";
 import CalendarPage from "./Pages/CalendarPage.jsx";
 import DashboardPage from "./Pages/DashboardPage.jsx";
 import ProjectConfigPage from "./Pages/ProjectConfigPage.jsx";
+import './global.css'
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
   { path: "*", element: <ErrorPage /> },

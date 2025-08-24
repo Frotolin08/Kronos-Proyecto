@@ -1,38 +1,20 @@
-import { useState } from "react"
-import Form from "../components/Form";
-import PageDisabledModal from "../components/PageDisabledModal";
-import { register } from "../../api/auth";
-export default function Register() {
-const fields =[{
-    name: "username",
-    placeholder: "create a username",
-    requireMsg: "Please insert a username",
-},{
-name: "password",
-    placeholder: "create a password",
-    requireMsg: "Please insert a password",
-    isPassword: true,
-},
-{
-    name: 'repeat password',
-    placeholder: 'please repeat your password',
-    requireMsg: 'please insert the same password',
-    isPassword: true,
-    validateWithPassword: true
-}
+import FancyTitle from "../components/FancyTitle";
+import SplitForm from "../components/SplitForm";
+import NavBar from '../components/NavBar'
+export default function Login() {
+const fields= [{name: 'username',
+requireMsg: 'inserte username',
+placeholder: 'nombre@empresa.com'},
+{name: 'password',
+requireMsg: 'inserte contraseña',
+isPassword: true,},
 ]
-
-const [triggered, setTriggered] = useState(false);
-  const disable = () => setTriggered(false);
-    return (<><p>Please fill out the register form</p>
-    <Form onSubmit={register}fields={fields} setTriggered={setTriggered}
-        triggered={triggered}
-        openModal={true}/>
-         <PageDisabledModal
-                triggered={triggered}
-                disable={disable}
-                innerText="Form submitted succesfully"
-              />
-</>
-)
+return(
+    <>
+    <NavBar class='emptyNav'logo='../../public/logo.svg' titleLink='/' titleText="Kronos"/>
+<div className='loginPage'>
+    <FancyTitle class='loginTitle'text='Regístrate en KRONOS' subTitle='Da comienzo a esta experiencia'/>
+<SplitForm fields={fields} class='register' submitBtn='Inicia Sesion'/>
+</div>
+</>)
 }
