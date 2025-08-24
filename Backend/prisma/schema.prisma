@@ -14,3 +14,88 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model persona {
+  id        Int      @id @default(autoincrement())
+  mail     String   @unique
+  nombre  String
+  contrasenia  String
+  usuario  String   @unique
+
+  archivos        archivos[]
+  mensajes        mensajes[]
+  tareas          tareas[]
+  personalizaciones personalizaciones[]
+  proyectos_tiene tiene[]
+}
+
+model archivos {
+  formato  String
+  archivo   Bytes
+  id    Int     @id @default(autoincrement())
+  id_persona  Int
+  id_proyecto   Int
+
+  persona       persona  @relation(fields: [id_persona], references: [id])
+  proyecto      proyecto @relation(fields: [id_proyecto], references: [id])
+
+}
+
+model mensajes {
+  id_chat   Int
+  id_persona    Int
+  mensaje   String
+  estado    String
+  id    Int     @id @default(autoincrement())
+
+  chat          chat     @relation(fields: [id_chat], references: [id])
+  persona       persona  @relation(fields: [id_persona], references: [id])
+}
+
+model tareas {
+  nombre    String
+  estado    String
+  id    Int    @id @default(autoincrement())
+  id_proyecto   Int
+  id_persona    Int
+  limite      String
+
+  proyecto      proyecto @relation(fields: [id_proyecto], references: [id])
+  persona       persona  @relation(fields: [id_persona], references: [id])
+}
+
+model personalizaciones {
+  id    Int     @id @default(autoincrement())
+  id_persona    Int
+  codigo_a_insertar   String
+
+  persona             persona  @relation(fields: [id_persona], references: [id])
+}
+
+model tiene {
+  id        Int      @id @default(autoincrement())
+  id_persona  Int 
+  id_proyecto   Int
+
+  persona       persona  @relation(fields: [id_persona], references: [id])
+  proyecto      proyecto @relation(fields: [id_proyecto], references: [id])
+}
+
+model proyecto {
+  id        Int      @id @default(autoincrement())
+  nombre     String   
+  limite     String
+
+  archivos        archivos[]
+  tareas          tareas[]
+  chats           chat[]
+  personas_tiene  tiene[]
+}
+
+model chat {
+  id        Int      @id @default(autoincrement())
+  nombre     String   
+
+  id_proyecto   Int
+  proyecto      proyecto @relation(fields: [id_proyecto], references: [id])
+  mensajes      mensajes[]
+}
