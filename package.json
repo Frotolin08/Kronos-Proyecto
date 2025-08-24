@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "argon2": "^0.44.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "prisma": "^6.14.0"
+  },
+  "name": "kronos-proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto TIC 4° año 2025",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frotolin08/Kronos-Proyecto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frotolin08/Kronos-Proyecto/issues"
+  },
+  "homepage": "https://github.com/Frotolin08/Kronos-Proyecto#readme"
+}
