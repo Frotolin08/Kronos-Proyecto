@@ -9,6 +9,7 @@ from pydantic import BaseModel
 from typing import List
 import base64
 import pandas as pd
+import datetime
 
 client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
 
@@ -29,7 +30,6 @@ with open('image.jpg','rb') as f:
 grounding_tool = types.Tool(
     google_search=types.GoogleSearch()
 )
-
 
 def createTxt(prompt):
     response = client.models.generate_content(
@@ -85,10 +85,20 @@ def createImgSearching(prompt):
 
 
 def createJson(prompt):
+    response_search = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents="Crea un prompt en base a tu función de busqueda en internet para poder conseguir información acerca del siguiente prompt y darselo a otra IA generadora de tablas" + prompt,
+        config=types.GenerateContentConfig(
+            tools=[grounding_tool]
+        )
+    )
+
+    prompt_board = response_search.text
+
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=[
-            prompt,
+            prompt_board,
             types.Part.from_bytes(
                 data=inserted_img,
                 mime_type='image/jpeg'
@@ -112,16 +122,19 @@ def createJson(prompt):
     print("json creado")
 
     df = pd.DataFrame(board.rows, columns=board.columns)
-    csv_path = os.path.join(SAVE_DIR, "tablita.csv")
-    df.to_csv(csv_path, index=False, encoding="utf-8-sig")
-    print("csv creado")
+    xlsx_path = os.path.join(
+    SAVE_DIR,
+    f"tablita_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+    )
+    df.to_excel(xlsx_path, index=False)
+    print("excel creado")
 
-#createJson(
- #   "Genera una tabla JSON con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon, una para PedidoYa y otra para lo que puedes analizar de la img que te pase en el content. Asegúrate de que hayan 10 filas, uno por cada columna. cada fila tendrá 5 columnas (4 para cada uno de los nombres de las páginas) y la última será con topico de Conclusion:. En este pondras que puedes observar que funciona bien en las primeras 3 páginas, y dirás que se puede mejorar de la que te pasé con la img. Debes poner conclusiones especificas por cada topico, no una general. Cada tabla debe ser descriptiva y desarrollada, teniendo aprox 15 palabras"
-#)
+createJson(
+    "Genera una tabla con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon, una para PedidoYa y otra para todo lo que puedes analizar de la img que te pase en el content. Asegúrate de que hayan 10 filas, uno por cada columna. cada fila tendrá 5 columnas (4 para cada uno de los nombres de las páginas) y la última será con topico de Conclusion:. En este pondras que puedes observar que funciona bien en las primeras 3 páginas, y dirás que se puede mejorar de la que te pasé con la img. Debes poner conclusiones especificas por cada topico, no una general. Cada tabla debe ser descriptiva y desarrollada, teniendo aprox 15-20 palabras. No deber arrancar la conclusión poniendo ML, AMAZAZON Y ... hacen esto.. simplemente pon que debería mejorar la última img de un sitio no oficial"
+)
 
-#createTxt("quien es el presidente de usa")
+#createTxt("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
-createImgSearching("como son las calles en Miramar, buenos aires, teniendo en cuenta el clima actual alli? esta lloviendo? soleado? nublado? se lo mas descriptivo y muestra a personas")
+#createImgSearching("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
 #createImg("create an image of a happy dog jumping on the grass")
