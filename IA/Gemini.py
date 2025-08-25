@@ -129,12 +129,12 @@ def createJson(prompt):
     df.to_excel(xlsx_path, index=False)
     print("excel creado")
 
-createJson(
-    "Genera una tabla con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon, una para PedidoYa y otra para todo lo que puedes analizar de la img que te pase en el content. Asegúrate de que hayan 10 filas, uno por cada columna. cada fila tendrá 5 columnas (4 para cada uno de los nombres de las páginas) y la última será con topico de Conclusion:. En este pondras que puedes observar que funciona bien en las primeras 3 páginas, y dirás que se puede mejorar de la que te pasé con la img. Debes poner conclusiones especificas por cada topico, no una general. Cada tabla debe ser descriptiva y desarrollada, teniendo aprox 15-20 palabras. No deber arrancar la conclusión poniendo ML, AMAZAZON Y ... hacen esto.. simplemente pon que debería mejorar la última img de un sitio no oficial"
-)
+#createJson(
+ #   "Genera una tabla con exactamente las siguientes columnas: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones. Incluye una fila para Mercado Libre, una para Amazon, una para PedidoYa y otra para todo lo que puedes analizar de la img que te pase en el content. Asegúrate de que hayan 10 filas, uno por cada columna. cada fila tendrá 5 columnas (4 para cada uno de los nombres de las páginas) y la última será con topico de Conclusion:. En este pondras que puedes observar que funciona bien en las primeras 3 páginas, y dirás que se puede mejorar de la que te pasé con la img. Debes poner conclusiones especificas por cada topico, no una general. Cada tabla debe ser descriptiva y desarrollada, teniendo aprox 15-20 palabras. No deber arrancar la conclusión poniendo ML, AMAZAZON Y ... hacen esto.. simplemente pon que debería mejorar la última img de un sitio no oficial"
+#)
 
 #createTxt("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
-#createImgSearching("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
+createImgSearching("crea a un peruano comiendose viva a una paloma en formato animado y en la calle")
 
 #createImg("create an image of a happy dog jumping on the grass")
