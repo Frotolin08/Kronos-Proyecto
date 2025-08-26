@@ -7,9 +7,14 @@
   --font: arial;
   --classyFont: 'Castoro Titling';
   --headerSize: 1.3rem;
+  --biggerHeaderSize: 2.5rem;
   --defaultFontWeight: 100;
   --decal: #575F1082;
   --textSize: 
+}
+body {
+
+  margin: 0px;
 }
 a {
   color: var(--textColor);
@@ -133,6 +138,7 @@ font-size: var(--headerSize);
   }
 
   .LandingPage {
+    width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -271,7 +277,7 @@ display: none;
     border-color: var(--tertiaryColor);
     border-width: 0.15rem;
     border-style: solid;
-    font-size: var(--headerSizes);
+    font-size: var(--headerSize);
   
    }
 .register button {
@@ -280,12 +286,48 @@ display: none;
   height: max-content;
   padding: .7rem;
   border-color: var(--tertiaryColor);
-    border-width: 0.15rem;
+    border-width: 0.35rem;
     border-style: solid;
   margin: 0;
   border-top-right-radius: .5rem;
   border-bottom-right-radius: .5rem;
   font-size: var(--headerSizes);
   color: var(--mainColor);
+
+}
+.FooterBox a{
+  color: var(--decal);
+font-family: var(--classyFont);
+font-size: var(--biggerHeaderSize);
+
+}
+.FooterBox img {
+height: 6rem;
+width: auto;
+object-fit: cover;
+}
+.FooterBox {
+  padding-left: 2rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+height: 1rem;
+}
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+ 
+  margin-bottom: 3rem;
+}
+.topLine {
+background-color: var(--secondaryColor);
+height: .2rem;
+width: 100%;
+
+}
+.FooterIcons {
+  padding-left: 2rem;
 
 }

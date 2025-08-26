@@ -2,7 +2,7 @@ import FancyTitle from "../components/FancyTitle"
 import ImageGallery from "../components/ImageGallery"
 import Navbar from "../components/NavBar"
 import SimpleButton from "../components/SimpleButton"
-
+import Footer from "../components/Footer"
 
 export default function LandingPage() {
  
@@ -17,9 +17,9 @@ const images= [{src:'../../public/coconut.jpg', row: 20},
 
   return (
     <>
-    <Navbar logo='../../public/logo.svg'
+    <Navbar 
     logoOnClick={openSideBar} button1Link='/login' button1Text='Iniciar sesion' button2Link='/register' button2Text='Comenzar'
-    titleLink='/' titleText="Kronos"
+    titleLink='/' 
     />
     <div className='LandingPage'>
 <FancyTitle text='EL TIEMPO ES TUYO' subTitle='Nunca fue tan fácil trabajar en equipo' class='LandingTitle'/>
@@ -27,6 +27,7 @@ const images= [{src:'../../public/coconut.jpg', row: 20},
 <FancyTitle text='TODO LO QUE TU EQUIPO NECESITA' class='LandingTitle'/>
 <ImageGallery images={images}/>
 </div>
+<Footer/>
     </>
   )
       
