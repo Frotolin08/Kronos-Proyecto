@@ -1,17 +1,13 @@
 import {Link} from 'react-router'
 import '../styles.css'
+import LogoWText from './LogoWText'
 export default function Navbar(props) {
 
 return(
 
 <div className={props.class? props.class :'NavBar'}>
     <div className="NavBarLeftDiv">
-    <Link to={props.titleLink}>
-    <img onClick={props.logoOnClick}src={props.logo}/>
-    </Link>
-    <Link to={props.titleLink}>
-        {props.titleText}
-    </Link>
+   <LogoWText titleLink={props.titleLink} logoOnClick={props.logoOnClick}/>
     </div>
     <div className="NavBarRightDiv">
 <Link to={props.button1Link}>

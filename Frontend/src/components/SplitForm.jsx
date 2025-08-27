@@ -31,8 +31,13 @@ return(
         type={currentField.isPassword && "password"} {...register(currentField.name, {required: currentField.requireMsg})}
         placeholder={currentField.placeholder}
         />
+       
 
       <button type='submit'> {step < formFields.length - 1 ? 'Continuar' : props.submitBtn}</button>
+      
+      {errors[currentField.name] && (
+              <p className="formError">{errors[currentField.name].message}</p>
+            )}
       </form>
     
 
