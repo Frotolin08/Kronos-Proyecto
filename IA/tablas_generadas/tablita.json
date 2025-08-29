@@ -1,69 +1,92 @@
 {
     "columns": [
-        "Website",
-        "Typography",
-        "Colors",
-        "Formal vs. Informal",
-        "Characters / Icons / Emblems",
-        "Accessibility",
-        "Navigation (important buttons)",
-        "Organization",
-        "Extra features",
-        "Tutorials or Instructions",
-        "Conclusion"
+        "Criterio",
+        "Mercado Libre",
+        "Amazon",
+        "PedidoYa",
+        "Sitio de la Imagen",
+        "Conclusión"
     ],
     "rows": [
         [
-            "Mercado Libre",
-            "Su logo no usa una fuente única; Mercado Shops permite combinar dos tipografías para títulos y cuerpo. [19, 30]",
-            "La paleta oficial incluye amarillo (#ffe600) y azul (#2d3277), buscando unidad visual en todo su ecosistema. [7, 27]",
-            "El tono general es profesional pero accesible, con comunicación inclusiva adaptada a diversas regiones. [27, 28]",
-            "Utiliza elementos visuales e interfaces consistentes; el logo único no se basa en una fuente estándar. [19, 27]",
-            "Prioriza la accesibilidad, actualizando su manual de estilo para incluir una sección específica de inclusión y mejora. [28]",
-            "Ofrece navegación clara para comprar, vender y usar servicios como Mercado Pago, facilitando transacciones eficientes. [18]",
-            "Opera como un ecosistema con sub-marcas de e-commerce, fintech y logística, bajo un lenguaje de diseño unificado. [27]",
-            "Incluye Mercado Pago para cobros, Mercado Ads y Mercado Shops para tiendas virtuales personalizadas y publicidad. [18, 27]",
-            "Ofrece guías de usuario, con un manual de estilo actualizado para equipos de UX creando contenido. [28, 31]",
-            "No se requieren sugerencias de mejora para este sitio web."
+            "Tipografía",
+            "Utiliza tipografías claras y legibles, como Proxima Nova, para una experiencia de usuario familiar y eficiente, facilitando la lectura en todo el sitio.",
+            "Emplea la familia de fuentes Amazon Ember, diseñada para una legibilidad óptima y consistente en diversas interfaces y dispositivos.",
+            "Su tipografía es moderna y fresca, manteniendo la claridad para una fácil comprensión de la información de los restaurantes y pedidos.",
+            "Presenta una tipografía sans-serif estándar, legible y limpia, ideal para la visualización de nombres de componentes y datos técnicos.",
+            "Experimentar con una fuente de encabezado distintiva, sin sacrificar la legibilidad, podría darle más personalidad al sitio."
         ],
         [
-            "Amazon",
-            "Amazon emplea Amazon Ember, una fuente sans-serif personalizada, buscando legibilidad y un diseño moderno y limpio. [1, 9]",
-            "Sus colores oficiales son naranja (#ff9900), negro (#333e48) y blanco, constantes desde el año 2000. [3, 4, 5, 6, 11]",
-            "La tipografía Amazon Ember equilibra profesionalismo con accesibilidad, creando una sensación cercana al usuario. [1, 2]",
-            "El icónico logo con la flecha sonriente 'A' a 'Z' simboliza su amplia gama de productos. [1, 2]",
-            "Amazon Ember fue diseñada para la experiencia del usuario, garantizando alta legibilidad en diversas pantallas. [1]",
-            "La plataforma se caracteriza por una navegación altamente intuitiva y eficiente, simplificando la búsqueda y compra.",
-            "Su estructura está muy organizada para gestionar un vasto catálogo global de productos y servicios con claridad. [1]",
-            "Ofrece un enorme catálogo de productos, servicios Prime y una integración fluida con dispositivos Alexa.",
-            "Dispone de extensas secciones de ayuda y guías detalladas para usuarios y vendedores dentro de su plataforma.",
-            "No se requieren sugerencias de mejora para este sitio web."
+            "Colores",
+            "Predominan los tonos amarillos y naranjas, asociados a la energía y ofertas, complementados con blancos y grises para un diseño limpio.",
+            "Su paleta se basa en el negro, blanco y un distintivo naranja, creando contraste y dirigiendo la atención a elementos clave.",
+            "Combina rojos vibrantes y blancos, transmitiendo inmediatez y apetito, con un diseño visualmente atractivo y reconocible.",
+            "Emplea un encabezado azul brillante con texto blanco, contrastando fuertemente con el fondo blanco general de la página.",
+            "Considerar una paleta de colores más suave o usar el azul dominante de forma más estratégica, quizás para resaltar elementos importantes."
         ],
         [
-            "PedidoYa",
-            "Utiliza una tipografía sans-serif limpia y moderna, manteniendo coherencia visual tras un refresco de marca. [13, 21]",
-            "Su logo resalta con blanco sobre rojo; una paleta digital asegura buena accesibilidad y contraste. [13, 21]",
-            "Adoptó una estrategia más espontánea y abierta, mostrando un tono casual y accesible en su comunicación. [21]",
-            "El logo presenta una 'P' prominente; ahora usan patrones geométricos orgánicos derivados de sus letras. [13, 21]",
-            "Desarrolló una nueva paleta digital superando problemas de contraste y alcanzando niveles de accesibilidad AA. [21]",
-            "La aplicación permite descubrir, ordenar y recibir productos a domicilio de forma muy sencilla. [32]",
-            "Se expandió a múltiples verticales, incluyendo comestibles y farmacia, con una estructura multi-vertical eficiente. [21, 32]",
-            "Ofrece amplia entrega, desde comida hasta farmacia, complementado con fotos contextuales dinámicas de la vida real. [21, 32]",
-            "Como servicio de entrega, proporciona instrucciones claras para el uso de la app y sus diversos servicios.",
-            "No se requieren sugerencias de mejora para este sitio web."
+            "Formal vs. Informal",
+            "Adopta un tono predominantemente funcional y formal, centrado en la transacción y la eficiencia para el usuario.",
+            "Mantiene un enfoque formal y directo, priorizando la información del producto y la simplicidad en la experiencia de compra.",
+            "Presenta un estilo juvenil y dinámico, utilizando un lenguaje cercano y amigable que fomenta una experiencia relajada y eficiente.",
+            "Muestra un tono directo y funcional, centrado en la acción (aprender, armar, comparar) con un lenguaje técnico apropiado para su nicho.",
+            "Introducir micro-interacciones lúdicas o un lenguaje más cercano en descripciones podría humanizar la experiencia sin perder formalidad."
         ],
         [
-            "PCity",
-            "Utiliza fuentes sans-serif claras y legibles para títulos, navegación y descripciones de productos, manteniendo una consistencia básica.",
-            "Predomina un esquema de color vibrante azul para el encabezado con blanco y negro, ofreciendo buen contraste y visibilidad.",
-            "Adopta un tono amigable y directo con frases como 'Aprendé, Armá y Compará', fomentando una interacción más personal.",
-            "Presenta un logo distintivo de un mouse con texto 'pCity', junto a íconos estándar de búsqueda y perfil de usuario.",
-            "El alto contraste entre los colores del sitio web y el tamaño de fuente elegido benefician la legibilidad general del contenido.",
-            "La barra de navegación superior es clara, con enlaces 'Arma tu PC' y un campo de búsqueda funcional.",
-            "La página está bien estructurada con secciones destacadas y una cuadrícula de productos, facilitando la exploración de componentes populares.",
-            "La promesa de 'Arma tu PC' y 'Comparar' sugiere herramientas interactivas para configurar y elegir hardware.",
-            "El título 'Aprendé' insinúa la posible existencia de guías o tutoriales para ayudar a los usuarios a construir sus PCs.",
-            "Integrar botones de 'Comparar' en tarjetas de producto y expandir 'Aprendé' con tutoriales explícitos sobre configuración de PC."
+            "Personajes / Iconos / Emblemas",
+            "Utiliza íconos claros y universales para la navegación, como carritos de compra y corazones, mejorando la usabilidad.",
+            "Presenta íconos simples y directos, destacando la flecha debajo de su logo y los símbolos de categorías para una navegación intuitiva.",
+            "Emplea un logotipo memorable y íconos modernos que refuerzan su identidad de marca, facilitando la identificación de secciones clave.",
+            "Integra un logo distintivo de ratón/procesador, íconos funcionales (búsqueda, usuario) y las imágenes de producto como elementos centrales.",
+            "Explorar animaciones sutiles para el logo o los íconos, o usar gráficos más expresivos para categorías, mejoraría el atractivo visual."
+        ],
+        [
+            "Accesibilidad",
+            "Se esfuerza por una interfaz accesible, con contrastes adecuados y elementos bien definidos para diversos usuarios.",
+            "Diseña pensando en la accesibilidad web, ofreciendo opciones para lectores de pantalla y navegación por teclado, promoviendo la inclusión.",
+            "Asegura una navegación sencilla y una presentación clara, permitiendo que usuarios con diferentes capacidades interactúen eficazmente.",
+            "Ofrece un contraste visual fuerte entre el azul del encabezado y el blanco del contenido, facilitando la lectura general de la información.",
+            "Implementar mejoras en la navegación por teclado y asegurar descripciones alt para imágenes potenciaría significativamente la accesibilidad."
+        ],
+        [
+            "Navegación (botones importantes)",
+            "Botones claros para 'Comprar', 'Agregar al carrito' y filtros, facilitando la interacción rápida y eficiente del usuario.",
+            "Destaca botones como 'Añadir a la cesta', 'Comprar ahora' y categorías visibles, simplificando el proceso de compra.",
+            "Botones prominentes para 'Ver menú', 'Pedir ahora' y filtros de comida, guiando al usuario rápidamente a su elección.",
+            "Presenta enlaces de navegación claros en el encabezado ('Arma tu PC', 'Comparar') y elementos de producto clickeables para exploración detallada.",
+            "Dar mayor prominencia visual a los botones de acción clave y asegurar su consistencia en todo el recorrido del usuario."
+        ],
+        [
+            "Organización",
+            "Estructura de categorías y subcategorías bien definida, junto con barras de búsqueda robustas para encontrar productos fácilmente.",
+            "Organización jerárquica clara con amplias categorías, filtros detallados y resultados de búsqueda relevantes para una experiencia eficiente.",
+            "Presenta restaurantes y opciones de comida por categorías, ubicación y ofertas, permitiendo una búsqueda rápida y efectiva.",
+            "Organiza los productos en una cuadrícula clara bajo secciones como 'Componentes populares', apoyándose en una barra de búsqueda superior para encontrar elementos.",
+            "Añadir opciones de filtrado avanzadas por especificaciones y comparativas personalizadas mejoraría significativamente la experiencia del usuario."
+        ],
+        [
+            "Características Extra",
+            "Ofrece Mercado Crédito, envíos rápidos con Mercado Envíos y una plataforma de publicidad para vendedores.",
+            "Destaca suscripciones Prime con beneficios exclusivos, servicios en la nube (AWS) y una vasta oferta de productos digitales.",
+            "Incluye seguimiento de pedidos en tiempo real, opciones de pago diversas y la posibilidad de programar entregas.",
+            "Sus características destacadas son las herramientas 'Arma tu PC' y 'Comparar', esenciales para usuarios interesados en construir o evaluar equipos.",
+            "Integrar más profundamente las funciones de 'Arma tu PC' y 'Comparar' directamente en las fichas de producto facilitaría su uso."
+        ],
+        [
+            "Tutoriales o Instrucciones",
+            "Proporciona centros de ayuda detallados y tutoriales para compradores y vendedores, cubriendo diversas operaciones.",
+            "Dispone de una extensa sección de ayuda, guías para el comprador y vendedor, y soporte al cliente para cualquier consulta.",
+            "Ofrece guías claras sobre cómo realizar pedidos, usar promociones y resolver problemas comunes de manera eficiente.",
+            "Posee un enlace 'Información' que probablemente dirige a tutoriales o guías de uso, esencial para el público técnico al que apunta.",
+            "Desarrollar tutoriales interactivos para guiar a los usuarios en el proceso de 'Arma tu PC' mejoraría la experiencia del novato."
+        ],
+        [
+            "Impresión General del Sitio",
+            "Proporciona una plataforma robusta y confiable para comercio electrónico, con un enfoque en la eficiencia transaccional y amplia variedad.",
+            "Se percibe como un gigante del e-commerce, ofreciendo conveniencia, una selección inmensa y servicios integrados.",
+            "Transmite una sensación de rapidez y conveniencia para la entrega de comida y productos, con una interfaz muy directa.",
+            "Ofrece una impresión de sitio especializado y funcional para hardware de PC, con una interfaz limpia y centrada en componentes.",
+            "Refinar los elementos visuales y expandir las herramientas de personalización podría solidificar su posición como referente en el nicho."
         ]
     ]
 }
