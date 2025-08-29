@@ -1,0 +1,69 @@
+{
+    "columns": [
+        "Website",
+        "Typography",
+        "Colors",
+        "Formal vs. Informal",
+        "Characters / Icons / Emblems",
+        "Accessibility",
+        "Navigation (important buttons)",
+        "Organization",
+        "Extra features",
+        "Tutorials or Instructions",
+        "Conclusion"
+    ],
+    "rows": [
+        [
+            "Mercado Libre",
+            "Su logo no usa una fuente única; Mercado Shops permite combinar dos tipografías para títulos y cuerpo. [19, 30]",
+            "La paleta oficial incluye amarillo (#ffe600) y azul (#2d3277), buscando unidad visual en todo su ecosistema. [7, 27]",
+            "El tono general es profesional pero accesible, con comunicación inclusiva adaptada a diversas regiones. [27, 28]",
+            "Utiliza elementos visuales e interfaces consistentes; el logo único no se basa en una fuente estándar. [19, 27]",
+            "Prioriza la accesibilidad, actualizando su manual de estilo para incluir una sección específica de inclusión y mejora. [28]",
+            "Ofrece navegación clara para comprar, vender y usar servicios como Mercado Pago, facilitando transacciones eficientes. [18]",
+            "Opera como un ecosistema con sub-marcas de e-commerce, fintech y logística, bajo un lenguaje de diseño unificado. [27]",
+            "Incluye Mercado Pago para cobros, Mercado Ads y Mercado Shops para tiendas virtuales personalizadas y publicidad. [18, 27]",
+            "Ofrece guías de usuario, con un manual de estilo actualizado para equipos de UX creando contenido. [28, 31]",
+            "No se requieren sugerencias de mejora para este sitio web."
+        ],
+        [
+            "Amazon",
+            "Amazon emplea Amazon Ember, una fuente sans-serif personalizada, buscando legibilidad y un diseño moderno y limpio. [1, 9]",
+            "Sus colores oficiales son naranja (#ff9900), negro (#333e48) y blanco, constantes desde el año 2000. [3, 4, 5, 6, 11]",
+            "La tipografía Amazon Ember equilibra profesionalismo con accesibilidad, creando una sensación cercana al usuario. [1, 2]",
+            "El icónico logo con la flecha sonriente 'A' a 'Z' simboliza su amplia gama de productos. [1, 2]",
+            "Amazon Ember fue diseñada para la experiencia del usuario, garantizando alta legibilidad en diversas pantallas. [1]",
+            "La plataforma se caracteriza por una navegación altamente intuitiva y eficiente, simplificando la búsqueda y compra.",
+            "Su estructura está muy organizada para gestionar un vasto catálogo global de productos y servicios con claridad. [1]",
+            "Ofrece un enorme catálogo de productos, servicios Prime y una integración fluida con dispositivos Alexa.",
+            "Dispone de extensas secciones de ayuda y guías detalladas para usuarios y vendedores dentro de su plataforma.",
+            "No se requieren sugerencias de mejora para este sitio web."
+        ],
+        [
+            "PedidoYa",
+            "Utiliza una tipografía sans-serif limpia y moderna, manteniendo coherencia visual tras un refresco de marca. [13, 21]",
+            "Su logo resalta con blanco sobre rojo; una paleta digital asegura buena accesibilidad y contraste. [13, 21]",
+            "Adoptó una estrategia más espontánea y abierta, mostrando un tono casual y accesible en su comunicación. [21]",
+            "El logo presenta una 'P' prominente; ahora usan patrones geométricos orgánicos derivados de sus letras. [13, 21]",
+            "Desarrolló una nueva paleta digital superando problemas de contraste y alcanzando niveles de accesibilidad AA. [21]",
+            "La aplicación permite descubrir, ordenar y recibir productos a domicilio de forma muy sencilla. [32]",
+            "Se expandió a múltiples verticales, incluyendo comestibles y farmacia, con una estructura multi-vertical eficiente. [21, 32]",
+            "Ofrece amplia entrega, desde comida hasta farmacia, complementado con fotos contextuales dinámicas de la vida real. [21, 32]",
+            "Como servicio de entrega, proporciona instrucciones claras para el uso de la app y sus diversos servicios.",
+            "No se requieren sugerencias de mejora para este sitio web."
+        ],
+        [
+            "PCity",
+            "Utiliza fuentes sans-serif claras y legibles para títulos, navegación y descripciones de productos, manteniendo una consistencia básica.",
+            "Predomina un esquema de color vibrante azul para el encabezado con blanco y negro, ofreciendo buen contraste y visibilidad.",
+            "Adopta un tono amigable y directo con frases como 'Aprendé, Armá y Compará', fomentando una interacción más personal.",
+            "Presenta un logo distintivo de un mouse con texto 'pCity', junto a íconos estándar de búsqueda y perfil de usuario.",
+            "El alto contraste entre los colores del sitio web y el tamaño de fuente elegido benefician la legibilidad general del contenido.",
+            "La barra de navegación superior es clara, con enlaces 'Arma tu PC' y un campo de búsqueda funcional.",
+            "La página está bien estructurada con secciones destacadas y una cuadrícula de productos, facilitando la exploración de componentes populares.",
+            "La promesa de 'Arma tu PC' y 'Comparar' sugiere herramientas interactivas para configurar y elegir hardware.",
+            "El título 'Aprendé' insinúa la posible existencia de guías o tutoriales para ayudar a los usuarios a construir sus PCs.",
+            "Integrar botones de 'Comparar' en tarjetas de producto y expandir 'Aprendé' con tutoriales explícitos sobre configuración de PC."
+        ]
+    ]
+}

@@ -1,4 +1,4 @@
-# pip install -r IA/lib.txt
+# pip install -r lib.txt
 import os
 import json
 from google import genai
@@ -10,6 +10,8 @@ from typing import List
 import base64
 import pandas as pd
 import datetime
+from tabulate import tabulate
+import json
 
 client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
 
@@ -82,14 +84,17 @@ def createJson(prompt, img_path="image.jpg"):
         json.dump(board_dict, f, ensure_ascii=False, indent=4)
     print("JSON creado")
 
+    with open("tablas_generadas/tablita.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    print(tabulate(data["rows"], headers=data["columns"], tablefmt="grid"))
+
     # Guardar Excel
     df = pd.DataFrame(board.rows, columns=board.columns)
-    xlsx_path = os.path.join(
-        SAVE_DIR,
-        f"tablita_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
-    )
+    xlsx_path = os.path.join(SAVE_DIR, "tablita.xlsx")
     df.to_excel(xlsx_path, index=False)
     print("Excel creado")
+
 
     conclusion = None
     #por si cambiamos de lugar las filas y columnas 
@@ -118,7 +123,7 @@ def createImg(prompt):
             print(part.text)
         elif part.inline_data is not None:
             image = Image.open(BytesIO((part.inline_data.data)))
-            image.save('gemini-image.png')
+            image.save('gemini-image.png', overwrite= True)
             image.show()
 
 def createImgSearching(conclusion_text, img_path="image.jpg"):
@@ -152,7 +157,7 @@ def createImgSearching(conclusion_text, img_path="image.jpg"):
 
 
 
-createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, Extra features, Tutorials or Instructions, Conclusion. The table must include rows for Mercado Libre, Amazon, PedidoYa, and the website shown in the provided image. There should be exactly 10 rows in total (one per topic/criterion). Each row must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with Mercado Libre, Amazon, or PedidoYa. Avoid starting sentences with ML, Amazon, and PedidoYa…. Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format.")
+createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, Extra features, Tutorials or Instructions, Conclusion. The table must include rows for Mercado Libre, Amazon, PedidoYa, and the website shown in the provided image. There should be exactly 10 rows in total (one per topic/criterion). Each row must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with Mercado Libre, Amazon, or PedidoYa, but detect with things should it improve (without mentioning the others websites). Avoid starting sentences with ML, Amazon, and PedidoYa…. Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format. Try to write correctly the words ant letters, not just simbols.")
 
 #createTxt("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
