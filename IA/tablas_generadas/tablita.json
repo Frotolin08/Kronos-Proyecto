@@ -1,69 +1,92 @@
 {
     "columns": [
-        "Website",
-        "Typography",
-        "Colors",
-        "Formal vs. Informal",
-        "Characters / Icons / Emblems",
-        "Accessibility",
-        "Navigation (important buttons)",
-        "Organization",
-        "Extra features",
-        "Tutorials or Instructions",
-        "Conclusion"
+        "criterion",
+        "mercado_libre",
+        "amazon",
+        "pedidoya",
+        "website_from_image",
+        "conclusion"
     ],
     "rows": [
         [
-            "Mercado Libre",
-            "Su logo no usa una fuente única; Mercado Shops permite combinar dos tipografías para títulos y cuerpo. [19, 30]",
-            "La paleta oficial incluye amarillo (#ffe600) y azul (#2d3277), buscando unidad visual en todo su ecosistema. [7, 27]",
-            "El tono general es profesional pero accesible, con comunicación inclusiva adaptada a diversas regiones. [27, 28]",
-            "Utiliza elementos visuales e interfaces consistentes; el logo único no se basa en una fuente estándar. [19, 27]",
-            "Prioriza la accesibilidad, actualizando su manual de estilo para incluir una sección específica de inclusión y mejora. [28]",
-            "Ofrece navegación clara para comprar, vender y usar servicios como Mercado Pago, facilitando transacciones eficientes. [18]",
-            "Opera como un ecosistema con sub-marcas de e-commerce, fintech y logística, bajo un lenguaje de diseño unificado. [27]",
-            "Incluye Mercado Pago para cobros, Mercado Ads y Mercado Shops para tiendas virtuales personalizadas y publicidad. [18, 27]",
-            "Ofrece guías de usuario, con un manual de estilo actualizado para equipos de UX creando contenido. [28, 31]",
-            "No se requieren sugerencias de mejora para este sitio web."
+            "Typography",
+            "Utiliza una tipografía Sans-serif clara y legible, como Arial o Open Sans, que asegura una buena experiencia de lectura en todos sus dispositivos.",
+            "Emplea una tipografía distintiva (Amazon Ember) para mantener consistencia visual, facilitando la identificación de la marca y la lectura de descripciones de productos.",
+            "Su tipografía es moderna y amigable, a menudo usando una fuente redondeada y sencilla para transmitir accesibilidad y rapidez en el servicio de entrega.",
+            "La tipografía es limpia y moderna, principalmente sans-serif, ofreciendo buena legibilidad para nombres de productos y encabezados importantes en la página.",
+            "Considerar incorporar variaciones de peso o tamaño para destacar mejor elementos clave sin comprometer la consistencia global del sitio."
         ],
         [
-            "Amazon",
-            "Amazon emplea Amazon Ember, una fuente sans-serif personalizada, buscando legibilidad y un diseño moderno y limpio. [1, 9]",
-            "Sus colores oficiales son naranja (#ff9900), negro (#333e48) y blanco, constantes desde el año 2000. [3, 4, 5, 6, 11]",
-            "La tipografía Amazon Ember equilibra profesionalismo con accesibilidad, creando una sensación cercana al usuario. [1, 2]",
-            "El icónico logo con la flecha sonriente 'A' a 'Z' simboliza su amplia gama de productos. [1, 2]",
-            "Amazon Ember fue diseñada para la experiencia del usuario, garantizando alta legibilidad en diversas pantallas. [1]",
-            "La plataforma se caracteriza por una navegación altamente intuitiva y eficiente, simplificando la búsqueda y compra.",
-            "Su estructura está muy organizada para gestionar un vasto catálogo global de productos y servicios con claridad. [1]",
-            "Ofrece un enorme catálogo de productos, servicios Prime y una integración fluida con dispositivos Alexa.",
-            "Dispone de extensas secciones de ayuda y guías detalladas para usuarios y vendedores dentro de su plataforma.",
-            "No se requieren sugerencias de mejora para este sitio web."
+            "Colors",
+            "Domina el amarillo vibrante junto con el azul oscuro, creando un contraste energético que llama la atención y resalta ofertas especiales.",
+            "Predominan el blanco, negro y un toque de naranja/azul, generando un esquema de colores profesional que facilita la concentración en los productos mostrados.",
+            "Se caracteriza por el rojo brillante y el blanco, transmitiendo energía y urgencia, lo cual es muy apropiado para su modelo de negocio de entrega rápida.",
+            "La paleta se centra en un azul brillante para la cabecera y el blanco para el contenido, generando una apariencia limpia y enfocada en los productos.",
+            "Explorar el uso de tonos complementarios sutiles para áreas interactivas, mejorando la jerarquía visual sin saturar el diseño existente."
         ],
         [
-            "PedidoYa",
-            "Utiliza una tipografía sans-serif limpia y moderna, manteniendo coherencia visual tras un refresco de marca. [13, 21]",
-            "Su logo resalta con blanco sobre rojo; una paleta digital asegura buena accesibilidad y contraste. [13, 21]",
-            "Adoptó una estrategia más espontánea y abierta, mostrando un tono casual y accesible en su comunicación. [21]",
-            "El logo presenta una 'P' prominente; ahora usan patrones geométricos orgánicos derivados de sus letras. [13, 21]",
-            "Desarrolló una nueva paleta digital superando problemas de contraste y alcanzando niveles de accesibilidad AA. [21]",
-            "La aplicación permite descubrir, ordenar y recibir productos a domicilio de forma muy sencilla. [32]",
-            "Se expandió a múltiples verticales, incluyendo comestibles y farmacia, con una estructura multi-vertical eficiente. [21, 32]",
-            "Ofrece amplia entrega, desde comida hasta farmacia, complementado con fotos contextuales dinámicas de la vida real. [21, 32]",
-            "Como servicio de entrega, proporciona instrucciones claras para el uso de la app y sus diversos servicios.",
-            "No se requieren sugerencias de mejora para este sitio web."
+            "Formal vs. Informal",
+            "Adopta un tono semi-formal, equilibrando la profesionalidad de las transacciones con un lenguaje cercano para construir confianza con sus usuarios.",
+            "Mantiene un tono predominantemente formal y transaccional, priorizando la claridad y eficiencia en la comunicación de detalles de productos y servicios.",
+            "Utiliza un lenguaje muy informal y amigable, con emojis y expresiones coloquiales que reflejan la juventud y dinamismo de su público objetivo.",
+            "Muestra un tono más formal y directo, enfocado en la funcionalidad y la información técnica, adecuado para un nicho de componentes tecnológicos.",
+            "Podría beneficiarse de introducir elementos de lenguaje ligeramente más conversacionales para fomentar mayor engagement con la comunidad de ensambladores."
         ],
         [
-            "PCity",
-            "Utiliza fuentes sans-serif claras y legibles para títulos, navegación y descripciones de productos, manteniendo una consistencia básica.",
-            "Predomina un esquema de color vibrante azul para el encabezado con blanco y negro, ofreciendo buen contraste y visibilidad.",
-            "Adopta un tono amigable y directo con frases como 'Aprendé, Armá y Compará', fomentando una interacción más personal.",
-            "Presenta un logo distintivo de un mouse con texto 'pCity', junto a íconos estándar de búsqueda y perfil de usuario.",
-            "El alto contraste entre los colores del sitio web y el tamaño de fuente elegido benefician la legibilidad general del contenido.",
-            "La barra de navegación superior es clara, con enlaces 'Arma tu PC' y un campo de búsqueda funcional.",
-            "La página está bien estructurada con secciones destacadas y una cuadrícula de productos, facilitando la exploración de componentes populares.",
-            "La promesa de 'Arma tu PC' y 'Comparar' sugiere herramientas interactivas para configurar y elegir hardware.",
-            "El título 'Aprendé' insinúa la posible existencia de guías o tutoriales para ayudar a los usuarios a construir sus PCs.",
-            "Integrar botones de 'Comparar' en tarjetas de producto y expandir 'Aprendé' con tutoriales explícitos sobre configuración de PC."
+            "Characters / Icons / Emblems",
+            "Su logo con la balanza y flecha simboliza comercio y eficiencia; los iconos son minimalistas y funcionales, facilitando la navegación sin distracciones.",
+            "El logo con la flecha de la 'a' a la 'z' subraya su vasta oferta; los iconos son universales y muy reconocibles, promoviendo una interacción intuitiva.",
+            "Usa un logo sencillo con un globo de diálogo y un tenedor, junto a iconos claros que representan categorías de comida y estados de pedidos.",
+            "El logo es una combinación de un ratón de PC con un embudo/circuito, y los iconos (lupa, persona) son estándar y claros, mejorando la usabilidad.",
+            "Desarrollar un conjunto de iconos personalizados y únicos que reflejen aún más la temática de construcción de PCs, añadiendo personalidad de marca."
+        ],
+        [
+            "Accessibility",
+            "Ofrece opciones como descripciones de imágenes y compatibilidad con lectores de pantalla, buscando ser inclusivo para usuarios con diversas capacidades.",
+            "Invierte en características de accesibilidad robustas, incluyendo navegación por teclado y soporte para texto de alto contraste, garantizando una experiencia para todos.",
+            "Se enfoca en una interfaz sencilla con grandes botones, facilitando el uso para usuarios con posibles dificultades motoras o visuales leves, priorizando la rapidez.",
+            "La legibilidad del texto y el contraste de colores son adecuados, lo que sugiere una buena base para la accesibilidad general de la plataforma.",
+            "Implementar alternativas de texto para todas las imágenes y asegurar una navegación totalmente controlable por teclado para usuarios con discapacidades."
+        ],
+        [
+            "Navigation (important buttons)",
+            "Botones de \"Comprar\" y \"Agregar al carrito\" son prominentes, junto a una barra de búsqueda eficiente, guiando al usuario rápidamente hacia la compra.",
+            "Destaca por su navegación intuitiva con un mega-menú y botones de acción claros, permitiendo a los usuarios encontrar productos con facilidad.",
+            "Sus botones de \"Pedir\" y \"Reordenar\" son muy visibles, con categorías de restaurantes claras, facilitando la elección y confirmación rápida de pedidos.",
+            "Los botones \"Información\", \"Arma tu PC\", \"Comparar\" son claros en la cabecera, junto a un campo de búsqueda prominente para encontrar productos.",
+            "Mejorar la visibilidad de los botones de filtros y opciones de ordenamiento dentro de la sección de productos para una mejor exploración."
+        ],
+        [
+            "Organization",
+            "La organización de productos por categorías, tiendas oficiales y secciones de ofertas es clara, permitiendo una búsqueda eficiente para los usuarios.",
+            "Utiliza una categorización detallada y filtros avanzados, organizando eficazmente millones de productos para una experiencia de compra personalizada y sencilla.",
+            "La organización por tipo de cocina, promociones y distancia es eficiente, permitiendo a los usuarios descubrir y seleccionar restaurantes rápidamente.",
+            "Presenta los \"Componentes populares\" de manera atractiva en cuadrícula, con títulos de productos claros, mostrando una organización lógica inicial.",
+            "Incluir más opciones de filtrado y ordenamiento detallado (por socket, generación, marca) para los componentes populares mejoraría la experiencia."
+        ],
+        [
+            "Extra features",
+            "Ofrece Mercado Puntos, envíos Flex, y un sistema de preguntas y respuestas, añadiendo valor a la experiencia de compra y fidelización del cliente.",
+            "Presenta Amazon Prime, reseñas detalladas, listas de deseos y recomendaciones personalizadas, enriqueciendo significativamente la interacción del usuario.",
+            "Dispone de seguimiento de pedidos en tiempo real, promociones exclusivas y la opción de calificar restaurantes, mejorando la conveniencia del servicio.",
+            "Ofrece \"Arma tu PC\" y \"Comparar\" como características distintivas, lo cual es muy útil para su audiencia especializada en hardware de computadoras.",
+            "Considerar la implementación de un foro comunitario o un blog con guías de ensamblaje para fomentar la interacción y educar a los usuarios."
+        ],
+        [
+            "Tutorials or Instructions",
+            "Proporciona secciones de ayuda y guías para vendedores y compradores, facilitando el uso de la plataforma y resolviendo dudas comunes.",
+            "Cuenta con amplias páginas de ayuda, tutoriales en video y descripciones detalladas de productos, asistiendo a los usuarios en cada etapa de su compra.",
+            "Sus instrucciones son simples y directas para realizar pedidos, con una sección de preguntas frecuentes que resuelve dudas básicas de manera eficiente.",
+            "La sección \"Arma tu PC\" sugiere que hay guías implícitas, pero una sección explícita de \"Información\" o \"Ayuda\" sería beneficiosa y más visible.",
+            "Desarrollar una base de conocimientos completa con tutoriales detallados sobre la compatibilidad de componentes y guías de ensamblaje paso a paso."
+        ],
+        [
+            "Overall User Experience",
+            "Ofrece una experiencia completa y funcional, con facilidad de compra y venta, aunque a veces la saturación de ofertas puede ser abrumadora.",
+            "Proporciona una UX pulida y eficiente, priorizando la comodidad y personalización, lo que permite a los usuarios encontrar y comprar con facilidad.",
+            "Se enfoca en una experiencia rápida y sin fricciones para pedir comida, con una interfaz intuitiva que minimiza los pasos necesarios para completar la orden.",
+            "La interfaz es limpia y enfocada, facilitando la visualización de componentes y la navegación básica para usuarios interesados en ensamblar PCs.",
+            "Optimizar los tiempos de carga de las páginas de productos y mejorar la retroalimentación visual en las interacciones para una experiencia más fluida."
         ]
     ]
 }

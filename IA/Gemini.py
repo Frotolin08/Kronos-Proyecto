@@ -33,6 +33,20 @@ grounding_tool = types.Tool(
     google_search=types.GoogleSearch()
 )
 
+def retry_request(func, *args, **kwargs):
+    max_retries = 5
+    delay = 2
+    for attempt in range(max_retries):
+        try:
+            return func(*args, **kwargs)
+        except genai.errors.ServerError as e:
+            if "503" in str(e) and attempt < max_retries - 1:
+                sleep_time = delay * (2 ** attempt) + random.uniform(0, 1)
+                print(f"⚠️ Server overloaded (503). Retrying in {sleep_time:.1f} seconds...")
+                time.sleep(sleep_time)
+            else:
+                raise
+
 def createTxt(prompt):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
@@ -157,7 +171,15 @@ def createImgSearching(conclusion_text, img_path="image.jpg"):
 
 
 
-createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, Extra features, Tutorials or Instructions, Conclusion. The table must include rows for Mercado Libre, Amazon, PedidoYa, and the website shown in the provided image. There should be exactly 10 rows in total (one per topic/criterion). Each row must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with Mercado Libre, Amazon, or PedidoYa, but detect with things should it improve (without mentioning the others websites). Avoid starting sentences with ML, Amazon, and PedidoYa…. Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format. Try to write correctly the words ant letters, not just simbols.")
+createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, "
+"Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, "
+"Extra features, Tutorials or Instructions, Conclusion. The table must include rows for Mercado Libre, Amazon, PedidoYa, "
+"and the website shown in the provided image. There should be exactly 10 rows in total (one per topic/criterion). Each row "
+"must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion "
+"column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with Mercado Libre, "
+"Amazon, or PedidoYa, but detect with things should it improve (without mentioning the others websites). Avoid starting sentences with ML, Amazon, and "
+"PedidoYa…. Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format. Write "
+"correctly the words ant letters, not just simbols.")
 
 #createTxt("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
