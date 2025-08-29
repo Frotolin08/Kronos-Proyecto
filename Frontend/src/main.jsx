@@ -12,6 +12,7 @@ import ProjectPage from "./Pages/ProjectPage.jsx";
 import CalendarPage from "./Pages/CalendarPage.jsx";
 import DashboardPage from "./Pages/DashboardPage.jsx";
 import ProjectConfigPage from "./Pages/ProjectConfigPage.jsx";
+import Recover from "./Pages/Recover.jsx";
 import './global.css'
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
   { path: '/project/:id/calendar', element: <CalendarPage/>},
   { path: '/project/:id/dashboard', element: <DashboardPage/>},
   { path: '/project/:id/config', element: <ProjectConfigPage/>},
+  { path: '/recover', element: <Recover /> },
   
 ]);
 createRoot(document.getElementById("root")).render(
