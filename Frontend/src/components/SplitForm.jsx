@@ -1,6 +1,7 @@
 import {useForm} from 'react-hook-form'
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router';
 export default function(props) {
     const formFields = props.fields;
     const navigate = useNavigate()
@@ -22,24 +23,34 @@ export default function(props) {
     }
     }
         const currentField = formFields[step]
+        const [passwordVisibility, setPasswordVisibility] = useState(false)
         
 return(
-
+<>
 <form onSubmit={handleSubmit(onSubmit)} className={props.class}>
         <label>{currentField.label}</label>
+        <div className='inputBox'>
         <input 
-        type={currentField.isPassword && "password"} {...register(currentField.name, {required: currentField.requireMsg})}
-        placeholder={currentField.placeholder}
-        />
+        type={currentField.isPassword && !passwordVisibility && 'password'} {...register(currentField.name, {required: currentField.requireMsg})}
+        placeholder={currentField.placeholder}/>
+        
+         {currentField.isPassword && <span style={{cursor: 'pointer'}}className="material-symbols-outlined" onClick={ () => setPasswordVisibility(!passwordVisibility)}>
+{passwordVisibility? 'visibility' : 'visibility_off'}
+</span> }
+</div>
+
+        <Link to={currentField.underTextLink}>{currentField.underText}</Link>
        
 
       <button type='submit'> {step < formFields.length - 1 ? 'Continuar' : props.submitBtn}</button>
       
-      {errors[currentField.name] && (
-              <p className="formError">{errors[currentField.name].message}</p>
-            )}
+     
       </form>
-    
+      {errors[currentField.name] && (
+               <p className="formError">{errors[currentField.name].message}</p>
+             )}
+     
+    </>
 
 )
 
