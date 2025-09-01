@@ -1674,6 +1674,7 @@ export namespace Prisma {
     nombre: string | null
     contrasenia: string | null
     usuario: string | null
+    googleRefreshToken: string | null
   }
 
   export type PersonaMaxAggregateOutputType = {
@@ -1682,6 +1683,7 @@ export namespace Prisma {
     nombre: string | null
     contrasenia: string | null
     usuario: string | null
+    googleRefreshToken: string | null
   }
 
   export type PersonaCountAggregateOutputType = {
@@ -1690,6 +1692,7 @@ export namespace Prisma {
     nombre: number
     contrasenia: number
     usuario: number
+    googleRefreshToken: number
     _all: number
   }
 
@@ -1708,6 +1711,7 @@ export namespace Prisma {
     nombre?: true
     contrasenia?: true
     usuario?: true
+    googleRefreshToken?: true
   }
 
   export type PersonaMaxAggregateInputType = {
@@ -1716,6 +1720,7 @@ export namespace Prisma {
     nombre?: true
     contrasenia?: true
     usuario?: true
+    googleRefreshToken?: true
   }
 
   export type PersonaCountAggregateInputType = {
@@ -1724,6 +1729,7 @@ export namespace Prisma {
     nombre?: true
     contrasenia?: true
     usuario?: true
+    googleRefreshToken?: true
     _all?: true
   }
 
@@ -1819,6 +1825,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken: string | null
     _count: PersonaCountAggregateOutputType | null
     _avg: PersonaAvgAggregateOutputType | null
     _sum: PersonaSumAggregateOutputType | null
@@ -1846,6 +1853,7 @@ export namespace Prisma {
     nombre?: boolean
     contrasenia?: boolean
     usuario?: boolean
+    googleRefreshToken?: boolean
     archivos?: boolean | persona$archivosArgs<ExtArgs>
     mensajes?: boolean | persona$mensajesArgs<ExtArgs>
     tareas?: boolean | persona$tareasArgs<ExtArgs>
@@ -1860,6 +1868,7 @@ export namespace Prisma {
     nombre?: boolean
     contrasenia?: boolean
     usuario?: boolean
+    googleRefreshToken?: boolean
   }, ExtArgs["result"]["persona"]>
 
   export type personaSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1868,6 +1877,7 @@ export namespace Prisma {
     nombre?: boolean
     contrasenia?: boolean
     usuario?: boolean
+    googleRefreshToken?: boolean
   }, ExtArgs["result"]["persona"]>
 
   export type personaSelectScalar = {
@@ -1876,9 +1886,10 @@ export namespace Prisma {
     nombre?: boolean
     contrasenia?: boolean
     usuario?: boolean
+    googleRefreshToken?: boolean
   }
 
-  export type personaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "mail" | "nombre" | "contrasenia" | "usuario", ExtArgs["result"]["persona"]>
+  export type personaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "mail" | "nombre" | "contrasenia" | "usuario" | "googleRefreshToken", ExtArgs["result"]["persona"]>
   export type personaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     archivos?: boolean | persona$archivosArgs<ExtArgs>
     mensajes?: boolean | persona$mensajesArgs<ExtArgs>
@@ -1905,6 +1916,7 @@ export namespace Prisma {
       nombre: string
       contrasenia: string
       usuario: string
+      googleRefreshToken: string | null
     }, ExtArgs["result"]["persona"]>
     composites: {}
   }
@@ -2338,6 +2350,7 @@ export namespace Prisma {
     readonly nombre: FieldRef<"persona", 'String'>
     readonly contrasenia: FieldRef<"persona", 'String'>
     readonly usuario: FieldRef<"persona", 'String'>
+    readonly googleRefreshToken: FieldRef<"persona", 'String'>
   }
     
 
@@ -10634,7 +10647,8 @@ export namespace Prisma {
     mail: 'mail',
     nombre: 'nombre',
     contrasenia: 'contrasenia',
-    usuario: 'usuario'
+    usuario: 'usuario',
+    googleRefreshToken: 'googleRefreshToken'
   };
 
   export type PersonaScalarFieldEnum = (typeof PersonaScalarFieldEnum)[keyof typeof PersonaScalarFieldEnum]
@@ -10726,6 +10740,14 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
   /**
    * Field references
    */
@@ -10799,6 +10821,7 @@ export namespace Prisma {
     nombre?: StringFilter<"persona"> | string
     contrasenia?: StringFilter<"persona"> | string
     usuario?: StringFilter<"persona"> | string
+    googleRefreshToken?: StringNullableFilter<"persona"> | string | null
     archivos?: ArchivosListRelationFilter
     mensajes?: MensajesListRelationFilter
     tareas?: TareasListRelationFilter
@@ -10812,6 +10835,7 @@ export namespace Prisma {
     nombre?: SortOrder
     contrasenia?: SortOrder
     usuario?: SortOrder
+    googleRefreshToken?: SortOrderInput | SortOrder
     archivos?: archivosOrderByRelationAggregateInput
     mensajes?: mensajesOrderByRelationAggregateInput
     tareas?: tareasOrderByRelationAggregateInput
@@ -10828,6 +10852,7 @@ export namespace Prisma {
     NOT?: personaWhereInput | personaWhereInput[]
     nombre?: StringFilter<"persona"> | string
     contrasenia?: StringFilter<"persona"> | string
+    googleRefreshToken?: StringNullableFilter<"persona"> | string | null
     archivos?: ArchivosListRelationFilter
     mensajes?: MensajesListRelationFilter
     tareas?: TareasListRelationFilter
@@ -10841,6 +10866,7 @@ export namespace Prisma {
     nombre?: SortOrder
     contrasenia?: SortOrder
     usuario?: SortOrder
+    googleRefreshToken?: SortOrderInput | SortOrder
     _count?: personaCountOrderByAggregateInput
     _avg?: personaAvgOrderByAggregateInput
     _max?: personaMaxOrderByAggregateInput
@@ -10857,6 +10883,7 @@ export namespace Prisma {
     nombre?: StringWithAggregatesFilter<"persona"> | string
     contrasenia?: StringWithAggregatesFilter<"persona"> | string
     usuario?: StringWithAggregatesFilter<"persona"> | string
+    googleRefreshToken?: StringNullableWithAggregatesFilter<"persona"> | string | null
   }
 
   export type archivosWhereInput = {
@@ -11252,6 +11279,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     tareas?: tareasCreateNestedManyWithoutPersonaInput
@@ -11265,6 +11293,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosUncheckedCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
@@ -11277,6 +11306,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
@@ -11290,6 +11320,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUncheckedUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
@@ -11303,6 +11334,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
   }
 
   export type personaUpdateManyMutationInput = {
@@ -11310,6 +11342,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type personaUncheckedUpdateManyInput = {
@@ -11318,6 +11351,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type archivosCreateInput = {
@@ -11679,6 +11713,21 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type ArchivosListRelationFilter = {
     every?: archivosWhereInput
     some?: archivosWhereInput
@@ -11709,6 +11758,11 @@ export namespace Prisma {
     none?: tieneWhereInput
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type archivosOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -11735,6 +11789,7 @@ export namespace Prisma {
     nombre?: SortOrder
     contrasenia?: SortOrder
     usuario?: SortOrder
+    googleRefreshToken?: SortOrder
   }
 
   export type personaAvgOrderByAggregateInput = {
@@ -11747,6 +11802,7 @@ export namespace Prisma {
     nombre?: SortOrder
     contrasenia?: SortOrder
     usuario?: SortOrder
+    googleRefreshToken?: SortOrder
   }
 
   export type personaMinOrderByAggregateInput = {
@@ -11755,6 +11811,7 @@ export namespace Prisma {
     nombre?: SortOrder
     contrasenia?: SortOrder
     usuario?: SortOrder
+    googleRefreshToken?: SortOrder
   }
 
   export type personaSumOrderByAggregateInput = {
@@ -11793,6 +11850,24 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type BytesFilter<$PrismaModel = never> = {
@@ -12132,6 +12207,10 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type archivosUpdateManyWithoutPersonaNestedInput = {
@@ -12661,6 +12740,20 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -12703,6 +12796,34 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedBytesFilter<$PrismaModel = never> = {
@@ -12968,6 +13089,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
@@ -12980,6 +13102,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
@@ -13029,6 +13152,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
@@ -13041,6 +13165,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
@@ -13096,6 +13221,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosCreateNestedManyWithoutPersonaInput
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
@@ -13108,6 +13234,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosUncheckedCreateNestedManyWithoutPersonaInput
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
@@ -13157,6 +13284,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
@@ -13169,6 +13297,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUncheckedUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
@@ -13202,6 +13331,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
@@ -13214,6 +13344,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosUncheckedCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
@@ -13269,6 +13400,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
@@ -13281,6 +13413,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUncheckedUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
@@ -13292,6 +13425,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     tareas?: tareasCreateNestedManyWithoutPersonaInput
@@ -13304,6 +13438,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosUncheckedCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
@@ -13331,6 +13466,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
@@ -13343,6 +13479,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUncheckedUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
@@ -13354,6 +13491,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     tareas?: tareasCreateNestedManyWithoutPersonaInput
@@ -13366,6 +13504,7 @@ export namespace Prisma {
     nombre: string
     contrasenia: string
     usuario: string
+    googleRefreshToken?: string | null
     archivos?: archivosUncheckedCreateNestedManyWithoutPersonaInput
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
@@ -13415,6 +13554,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
@@ -13427,6 +13567,7 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     contrasenia?: StringFieldUpdateOperationsInput | string
     usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     archivos?: archivosUncheckedUpdateManyWithoutPersonaNestedInput
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput

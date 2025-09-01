@@ -125,7 +125,8 @@ exports.Prisma.PersonaScalarFieldEnum = {
   mail: 'mail',
   nombre: 'nombre',
   contrasenia: 'contrasenia',
-  usuario: 'usuario'
+  usuario: 'usuario',
+  googleRefreshToken: 'googleRefreshToken'
 };
 
 exports.Prisma.ArchivosScalarFieldEnum = {
@@ -185,6 +186,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 

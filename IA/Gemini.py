@@ -171,18 +171,18 @@ def createImgSearching(conclusion_text, img_path="image.jpg"):
 
 
 
-createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, "
-"Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, "
-"Extra features, Tutorials or Instructions, Conclusion. The table must include rows for Mercado Libre, Amazon, PedidoYa, "
-"and the website shown in the provided image. There should be exactly 10 rows in total (one per topic/criterion). Each row "
-"must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion "
-"column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with Mercado Libre, "
-"Amazon, or PedidoYa, but detect with things should it improve (without mentioning the others websites). Avoid starting sentences with ML, Amazon, and "
-"PedidoYa…. Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format. Write "
-"correctly the words ant letters, not just simbols.")
+#createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, "
+#"Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, "
+#"Extra features, Tutorials or Instructions, Conclusion. The table must include rows for Mercado Libre, Amazon, PedidoYa, "
+#"and the website shown in the provided image. There should be exactly 10 rows in total (one per topic/criterion). Each row "
+#"must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion "
+#"column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with Mercado Libre, "
+#"Amazon, or PedidoYa, but detect with things should it improve (without mentioning the others websites). Avoid starting sentences with ML, Amazon, and "
+#"PedidoYa…. Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format. Write "
+#"correctly the words ant letters, not just simbols.")
 
 #createTxt("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
 #createImgSearching("crea una img de una cabeza humana cortada en medio del desierto. que no sea taaan sangriento, pero con un leve tono realista")
-
+createImgSearching("creame una img del ultimo concierto de Tini que haya hecho. deja en claro DONDE fue")
 #createImg("create an image of a happy dog jumping on the grass")
