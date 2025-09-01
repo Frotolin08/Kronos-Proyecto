@@ -1,16 +1,4 @@
-import express from 'express';
-import { PrismaClient } from '@prisma/client';
-import dotenv from 'dotenv';
-import argon2 from 'argon2';
-import jwt from 'jsonwebtoken';
-
-dotenv.config();
-const app = express();
-const prisma = new PrismaClient();
-const JWT_SECRET = process.env.JWT_SECRET || 'contrasenia-jeje'; 
-app.use(express.json());
-
-const iniciar = async (req, res) => {
+const login = async (req, res) => {
     const {usuarioI, mailI, contraseniaP} = req.body;
        
      if (!mailI && !contraseniaP || !usuarioI && !contraseniaP) {
@@ -58,8 +46,7 @@ const iniciar = async (req, res) => {
     
 } 
 
-
-const crear = async (req, res) => {
+const signup = async (req, res) => {
     const {usuario, nombre, mail, contraseniaPrior} = req.body;
 
     try {
@@ -97,3 +84,5 @@ const crear = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     };
 };
+
+module.exports = (login, signup);

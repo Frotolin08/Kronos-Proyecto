@@ -20,6 +20,8 @@ model persona {
   tareas          tareas[]
   personalizaciones personalizaciones[]
   proyectos_tiene tiene[]
+
+  googleRefreshToken String?
 }
 
 model archivos {
