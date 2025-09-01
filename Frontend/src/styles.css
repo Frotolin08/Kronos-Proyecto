@@ -298,8 +298,7 @@ display: none;
    .register input {
     padding: .7rem;
     width: 15rem;
-    border-top-left-radius: .5rem;
-    border-bottom-left-radius: .5rem;
+    border-radius: .5rem;
     border-color: var(--tertiaryColor);
     border-width: 0.15rem;
     border-style: solid;
@@ -315,8 +314,7 @@ display: none;
     border-width: 0.35rem;
     border-style: solid;
   margin: 0;
-  border-top-right-radius: .5rem;
-  border-bottom-right-radius: .5rem;
+  border-radius: .5rem;
   font-size: var(--headerSizes);
   color: var(--mainColor);
 
@@ -376,3 +374,24 @@ z-index: 100;
   height: 15rem;
   width: auto;
 }
+
+.register label {
+    
+  margin-bottom: -1rem;
+  font-size: .9rem;
+  color:var(--tertiaryColor);
+  align-self: flex-start;
+ }
+
+ #firstInputRegister {
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+
+ }
+
+ .biggerRegisterContainter {
+display: flex;
+justify-content: center;
+
+
+ }
