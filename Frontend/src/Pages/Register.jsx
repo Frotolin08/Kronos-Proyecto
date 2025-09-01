@@ -1,5 +1,5 @@
 import FancyTitle from "../components/FancyTitle";
-import SplitForm from "../components/SplitForm";
+import RegisterForm from "../components/RegisterForm";
 import NavBar from '../components/NavBar'
 export default function Login() {
 const fields= [{name: 'username',
@@ -15,7 +15,7 @@ return(
     <NavBar class='emptyNav'logo='../../public/logo.svg' titleLink='/' titleText="Kronos"/>
 <div className='loginPage'>
     <FancyTitle class='loginTitle'text='Regístrate en KRONOS' subTitle='Da comienzo a esta experiencia'/>
-<SplitForm fields={fields} class='register' submitBtn='Registrarse'/>
+<RegisterForm class='register' fields={fields}/>
 </div>
 </>)
 }

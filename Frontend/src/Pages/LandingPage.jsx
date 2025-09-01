@@ -3,6 +3,9 @@ import ImageGallery from "../components/ImageGallery"
 import Navbar from "../components/NavBar"
 import SimpleButton from "../components/SimpleButton"
 import Footer from "../components/Footer"
+import LoadingScreen from "../components/LoadingScreen"
+import { useEffect, useState } from "react"
+
 
 export default function LandingPage() {
  
@@ -12,13 +15,18 @@ const images= [{src:'../../public/coconut.jpg', row: 20},
 {src:'../../public/coconut.jpg', row: 30},
 {src:'../../public/coconut.jpg', row: 40},
 {src:'../../public/coconut.jpg', row: 50}]
-  const openSideBar = ()=> console.log('sidebar open!')
-   
+  const [loading, setloading] = useState(false);
+   useEffect(() => { 
+     setloading(true);
+    setTimeout(()=> {
+      setloading(false)},
+      500) })
 
   return (
     <>
+ { loading && <LoadingScreen/> }
     <Navbar 
-    logoOnClick={openSideBar} button1Link='/login' button1Text='Iniciar sesion' button2Link='/register' button2Text='Comenzar'
+     button1Link='/login' button1Text='Iniciar sesion' button2Link='/register' button2Text='Comenzar'
     titleLink='/' 
     />
     <div className='LandingPage'>

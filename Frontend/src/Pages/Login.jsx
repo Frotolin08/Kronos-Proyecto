@@ -1,5 +1,5 @@
 import FancyTitle from "../components/FancyTitle";
-import SplitForm from "../components/SplitForm";
+import SplitForm from "../components/loginForm";
 import NavBar from '../components/NavBar'
 export default function Login() {
 const fields= [{name: 'username',
