@@ -140,32 +140,47 @@ def createImg(prompt):
             image.save('gemini-image.png', overwrite= True)
             image.show()
 
-def createImgSearching(conclusion_text, img_path="image.jpg"):
-    with open(img_path, "rb") as f:
-        img_bytes = f.read()
-
-    # Prompt detallado en inglés para Gemini
-    prompt_img = ("You are a professional UI/UX designer. I will give you an original screenshot of a website interface and some conclusions about what must be improved in its design. Using this information AND the original screenshot as a base, generate a new realistic and improved version of the interface. Do not drastically change the identity of the site, only apply the improvements suggested. Here are the improvements that must be applied: \n"  f"{conclusion_text}\n"
+def createImgSearching(prompt):
+    response_search = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=(
+            "Crea un prompt en base a tu función de búsqueda en internet para poder conseguir información "
+            "acerca del siguiente prompt y dárselo a otra IA generadora de imágenes. Haz el prompt lo más "
+            "detallado posible: " + prompt
+        ),
+        config=types.GenerateContentConfig(
+            tools=[grounding_tool]
+        )
     )
 
+    # Extraer el texto real
+    prompt_img = None
+    for cand in response_search.candidates:
+        for part in cand.content.parts:
+            if part.text:
+                prompt_img = part.text
+                break
+        if prompt_img:
+            break
+
+    if not prompt_img:
+        raise ValueError("No se pudo generar un prompt para la imagen")
+
+    # Ahora sí generamos la imagen
     response_img = client.models.generate_content(
         model="gemini-2.0-flash-preview-image-generation",
-        contents=[
-            prompt_img,
-            types.Part.from_bytes(
-                data=img_bytes,
-                mime_type="image/jpeg"
-            )
-        ],
+        contents=prompt_img,
         config=types.GenerateContentConfig(
             response_modalities=["TEXT", "IMAGE"]
         )
     )
+
     for part in response_img.candidates[0].content.parts:
         if part.text is not None:
             print(part.text)
         elif part.inline_data is not None:
-            image = Image.open(BytesIO((part.inline_data.data)))
+            img_bytes = base64.b64decode(part.inline_data.data)
+            image = Image.open(BytesIO(img_bytes))
             image.save('gemini-image.png')
             image.show()
 
@@ -183,6 +198,6 @@ def createImgSearching(conclusion_text, img_path="image.jpg"):
 
 #createTxt("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
-#createImgSearching("crea una img de una cabeza humana cortada en medio del desierto. que no sea taaan sangriento, pero con un leve tono realista")
-createImgSearching("creame una img del ultimo concierto de Tini que haya hecho. deja en claro DONDE fue")
+createImgSearching("Crea una img de un chico de 16 años, de piel muuuy blanca y tomando mate. debe estar en uruguay, y tener una camiseta del país")
+
 #createImg("create an image of a happy dog jumping on the grass")
