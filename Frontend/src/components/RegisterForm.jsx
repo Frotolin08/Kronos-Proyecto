@@ -35,13 +35,17 @@ return(
         <input id='firstInputRegister' 
          {...register('email', {required:'inserte un email'})}
         placeholder='nombre@empresa.com'/> 
+         <button type='submit'style={step==1 ?{borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px'} : null}> {step==1 ? 'Continuar' : 'Registrate'}</button>
 </div>)}
 
 
 {step==2 &&  ( <div className='input2Box'>
   <div className='biggerRegisterContainer'>
-        <input type='file' accept='image/*'
+        <div className="imgInput">
+          <img id='imgRegister' src="../../public/userPicInsert.svg"/>
+        <input id='registerImg' type='file' accept='image/*'
         {...register('pfp', {required: 'inserte una imagen'})}/>
+        </div>
         <div className='smallerRegisterContainer'>
         <label>Tu nombre completo</label>
         <input 
@@ -57,12 +61,12 @@ return(
 </div>
 </div>
 <Link to='/login'>Inicia sesión acá</Link>
-      
+<button type='submit'style={step==1 ?{borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px'} : null}> {step==1 ? 'Continuar' : 'Registrate'}</button>
 </div>)}
         
        
 
-      <button type='submit'style={step==1 ?{borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px'} : null}> {step==1 ? 'Continuar' : 'Registrate'}</button>
+     
       
      
       </form>
@@ -74,6 +78,9 @@ return(
              )}
              {errors['password'] && (
                <p className="formError">{errors['password'].message}</p>
+             )}
+             {errors['pfp'] && (
+               <p className="formError">{errors['pfp'].message}</p>
              )}
      
     </>
