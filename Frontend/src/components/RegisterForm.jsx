@@ -70,19 +70,9 @@ return(
       
      
       </form>
-      {errors['email'] && (
-               <p className="formError">{errors['email'].message}</p>
-             )}
-             {errors['nombre'] && (
-               <p className="formError">{errors['nombre'].message}</p>
-             )}
-             {errors['password'] && (
-               <p className="formError">{errors['password'].message}</p>
-             )}
-             {errors['pfp'] && (
-               <p className="formError">{errors['pfp'].message}</p>
-             )}
-     
+      {Object.values(errors)[0] && (
+  <p className="formError">{Object.values(errors)[0].message}</p>
+)}
     </>
 
 

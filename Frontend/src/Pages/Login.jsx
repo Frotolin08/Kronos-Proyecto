@@ -3,10 +3,10 @@ import SplitForm from "../components/loginForm";
 import NavBar from '../components/NavBar'
 export default function Login() {
 const fields= [{name: 'username',
-requireMsg: 'inserte username',
+requireMsg: 'Mail incorrecto o inexistente. Intenta de nuevo o cliquea aqui para ',
 label: 'Dirección de email'},
 {name: 'password',
-requireMsg: 'inserte contraseña',
+requireMsg: 'Contraseña incorrecta o inexistente. Intenta de nuevo o cliquea aqui para ',
 isPassword: true,
 label:'Contraseña',
 underText: '¿Te olvidaste tu contraseña?',
