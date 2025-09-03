@@ -28,9 +28,9 @@ export default function(props) {
 return(
 <>
 <form onSubmit={handleSubmit(onSubmit)} className={props.class}>
-        <label>{currentField.label}</label>
+        <label style={errors[currentField.name] && {color: "#B20000"}}>{currentField.label}</label>
         <div className='inputBox'>
-        <input 
+        <input className={errors[currentField.name] && "errorInput"}
         type={currentField.isPassword && !passwordVisibility && 'password'} {...register(currentField.name, {required: currentField.requireMsg})}
         placeholder={currentField.placeholder}/>
         
@@ -47,7 +47,7 @@ return(
      
       </form>
       {errors[currentField.name] && (
-               <p className="formError">{errors[currentField.name].message}</p>
+               <p className="formError">{errors[currentField.name].message}<Link style={{color: "#4240BE", textDecoration: "underline", }} to="/register">  Registrarse</Link></p>
              )}
      
     </>
