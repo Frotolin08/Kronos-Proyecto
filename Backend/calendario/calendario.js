@@ -55,4 +55,40 @@ const lookfortoken = async (tokenrenewed) => {
   return calendar;
 };
 
-module.exports(authorization, getatoken, lookfortoken);
+const permision = async (code) => {
+  const code = req.query.code;
+  if (!code) {
+    return res.status(400).send('No authorization code provided');
+  }
+  
+  try {
+    const tokens = await getatoken(code);
+
+    await prisma.persona.update({ 
+            where: { 
+                id: personaId 
+            }, 
+            data: { 
+                googleRefreshToken: tokens.refresh_token 
+            }
+        });
+
+    res.send('Authorization successful');
+  } catch (error) {
+    res.status(500).send('Authorization failed.');
+  } 
+
+}
+
+const getevents = async () => {
+  const userRefreshToken = 'TOKEN_FROM_YOUR_DB'; 
+    
+  try {
+    const events = await getEvents(userRefreshToken);
+    res.json(events);
+  } catch (error) {
+    res.status(500).send('Failed to get events.');
+  }
+}
+
+module.exports(authorization, getatoken, lookfortoken, permision, getevents);
