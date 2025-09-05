@@ -33,6 +33,7 @@ grounding_tool = types.Tool(
     google_search=types.GoogleSearch()
 )
 
+#ERROR
 def retry_request(func, *args, **kwargs):
     max_retries = 5
     delay = 2
@@ -42,11 +43,12 @@ def retry_request(func, *args, **kwargs):
         except genai.errors.ServerError as e:
             if "503" in str(e) and attempt < max_retries - 1:
                 sleep_time = delay * (2 ** attempt) + random.uniform(0, 1)
-                print(f"⚠️ Server overloaded (503). Retrying in {sleep_time:.1f} seconds...")
+                print(f"Server sobrecargado (503). Retrying in {sleep_time:.1f} seconds...")
                 time.sleep(sleep_time)
             else:
                 raise
 
+#crear texto
 def createTxt(prompt):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
@@ -57,6 +59,7 @@ def createTxt(prompt):
     )
     print(response.text)
     
+#crear tabla e img buscando en internet
 def createJson(prompt, img_path="image.jpg"):
     response_search = client.models.generate_content(
         model="gemini-2.5-flash",
@@ -110,8 +113,8 @@ def createJson(prompt, img_path="image.jpg"):
     print("Excel creado")
 
 
-    conclusion = None
     #por si cambiamos de lugar las filas y columnas 
+    conclusion = None
     if "Conclusion:" in df.columns:
         conclusion = " ".join(df["Conclusion:"].dropna().tolist())
     else:
@@ -123,11 +126,13 @@ def createJson(prompt, img_path="image.jpg"):
         createImgSearching(conclusion, img_path)
 
 
-
+#crear img
 def createImg(prompt):
     response = client.models.generate_content(
         model="gemini-2.0-flash-preview-image-generation",
-        contents=(prompt),
+        contents=[
+            {"role": "user", "parts": [{"text": prompt}]}
+        ],
         config=types.GenerateContentConfig(
         response_modalities=['TEXT', 'IMAGE']
         )
@@ -140,50 +145,42 @@ def createImg(prompt):
             image.save('gemini-image.png', overwrite= True)
             image.show()
 
+#crear img buscando en internet
 def createImgSearching(prompt):
-    response_search = client.models.generate_content(
+    response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=(
-            "Crea un prompt en base a tu función de búsqueda en internet para poder conseguir información "
-            "acerca del siguiente prompt y dárselo a otra IA generadora de imágenes. Haz el prompt lo más "
-            "detallado posible: " + prompt
+            "Eres un generador de prompts para IAs de imagen. "
+            "Investiga en internet detalles útiles (época, vestimenta, entorno, referencias visuales) "
+            "y devuelve UN solo prompt en español, ultra descriptivo, con estilo, iluminación, cámara, "
+            "encuadre y paleta, sin texto ni marcas de agua. "
+            f"Tema: {prompt}"
         ),
-        config=types.GenerateContentConfig(
+        config = types.GenerateContentConfig(
             tools=[grounding_tool]
         )
     )
+    print(response.text)
 
-    # Extraer el texto real
-    prompt_img = None
-    for cand in response_search.candidates:
-        for part in cand.content.parts:
-            if part.text:
-                prompt_img = part.text
-                break
-        if prompt_img:
-            break
+    prompt_img = response.text
 
-    if not prompt_img:
-        raise ValueError("No se pudo generar un prompt para la imagen")
-
-    # Ahora sí generamos la imagen
+    # Generar img
     response_img = client.models.generate_content(
         model="gemini-2.0-flash-preview-image-generation",
-        contents=prompt_img,
+        contents=[
+            {"role": "user", "parts": [{"text": prompt_img}]}
+        ],
         config=types.GenerateContentConfig(
-            response_modalities=["TEXT", "IMAGE"]
+        response_modalities=['TEXT', 'IMAGE']
         )
     )
-
     for part in response_img.candidates[0].content.parts:
         if part.text is not None:
             print(part.text)
         elif part.inline_data is not None:
-            img_bytes = base64.b64decode(part.inline_data.data)
-            image = Image.open(BytesIO(img_bytes))
-            image.save('gemini-image.png')
+            image = Image.open(BytesIO((part.inline_data.data)))
+            image.save('gemini-image.png', overwrite= True)
             image.show()
-
 
 
 #createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, "
