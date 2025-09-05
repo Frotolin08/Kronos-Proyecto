@@ -241,7 +241,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 text-align: center;
-padding-top: 6rem;
+padding-top: 5rem;
 font-family: var(--font);
 
   }
@@ -405,7 +405,7 @@ z-index: 100;
 display: flex;
 justify-content: center;
 gap: 5rem;
-margin-bottom: 3rem;
+margin-bottom: .9rem;
  }
  .smallerRegisterContainer {
   gap: 1rem;
@@ -451,3 +451,13 @@ width: auto;
 
 }
 
+.gmailIngresado {
+display: flex;
+align-items: center;
+gap: 1rem;
+opacity: 55%;
+
+}
+#userNameIco {
+font-size: 2rem;
+}

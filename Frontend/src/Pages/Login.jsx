@@ -10,7 +10,9 @@ requireMsg: 'Contraseña incorrecta o inexistente. Intenta de nuevo o cliquea aq
 isPassword: true,
 label:'Contraseña',
 underText: '¿Te olvidaste tu contraseña?',
-underTextLink: '/recover'},
+underTextLink: '/recover',
+minLength: 7,
+minLengthMsg: "la contraseña debe contar con 7 caracteres como minimo"},
 ]
 return(
     <>

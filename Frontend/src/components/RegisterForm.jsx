@@ -15,10 +15,15 @@ export default function RegisterForm(props) {
       } = useForm();
 
       const [step, setStep] = useState(1);
-
+      const [email, setEmail] =useState();
+      const resetAll = ()=> { 
+        reset();
+        setStep(1);
+        setEmail(null);}
       const onSubmit = async (data) => {
         if(step==1)
-        {setStep(2); }
+        {setStep(2); 
+         setEmail(data.email)}
         else {
       console.log(data);
       props.onSubmit && await props.onSubmit(data.email, data.pfp, data.nombre, data.password)
@@ -29,8 +34,15 @@ export default function RegisterForm(props) {
 return(
 
 <>
-<form onSubmit={handleSubmit(onSubmit)} className={props.class}>
+{email && <div className='gmailIngresado'>
+  <span id="userNameIco" class="material-symbols-outlined">account_circle</span>
+        <p>Te registraste como {email}</p>
         
+        <span onClick={resetAll} style={{cursor: "pointer"}}class="material-symbols-outlined">cancel</span>
+        
+        </div>}
+<form onSubmit={handleSubmit(onSubmit)} className={props.class}>
+
        {step==1 &&  ( <div className='inputBox'>
         <input id='firstInputRegister' 
          {...register('email', {required:'inserte un email'})}
@@ -53,7 +65,7 @@ return(
       /> 
       <label>Contraseña</label>
         <input type={passwordVisibility ? null : 'password'} 
-         {...register('password', {required: 'Inserte una constraseña'})}
+         {...register('password', {required: 'Inserte una constraseña',minLength: {value: 7, message: "La contraseña debe tener un minimo de 7 caracteres"}})}
       /> 
       <span style={{cursor: 'pointer'}}className="material-symbols-outlined" onClick={ () => setPasswordVisibility(!passwordVisibility)}>
 {passwordVisibility? 'visibility' : 'visibility_off'}

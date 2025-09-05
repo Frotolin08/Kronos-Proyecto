@@ -6,6 +6,7 @@ export default function(props) {
     const formFields = props.fields;
     const navigate = useNavigate()
     const [step, setStep] = useState(0)
+    const [email, setEmail] =useState();
     const {
         register,
         handleSubmit,
@@ -13,13 +14,20 @@ export default function(props) {
         formState: { errors },
         reset,
       } = useForm();
+      const resetAll = ()=> { 
+        reset();
+        setStep(0);
+        setEmail(null);
+      }
       const onSubmit = async (data) => {
           if(step<formFields.length -1)
-          {setStep(step+1); setValue(formFields[step+1].name, '') }
+          { formFields[step].name=='username' && setEmail(data.username)
+            setStep(step+1); setValue(formFields[step+1].name, '') 
+           }
           else {
         console.log(data);
         props.onSubmit && await props.onSubmit(data.username, data.password)
-        reset(); navigate('/')
+         navigate('/')
     }
     }
         const currentField = formFields[step]
@@ -28,10 +36,17 @@ export default function(props) {
 return(
 <>
 <form onSubmit={handleSubmit(onSubmit)} className={props.class}>
+  {email && <div className='gmailIngresado'>
+  <span id="userNameIco" class="material-symbols-outlined">account_circle</span>
+        <p>{email}</p>
+        
+        <span onClick={resetAll} style={{cursor: "pointer"}}class="material-symbols-outlined">cancel</span>
+        
+        </div>}
         <label style={errors[currentField.name] && {color: "#B20000"}}>{currentField.label}</label>
         <div className='inputBox'>
         <input className={errors[currentField.name] && "errorInput"}
-        type={currentField.isPassword && !passwordVisibility && 'password'} {...register(currentField.name, {required: currentField.requireMsg})}
+        type={currentField.isPassword && !passwordVisibility && 'password'} {...register(currentField.name, {required: currentField.requireMsg,minLength: {value: currentField.minLength, message: currentField.minLengthMsg}})}
         placeholder={currentField.placeholder}/>
         
          {currentField.isPassword && <span style={{cursor: 'pointer'}}className="material-symbols-outlined" onClick={ () => setPasswordVisibility(!passwordVisibility)}>
@@ -47,7 +62,7 @@ return(
      
       </form>
       {errors[currentField.name] && (
-               <p className="formError">{errors[currentField.name].message}<Link style={{color: "#4240BE", textDecoration: "underline", }} to="/register">  Registrarse</Link></p>
+               <p className="formError">{errors[currentField.name].message}{errors[currentField.name].type== "minLength"? null : <Link style={{color: "#4240BE", textDecoration: "underline", }} to="/register">  Registrarse</Link>}</p>
              )}
      
     </>
