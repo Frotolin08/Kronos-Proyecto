@@ -1,92 +1,92 @@
 {
     "columns": [
         "criterion",
-        "mercado_libre",
-        "amazon",
-        "pedidoya",
-        "website_from_image",
-        "conclusion"
+        "Mercado Libre",
+        "Amazon",
+        "PedidoYa",
+        "Website from Image",
+        "Conclusion"
     ],
     "rows": [
         [
             "Typography",
-            "Utiliza una tipografía Sans-serif clara y legible, como Arial o Open Sans, que asegura una buena experiencia de lectura en todos sus dispositivos.",
-            "Emplea una tipografía distintiva (Amazon Ember) para mantener consistencia visual, facilitando la identificación de la marca y la lectura de descripciones de productos.",
-            "Su tipografía es moderna y amigable, a menudo usando una fuente redondeada y sencilla para transmitir accesibilidad y rapidez en el servicio de entrega.",
-            "La tipografía es limpia y moderna, principalmente sans-serif, ofreciendo buena legibilidad para nombres de productos y encabezados importantes en la página.",
-            "Considerar incorporar variaciones de peso o tamaño para destacar mejor elementos clave sin comprometer la consistencia global del sitio."
+            "Utiliza una tipografía sans-serif personalizada, con líneas suavizadas y redondeadas, para una legibilidad óptima y moderna en su plataforma. [8, 40]",
+            "Emplea principalmente Amazon Ember, una sans-serif personalizada, que asegura una lectura clara y profesional en todos sus diversos dispositivos y plataformas. [5, 9, 14]",
+            "Muestra una tipografía sans-serif moderna y limpia en su interfaz, priorizando la claridad y facilidad de lectura para una experiencia de usuario eficiente. [33]",
+            "Utiliza una tipografía sans-serif limpia y estándar, asegurando excelente legibilidad para títulos, descripciones y elementos de navegación de la página.",
+            "Explorar variaciones de fuentes que refuercen la identidad de la marca, manteniendo la claridad y adaptándose mejor a la estética tecnológica."
         ],
         [
             "Colors",
-            "Domina el amarillo vibrante junto con el azul oscuro, creando un contraste energético que llama la atención y resalta ofertas especiales.",
-            "Predominan el blanco, negro y un toque de naranja/azul, generando un esquema de colores profesional que facilita la concentración en los productos mostrados.",
-            "Se caracteriza por el rojo brillante y el blanco, transmitiendo energía y urgencia, lo cual es muy apropiado para su modelo de negocio de entrega rápida.",
-            "La paleta se centra en un azul brillante para la cabecera y el blanco para el contenido, generando una apariencia limpia y enfocada en los productos.",
-            "Explorar el uso de tonos complementarios sutiles para áreas interactivas, mejorando la jerarquía visual sin saturar el diseño existente."
+            "Su paleta distintiva combina amarillo brillante, azul profundo y blanco, simbolizando energía, confianza y una plataforma abierta para todos. [2, 3, 8, 19]",
+            "Predominan el naranja energético, el negro y el blanco; estos colores clave crean una identidad de marca reconocible y funcional en su interfaz. [1, 4, 6, 15]",
+            "Ha evolucionado su paleta cromática con un enfoque moderno, usando colores vibrantes y frescos que reflejan su estrategia expansiva y espontánea. [11, 33]",
+            "La paleta principal es azul vibrante para el encabezado, blanco de fondo y negro para el texto, ofreciendo un contraste nítido y funcional.",
+            "Introducir sutilmente colores secundarios para destacar llamadas a la acción o elementos interactivos podría mejorar la jerarquía visual del diseño."
         ],
         [
             "Formal vs. Informal",
-            "Adopta un tono semi-formal, equilibrando la profesionalidad de las transacciones con un lenguaje cercano para construir confianza con sus usuarios.",
-            "Mantiene un tono predominantemente formal y transaccional, priorizando la claridad y eficiencia en la comunicación de detalles de productos y servicios.",
-            "Utiliza un lenguaje muy informal y amigable, con emojis y expresiones coloquiales que reflejan la juventud y dinamismo de su público objetivo.",
-            "Muestra un tono más formal y directo, enfocado en la funcionalidad y la información técnica, adecuado para un nicho de componentes tecnológicos.",
-            "Podría beneficiarse de introducir elementos de lenguaje ligeramente más conversacionales para fomentar mayor engagement con la comunidad de ensambladores."
+            "Mantiene un equilibrio, con un diseño que transmite profesionalismo en transacciones y una accesibilidad amigable que fomenta la comunidad. [2, 8, 32]",
+            "Su diseño es profesional y metódico, centrado en la eficiencia de la compra, aunque mantiene un tono accesible para el cliente. [5, 18, 31]",
+            "Ha adoptado una estrategia más espontánea y abierta, inclinándose hacia un estilo informal que promueve cercanía y facilidad de uso. [33]",
+            "El diseño es profesional y directo, centrado en la funcionalidad de comparación y armado de componentes de PC, transmitiendo seriedad.",
+            "Adoptar un tono más amigable en descripciones o mensajes podría conectar mejor con usuarios menos técnicos, manteniendo profesionalismo."
         ],
         [
             "Characters / Icons / Emblems",
-            "Su logo con la balanza y flecha simboliza comercio y eficiencia; los iconos son minimalistas y funcionales, facilitando la navegación sin distracciones.",
-            "El logo con la flecha de la 'a' a la 'z' subraya su vasta oferta; los iconos son universales y muy reconocibles, promoviendo una interacción intuitiva.",
-            "Usa un logo sencillo con un globo de diálogo y un tenedor, junto a iconos claros que representan categorías de comida y estados de pedidos.",
-            "El logo es una combinación de un ratón de PC con un embudo/circuito, y los iconos (lupa, persona) son estándar y claros, mejorando la usabilidad.",
-            "Desarrollar un conjunto de iconos personalizados y únicos que reflejen aún más la temática de construcción de PCs, añadiendo personalidad de marca."
+            "Presenta el icónico logotipo de dos manos estrechándose, que simboliza confianza, alianza y una sólida conexión dentro de su comunidad. [2, 8]",
+            "Destaca por la flecha de la sonrisa que va de la 'A' a la 'Z' en su logo, sugiriendo variedad y la satisfacción completa del cliente. [5]",
+            "Utiliza un logotipo moderno que incluye elementos visuales distintivos, reforzando su identidad como una plataforma ágil de delivery. [45]",
+            "Un logo de ratón estilizado con 'Rity', e iconos de búsqueda y perfil genéricos, son claros y funcionales.",
+            "El diseño de iconos más únicos o un emblema secundario podría reforzar la singularidad de la marca en el nicho tecnológico."
         ],
         [
             "Accessibility",
-            "Ofrece opciones como descripciones de imágenes y compatibilidad con lectores de pantalla, buscando ser inclusivo para usuarios con diversas capacidades.",
-            "Invierte en características de accesibilidad robustas, incluyendo navegación por teclado y soporte para texto de alto contraste, garantizando una experiencia para todos.",
-            "Se enfoca en una interfaz sencilla con grandes botones, facilitando el uso para usuarios con posibles dificultades motoras o visuales leves, priorizando la rapidez.",
-            "La legibilidad del texto y el contraste de colores son adecuados, lo que sugiere una buena base para la accesibilidad general de la plataforma.",
-            "Implementar alternativas de texto para todas las imágenes y asegurar una navegación totalmente controlable por teclado para usuarios con discapacidades."
+            "Integra funcionalidades para asegurar la usabilidad general, aunque detalles específicos de accesibilidad no fueron encontrados en la búsqueda. [2]",
+            "Ofrece extensas funciones como VoiceView, textos ajustables y descripciones de audio, garantizando que su plataforma sea inclusiva para todos los usuarios. [7, 12, 25, 31]",
+            "Su rebranding abordó problemas previos de accesibilidad y contraste en la paleta de colores, buscando una mayor legibilidad para los usuarios. [33]",
+            "La combinación de colores y tamaños de fuente ofrece buena legibilidad. No se aprecian características avanzadas de accesibilidad en la interfaz.",
+            "Implementar opciones de contraste alto o herramientas de lectura de pantalla mejoraría la experiencia para usuarios con diversas necesidades visuales."
         ],
         [
             "Navigation (important buttons)",
-            "Botones de \"Comprar\" y \"Agregar al carrito\" son prominentes, junto a una barra de búsqueda eficiente, guiando al usuario rápidamente hacia la compra.",
-            "Destaca por su navegación intuitiva con un mega-menú y botones de acción claros, permitiendo a los usuarios encontrar productos con facilidad.",
-            "Sus botones de \"Pedir\" y \"Reordenar\" son muy visibles, con categorías de restaurantes claras, facilitando la elección y confirmación rápida de pedidos.",
-            "Los botones \"Información\", \"Arma tu PC\", \"Comparar\" son claros en la cabecera, junto a un campo de búsqueda prominente para encontrar productos.",
-            "Mejorar la visibilidad de los botones de filtros y opciones de ordenamiento dentro de la sección de productos para una mejor exploración."
+            "Cuenta con una interfaz de usuario intuitiva que guía a los usuarios, con botones clave para búsquedas y gestión de compras, facilitando el recorrido. [2]",
+            "Tiene una navegación fluida con una barra de búsqueda central, botones de compra rápida y un menú claro para explorar amplias categorías de productos. [18, 21, 31]",
+            "Ofrece una navegación sencilla, con botones destacados para pedidos, seguimiento y opciones de cuenta, optimizando la experiencia de entrega rápida.",
+            "La barra superior presenta enlaces vitales: 'Información', 'Arma tu PC', 'Comparar', y una barra de búsqueda prominente.",
+            "Una disposición mejorada de los elementos clave, destacando 'Arma tu PC', podría optimizar el flujo de usuarios."
         ],
         [
             "Organization",
-            "La organización de productos por categorías, tiendas oficiales y secciones de ofertas es clara, permitiendo una búsqueda eficiente para los usuarios.",
-            "Utiliza una categorización detallada y filtros avanzados, organizando eficazmente millones de productos para una experiencia de compra personalizada y sencilla.",
-            "La organización por tipo de cocina, promociones y distancia es eficiente, permitiendo a los usuarios descubrir y seleccionar restaurantes rápidamente.",
-            "Presenta los \"Componentes populares\" de manera atractiva en cuadrícula, con títulos de productos claros, mostrando una organización lógica inicial.",
-            "Incluir más opciones de filtrado y ordenamiento detallado (por socket, generación, marca) para los componentes populares mejoraría la experiencia."
+            "Opera con una estructura jerárquica y funcional, con divisiones claras en tecnología, operaciones y finanzas, optimizando su gestión regional. [27, 29, 43]",
+            "Presenta una estructura organizacional funcional y jerárquica, con equipos especializados en funciones y divisiones geográficas, permitiendo una gestión global eficiente. [23, 24, 35]",
+            "Como parte de Delivery Hero, su organización interna se enfoca en la eficiencia operativa para gestionar entregas en múltiples mercados. [47]",
+            "La página está organizada con un encabezado fijo, título principal y componentes populares en un diseño de cuadrícula estructurada.",
+            "Añadir filtros o categorías claras para los componentes populares facilitaría la exploración y la búsqueda de productos específicos."
         ],
         [
             "Extra features",
-            "Ofrece Mercado Puntos, envíos Flex, y un sistema de preguntas y respuestas, añadiendo valor a la experiencia de compra y fidelización del cliente.",
-            "Presenta Amazon Prime, reseñas detalladas, listas de deseos y recomendaciones personalizadas, enriqueciendo significativamente la interacción del usuario.",
-            "Dispone de seguimiento de pedidos en tiempo real, promociones exclusivas y la opción de calificar restaurantes, mejorando la conveniencia del servicio.",
-            "Ofrece \"Arma tu PC\" y \"Comparar\" como características distintivas, lo cual es muy útil para su audiencia especializada en hardware de computadoras.",
-            "Considerar la implementación de un foro comunitario o un blog con guías de ensamblaje para fomentar la interacción y educar a los usuarios."
+            "Ofrece un ecosistema integral de servicios como Mercado Pago y Mercado Envíos, expandiendo sus capacidades más allá de las compras básicas. [2]",
+            "Destaca por sus recomendaciones personalizadas, pedidos con un clic, y características innovadoras como Amazon Go y el asistente virtual Alexa. [20, 21, 31]",
+            "Permite el seguimiento de pedidos en tiempo real, opciones de pago variadas y personalización de pedidos, enriqueciendo la experiencia de delivery.",
+            "Las funciones de 'Arma tu PC' y 'Comparar' indican herramientas interactivas avanzadas para configurar y evaluar hardware.",
+            "Destacar visiblemente las características únicas como 'Arma tu PC' con descripciones claras invitaría a más usuarios a explorarlas."
         ],
         [
             "Tutorials or Instructions",
-            "Proporciona secciones de ayuda y guías para vendedores y compradores, facilitando el uso de la plataforma y resolviendo dudas comunes.",
-            "Cuenta con amplias páginas de ayuda, tutoriales en video y descripciones detalladas de productos, asistiendo a los usuarios en cada etapa de su compra.",
-            "Sus instrucciones son simples y directas para realizar pedidos, con una sección de preguntas frecuentes que resuelve dudas básicas de manera eficiente.",
-            "La sección \"Arma tu PC\" sugiere que hay guías implícitas, pero una sección explícita de \"Información\" o \"Ayuda\" sería beneficiosa y más visible.",
-            "Desarrollar una base de conocimientos completa con tutoriales detallados sobre la compatibilidad de componentes y guías de ensamblaje paso a paso."
+            "La plataforma integra guías claras para vendedores sobre cómo usar sus herramientas, lo que facilita la creación y gestión de tiendas online. [44]",
+            "Proporciona una bienvenida opcional para nuevos usuarios y asistentes de voz que incluyen tutoriales en pantalla, facilitando la adaptación del usuario. [20, 28]",
+            "Incorpora instrucciones sencillas para realizar pedidos, personalizar entregas y utilizar las funcionalidades de la aplicación de manera intuitiva.",
+            "El título 'Aprendé, Armá y Compará' sugiere una sección educativa, aunque no hay tutoriales explícitos visibles aquí.",
+            "Ofrecer mini-guías o tooltips interactivos sobre cómo usar las funciones de armado y comparación podría enriquecer la experiencia."
         ],
         [
-            "Overall User Experience",
-            "Ofrece una experiencia completa y funcional, con facilidad de compra y venta, aunque a veces la saturación de ofertas puede ser abrumadora.",
-            "Proporciona una UX pulida y eficiente, priorizando la comodidad y personalización, lo que permite a los usuarios encontrar y comprar con facilidad.",
-            "Se enfoca en una experiencia rápida y sin fricciones para pedir comida, con una interfaz intuitiva que minimiza los pasos necesarios para completar la orden.",
-            "La interfaz es limpia y enfocada, facilitando la visualización de componentes y la navegación básica para usuarios interesados en ensamblar PCs.",
-            "Optimizar los tiempos de carga de las páginas de productos y mejorar la retroalimentación visual en las interacciones para una experiencia más fluida."
+            "User Interface Cohesion",
+            "A pesar de una arquitectura inicial fragmentada, ha logrado una identidad unificada con elementos visuales consistentes en todo su ecosistema. [2, 44]",
+            "Posee una cohesión de interfaz excepcional, manteniendo un diseño limpio y consistente en el sitio web, aplicaciones y materiales de marketing globalmente. [5, 18, 31]",
+            "Su reciente proceso de rebranding buscó una identidad visual más holística, unificando la experiencia en todas sus plataformas digitales. [33]",
+            "El diseño demuestra consistencia en tipografía, colores y disposición de elementos, generando una experiencia visual unificada y ordenada.",
+            "Reforzar la identidad visual con elementos gráficos recurrentes, quizás en los cuadros de producto, podría aumentar la sensación de marca."
         ]
     ]
 }
