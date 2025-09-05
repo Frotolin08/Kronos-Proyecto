@@ -4,11 +4,11 @@
   --mainColor: white;
   --tertiaryColor: #A2A2A2;
   --textColor: rgb(255, 255, 255);
-  --font: arial;
+  --font: 'inter';
   --classyFont: 'Castoro Titling';
   --headerSize: 1.3rem;
   --biggerHeaderSize: 2.5rem;
-  --defaultFontWeight: 100;
+  --defaultFontWeight: 300;
   --decal: #575F1082;
   --errorColor: #B20000;
   --linkColor: #4240BE;
@@ -62,6 +62,7 @@ button {
 
 .NavBar {
 width: 100%;
+z-index: 100;
 display: flex;
 align-items: center;
 position: fixed;
@@ -176,11 +177,18 @@ font-size: var(--headerSize);
 
   .gallery img {
     width: 100%;
-    height: auto;
+    height: 100%;
     grid-row-end: span var(--rows, 20);
     border-radius: 10px;
     object-fit: cover;
     display: block;
+    transition: all ease .3s;
+  }
+  .gallery img:hover {
+opacity: 90%;
+transform: scale(1.01);
+z-index: 1;
+
   }
 
   .login {
@@ -253,7 +261,7 @@ font-family: var(--font);
   }
   .loginTitle h1{
 margin: 0;
-font-weight: 100;
+font-weight: var(--defaultFontWeight);
 width:15rem;
   }
 
@@ -350,6 +358,7 @@ gap: 1rem;
 height: 1rem;
 }
 .footer {
+  margin-top: 3rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -371,7 +380,7 @@ width: 100%;
 .loadingContainer {
 
   height: 100vh;
-  width: 100vw;
+  width: 98.9vw;
 display: flex;
 position: relative;
 top: 0px;
@@ -383,7 +392,7 @@ z-index: 100;
 }
 .svg {
 
-  height: 15rem;
+  height: 10rem;
   width: auto;
 }
 

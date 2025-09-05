@@ -54,7 +54,7 @@ return(
 {step==2 &&  ( <div className='input2Box'>
   <div className='biggerRegisterContainer'>
         <div className="imgInput">
-          <img id='imgRegister' src="../../public/userPicInsert.svg"/>
+          <img id='imgRegister' src="public/userPicInsert.svg"/>
         <input id='registerImg' type='file' accept='image/*'
         {...register('pfp', {required: 'inserte una imagen'})}/>
         </div>

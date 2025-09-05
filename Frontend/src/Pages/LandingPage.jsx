@@ -10,11 +10,15 @@ import { useEffect, useState } from "react"
 export default function LandingPage() {
  
 
-const images= [{src:'../../public/coconut.jpg', row: 20},
-{src:'../../public/coconut.jpg', row: 20},
-{src:'../../public/coconut.jpg', row: 30},
-{src:'../../public/coconut.jpg', row: 40},
-{src:'../../public/coconut.jpg', row: 50}]
+const images= [{src:'../../public/coconut.jpg', row: 20, id: 1},
+{src:'../../public/coconut.jpg', row: 20, id: 2},
+{src:'../../public/coconut.jpg', row: 30, id: 3},
+{src:'../../public/coconut.jpg', row: 40, id: 4},
+{src:'../../public/coconut.jpg', row: 30, id: 5},
+{src:'../../public/coconut.jpg', row: 30, id: 6},
+{src:'../../public/coconut.jpg', row: 20, id: 7},
+{src:'../../public/coconut.jpg', row: 10, id: 8},
+{src:"../../public/mirkin.jpg", row: 10, id: 9}]
   const [loading, setloading] = useState(false);
    useEffect(() => { 
      setloading(true);

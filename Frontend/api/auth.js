@@ -1,11 +1,11 @@
 import axios from 'axios'
 
-export const login = (user, pass) => { axios({
+export const login = (email, pass) => { axios({
 
 method: 'post',
 url:  '/login',
 data: {
-username: user,
+email: email,
 password: pass,
 
 }
@@ -14,12 +14,14 @@ console.log('login sent') }
 
 
 
-export const register = (user, pass) => { axios({
+export const register = (email, pfp, name, pass,) => { axios({
 
 method: 'post',
 url:  '/register',
 data: {
-username: user,
+email: email,
+pfp: pfp,
+name: name,
 password: pass,
 
 }
