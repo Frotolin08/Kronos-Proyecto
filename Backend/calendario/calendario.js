@@ -78,14 +78,13 @@ const setupcalendario = () => {
   const getevents = async (req, res) => {
     try {
       const personaId = req.personaId; 
-
       const persona = await prisma.persona.findUnique({
         where: { id: personaId },
         select: { googleRefreshToken: true }
       });
 
       if (!persona || !persona.googleRefreshToken) {
-        return res.status(401).send('User not linked to a Google account.');
+        return res.status(401).send('User not linked to a Google account');
       }
       const calendar = await lookfortoken(persona.googleRefreshToken);
       const events = await calendar.events.list({
@@ -99,13 +98,102 @@ const setupcalendario = () => {
 
     } catch (error) {
       console.error('Failed to get events:', error);
-      res.status(500).send('Failed to get events.');
+      res.status(500).send('Failed to get events');
     }
   };
 
   const redirectwithgoogle = async (req, res) => {
     const url = authorization();
     res.redirect(url);
+  };
+  
+  const createevents = async (req, res) => {
+    try {
+      const personaId = req.personaId;
+      const eventdetails = req.body;
+
+      if (!eventdetails) {
+        return res.status(400).send('No event details provided');
+      }
+
+      const persona = await prisma.persona.findUnique({
+        where: { id: personaId },
+        select: { googleRefreshToken: true }
+      });
+
+      if (!persona || !persona.googleRefreshToken) {
+        return res.status(401).send('User not linked to a Google account');
+      }
+
+      const calendar = await lookfortoken(persona.googleRefreshToken);
+      const res_event = await calendar.events.insert({
+        calendarId: 'primary',
+        resource: eventdetails,
+      });
+      res.status(201).json(res_event.data);
+
+    } catch (error) {
+      console.error('Failed to create event:', error);
+      res.status(500).send('Failed to create event');
+    }
+  };
+
+  const deleteevents = async (req, res) => {
+    try {
+      const { eventId } = req.params;
+      const personaId = req.personaId;
+
+      const persona = await prisma.persona.findUnique({
+        where: { id: personaId },
+        select: { googleRefreshToken: true }
+      });
+
+      if (!persona || !persona.googleRefreshToken) {
+        return res.status(401).send('User not linked to a Google account');
+      }
+
+      const calendar = await lookfortoken(persona.googleRefreshToken);
+      await calendar.events.delete({
+        calendarId: 'primary',
+        eventId: eventId,
+      });
+
+      res.status(204).send();
+    } catch (error) {
+      console.error('Failed to delete event:', error);
+      res.status(500).send('Failed to delete event');
+    }
+  };
+
+  
+  const updateevents = async (req, res) => {
+    try {
+      const { eventId } = req.params; 
+      const eventdetails = req.body; 
+      const personaId = req.personaId;
+
+      const persona = await prisma.persona.findUnique({
+        where: { id: personaId },
+        select: { googleRefreshToken: true }
+      });
+
+      if (!persona || !persona.googleRefreshToken) {
+        return res.status(401).send('User not linked to a Google account');
+      }
+
+      const calendar = await lookfortoken(persona.googleRefreshToken);
+      const updatedEvent = await calendar.events.update({
+        calendarId: 'primary',
+        eventId: eventId,
+        resource: eventdetails,
+      });
+
+      res.status(200).json(updatedEvent.data);
+
+    } catch (error) {
+      console.error('Failed to update event:', error);
+      res.status(500).send('Failed to update event');
+    }
   };
 
   return {
@@ -114,9 +202,11 @@ const setupcalendario = () => {
     lookfortoken,
     permision,
     getevents,
-    redirectwithgoogle
+    redirectwithgoogle,
+    createevents,
+    deleteevents,
+    updateevents
   };
 };
-
 
 module.exports = setupcalendario;

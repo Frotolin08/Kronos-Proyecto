@@ -8,10 +8,10 @@ import setupcalendario from './calendario.js';
 import setupautenticacion from './autenticacion.js';
 import setuprouter from './rutas.js';
 
-const {authorization, getatoken, lookfortoken, permision, getevents, redirectwithgoogle} = setupcalendario();
+const {authorization, getatoken, lookfortoken, permision, getevents, redirectwithgoogle, createevents, deleteevents, updateevents} = setupcalendario();
 const { login, signup } = setupsesiones(JWT_SECRET);
 const { autenticacion } = setupautenticacion(JWT_SECRET);
-const router = setuprouter({ login, signup, authentication, getevents, permision, redirectwithgoogle });
+const router = setuprouter({ login, signup, authentication, getevents, permision, redirectwithgoogle, createevents, deleteevents, updateevents});
 
 dotenv.config();
 const app = express();
