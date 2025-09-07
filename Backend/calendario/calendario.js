@@ -1,5 +1,6 @@
 require('dotenv').config();
-
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 const { google } = require('googleapis');
 
 const oAuth2Client = new google.auth.OAuth2(
@@ -19,7 +20,7 @@ const authorization = () => {
   return url;
 };
  
-const getatoken = async (code) => {
+const getatoken = async (code, personaId) => {
     try {
         const { tokens } = await oAuth2Client.getToken(code);
         
@@ -45,6 +46,7 @@ const getatoken = async (code) => {
 const lookfortoken = async (tokenrenewed) => {
   if (!tokenrenewed) {
    console.log("U need a token for this");
+   throw new Error("No token provided");
   }
   
   oAuth2Client.setCredentials({
@@ -55,14 +57,16 @@ const lookfortoken = async (tokenrenewed) => {
   return calendar;
 };
 
-const permision = async (code) => {
+const permision = async (req, res) => {
   const code = req.query.code;
   if (!code) {
     return res.status(400).send('No authorization code provided');
   }
   
+  const personaId = req.personaId; 
+  
   try {
-    const tokens = await getatoken(code);
+    const tokens = await getatoken(code, personaId);
 
     await prisma.persona.update({ 
             where: { 
@@ -78,17 +82,46 @@ const permision = async (code) => {
     res.status(500).send('Authorization failed.');
   } 
 
-}
+};
 
 const getevents = async () => {
-  const userRefreshToken = 'TOKEN_FROM_YOUR_DB'; 
-    
   try {
-    const events = await getEvents(userRefreshToken);
-    res.json(events);
+    const personaId = req.personaId; 
+
+    const persona = await prisma.persona.findUnique({
+      where: { id: personaId },
+      select: { googleRefreshToken: true }
+    });
+
+    if (!persona || !persona.googleRefreshToken) {
+      return res.status(401).send('User not linked to a Google account.');
+    }
+    const calendar = await lookfortoken(persona.googleRefreshToken);
+    const events = await calendar.events.list({
+      calendarId: 'primary',
+      timeMin: (new Date()).toISOString(),
+      maxResults: 10,
+      singleEvents: true,
+      orderBy: 'startTime',
+    });
+    res.json(events.data.items);
+
   } catch (error) {
+    console.error('Failed to get events:', error);
     res.status(500).send('Failed to get events.');
   }
-}
+};
 
-module.exports(authorization, getatoken, lookfortoken, permision, getevents);
+const redirectwithgoogle = async (req, res) => {
+  const url = authorization();
+  res.redirect(url);
+};
+
+module.exports = {
+  authorization,
+  getatoken,
+  lookfortoken,
+  permision,
+  getevents,
+  redirectwithgoogle
+};

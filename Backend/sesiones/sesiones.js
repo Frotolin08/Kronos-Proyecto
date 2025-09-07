@@ -1,33 +1,48 @@
-const login = async (req, res) => {
-    const {usuarioI, mailI, contraseniaP} = req.body;
-       
-     if (!mailI && !contraseniaP || !usuarioI && !contraseniaP) {
-        return res.status(400).json({ error: "Missing data" });
-    }
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+const argon2 = require('argon2');
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET || 'contrasenia-jeje';
+    
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+const argon2 = require('argon2');
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET || 'contrasenia-jeje';
 
+const login = async (req, res) => {
+
+    const {usuarioI, mailI, contraseniaP} = req.body;
+    let persona;
+    
     try {
 
-        const persona = await prisma.persona.findUnique({
-            where: {
-                mail: mailI,
-            },
-            
-        });
-
-        if (!persona) {
-            const persona2 = await prisma.persona.findUnique({
-                where: {
-                usuario: usuarioI,
-                },
-            });
+            if (mailI) {
+      persona = await prisma.persona.findUnique({ 
+        where: { 
+            mail: mailI 
         } 
+    });
+    }
 
-        const contraseniaI = await argon2.verify(persona.contrasenia, contraseniaP);
+    if (!persona && usuarioI) {
+      persona = await prisma.persona.findUnique({ 
+        where: { 
+            usuario: usuarioI 
+        } 
+    });
+    }
+    
+    if (!persona || !contraseniaP) {
+      return res.status(401).json({ error: "Wrong data" });
+    }
 
-        if (!contraseniaI) {
-            return res.status(401).json({ error: "Wrong data" });
-        }
-
+    
+    const contraseniaI = await argon2.verify(persona.contrasenia, contraseniaP);
+    if (!contraseniaI) {
+      return res.status(401).json({ error: "Wrong data" });
+    }
+    
         const token = jwt.sign({ 
             personaId: persona.id, 
             mail: persona.email 
@@ -44,7 +59,7 @@ const login = async (req, res) => {
         console.error("unsuccessful login", err);
     }
     
-} 
+};
 
 const signup = async (req, res) => {
     const {usuario, nombre, mail, contraseniaPrior} = req.body;
@@ -57,7 +72,7 @@ const signup = async (req, res) => {
 
         const contrasenia = await argon2.hash(contraseniaPrior);
 
-        const persona = await prisma.user.create({
+        const persona = await prisma.persona.create({
             data: {
                 usuario: usuario,
                 nombre: nombre,
@@ -85,4 +100,7 @@ const signup = async (req, res) => {
     };
 };
 
-module.exports = (login, signup);
+module.exports = {
+  login,
+  signup
+};
