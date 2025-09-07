@@ -8,12 +8,14 @@ import setupcalendario from './calendario.js';
 import setupautenticacion from './autenticacion.js';
 import setuprouter from './rutas.js';
 import setuparchivos from './archivos/archivos.js';
+import setupwebsocketserver from './chats/chat.js';
 
 const {authorization, getatoken, lookfortoken, permision, getevents, redirectwithgoogle, createevents, deleteevents, updateevents} = setupcalendario();
 const { login, signup } = setupsesiones(JWT_SECRET);
 const { autenticacion } = setupautenticacion(JWT_SECRET);
 const {seefile, uploadfile} = setuparchivos();
-const router = setuprouter({ login, signup, authentication, getevents, permision, redirectwithgoogle, createevents, deleteevents, updateevents, seefile, uploadfile});
+const { websocketserver } = setuparchivos();
+const router = setuprouter({ login, signup, authentication, getevents, permision, redirectwithgoogle, createevents, deleteevents, updateevents, seefile, uploadfile, websocketserver});
 
 dotenv.config();
 const app = express();
