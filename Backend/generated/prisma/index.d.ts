@@ -2904,6 +2904,7 @@ export namespace Prisma {
   export type ArchivosMinAggregateOutputType = {
     formato: string | null
     archivo: Uint8Array | null
+    nombrearchivo: string | null
     id: number | null
     id_persona: number | null
     id_proyecto: number | null
@@ -2912,6 +2913,7 @@ export namespace Prisma {
   export type ArchivosMaxAggregateOutputType = {
     formato: string | null
     archivo: Uint8Array | null
+    nombrearchivo: string | null
     id: number | null
     id_persona: number | null
     id_proyecto: number | null
@@ -2920,6 +2922,7 @@ export namespace Prisma {
   export type ArchivosCountAggregateOutputType = {
     formato: number
     archivo: number
+    nombrearchivo: number
     id: number
     id_persona: number
     id_proyecto: number
@@ -2942,6 +2945,7 @@ export namespace Prisma {
   export type ArchivosMinAggregateInputType = {
     formato?: true
     archivo?: true
+    nombrearchivo?: true
     id?: true
     id_persona?: true
     id_proyecto?: true
@@ -2950,6 +2954,7 @@ export namespace Prisma {
   export type ArchivosMaxAggregateInputType = {
     formato?: true
     archivo?: true
+    nombrearchivo?: true
     id?: true
     id_persona?: true
     id_proyecto?: true
@@ -2958,6 +2963,7 @@ export namespace Prisma {
   export type ArchivosCountAggregateInputType = {
     formato?: true
     archivo?: true
+    nombrearchivo?: true
     id?: true
     id_persona?: true
     id_proyecto?: true
@@ -3053,6 +3059,7 @@ export namespace Prisma {
   export type ArchivosGroupByOutputType = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     id: number
     id_persona: number
     id_proyecto: number
@@ -3080,6 +3087,7 @@ export namespace Prisma {
   export type archivosSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     formato?: boolean
     archivo?: boolean
+    nombrearchivo?: boolean
     id?: boolean
     id_persona?: boolean
     id_proyecto?: boolean
@@ -3090,6 +3098,7 @@ export namespace Prisma {
   export type archivosSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     formato?: boolean
     archivo?: boolean
+    nombrearchivo?: boolean
     id?: boolean
     id_persona?: boolean
     id_proyecto?: boolean
@@ -3100,6 +3109,7 @@ export namespace Prisma {
   export type archivosSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     formato?: boolean
     archivo?: boolean
+    nombrearchivo?: boolean
     id?: boolean
     id_persona?: boolean
     id_proyecto?: boolean
@@ -3110,12 +3120,13 @@ export namespace Prisma {
   export type archivosSelectScalar = {
     formato?: boolean
     archivo?: boolean
+    nombrearchivo?: boolean
     id?: boolean
     id_persona?: boolean
     id_proyecto?: boolean
   }
 
-  export type archivosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formato" | "archivo" | "id" | "id_persona" | "id_proyecto", ExtArgs["result"]["archivos"]>
+  export type archivosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formato" | "archivo" | "nombrearchivo" | "id" | "id_persona" | "id_proyecto", ExtArgs["result"]["archivos"]>
   export type archivosInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     persona?: boolean | personaDefaultArgs<ExtArgs>
     proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
@@ -3138,6 +3149,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       formato: string
       archivo: Uint8Array
+      nombrearchivo: string
       id: number
       id_persona: number
       id_proyecto: number
@@ -3568,6 +3580,7 @@ export namespace Prisma {
   interface archivosFieldRefs {
     readonly formato: FieldRef<"archivos", 'String'>
     readonly archivo: FieldRef<"archivos", 'Bytes'>
+    readonly nombrearchivo: FieldRef<"archivos", 'String'>
     readonly id: FieldRef<"archivos", 'Int'>
     readonly id_persona: FieldRef<"archivos", 'Int'>
     readonly id_proyecto: FieldRef<"archivos", 'Int'>
@@ -10657,6 +10670,7 @@ export namespace Prisma {
   export const ArchivosScalarFieldEnum: {
     formato: 'formato',
     archivo: 'archivo',
+    nombrearchivo: 'nombrearchivo',
     id: 'id',
     id_persona: 'id_persona',
     id_proyecto: 'id_proyecto'
@@ -10892,6 +10906,7 @@ export namespace Prisma {
     NOT?: archivosWhereInput | archivosWhereInput[]
     formato?: StringFilter<"archivos"> | string
     archivo?: BytesFilter<"archivos"> | Uint8Array
+    nombrearchivo?: StringFilter<"archivos"> | string
     id?: IntFilter<"archivos"> | number
     id_persona?: IntFilter<"archivos"> | number
     id_proyecto?: IntFilter<"archivos"> | number
@@ -10902,6 +10917,7 @@ export namespace Prisma {
   export type archivosOrderByWithRelationInput = {
     formato?: SortOrder
     archivo?: SortOrder
+    nombrearchivo?: SortOrder
     id?: SortOrder
     id_persona?: SortOrder
     id_proyecto?: SortOrder
@@ -10916,6 +10932,7 @@ export namespace Prisma {
     NOT?: archivosWhereInput | archivosWhereInput[]
     formato?: StringFilter<"archivos"> | string
     archivo?: BytesFilter<"archivos"> | Uint8Array
+    nombrearchivo?: StringFilter<"archivos"> | string
     id_persona?: IntFilter<"archivos"> | number
     id_proyecto?: IntFilter<"archivos"> | number
     persona?: XOR<PersonaScalarRelationFilter, personaWhereInput>
@@ -10925,6 +10942,7 @@ export namespace Prisma {
   export type archivosOrderByWithAggregationInput = {
     formato?: SortOrder
     archivo?: SortOrder
+    nombrearchivo?: SortOrder
     id?: SortOrder
     id_persona?: SortOrder
     id_proyecto?: SortOrder
@@ -10941,6 +10959,7 @@ export namespace Prisma {
     NOT?: archivosScalarWhereWithAggregatesInput | archivosScalarWhereWithAggregatesInput[]
     formato?: StringWithAggregatesFilter<"archivos"> | string
     archivo?: BytesWithAggregatesFilter<"archivos"> | Uint8Array
+    nombrearchivo?: StringWithAggregatesFilter<"archivos"> | string
     id?: IntWithAggregatesFilter<"archivos"> | number
     id_persona?: IntWithAggregatesFilter<"archivos"> | number
     id_proyecto?: IntWithAggregatesFilter<"archivos"> | number
@@ -11357,6 +11376,7 @@ export namespace Prisma {
   export type archivosCreateInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     persona: personaCreateNestedOneWithoutArchivosInput
     proyecto: proyectoCreateNestedOneWithoutArchivosInput
   }
@@ -11364,6 +11384,7 @@ export namespace Prisma {
   export type archivosUncheckedCreateInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     id?: number
     id_persona: number
     id_proyecto: number
@@ -11372,6 +11393,7 @@ export namespace Prisma {
   export type archivosUpdateInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     persona?: personaUpdateOneRequiredWithoutArchivosNestedInput
     proyecto?: proyectoUpdateOneRequiredWithoutArchivosNestedInput
   }
@@ -11379,6 +11401,7 @@ export namespace Prisma {
   export type archivosUncheckedUpdateInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
     id_persona?: IntFieldUpdateOperationsInput | number
     id_proyecto?: IntFieldUpdateOperationsInput | number
@@ -11387,6 +11410,7 @@ export namespace Prisma {
   export type archivosCreateManyInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     id?: number
     id_persona: number
     id_proyecto: number
@@ -11395,11 +11419,13 @@ export namespace Prisma {
   export type archivosUpdateManyMutationInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
   }
 
   export type archivosUncheckedUpdateManyInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
     id_persona?: IntFieldUpdateOperationsInput | number
     id_proyecto?: IntFieldUpdateOperationsInput | number
@@ -11890,6 +11916,7 @@ export namespace Prisma {
   export type archivosCountOrderByAggregateInput = {
     formato?: SortOrder
     archivo?: SortOrder
+    nombrearchivo?: SortOrder
     id?: SortOrder
     id_persona?: SortOrder
     id_proyecto?: SortOrder
@@ -11904,6 +11931,7 @@ export namespace Prisma {
   export type archivosMaxOrderByAggregateInput = {
     formato?: SortOrder
     archivo?: SortOrder
+    nombrearchivo?: SortOrder
     id?: SortOrder
     id_persona?: SortOrder
     id_proyecto?: SortOrder
@@ -11912,6 +11940,7 @@ export namespace Prisma {
   export type archivosMinOrderByAggregateInput = {
     formato?: SortOrder
     archivo?: SortOrder
+    nombrearchivo?: SortOrder
     id?: SortOrder
     id_persona?: SortOrder
     id_proyecto?: SortOrder
@@ -12846,12 +12875,14 @@ export namespace Prisma {
   export type archivosCreateWithoutPersonaInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     proyecto: proyectoCreateNestedOneWithoutArchivosInput
   }
 
   export type archivosUncheckedCreateWithoutPersonaInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     id?: number
     id_proyecto: number
   }
@@ -12974,6 +13005,7 @@ export namespace Prisma {
     NOT?: archivosScalarWhereInput | archivosScalarWhereInput[]
     formato?: StringFilter<"archivos"> | string
     archivo?: BytesFilter<"archivos"> | Uint8Array
+    nombrearchivo?: StringFilter<"archivos"> | string
     id?: IntFilter<"archivos"> | number
     id_persona?: IntFilter<"archivos"> | number
     id_proyecto?: IntFilter<"archivos"> | number
@@ -13605,12 +13637,14 @@ export namespace Prisma {
   export type archivosCreateWithoutProyectoInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     persona: personaCreateNestedOneWithoutArchivosInput
   }
 
   export type archivosUncheckedCreateWithoutProyectoInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     id?: number
     id_persona: number
   }
@@ -13855,6 +13889,7 @@ export namespace Prisma {
   export type archivosCreateManyPersonaInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     id?: number
     id_proyecto: number
   }
@@ -13887,12 +13922,14 @@ export namespace Prisma {
   export type archivosUpdateWithoutPersonaInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     proyecto?: proyectoUpdateOneRequiredWithoutArchivosNestedInput
   }
 
   export type archivosUncheckedUpdateWithoutPersonaInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
     id_proyecto?: IntFieldUpdateOperationsInput | number
   }
@@ -13900,6 +13937,7 @@ export namespace Prisma {
   export type archivosUncheckedUpdateManyWithoutPersonaInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
     id_proyecto?: IntFieldUpdateOperationsInput | number
   }
@@ -13978,6 +14016,7 @@ export namespace Prisma {
   export type archivosCreateManyProyectoInput = {
     formato: string
     archivo: Uint8Array
+    nombrearchivo: string
     id?: number
     id_persona: number
   }
@@ -14003,12 +14042,14 @@ export namespace Prisma {
   export type archivosUpdateWithoutProyectoInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     persona?: personaUpdateOneRequiredWithoutArchivosNestedInput
   }
 
   export type archivosUncheckedUpdateWithoutProyectoInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
     id_persona?: IntFieldUpdateOperationsInput | number
   }
@@ -14016,6 +14057,7 @@ export namespace Prisma {
   export type archivosUncheckedUpdateManyWithoutProyectoInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
+    nombrearchivo?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
     id_persona?: IntFieldUpdateOperationsInput | number
   }

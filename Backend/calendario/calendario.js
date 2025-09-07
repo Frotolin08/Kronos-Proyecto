@@ -165,7 +165,6 @@ const setupcalendario = () => {
     }
   };
 
-  
   const updateevents = async (req, res) => {
     try {
       const { eventId } = req.params; 

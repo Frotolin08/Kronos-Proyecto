@@ -132,6 +132,7 @@ exports.Prisma.PersonaScalarFieldEnum = {
 exports.Prisma.ArchivosScalarFieldEnum = {
   formato: 'formato',
   archivo: 'archivo',
+  nombrearchivo: 'nombrearchivo',
   id: 'id',
   id_persona: 'id_persona',
   id_proyecto: 'id_proyecto'

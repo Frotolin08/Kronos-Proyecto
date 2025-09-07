@@ -25,11 +25,12 @@ model persona {
 }
 
 model archivos {
-  formato     String
-  archivo     Bytes
-  id          Int    @id @default(autoincrement())
-  id_persona  Int
-  id_proyecto Int
+  formato       String
+  archivo       Bytes
+  nombrearchivo String
+  id            Int    @id @default(autoincrement())
+  id_persona    Int
+  id_proyecto   Int
 
   persona  persona  @relation(fields: [id_persona], references: [id])
   proyecto proyecto @relation(fields: [id_proyecto], references: [id])
