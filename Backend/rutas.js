@@ -1,10 +1,16 @@
-import sesiones from './sesiones.js';
-import calendario from './calendario.js';
+import { Router } from 'express';
 
-app.post("/users/login", sesiones.login);
-app.post("/users/signup", sesiones.signup);
-app.get("/auth/google/callback", calendario.permision);
-app.get("/api/calendar/events",calendario.getevents);
-app.get('/auth/google', calendario.redirectwithgoogle);
+const setuprouter = ({ login, signup, authentication, getevents, permision, redirectwithgoogle }) => {
+    
+    const router = Router();
 
+    router.post("/users/login", login);
+    router.post("/users/signup", signup);
+    router.get("/auth/google/callback", authentication, permision);
+    router.get("/api/calendar/events", authentication, getevents);
+    router.get('/auth/google', redirectwithgoogle);
 
+    return router;
+};
+
+export default setuprouter;
