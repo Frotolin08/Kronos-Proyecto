@@ -81,7 +81,7 @@ def createJson(prompt, img_path="image.jpg"):
             tools=[grounding_tool]
         )
     )
-    print("response hecho")
+    print("response de tabla hecho")
 
     prompt_board = response.text
 
@@ -159,10 +159,12 @@ def createImg(prompt):
 def createImgSearching(prompt, img_path=None):
     contents = [
         {"role": "user", "parts": [{"text": (
-            "Eres un generador de prompts para IAs de imagen. "
-            "Investiga en internet detalles útiles (época, vestimenta, entorno, referencias visuales) "
-            "y devuelve UN solo prompt en español, ultra descriptivo, con estilo, iluminación, cámara, "
-            "encuadre y paleta, sin texto ni marcas de agua. "
+           " Crea una imagen realista del sitio web mostrado en la imagen adjunta, incorporando las mejoras indicadas en la conclusión:"
+            "- Ajustar colores y tipografía para mejor legibilidad."
+            "- Reorganizar botones importantes para navegación más intuitiva."
+            "- Añadir iconos y elementos visuales que mejoren la experiencia."
+            "- Mantener el estilo general del sitio original."
+            "No inventes nuevos elementos, solo mejora lo que ya existe. La imagen debe mostrar claramente los cambios sugeridos."
             f"Tema: {prompt}"
         )}]}
     ]
@@ -182,7 +184,7 @@ def createImgSearching(prompt, img_path=None):
             tools=[grounding_tool]
         )
     )
-    print(response.text)
+    print("response de img hecho")
 
     prompt_img = response.text
 

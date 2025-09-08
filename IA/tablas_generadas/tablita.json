@@ -1,82 +1,82 @@
 [
     {
         "criterion_or_website": "Typography",
-        "website_1_value": "Utiliza fuentes sans-serif claras y legibles, como Segoe UI, con una jerarquía consistente para títulos y texto principal.",
-        "website_2_value": "Emplea tipografías sans-serif modernas y limpias, priorizando la legibilidad en subtítulos y descripciones de fotos.",
-        "website_3_value": "Fuentes sans-serif profesionales como Open Sans, garantizando alta legibilidad para contenido empresarial y perfiles detallados.",
-        "website_4_value": "Tipografía sans-serif estándar y sencilla, lo que asegura buena legibilidad para nombres de productos y títulos.",
-        "conclusion": "Podría explorar una tipografía más distintiva o una paleta de fuentes complementarias para añadir carácter y diferenciación visual."
+        "website_1_value": "Utiliza Facebook Sans, una tipografía Sans-serif clara y legible, priorizando la coherencia en sus interfaces. [3]",
+        "website_2_value": "Presenta una combinación de fuentes limpias para texto estándar, con opciones creativas para historias y gráficos. [5, 8]",
+        "website_3_value": "Muestra tipografías audaces y dinámicas, a menudo con efectos visuales, reflejando su naturaleza juvenil y enérgica. [2, 4, 14, 17]",
+        "website_4_value": "La tipografía es funcional pero carece de un estilo distintivo, usando fuentes estándar sin mucha personalidad ni jerarquía visual clara. [11, 20]",
+        "conclusion": "Considerar implementar una tipografía más moderna y única para diferenciar la marca visualmente y mejorar la jerarquía."
     },
     {
         "criterion_or_website": "Colors",
-        "website_1_value": "Predominan azules y blancos, transmitiendo confianza y familiaridad, con un contraste elevado para la lectura.",
-        "website_2_value": "Logo con gradientes vibrantes, interfaz principalmente blanca y texto negro, destacando el contenido visual.",
-        "website_3_value": "Esquema de colores corporativos: azul, blanco y gris, que proyecta profesionalismo y un entorno de trabajo serio.",
-        "website_4_value": "Dominante cabecera azul brillante con texto blanco, cuerpo de la página blanco con texto negro, colores funcionales.",
-        "conclusion": "La paleta de colores es básica; considerar introducir un color secundario o acentos para destacar elementos clave y mejorar la estética general."
+        "website_1_value": "Dominan los tonos azules clásicos y blanco, proyectando profesionalismo, confianza y una sensación de familiaridad. [15]",
+        "website_2_value": "Se caracteriza por degradados vibrantes y colores cálidos, evocando creatividad, alegría y una estética moderna y atractiva. [8]",
+        "website_3_value": "Emplea una paleta de colores oscuros y neón, generando una atmósfera moderna, juvenil y energéticamente estimulante. [1]",
+        "website_4_value": "La paleta de colores es básica y monocromática, lo que resulta en una apariencia algo genérica, plana y sin vida. [7, 11]",
+        "conclusion": "Introducir una paleta de colores más rica y atractiva que refuerce la identidad de la plataforma y el contraste."
     },
     {
         "criterion_or_website": "Formal vs. Informal",
-        "website_1_value": "Mezcla de tono, más informal para interacciones personales y algo formal para noticias y páginas oficiales.",
-        "website_2_value": "Predominantemente informal y visual, centrado en la expresión creativa y estilos de vida personales.",
-        "website_3_value": "Estrictamente formal y profesional, diseñado para networking, búsqueda de empleo y desarrollo de negocios.",
-        "website_4_value": "Tono formal y funcional, típico de sitios de comercio electrónico y utilidades, enfocado en información de productos.",
-        "conclusion": "El tono es adecuado para una tienda de componentes; sin embargo, un toque sutil de calidez podría mejorar la conexión con el usuario."
+        "website_1_value": "Adopta un tono predominantemente semi-formal, adecuado para conexiones personales, profesionales y comunicados oficiales. [13, 19]",
+        "website_2_value": "Mantiene un estilo informal y visualmente atractivo, fomentando la expresión personal y la interacción casual entre usuarios. [5, 8]",
+        "website_3_value": "Opera en un registro marcadamente informal y lúdico, celebrando la espontaneidad y el entretenimiento sin filtros. [2, 14]",
+        "website_4_value": "El lenguaje y el diseño son neutrales, cayendo en un rango formal que puede percibirse como poco cercano para el usuario. [6, 7]",
+        "conclusion": "Evaluar un enfoque más informal en el lenguaje y diseño para fomentar mayor cercanía y participación activa de la audiencia."
     },
     {
         "criterion_or_website": "Characters / Icons / Emblems",
-        "website_1_value": "Íconos universales de redes sociales, botones de 'me gusta', perfiles de usuario y emoticonos reconocibles.",
-        "website_2_value": "Íconos minimalistas (corazón, burbuja de diálogo, avión de papel), con énfasis en las imágenes de perfil de usuario.",
-        "website_3_value": "Íconos profesionales para conexiones, empleos y mensajes, junto con logotipos de empresas y fotos de perfil.",
-        "website_4_value": "Íconos simples y funcionales: búsqueda, perfil de usuario y un logo de ratón 'PMCity' claro y directo en la cabecera.",
-        "conclusion": "Los íconos son funcionales pero sencillos; mejorar el diseño del logo y considerar íconos más modernos y coherentes visualmente."
+        "website_1_value": "Usa iconos planos y reconocibles universalmente, junto a un logo 'f' icónico y reacciones emotivas en el contenido. [12, 13, 15]",
+        "website_2_value": "Destaca por sus iconos minimalistas, el logo de la cámara fotográfica retro y elementos visuales para historias y reels. [5, 8]",
+        "website_3_value": "Presenta iconos dinámicos y un emblema vibrante que resuenan con su audiencia joven y la cultura de videos cortos. [1]",
+        "website_4_value": "Los iconos son genéricos y poco memorables, careciendo de un estilo unificado o elementos emblemáticos propios. [7]",
+        "conclusion": "Desarrollar un conjunto de iconos personalizados y un emblema único que reflejen mejor la personalidad del sitio."
     },
     {
         "criterion_or_website": "Accessibility",
-        "website_1_value": "Generalmente buena accesibilidad con texto alternativo para imágenes y navegación por teclado bien implementada.",
-        "website_2_value": "Accesibilidad básica, incluyendo texto alternativo para fotos y soporte para lectores de pantalla en ciertas funciones.",
-        "website_3_value": "Buenas prácticas de accesibilidad, estructura semántica clara y navegación por teclado robusta para profesionales.",
-        "website_4_value": "Aparentemente buen contraste de texto y navegación clara. No se observan barreras obvias en la interfaz visible.",
-        "conclusion": "Asegurar que todos los elementos interactivos sean navegables por teclado y que las imágenes de productos incluyan descripciones de texto alternativo."
+        "website_1_value": "Ofrece múltiples funciones de accesibilidad, incluyendo lectores de pantalla y opciones de contraste para usuarios. [12]",
+        "website_2_value": "Ha mejorado su accesibilidad con texto alternativo para imágenes y subtítulos, aunque tiene áreas de oportunidad. [5, 8, 18]",
+        "website_3_value": "Continúa mejorando características de accesibilidad como subtítulos automáticos y ajustes de texto para inclusión plena. [1]",
+        "website_4_value": "La accesibilidad es básica, con limitaciones en opciones de contraste, texto alternativo y navegación por teclado, dificultando el acceso. [10, 11]",
+        "conclusion": "Implementar un conjunto robusto de características de accesibilidad para garantizar un uso inclusivo para todos."
     },
     {
         "criterion_or_website": "Navigation (important buttons)",
-        "website_1_value": "Barra superior con secciones (Inicio, Watch, Marketplace), barra lateral extensa y barra de búsqueda prominentemente.",
-        "website_2_value": "Barra de navegación inferior intuitiva (Inicio, Buscar, Reels, Tienda, Perfil) y botones superiores para mensajes.",
-        "website_3_value": "Navegación superior global (Inicio, Mi red, Empleos) y un menú de perfil claro, estructurado para uso profesional.",
-        "website_4_value": "Cabecera con enlaces 'Información', 'Arma tu PC', 'Comparar' y una barra de búsqueda visible, navegación directa.",
-        "conclusion": "La navegación principal es clara; se podría añadir un 'carrito' de compras o un historial de búsquedas para mejorar la experiencia del usuario."
+        "website_1_value": "Posee una barra de navegación superior clara con accesos directos intuitivos a inicio, amigos y notificaciones. [19]",
+        "website_2_value": "Cuenta con una barra inferior prominente para inicio, búsqueda, reels, tienda y perfil, facilitando el acceso rápido. [5]",
+        "website_3_value": "Su navegación se centra en un feed vertical infinito, con botones clave de inicio, seguir, crear y perfil. [1]",
+        "website_4_value": "Los botones de navegación son estándar y su jerarquía no es siempre clara, lo que puede confundir al usuario. [6, 7, 10]",
+        "conclusion": "Rediseñar la navegación para que los botones importantes sean más intuitivos, visibles y con una jerarquía clara."
     },
     {
         "criterion_or_website": "Organization",
-        "website_1_value": "Organización basada en un 'feed' de noticias, secciones para grupos, páginas y perfiles personales.",
-        "website_2_value": "Perfiles en cuadrícula, 'feed' y 'stories'; organización visual que enfatiza la disposición y el descubrimiento de contenido.",
-        "website_3_value": "Centrado en el perfil, 'feed' de noticias, listados de empleo y páginas de empresa, con secciones estructuradas para datos profesionales.",
-        "website_4_value": "Cabecera, título principal y sección de 'Componentes populares' en un diseño de cuadrícula claro y simple para productos.",
-        "conclusion": "La organización es lógica para productos; considerar filtros de búsqueda avanzada y categorización de componentes para facilitar la exploración."
+        "website_1_value": "Estructura el contenido en un feed central y barras laterales para amigos/grupos, manteniendo la información organizada. [19]",
+        "website_2_value": "Organiza el contenido de forma visual, priorizando cuadrículas de fotos, historias efímeras y reels de videos cortos. [5]",
+        "website_3_value": "Su organización se basa en un algoritmo que personaliza el feed, presentando videos relevantes sin estructura rígida. [1]",
+        "website_4_value": "La organización del contenido es lineal y predecible, careciendo de dinamismo o personalización para el usuario. [7, 11]",
+        "conclusion": "Explorar nuevas formas de organizar el contenido, quizás con personalización, para mejorar la experiencia del usuario."
     },
     {
         "criterion_or_website": "Extra features",
-        "website_1_value": "Messenger, Marketplace, Grupos, Eventos, Juegos y transmisiones en vivo, ofreciendo un amplio conjunto de funciones.",
-        "website_2_value": "Reels, Stories, IGTV, Tienda y Live, un conjunto robusto de funciones para compartir y consumir contenido multimedia.",
-        "website_3_value": "Búsqueda de empleo, LinkedIn Learning, artículos profesionales y grupos temáticos, herramientas profesionales completas.",
-        "website_4_value": "'Arma tu PC' y 'Comparar', funciones muy relevantes para su propósito, que añaden valor directo al usuario.",
-        "conclusion": "Las funciones de 'Arma tu PC' y 'Comparar' son excelentes; se podría integrar un sistema de reseñas de usuarios o foros para productos."
+        "website_1_value": "Ofrece Marketplace, Grupos, Eventos y Páginas, enriqueciendo la interacción y expandiendo las funcionalidades. [19]",
+        "website_2_value": "Incluye Stories, Reels, IGTV y la posibilidad de comprar directamente desde la aplicación, diversificando la experiencia. [5]",
+        "website_3_value": "Destaca por sus herramientas de edición de video, filtros creativos, efectos AR y duetos interactivos para usuarios. [1]",
+        "website_4_value": "Las características adicionales son mínimas o inexistentes, limitando la profundidad y la variedad de interacción del usuario.",
+        "conclusion": "Desarrollar e integrar características adicionales innovadoras que aporten valor y diferenciación a la plataforma."
     },
     {
         "criterion_or_website": "Tutorials or Instructions",
-        "website_1_value": "Centro de ayuda extenso con guías detalladas para funciones, consejos de seguridad y normas comunitarias.",
-        "website_2_value": "Centro de ayuda, guías para usar funciones como Reels o Stories, y configuración de privacidad.",
-        "website_3_value": "LinkedIn Learning (premium), extenso centro de ayuda y artículos de consejos profesionales y guías de uso.",
-        "website_4_value": "La sección 'Aprende' sugiere contenido educativo, y la función 'Arma tu PC' actúa como un tutorial guiado de construcción.",
-        "conclusion": "Sería beneficioso incluir tutoriales de montaje o guías detalladas para principiantes, accesibles directamente desde las secciones 'Aprende' o 'Información'."
+        "website_1_value": "Proporciona secciones de ayuda extensas y guías paso a paso para todas sus funcionalidades y herramientas complejas. [19]",
+        "website_2_value": "Ofrece tutoriales integrados para nuevas funciones y un centro de ayuda robusto con preguntas frecuentes claras. [5, 8]",
+        "website_3_value": "Brinda guías visuales y consejos en la aplicación, ayudando a los usuarios a dominar rápidamente sus herramientas creativas. [1]",
+        "website_4_value": "Las instrucciones son escasas y no siempre fáciles de encontrar, lo que dificulta el aprendizaje de nuevas funciones.",
+        "conclusion": "Crear tutoriales claros, accesibles y bien organizados, junto con un centro de ayuda intuitivo para usuarios."
     },
     {
-        "criterion_or_website": "Overall User Experience",
-        "website_1_value": "Experiencia integral, pero puede ser abrumadora por la cantidad de funciones, aunque intuitiva en lo básico.",
-        "website_2_value": "Muy atractiva y visual, intuitiva para compartir medios, pero puede generar sobrecarga de contenido visual.",
-        "website_3_value": "Enfocada y eficiente para uso profesional, con rutas claras para networking y búsqueda de empleo, a veces algo formal.",
-        "website_4_value": "Directa y funcional para encontrar componentes de PC, con un diseño limpio y sencillo para navegar fácilmente por los productos.",
-        "conclusion": "Para mejorar la experiencia general, optimizar los tiempos de carga de imágenes y añadir animaciones sutiles a las interacciones clave."
+        "criterion_or_website": "Conclusion",
+        "website_1_value": "Una plataforma madura que equilibra comunicación personal con herramientas empresariales, manteniendo su relevancia global. [19]",
+        "website_2_value": "Se consolidó como líder visual, evolucionando constantemente para satisfacer las demandas de creadores y usuarios. [5]",
+        "website_3_value": "Revolucionó el contenido de video corto, creando una cultura vibrante y una experiencia de usuario altamente adictiva. [1]",
+        "website_4_value": "Este sitio ofrece una base sólida, pero con un potencial inmenso para mejorar su atractivo visual y funcionalidad. [6, 7]",
+        "conclusion": "En general, el sitio podría beneficiarse enormemente de una renovación estética y funcional integral para destacar."
     }
 ]
