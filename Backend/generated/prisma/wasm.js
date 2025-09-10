@@ -191,6 +191,12 @@ exports.Prisma.Tiene_rcScalarFieldEnum = {
   id_chat: 'id_chat'
 };
 
+exports.Prisma.LeidoScalarFieldEnum = {
+  id: 'id',
+  id_mensaje: 'id_mensaje',
+  id_persona: 'id_persona'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -217,7 +223,8 @@ exports.Prisma.ModelName = {
   proyecto: 'proyecto',
   chat: 'chat',
   tiene_pc: 'tiene_pc',
-  tiene_rc: 'tiene_rc'
+  tiene_rc: 'tiene_rc',
+  leido: 'leido'
 };
 
 /**

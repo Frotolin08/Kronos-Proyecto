@@ -21,6 +21,7 @@ model persona {
   personalizaciones personalizaciones[]
   proyectos_tiene tiene[]
   chat_tiene tiene_pc[]
+  leido_mensajes     leido[] 
 
   googleRefreshToken String?
 }
