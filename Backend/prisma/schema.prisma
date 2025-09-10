@@ -20,6 +20,7 @@ model persona {
   tareas          tareas[]
   personalizaciones personalizaciones[]
   proyectos_tiene tiene[]
+  chat_tiene tiene_pc[]
 
   googleRefreshToken String?
 }
@@ -84,8 +85,9 @@ model proyecto {
 
   archivos        archivos[]
   tareas          tareas[]
-  chats           chat[]
+  chat_tiene tiene_rc[]
   personas_tiene  tiene[]
+  chats           chat[]
 }
 
 model chat {
@@ -95,4 +97,24 @@ model chat {
   id_proyecto   Int
   proyecto      proyecto @relation(fields: [id_proyecto], references: [id])
   mensajes      mensajes[]
+  personas_tiene  tiene_pc[]
+  proyectos_tiene tiene_rc[]
+}
+
+model tiene_pc {
+  id         Int      @id @default(autoincrement())
+  id_persona Int
+  id_chat    Int
+  
+  persona    persona  @relation(fields: [id_persona], references: [id])
+  chat       chat     @relation(fields: [id_chat], references: [id])
+}
+
+model tiene_rc {
+  id          Int      @id @default(autoincrement())
+  id_proyecto Int
+  id_chat     Int
+  
+  proyecto    proyecto @relation(fields: [id_proyecto], references: [id])
+  chat        chat     @relation(fields: [id_chat], references: [id])
 }

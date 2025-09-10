@@ -1,31 +1,126 @@
-const WebSocket = require('ws');
+import { PrismaClient } from '@prisma/client';
 
-function setupwebsocketserver(server) {
-  const wss = new WebSocket.Server({ server });
+const prisma = new PrismaClient();
 
-  // espera a que llegue alguien
-  wss.on('connection', ws => {
-    console.log('A new friend joined the chat!');
+const setupchat = () => {
+    const createchat = async (req, res) => {
+        const { nombre, limite } = req.body;
+        const { personaId } = req.personaId;
+        const { proyectoIdId } = req.params;
 
-    // cuando alguien manda mensaje, pasa esto
-    ws.on('message', message => {
-      console.log('We got a message:', message.toString());
-
-      // lleva el mensaje al resto
-      wss.clients.forEach(client => {
-        if (client !== ws && client.readyState === WebSocket.OPEN) {
-          client.send(message.toString());
+        if (!nombre || !id_proyecto || !personaId) {
+            return res.status(400).json({ error: "Missing required fields" });
         }
-      });
-    });
 
-    // cuando se desconecta la persona termina la conexion
-    ws.on('close', () => {
-      console.log('A friend left the chat!');
-    });
-  });
+        try {
+            const ismember = await prisma.tiene.findFirst({
+                where: {
+                    id_persona: personaId,
+                    id_proyecto: proyectoId
+                }
+            });
 
-  console.log('The chat backend is now ready!');
-}
+            if (!ismember) {
+                return res.status(403).json({ error: "You don't have permission to create a chat in this project" });
+            }
 
-module.exports = setupwebsocketserver;
+            const newchat = await prisma.chat.create({
+                data: {
+                    nombre: nombre,
+                    id_proyecto: id_proyecto,
+                    limite: limite
+                },
+            });
+
+            const projectMembers = await prisma.tiene.findMany({
+                where: {
+                    id_proyecto: id_proyecto
+                },
+                select: {
+                    id_persona: true
+                }
+            });
+
+            await prisma.tiene_pc.createMany({
+                data: projectMembers.map(member => ({
+                    id_persona: member.id_persona,
+                    id_chat: newchat.id
+                }))
+            });
+
+            res.status(201).json({ message: "Chat created successfully", chat: newchat });
+        } catch (error) {
+            console.error("Error creating chat:", error);
+            res.status(500).json({ error: "Internal Server Error" });
+        }
+    };
+
+    const getchatmessages = async (req, res) => {
+        const { chatId } = req.params;
+        const personaId = req.personaId;
+
+        if (!chatId || !personaId) {
+            return res.status(400).json({ error: "Missing required fields" });
+        }
+
+        try {
+            const hasaccess = await prisma.tiene_pc.findFirst({
+                where: {
+                    id_persona: personaId,
+                    id_chat: parseInt(chatId)
+                }
+            });
+
+            if (!hasaccess) {
+                return res.status(403).json({ error: "You don't have access to this chat" });
+            }
+
+            const messages = await prisma.mensajes.findMany({
+                where: {
+                    id_chat: parseInt(chatId)
+                },
+                orderBy: {
+                    id: 'asc'
+                }
+            });
+
+            res.status(200).json(messages);
+
+        } catch (error) {
+            console.error("Error getting messages:", error);
+            res.status(500).json({ error: "Internal Server Error" });
+        }
+    };
+
+    const updatemessagestatus = async (req, res) => {
+        const { messageId } = req.params;
+        const { estado } = req.body; 
+        const personaId = req.personaId;
+        
+        if (!messageId || !estado) {
+            return res.status(400).json({ error: "Missing required fields" });
+        }
+
+        // falta la logica para verificar cuando se vio el mensaje y cuando no
+
+        try {
+            const updatedmessage = await prisma.mensajes.update({
+                where: {
+                    id: parseInt(messageId)
+                },
+                data: {
+                    estado: estado
+                }
+            });
+
+            res.status(200).json({ message: "Message status updated successfully", updatedmessage });
+        } catch (error) {
+            console.error("Error updating message status:", error);
+            res.status(500).json({ error: "Internal Server Error" });
+        }
+    };
+    
+    return { createchat, getchatmessages, updatemessagestatus };
+};
+
+export default setupchat;

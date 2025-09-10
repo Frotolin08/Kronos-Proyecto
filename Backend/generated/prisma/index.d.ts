@@ -53,6 +53,16 @@ export type proyecto = $Result.DefaultSelection<Prisma.$proyectoPayload>
  * 
  */
 export type chat = $Result.DefaultSelection<Prisma.$chatPayload>
+/**
+ * Model tiene_pc
+ * 
+ */
+export type tiene_pc = $Result.DefaultSelection<Prisma.$tiene_pcPayload>
+/**
+ * Model tiene_rc
+ * 
+ */
+export type tiene_rc = $Result.DefaultSelection<Prisma.$tiene_rcPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -251,6 +261,26 @@ export class PrismaClient<
     * ```
     */
   get chat(): Prisma.chatDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.tiene_pc`: Exposes CRUD operations for the **tiene_pc** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tiene_pcs
+    * const tiene_pcs = await prisma.tiene_pc.findMany()
+    * ```
+    */
+  get tiene_pc(): Prisma.tiene_pcDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.tiene_rc`: Exposes CRUD operations for the **tiene_rc** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tiene_rcs
+    * const tiene_rcs = await prisma.tiene_rc.findMany()
+    * ```
+    */
+  get tiene_rc(): Prisma.tiene_rcDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -698,7 +728,9 @@ export namespace Prisma {
     personalizaciones: 'personalizaciones',
     tiene: 'tiene',
     proyecto: 'proyecto',
-    chat: 'chat'
+    chat: 'chat',
+    tiene_pc: 'tiene_pc',
+    tiene_rc: 'tiene_rc'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -717,7 +749,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "persona" | "archivos" | "mensajes" | "tareas" | "personalizaciones" | "tiene" | "proyecto" | "chat"
+      modelProps: "persona" | "archivos" | "mensajes" | "tareas" | "personalizaciones" | "tiene" | "proyecto" | "chat" | "tiene_pc" | "tiene_rc"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1313,6 +1345,154 @@ export namespace Prisma {
           }
         }
       }
+      tiene_pc: {
+        payload: Prisma.$tiene_pcPayload<ExtArgs>
+        fields: Prisma.tiene_pcFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tiene_pcFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tiene_pcFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>
+          }
+          findFirst: {
+            args: Prisma.tiene_pcFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tiene_pcFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>
+          }
+          findMany: {
+            args: Prisma.tiene_pcFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>[]
+          }
+          create: {
+            args: Prisma.tiene_pcCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>
+          }
+          createMany: {
+            args: Prisma.tiene_pcCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.tiene_pcCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>[]
+          }
+          delete: {
+            args: Prisma.tiene_pcDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>
+          }
+          update: {
+            args: Prisma.tiene_pcUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>
+          }
+          deleteMany: {
+            args: Prisma.tiene_pcDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tiene_pcUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.tiene_pcUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>[]
+          }
+          upsert: {
+            args: Prisma.tiene_pcUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_pcPayload>
+          }
+          aggregate: {
+            args: Prisma.Tiene_pcAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTiene_pc>
+          }
+          groupBy: {
+            args: Prisma.tiene_pcGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tiene_pcGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tiene_pcCountArgs<ExtArgs>
+            result: $Utils.Optional<Tiene_pcCountAggregateOutputType> | number
+          }
+        }
+      }
+      tiene_rc: {
+        payload: Prisma.$tiene_rcPayload<ExtArgs>
+        fields: Prisma.tiene_rcFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tiene_rcFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tiene_rcFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>
+          }
+          findFirst: {
+            args: Prisma.tiene_rcFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tiene_rcFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>
+          }
+          findMany: {
+            args: Prisma.tiene_rcFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>[]
+          }
+          create: {
+            args: Prisma.tiene_rcCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>
+          }
+          createMany: {
+            args: Prisma.tiene_rcCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.tiene_rcCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>[]
+          }
+          delete: {
+            args: Prisma.tiene_rcDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>
+          }
+          update: {
+            args: Prisma.tiene_rcUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>
+          }
+          deleteMany: {
+            args: Prisma.tiene_rcDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tiene_rcUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.tiene_rcUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>[]
+          }
+          upsert: {
+            args: Prisma.tiene_rcUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tiene_rcPayload>
+          }
+          aggregate: {
+            args: Prisma.Tiene_rcAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTiene_rc>
+          }
+          groupBy: {
+            args: Prisma.tiene_rcGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tiene_rcGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tiene_rcCountArgs<ExtArgs>
+            result: $Utils.Optional<Tiene_rcCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1413,6 +1593,8 @@ export namespace Prisma {
     tiene?: tieneOmit
     proyecto?: proyectoOmit
     chat?: chatOmit
+    tiene_pc?: tiene_pcOmit
+    tiene_rc?: tiene_rcOmit
   }
 
   /* Types for Logging */
@@ -1498,6 +1680,7 @@ export namespace Prisma {
     tareas: number
     personalizaciones: number
     proyectos_tiene: number
+    chat_tiene: number
   }
 
   export type PersonaCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1506,6 +1689,7 @@ export namespace Prisma {
     tareas?: boolean | PersonaCountOutputTypeCountTareasArgs
     personalizaciones?: boolean | PersonaCountOutputTypeCountPersonalizacionesArgs
     proyectos_tiene?: boolean | PersonaCountOutputTypeCountProyectos_tieneArgs
+    chat_tiene?: boolean | PersonaCountOutputTypeCountChat_tieneArgs
   }
 
   // Custom InputTypes
@@ -1554,6 +1738,13 @@ export namespace Prisma {
     where?: tieneWhereInput
   }
 
+  /**
+   * PersonaCountOutputType without action
+   */
+  export type PersonaCountOutputTypeCountChat_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tiene_pcWhereInput
+  }
+
 
   /**
    * Count Type ProyectoCountOutputType
@@ -1562,15 +1753,17 @@ export namespace Prisma {
   export type ProyectoCountOutputType = {
     archivos: number
     tareas: number
-    chats: number
+    chat_tiene: number
     personas_tiene: number
+    chats: number
   }
 
   export type ProyectoCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     archivos?: boolean | ProyectoCountOutputTypeCountArchivosArgs
     tareas?: boolean | ProyectoCountOutputTypeCountTareasArgs
-    chats?: boolean | ProyectoCountOutputTypeCountChatsArgs
+    chat_tiene?: boolean | ProyectoCountOutputTypeCountChat_tieneArgs
     personas_tiene?: boolean | ProyectoCountOutputTypeCountPersonas_tieneArgs
+    chats?: boolean | ProyectoCountOutputTypeCountChatsArgs
   }
 
   // Custom InputTypes
@@ -1601,8 +1794,8 @@ export namespace Prisma {
   /**
    * ProyectoCountOutputType without action
    */
-  export type ProyectoCountOutputTypeCountChatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: chatWhereInput
+  export type ProyectoCountOutputTypeCountChat_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tiene_rcWhereInput
   }
 
   /**
@@ -1612,6 +1805,13 @@ export namespace Prisma {
     where?: tieneWhereInput
   }
 
+  /**
+   * ProyectoCountOutputType without action
+   */
+  export type ProyectoCountOutputTypeCountChatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: chatWhereInput
+  }
+
 
   /**
    * Count Type ChatCountOutputType
@@ -1619,10 +1819,14 @@ export namespace Prisma {
 
   export type ChatCountOutputType = {
     mensajes: number
+    personas_tiene: number
+    proyectos_tiene: number
   }
 
   export type ChatCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     mensajes?: boolean | ChatCountOutputTypeCountMensajesArgs
+    personas_tiene?: boolean | ChatCountOutputTypeCountPersonas_tieneArgs
+    proyectos_tiene?: boolean | ChatCountOutputTypeCountProyectos_tieneArgs
   }
 
   // Custom InputTypes
@@ -1641,6 +1845,20 @@ export namespace Prisma {
    */
   export type ChatCountOutputTypeCountMensajesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: mensajesWhereInput
+  }
+
+  /**
+   * ChatCountOutputType without action
+   */
+  export type ChatCountOutputTypeCountPersonas_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tiene_pcWhereInput
+  }
+
+  /**
+   * ChatCountOutputType without action
+   */
+  export type ChatCountOutputTypeCountProyectos_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tiene_rcWhereInput
   }
 
 
@@ -1859,6 +2077,7 @@ export namespace Prisma {
     tareas?: boolean | persona$tareasArgs<ExtArgs>
     personalizaciones?: boolean | persona$personalizacionesArgs<ExtArgs>
     proyectos_tiene?: boolean | persona$proyectos_tieneArgs<ExtArgs>
+    chat_tiene?: boolean | persona$chat_tieneArgs<ExtArgs>
     _count?: boolean | PersonaCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["persona"]>
 
@@ -1896,6 +2115,7 @@ export namespace Prisma {
     tareas?: boolean | persona$tareasArgs<ExtArgs>
     personalizaciones?: boolean | persona$personalizacionesArgs<ExtArgs>
     proyectos_tiene?: boolean | persona$proyectos_tieneArgs<ExtArgs>
+    chat_tiene?: boolean | persona$chat_tieneArgs<ExtArgs>
     _count?: boolean | PersonaCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type personaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1909,6 +2129,7 @@ export namespace Prisma {
       tareas: Prisma.$tareasPayload<ExtArgs>[]
       personalizaciones: Prisma.$personalizacionesPayload<ExtArgs>[]
       proyectos_tiene: Prisma.$tienePayload<ExtArgs>[]
+      chat_tiene: Prisma.$tiene_pcPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2316,6 +2537,7 @@ export namespace Prisma {
     tareas<T extends persona$tareasArgs<ExtArgs> = {}>(args?: Subset<T, persona$tareasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tareasPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     personalizaciones<T extends persona$personalizacionesArgs<ExtArgs> = {}>(args?: Subset<T, persona$personalizacionesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$personalizacionesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     proyectos_tiene<T extends persona$proyectos_tieneArgs<ExtArgs> = {}>(args?: Subset<T, persona$proyectos_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tienePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    chat_tiene<T extends persona$chat_tieneArgs<ExtArgs> = {}>(args?: Subset<T, persona$chat_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2856,6 +3078,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: TieneScalarFieldEnum | TieneScalarFieldEnum[]
+  }
+
+  /**
+   * persona.chat_tiene
+   */
+  export type persona$chat_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    where?: tiene_pcWhereInput
+    orderBy?: tiene_pcOrderByWithRelationInput | tiene_pcOrderByWithRelationInput[]
+    cursor?: tiene_pcWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tiene_pcScalarFieldEnum | Tiene_pcScalarFieldEnum[]
   }
 
   /**
@@ -8563,8 +8809,9 @@ export namespace Prisma {
     limite?: boolean
     archivos?: boolean | proyecto$archivosArgs<ExtArgs>
     tareas?: boolean | proyecto$tareasArgs<ExtArgs>
-    chats?: boolean | proyecto$chatsArgs<ExtArgs>
+    chat_tiene?: boolean | proyecto$chat_tieneArgs<ExtArgs>
     personas_tiene?: boolean | proyecto$personas_tieneArgs<ExtArgs>
+    chats?: boolean | proyecto$chatsArgs<ExtArgs>
     _count?: boolean | ProyectoCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["proyecto"]>
 
@@ -8590,8 +8837,9 @@ export namespace Prisma {
   export type proyectoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     archivos?: boolean | proyecto$archivosArgs<ExtArgs>
     tareas?: boolean | proyecto$tareasArgs<ExtArgs>
-    chats?: boolean | proyecto$chatsArgs<ExtArgs>
+    chat_tiene?: boolean | proyecto$chat_tieneArgs<ExtArgs>
     personas_tiene?: boolean | proyecto$personas_tieneArgs<ExtArgs>
+    chats?: boolean | proyecto$chatsArgs<ExtArgs>
     _count?: boolean | ProyectoCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type proyectoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -8602,8 +8850,9 @@ export namespace Prisma {
     objects: {
       archivos: Prisma.$archivosPayload<ExtArgs>[]
       tareas: Prisma.$tareasPayload<ExtArgs>[]
-      chats: Prisma.$chatPayload<ExtArgs>[]
+      chat_tiene: Prisma.$tiene_rcPayload<ExtArgs>[]
       personas_tiene: Prisma.$tienePayload<ExtArgs>[]
+      chats: Prisma.$chatPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -9005,8 +9254,9 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     archivos<T extends proyecto$archivosArgs<ExtArgs> = {}>(args?: Subset<T, proyecto$archivosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$archivosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     tareas<T extends proyecto$tareasArgs<ExtArgs> = {}>(args?: Subset<T, proyecto$tareasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tareasPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    chats<T extends proyecto$chatsArgs<ExtArgs> = {}>(args?: Subset<T, proyecto$chatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    chat_tiene<T extends proyecto$chat_tieneArgs<ExtArgs> = {}>(args?: Subset<T, proyecto$chat_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     personas_tiene<T extends proyecto$personas_tieneArgs<ExtArgs> = {}>(args?: Subset<T, proyecto$personas_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tienePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    chats<T extends proyecto$chatsArgs<ExtArgs> = {}>(args?: Subset<T, proyecto$chatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9475,27 +9725,27 @@ export namespace Prisma {
   }
 
   /**
-   * proyecto.chats
+   * proyecto.chat_tiene
    */
-  export type proyecto$chatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type proyecto$chat_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the chat
+     * Select specific fields to fetch from the tiene_rc
      */
-    select?: chatSelect<ExtArgs> | null
+    select?: tiene_rcSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the chat
+     * Omit specific fields from the tiene_rc
      */
-    omit?: chatOmit<ExtArgs> | null
+    omit?: tiene_rcOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: chatInclude<ExtArgs> | null
-    where?: chatWhereInput
-    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
-    cursor?: chatWhereUniqueInput
+    include?: tiene_rcInclude<ExtArgs> | null
+    where?: tiene_rcWhereInput
+    orderBy?: tiene_rcOrderByWithRelationInput | tiene_rcOrderByWithRelationInput[]
+    cursor?: tiene_rcWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
+    distinct?: Tiene_rcScalarFieldEnum | Tiene_rcScalarFieldEnum[]
   }
 
   /**
@@ -9520,6 +9770,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: TieneScalarFieldEnum | TieneScalarFieldEnum[]
+  }
+
+  /**
+   * proyecto.chats
+   */
+  export type proyecto$chatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    where?: chatWhereInput
+    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
+    cursor?: chatWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
   }
 
   /**
@@ -9729,6 +10003,8 @@ export namespace Prisma {
     id_proyecto?: boolean
     proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
     mensajes?: boolean | chat$mensajesArgs<ExtArgs>
+    personas_tiene?: boolean | chat$personas_tieneArgs<ExtArgs>
+    proyectos_tiene?: boolean | chat$proyectos_tieneArgs<ExtArgs>
     _count?: boolean | ChatCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["chat"]>
 
@@ -9756,6 +10032,8 @@ export namespace Prisma {
   export type chatInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
     mensajes?: boolean | chat$mensajesArgs<ExtArgs>
+    personas_tiene?: boolean | chat$personas_tieneArgs<ExtArgs>
+    proyectos_tiene?: boolean | chat$proyectos_tieneArgs<ExtArgs>
     _count?: boolean | ChatCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type chatIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -9770,6 +10048,8 @@ export namespace Prisma {
     objects: {
       proyecto: Prisma.$proyectoPayload<ExtArgs>
       mensajes: Prisma.$mensajesPayload<ExtArgs>[]
+      personas_tiene: Prisma.$tiene_pcPayload<ExtArgs>[]
+      proyectos_tiene: Prisma.$tiene_rcPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -10171,6 +10451,8 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     proyecto<T extends proyectoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, proyectoDefaultArgs<ExtArgs>>): Prisma__proyectoClient<$Result.GetResult<Prisma.$proyectoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     mensajes<T extends chat$mensajesArgs<ExtArgs> = {}>(args?: Subset<T, chat$mensajesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$mensajesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    personas_tiene<T extends chat$personas_tieneArgs<ExtArgs> = {}>(args?: Subset<T, chat$personas_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    proyectos_tiene<T extends chat$proyectos_tieneArgs<ExtArgs> = {}>(args?: Subset<T, chat$proyectos_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -10623,6 +10905,54 @@ export namespace Prisma {
   }
 
   /**
+   * chat.personas_tiene
+   */
+  export type chat$personas_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    where?: tiene_pcWhereInput
+    orderBy?: tiene_pcOrderByWithRelationInput | tiene_pcOrderByWithRelationInput[]
+    cursor?: tiene_pcWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tiene_pcScalarFieldEnum | Tiene_pcScalarFieldEnum[]
+  }
+
+  /**
+   * chat.proyectos_tiene
+   */
+  export type chat$proyectos_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    where?: tiene_rcWhereInput
+    orderBy?: tiene_rcOrderByWithRelationInput | tiene_rcOrderByWithRelationInput[]
+    cursor?: tiene_rcWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tiene_rcScalarFieldEnum | Tiene_rcScalarFieldEnum[]
+  }
+
+  /**
    * chat without action
    */
   export type chatDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10638,6 +10968,2170 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: chatInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tiene_pc
+   */
+
+  export type AggregateTiene_pc = {
+    _count: Tiene_pcCountAggregateOutputType | null
+    _avg: Tiene_pcAvgAggregateOutputType | null
+    _sum: Tiene_pcSumAggregateOutputType | null
+    _min: Tiene_pcMinAggregateOutputType | null
+    _max: Tiene_pcMaxAggregateOutputType | null
+  }
+
+  export type Tiene_pcAvgAggregateOutputType = {
+    id: number | null
+    id_persona: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_pcSumAggregateOutputType = {
+    id: number | null
+    id_persona: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_pcMinAggregateOutputType = {
+    id: number | null
+    id_persona: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_pcMaxAggregateOutputType = {
+    id: number | null
+    id_persona: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_pcCountAggregateOutputType = {
+    id: number
+    id_persona: number
+    id_chat: number
+    _all: number
+  }
+
+
+  export type Tiene_pcAvgAggregateInputType = {
+    id?: true
+    id_persona?: true
+    id_chat?: true
+  }
+
+  export type Tiene_pcSumAggregateInputType = {
+    id?: true
+    id_persona?: true
+    id_chat?: true
+  }
+
+  export type Tiene_pcMinAggregateInputType = {
+    id?: true
+    id_persona?: true
+    id_chat?: true
+  }
+
+  export type Tiene_pcMaxAggregateInputType = {
+    id?: true
+    id_persona?: true
+    id_chat?: true
+  }
+
+  export type Tiene_pcCountAggregateInputType = {
+    id?: true
+    id_persona?: true
+    id_chat?: true
+    _all?: true
+  }
+
+  export type Tiene_pcAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tiene_pc to aggregate.
+     */
+    where?: tiene_pcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_pcs to fetch.
+     */
+    orderBy?: tiene_pcOrderByWithRelationInput | tiene_pcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tiene_pcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_pcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_pcs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tiene_pcs
+    **/
+    _count?: true | Tiene_pcCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tiene_pcAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tiene_pcSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tiene_pcMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tiene_pcMaxAggregateInputType
+  }
+
+  export type GetTiene_pcAggregateType<T extends Tiene_pcAggregateArgs> = {
+        [P in keyof T & keyof AggregateTiene_pc]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTiene_pc[P]>
+      : GetScalarType<T[P], AggregateTiene_pc[P]>
+  }
+
+
+
+
+  export type tiene_pcGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tiene_pcWhereInput
+    orderBy?: tiene_pcOrderByWithAggregationInput | tiene_pcOrderByWithAggregationInput[]
+    by: Tiene_pcScalarFieldEnum[] | Tiene_pcScalarFieldEnum
+    having?: tiene_pcScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tiene_pcCountAggregateInputType | true
+    _avg?: Tiene_pcAvgAggregateInputType
+    _sum?: Tiene_pcSumAggregateInputType
+    _min?: Tiene_pcMinAggregateInputType
+    _max?: Tiene_pcMaxAggregateInputType
+  }
+
+  export type Tiene_pcGroupByOutputType = {
+    id: number
+    id_persona: number
+    id_chat: number
+    _count: Tiene_pcCountAggregateOutputType | null
+    _avg: Tiene_pcAvgAggregateOutputType | null
+    _sum: Tiene_pcSumAggregateOutputType | null
+    _min: Tiene_pcMinAggregateOutputType | null
+    _max: Tiene_pcMaxAggregateOutputType | null
+  }
+
+  type GetTiene_pcGroupByPayload<T extends tiene_pcGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tiene_pcGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tiene_pcGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tiene_pcGroupByOutputType[P]>
+            : GetScalarType<T[P], Tiene_pcGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tiene_pcSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_persona?: boolean
+    id_chat?: boolean
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tiene_pc"]>
+
+  export type tiene_pcSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_persona?: boolean
+    id_chat?: boolean
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tiene_pc"]>
+
+  export type tiene_pcSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_persona?: boolean
+    id_chat?: boolean
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tiene_pc"]>
+
+  export type tiene_pcSelectScalar = {
+    id?: boolean
+    id_persona?: boolean
+    id_chat?: boolean
+  }
+
+  export type tiene_pcOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_persona" | "id_chat", ExtArgs["result"]["tiene_pc"]>
+  export type tiene_pcInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+  export type tiene_pcIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+  export type tiene_pcIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+
+  export type $tiene_pcPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tiene_pc"
+    objects: {
+      persona: Prisma.$personaPayload<ExtArgs>
+      chat: Prisma.$chatPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      id_persona: number
+      id_chat: number
+    }, ExtArgs["result"]["tiene_pc"]>
+    composites: {}
+  }
+
+  type tiene_pcGetPayload<S extends boolean | null | undefined | tiene_pcDefaultArgs> = $Result.GetResult<Prisma.$tiene_pcPayload, S>
+
+  type tiene_pcCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<tiene_pcFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Tiene_pcCountAggregateInputType | true
+    }
+
+  export interface tiene_pcDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tiene_pc'], meta: { name: 'tiene_pc' } }
+    /**
+     * Find zero or one Tiene_pc that matches the filter.
+     * @param {tiene_pcFindUniqueArgs} args - Arguments to find a Tiene_pc
+     * @example
+     * // Get one Tiene_pc
+     * const tiene_pc = await prisma.tiene_pc.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tiene_pcFindUniqueArgs>(args: SelectSubset<T, tiene_pcFindUniqueArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Tiene_pc that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {tiene_pcFindUniqueOrThrowArgs} args - Arguments to find a Tiene_pc
+     * @example
+     * // Get one Tiene_pc
+     * const tiene_pc = await prisma.tiene_pc.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tiene_pcFindUniqueOrThrowArgs>(args: SelectSubset<T, tiene_pcFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tiene_pc that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_pcFindFirstArgs} args - Arguments to find a Tiene_pc
+     * @example
+     * // Get one Tiene_pc
+     * const tiene_pc = await prisma.tiene_pc.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tiene_pcFindFirstArgs>(args?: SelectSubset<T, tiene_pcFindFirstArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tiene_pc that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_pcFindFirstOrThrowArgs} args - Arguments to find a Tiene_pc
+     * @example
+     * // Get one Tiene_pc
+     * const tiene_pc = await prisma.tiene_pc.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tiene_pcFindFirstOrThrowArgs>(args?: SelectSubset<T, tiene_pcFindFirstOrThrowArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Tiene_pcs that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_pcFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tiene_pcs
+     * const tiene_pcs = await prisma.tiene_pc.findMany()
+     * 
+     * // Get first 10 Tiene_pcs
+     * const tiene_pcs = await prisma.tiene_pc.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const tiene_pcWithIdOnly = await prisma.tiene_pc.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends tiene_pcFindManyArgs>(args?: SelectSubset<T, tiene_pcFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Tiene_pc.
+     * @param {tiene_pcCreateArgs} args - Arguments to create a Tiene_pc.
+     * @example
+     * // Create one Tiene_pc
+     * const Tiene_pc = await prisma.tiene_pc.create({
+     *   data: {
+     *     // ... data to create a Tiene_pc
+     *   }
+     * })
+     * 
+     */
+    create<T extends tiene_pcCreateArgs>(args: SelectSubset<T, tiene_pcCreateArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Tiene_pcs.
+     * @param {tiene_pcCreateManyArgs} args - Arguments to create many Tiene_pcs.
+     * @example
+     * // Create many Tiene_pcs
+     * const tiene_pc = await prisma.tiene_pc.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tiene_pcCreateManyArgs>(args?: SelectSubset<T, tiene_pcCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Tiene_pcs and returns the data saved in the database.
+     * @param {tiene_pcCreateManyAndReturnArgs} args - Arguments to create many Tiene_pcs.
+     * @example
+     * // Create many Tiene_pcs
+     * const tiene_pc = await prisma.tiene_pc.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Tiene_pcs and only return the `id`
+     * const tiene_pcWithIdOnly = await prisma.tiene_pc.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends tiene_pcCreateManyAndReturnArgs>(args?: SelectSubset<T, tiene_pcCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Tiene_pc.
+     * @param {tiene_pcDeleteArgs} args - Arguments to delete one Tiene_pc.
+     * @example
+     * // Delete one Tiene_pc
+     * const Tiene_pc = await prisma.tiene_pc.delete({
+     *   where: {
+     *     // ... filter to delete one Tiene_pc
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tiene_pcDeleteArgs>(args: SelectSubset<T, tiene_pcDeleteArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Tiene_pc.
+     * @param {tiene_pcUpdateArgs} args - Arguments to update one Tiene_pc.
+     * @example
+     * // Update one Tiene_pc
+     * const tiene_pc = await prisma.tiene_pc.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tiene_pcUpdateArgs>(args: SelectSubset<T, tiene_pcUpdateArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Tiene_pcs.
+     * @param {tiene_pcDeleteManyArgs} args - Arguments to filter Tiene_pcs to delete.
+     * @example
+     * // Delete a few Tiene_pcs
+     * const { count } = await prisma.tiene_pc.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tiene_pcDeleteManyArgs>(args?: SelectSubset<T, tiene_pcDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tiene_pcs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_pcUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tiene_pcs
+     * const tiene_pc = await prisma.tiene_pc.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tiene_pcUpdateManyArgs>(args: SelectSubset<T, tiene_pcUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tiene_pcs and returns the data updated in the database.
+     * @param {tiene_pcUpdateManyAndReturnArgs} args - Arguments to update many Tiene_pcs.
+     * @example
+     * // Update many Tiene_pcs
+     * const tiene_pc = await prisma.tiene_pc.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Tiene_pcs and only return the `id`
+     * const tiene_pcWithIdOnly = await prisma.tiene_pc.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends tiene_pcUpdateManyAndReturnArgs>(args: SelectSubset<T, tiene_pcUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Tiene_pc.
+     * @param {tiene_pcUpsertArgs} args - Arguments to update or create a Tiene_pc.
+     * @example
+     * // Update or create a Tiene_pc
+     * const tiene_pc = await prisma.tiene_pc.upsert({
+     *   create: {
+     *     // ... data to create a Tiene_pc
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tiene_pc we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tiene_pcUpsertArgs>(args: SelectSubset<T, tiene_pcUpsertArgs<ExtArgs>>): Prisma__tiene_pcClient<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Tiene_pcs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_pcCountArgs} args - Arguments to filter Tiene_pcs to count.
+     * @example
+     * // Count the number of Tiene_pcs
+     * const count = await prisma.tiene_pc.count({
+     *   where: {
+     *     // ... the filter for the Tiene_pcs we want to count
+     *   }
+     * })
+    **/
+    count<T extends tiene_pcCountArgs>(
+      args?: Subset<T, tiene_pcCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tiene_pcCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tiene_pc.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tiene_pcAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tiene_pcAggregateArgs>(args: Subset<T, Tiene_pcAggregateArgs>): Prisma.PrismaPromise<GetTiene_pcAggregateType<T>>
+
+    /**
+     * Group by Tiene_pc.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_pcGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tiene_pcGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tiene_pcGroupByArgs['orderBy'] }
+        : { orderBy?: tiene_pcGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tiene_pcGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTiene_pcGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tiene_pc model
+   */
+  readonly fields: tiene_pcFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tiene_pc.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tiene_pcClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    persona<T extends personaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, personaDefaultArgs<ExtArgs>>): Prisma__personaClient<$Result.GetResult<Prisma.$personaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    chat<T extends chatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, chatDefaultArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tiene_pc model
+   */
+  interface tiene_pcFieldRefs {
+    readonly id: FieldRef<"tiene_pc", 'Int'>
+    readonly id_persona: FieldRef<"tiene_pc", 'Int'>
+    readonly id_chat: FieldRef<"tiene_pc", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tiene_pc findUnique
+   */
+  export type tiene_pcFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_pc to fetch.
+     */
+    where: tiene_pcWhereUniqueInput
+  }
+
+  /**
+   * tiene_pc findUniqueOrThrow
+   */
+  export type tiene_pcFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_pc to fetch.
+     */
+    where: tiene_pcWhereUniqueInput
+  }
+
+  /**
+   * tiene_pc findFirst
+   */
+  export type tiene_pcFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_pc to fetch.
+     */
+    where?: tiene_pcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_pcs to fetch.
+     */
+    orderBy?: tiene_pcOrderByWithRelationInput | tiene_pcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tiene_pcs.
+     */
+    cursor?: tiene_pcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_pcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_pcs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tiene_pcs.
+     */
+    distinct?: Tiene_pcScalarFieldEnum | Tiene_pcScalarFieldEnum[]
+  }
+
+  /**
+   * tiene_pc findFirstOrThrow
+   */
+  export type tiene_pcFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_pc to fetch.
+     */
+    where?: tiene_pcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_pcs to fetch.
+     */
+    orderBy?: tiene_pcOrderByWithRelationInput | tiene_pcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tiene_pcs.
+     */
+    cursor?: tiene_pcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_pcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_pcs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tiene_pcs.
+     */
+    distinct?: Tiene_pcScalarFieldEnum | Tiene_pcScalarFieldEnum[]
+  }
+
+  /**
+   * tiene_pc findMany
+   */
+  export type tiene_pcFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_pcs to fetch.
+     */
+    where?: tiene_pcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_pcs to fetch.
+     */
+    orderBy?: tiene_pcOrderByWithRelationInput | tiene_pcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tiene_pcs.
+     */
+    cursor?: tiene_pcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_pcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_pcs.
+     */
+    skip?: number
+    distinct?: Tiene_pcScalarFieldEnum | Tiene_pcScalarFieldEnum[]
+  }
+
+  /**
+   * tiene_pc create
+   */
+  export type tiene_pcCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * The data needed to create a tiene_pc.
+     */
+    data: XOR<tiene_pcCreateInput, tiene_pcUncheckedCreateInput>
+  }
+
+  /**
+   * tiene_pc createMany
+   */
+  export type tiene_pcCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tiene_pcs.
+     */
+    data: tiene_pcCreateManyInput | tiene_pcCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tiene_pc createManyAndReturn
+   */
+  export type tiene_pcCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * The data used to create many tiene_pcs.
+     */
+    data: tiene_pcCreateManyInput | tiene_pcCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tiene_pc update
+   */
+  export type tiene_pcUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * The data needed to update a tiene_pc.
+     */
+    data: XOR<tiene_pcUpdateInput, tiene_pcUncheckedUpdateInput>
+    /**
+     * Choose, which tiene_pc to update.
+     */
+    where: tiene_pcWhereUniqueInput
+  }
+
+  /**
+   * tiene_pc updateMany
+   */
+  export type tiene_pcUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tiene_pcs.
+     */
+    data: XOR<tiene_pcUpdateManyMutationInput, tiene_pcUncheckedUpdateManyInput>
+    /**
+     * Filter which tiene_pcs to update
+     */
+    where?: tiene_pcWhereInput
+    /**
+     * Limit how many tiene_pcs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * tiene_pc updateManyAndReturn
+   */
+  export type tiene_pcUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * The data used to update tiene_pcs.
+     */
+    data: XOR<tiene_pcUpdateManyMutationInput, tiene_pcUncheckedUpdateManyInput>
+    /**
+     * Filter which tiene_pcs to update
+     */
+    where?: tiene_pcWhereInput
+    /**
+     * Limit how many tiene_pcs to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tiene_pc upsert
+   */
+  export type tiene_pcUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * The filter to search for the tiene_pc to update in case it exists.
+     */
+    where: tiene_pcWhereUniqueInput
+    /**
+     * In case the tiene_pc found by the `where` argument doesn't exist, create a new tiene_pc with this data.
+     */
+    create: XOR<tiene_pcCreateInput, tiene_pcUncheckedCreateInput>
+    /**
+     * In case the tiene_pc was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tiene_pcUpdateInput, tiene_pcUncheckedUpdateInput>
+  }
+
+  /**
+   * tiene_pc delete
+   */
+  export type tiene_pcDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+    /**
+     * Filter which tiene_pc to delete.
+     */
+    where: tiene_pcWhereUniqueInput
+  }
+
+  /**
+   * tiene_pc deleteMany
+   */
+  export type tiene_pcDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tiene_pcs to delete
+     */
+    where?: tiene_pcWhereInput
+    /**
+     * Limit how many tiene_pcs to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * tiene_pc without action
+   */
+  export type tiene_pcDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_pc
+     */
+    select?: tiene_pcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_pc
+     */
+    omit?: tiene_pcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_pcInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tiene_rc
+   */
+
+  export type AggregateTiene_rc = {
+    _count: Tiene_rcCountAggregateOutputType | null
+    _avg: Tiene_rcAvgAggregateOutputType | null
+    _sum: Tiene_rcSumAggregateOutputType | null
+    _min: Tiene_rcMinAggregateOutputType | null
+    _max: Tiene_rcMaxAggregateOutputType | null
+  }
+
+  export type Tiene_rcAvgAggregateOutputType = {
+    id: number | null
+    id_proyecto: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_rcSumAggregateOutputType = {
+    id: number | null
+    id_proyecto: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_rcMinAggregateOutputType = {
+    id: number | null
+    id_proyecto: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_rcMaxAggregateOutputType = {
+    id: number | null
+    id_proyecto: number | null
+    id_chat: number | null
+  }
+
+  export type Tiene_rcCountAggregateOutputType = {
+    id: number
+    id_proyecto: number
+    id_chat: number
+    _all: number
+  }
+
+
+  export type Tiene_rcAvgAggregateInputType = {
+    id?: true
+    id_proyecto?: true
+    id_chat?: true
+  }
+
+  export type Tiene_rcSumAggregateInputType = {
+    id?: true
+    id_proyecto?: true
+    id_chat?: true
+  }
+
+  export type Tiene_rcMinAggregateInputType = {
+    id?: true
+    id_proyecto?: true
+    id_chat?: true
+  }
+
+  export type Tiene_rcMaxAggregateInputType = {
+    id?: true
+    id_proyecto?: true
+    id_chat?: true
+  }
+
+  export type Tiene_rcCountAggregateInputType = {
+    id?: true
+    id_proyecto?: true
+    id_chat?: true
+    _all?: true
+  }
+
+  export type Tiene_rcAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tiene_rc to aggregate.
+     */
+    where?: tiene_rcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_rcs to fetch.
+     */
+    orderBy?: tiene_rcOrderByWithRelationInput | tiene_rcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tiene_rcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_rcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_rcs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tiene_rcs
+    **/
+    _count?: true | Tiene_rcCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tiene_rcAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tiene_rcSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tiene_rcMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tiene_rcMaxAggregateInputType
+  }
+
+  export type GetTiene_rcAggregateType<T extends Tiene_rcAggregateArgs> = {
+        [P in keyof T & keyof AggregateTiene_rc]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTiene_rc[P]>
+      : GetScalarType<T[P], AggregateTiene_rc[P]>
+  }
+
+
+
+
+  export type tiene_rcGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tiene_rcWhereInput
+    orderBy?: tiene_rcOrderByWithAggregationInput | tiene_rcOrderByWithAggregationInput[]
+    by: Tiene_rcScalarFieldEnum[] | Tiene_rcScalarFieldEnum
+    having?: tiene_rcScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tiene_rcCountAggregateInputType | true
+    _avg?: Tiene_rcAvgAggregateInputType
+    _sum?: Tiene_rcSumAggregateInputType
+    _min?: Tiene_rcMinAggregateInputType
+    _max?: Tiene_rcMaxAggregateInputType
+  }
+
+  export type Tiene_rcGroupByOutputType = {
+    id: number
+    id_proyecto: number
+    id_chat: number
+    _count: Tiene_rcCountAggregateOutputType | null
+    _avg: Tiene_rcAvgAggregateOutputType | null
+    _sum: Tiene_rcSumAggregateOutputType | null
+    _min: Tiene_rcMinAggregateOutputType | null
+    _max: Tiene_rcMaxAggregateOutputType | null
+  }
+
+  type GetTiene_rcGroupByPayload<T extends tiene_rcGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tiene_rcGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tiene_rcGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tiene_rcGroupByOutputType[P]>
+            : GetScalarType<T[P], Tiene_rcGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tiene_rcSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_proyecto?: boolean
+    id_chat?: boolean
+    proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tiene_rc"]>
+
+  export type tiene_rcSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_proyecto?: boolean
+    id_chat?: boolean
+    proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tiene_rc"]>
+
+  export type tiene_rcSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_proyecto?: boolean
+    id_chat?: boolean
+    proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tiene_rc"]>
+
+  export type tiene_rcSelectScalar = {
+    id?: boolean
+    id_proyecto?: boolean
+    id_chat?: boolean
+  }
+
+  export type tiene_rcOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_proyecto" | "id_chat", ExtArgs["result"]["tiene_rc"]>
+  export type tiene_rcInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+  export type tiene_rcIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+  export type tiene_rcIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    proyecto?: boolean | proyectoDefaultArgs<ExtArgs>
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+
+  export type $tiene_rcPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tiene_rc"
+    objects: {
+      proyecto: Prisma.$proyectoPayload<ExtArgs>
+      chat: Prisma.$chatPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      id_proyecto: number
+      id_chat: number
+    }, ExtArgs["result"]["tiene_rc"]>
+    composites: {}
+  }
+
+  type tiene_rcGetPayload<S extends boolean | null | undefined | tiene_rcDefaultArgs> = $Result.GetResult<Prisma.$tiene_rcPayload, S>
+
+  type tiene_rcCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<tiene_rcFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Tiene_rcCountAggregateInputType | true
+    }
+
+  export interface tiene_rcDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tiene_rc'], meta: { name: 'tiene_rc' } }
+    /**
+     * Find zero or one Tiene_rc that matches the filter.
+     * @param {tiene_rcFindUniqueArgs} args - Arguments to find a Tiene_rc
+     * @example
+     * // Get one Tiene_rc
+     * const tiene_rc = await prisma.tiene_rc.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tiene_rcFindUniqueArgs>(args: SelectSubset<T, tiene_rcFindUniqueArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Tiene_rc that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {tiene_rcFindUniqueOrThrowArgs} args - Arguments to find a Tiene_rc
+     * @example
+     * // Get one Tiene_rc
+     * const tiene_rc = await prisma.tiene_rc.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tiene_rcFindUniqueOrThrowArgs>(args: SelectSubset<T, tiene_rcFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tiene_rc that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_rcFindFirstArgs} args - Arguments to find a Tiene_rc
+     * @example
+     * // Get one Tiene_rc
+     * const tiene_rc = await prisma.tiene_rc.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tiene_rcFindFirstArgs>(args?: SelectSubset<T, tiene_rcFindFirstArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tiene_rc that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_rcFindFirstOrThrowArgs} args - Arguments to find a Tiene_rc
+     * @example
+     * // Get one Tiene_rc
+     * const tiene_rc = await prisma.tiene_rc.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tiene_rcFindFirstOrThrowArgs>(args?: SelectSubset<T, tiene_rcFindFirstOrThrowArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Tiene_rcs that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_rcFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tiene_rcs
+     * const tiene_rcs = await prisma.tiene_rc.findMany()
+     * 
+     * // Get first 10 Tiene_rcs
+     * const tiene_rcs = await prisma.tiene_rc.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const tiene_rcWithIdOnly = await prisma.tiene_rc.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends tiene_rcFindManyArgs>(args?: SelectSubset<T, tiene_rcFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Tiene_rc.
+     * @param {tiene_rcCreateArgs} args - Arguments to create a Tiene_rc.
+     * @example
+     * // Create one Tiene_rc
+     * const Tiene_rc = await prisma.tiene_rc.create({
+     *   data: {
+     *     // ... data to create a Tiene_rc
+     *   }
+     * })
+     * 
+     */
+    create<T extends tiene_rcCreateArgs>(args: SelectSubset<T, tiene_rcCreateArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Tiene_rcs.
+     * @param {tiene_rcCreateManyArgs} args - Arguments to create many Tiene_rcs.
+     * @example
+     * // Create many Tiene_rcs
+     * const tiene_rc = await prisma.tiene_rc.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tiene_rcCreateManyArgs>(args?: SelectSubset<T, tiene_rcCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Tiene_rcs and returns the data saved in the database.
+     * @param {tiene_rcCreateManyAndReturnArgs} args - Arguments to create many Tiene_rcs.
+     * @example
+     * // Create many Tiene_rcs
+     * const tiene_rc = await prisma.tiene_rc.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Tiene_rcs and only return the `id`
+     * const tiene_rcWithIdOnly = await prisma.tiene_rc.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends tiene_rcCreateManyAndReturnArgs>(args?: SelectSubset<T, tiene_rcCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Tiene_rc.
+     * @param {tiene_rcDeleteArgs} args - Arguments to delete one Tiene_rc.
+     * @example
+     * // Delete one Tiene_rc
+     * const Tiene_rc = await prisma.tiene_rc.delete({
+     *   where: {
+     *     // ... filter to delete one Tiene_rc
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tiene_rcDeleteArgs>(args: SelectSubset<T, tiene_rcDeleteArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Tiene_rc.
+     * @param {tiene_rcUpdateArgs} args - Arguments to update one Tiene_rc.
+     * @example
+     * // Update one Tiene_rc
+     * const tiene_rc = await prisma.tiene_rc.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tiene_rcUpdateArgs>(args: SelectSubset<T, tiene_rcUpdateArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Tiene_rcs.
+     * @param {tiene_rcDeleteManyArgs} args - Arguments to filter Tiene_rcs to delete.
+     * @example
+     * // Delete a few Tiene_rcs
+     * const { count } = await prisma.tiene_rc.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tiene_rcDeleteManyArgs>(args?: SelectSubset<T, tiene_rcDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tiene_rcs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_rcUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tiene_rcs
+     * const tiene_rc = await prisma.tiene_rc.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tiene_rcUpdateManyArgs>(args: SelectSubset<T, tiene_rcUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tiene_rcs and returns the data updated in the database.
+     * @param {tiene_rcUpdateManyAndReturnArgs} args - Arguments to update many Tiene_rcs.
+     * @example
+     * // Update many Tiene_rcs
+     * const tiene_rc = await prisma.tiene_rc.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Tiene_rcs and only return the `id`
+     * const tiene_rcWithIdOnly = await prisma.tiene_rc.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends tiene_rcUpdateManyAndReturnArgs>(args: SelectSubset<T, tiene_rcUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Tiene_rc.
+     * @param {tiene_rcUpsertArgs} args - Arguments to update or create a Tiene_rc.
+     * @example
+     * // Update or create a Tiene_rc
+     * const tiene_rc = await prisma.tiene_rc.upsert({
+     *   create: {
+     *     // ... data to create a Tiene_rc
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tiene_rc we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tiene_rcUpsertArgs>(args: SelectSubset<T, tiene_rcUpsertArgs<ExtArgs>>): Prisma__tiene_rcClient<$Result.GetResult<Prisma.$tiene_rcPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Tiene_rcs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_rcCountArgs} args - Arguments to filter Tiene_rcs to count.
+     * @example
+     * // Count the number of Tiene_rcs
+     * const count = await prisma.tiene_rc.count({
+     *   where: {
+     *     // ... the filter for the Tiene_rcs we want to count
+     *   }
+     * })
+    **/
+    count<T extends tiene_rcCountArgs>(
+      args?: Subset<T, tiene_rcCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tiene_rcCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tiene_rc.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tiene_rcAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tiene_rcAggregateArgs>(args: Subset<T, Tiene_rcAggregateArgs>): Prisma.PrismaPromise<GetTiene_rcAggregateType<T>>
+
+    /**
+     * Group by Tiene_rc.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tiene_rcGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tiene_rcGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tiene_rcGroupByArgs['orderBy'] }
+        : { orderBy?: tiene_rcGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tiene_rcGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTiene_rcGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tiene_rc model
+   */
+  readonly fields: tiene_rcFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tiene_rc.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tiene_rcClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    proyecto<T extends proyectoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, proyectoDefaultArgs<ExtArgs>>): Prisma__proyectoClient<$Result.GetResult<Prisma.$proyectoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    chat<T extends chatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, chatDefaultArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tiene_rc model
+   */
+  interface tiene_rcFieldRefs {
+    readonly id: FieldRef<"tiene_rc", 'Int'>
+    readonly id_proyecto: FieldRef<"tiene_rc", 'Int'>
+    readonly id_chat: FieldRef<"tiene_rc", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tiene_rc findUnique
+   */
+  export type tiene_rcFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_rc to fetch.
+     */
+    where: tiene_rcWhereUniqueInput
+  }
+
+  /**
+   * tiene_rc findUniqueOrThrow
+   */
+  export type tiene_rcFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_rc to fetch.
+     */
+    where: tiene_rcWhereUniqueInput
+  }
+
+  /**
+   * tiene_rc findFirst
+   */
+  export type tiene_rcFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_rc to fetch.
+     */
+    where?: tiene_rcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_rcs to fetch.
+     */
+    orderBy?: tiene_rcOrderByWithRelationInput | tiene_rcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tiene_rcs.
+     */
+    cursor?: tiene_rcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_rcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_rcs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tiene_rcs.
+     */
+    distinct?: Tiene_rcScalarFieldEnum | Tiene_rcScalarFieldEnum[]
+  }
+
+  /**
+   * tiene_rc findFirstOrThrow
+   */
+  export type tiene_rcFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_rc to fetch.
+     */
+    where?: tiene_rcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_rcs to fetch.
+     */
+    orderBy?: tiene_rcOrderByWithRelationInput | tiene_rcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tiene_rcs.
+     */
+    cursor?: tiene_rcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_rcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_rcs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tiene_rcs.
+     */
+    distinct?: Tiene_rcScalarFieldEnum | Tiene_rcScalarFieldEnum[]
+  }
+
+  /**
+   * tiene_rc findMany
+   */
+  export type tiene_rcFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * Filter, which tiene_rcs to fetch.
+     */
+    where?: tiene_rcWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tiene_rcs to fetch.
+     */
+    orderBy?: tiene_rcOrderByWithRelationInput | tiene_rcOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tiene_rcs.
+     */
+    cursor?: tiene_rcWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tiene_rcs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tiene_rcs.
+     */
+    skip?: number
+    distinct?: Tiene_rcScalarFieldEnum | Tiene_rcScalarFieldEnum[]
+  }
+
+  /**
+   * tiene_rc create
+   */
+  export type tiene_rcCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * The data needed to create a tiene_rc.
+     */
+    data: XOR<tiene_rcCreateInput, tiene_rcUncheckedCreateInput>
+  }
+
+  /**
+   * tiene_rc createMany
+   */
+  export type tiene_rcCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tiene_rcs.
+     */
+    data: tiene_rcCreateManyInput | tiene_rcCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tiene_rc createManyAndReturn
+   */
+  export type tiene_rcCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * The data used to create many tiene_rcs.
+     */
+    data: tiene_rcCreateManyInput | tiene_rcCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tiene_rc update
+   */
+  export type tiene_rcUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * The data needed to update a tiene_rc.
+     */
+    data: XOR<tiene_rcUpdateInput, tiene_rcUncheckedUpdateInput>
+    /**
+     * Choose, which tiene_rc to update.
+     */
+    where: tiene_rcWhereUniqueInput
+  }
+
+  /**
+   * tiene_rc updateMany
+   */
+  export type tiene_rcUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tiene_rcs.
+     */
+    data: XOR<tiene_rcUpdateManyMutationInput, tiene_rcUncheckedUpdateManyInput>
+    /**
+     * Filter which tiene_rcs to update
+     */
+    where?: tiene_rcWhereInput
+    /**
+     * Limit how many tiene_rcs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * tiene_rc updateManyAndReturn
+   */
+  export type tiene_rcUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * The data used to update tiene_rcs.
+     */
+    data: XOR<tiene_rcUpdateManyMutationInput, tiene_rcUncheckedUpdateManyInput>
+    /**
+     * Filter which tiene_rcs to update
+     */
+    where?: tiene_rcWhereInput
+    /**
+     * Limit how many tiene_rcs to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tiene_rc upsert
+   */
+  export type tiene_rcUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * The filter to search for the tiene_rc to update in case it exists.
+     */
+    where: tiene_rcWhereUniqueInput
+    /**
+     * In case the tiene_rc found by the `where` argument doesn't exist, create a new tiene_rc with this data.
+     */
+    create: XOR<tiene_rcCreateInput, tiene_rcUncheckedCreateInput>
+    /**
+     * In case the tiene_rc was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tiene_rcUpdateInput, tiene_rcUncheckedUpdateInput>
+  }
+
+  /**
+   * tiene_rc delete
+   */
+  export type tiene_rcDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
+    /**
+     * Filter which tiene_rc to delete.
+     */
+    where: tiene_rcWhereUniqueInput
+  }
+
+  /**
+   * tiene_rc deleteMany
+   */
+  export type tiene_rcDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tiene_rcs to delete
+     */
+    where?: tiene_rcWhereInput
+    /**
+     * Limit how many tiene_rcs to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * tiene_rc without action
+   */
+  export type tiene_rcDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tiene_rc
+     */
+    select?: tiene_rcSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tiene_rc
+     */
+    omit?: tiene_rcOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tiene_rcInclude<ExtArgs> | null
   }
 
 
@@ -10736,6 +13230,24 @@ export namespace Prisma {
   };
 
   export type ChatScalarFieldEnum = (typeof ChatScalarFieldEnum)[keyof typeof ChatScalarFieldEnum]
+
+
+  export const Tiene_pcScalarFieldEnum: {
+    id: 'id',
+    id_persona: 'id_persona',
+    id_chat: 'id_chat'
+  };
+
+  export type Tiene_pcScalarFieldEnum = (typeof Tiene_pcScalarFieldEnum)[keyof typeof Tiene_pcScalarFieldEnum]
+
+
+  export const Tiene_rcScalarFieldEnum: {
+    id: 'id',
+    id_proyecto: 'id_proyecto',
+    id_chat: 'id_chat'
+  };
+
+  export type Tiene_rcScalarFieldEnum = (typeof Tiene_rcScalarFieldEnum)[keyof typeof Tiene_rcScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -10841,6 +13353,7 @@ export namespace Prisma {
     tareas?: TareasListRelationFilter
     personalizaciones?: PersonalizacionesListRelationFilter
     proyectos_tiene?: TieneListRelationFilter
+    chat_tiene?: Tiene_pcListRelationFilter
   }
 
   export type personaOrderByWithRelationInput = {
@@ -10855,6 +13368,7 @@ export namespace Prisma {
     tareas?: tareasOrderByRelationAggregateInput
     personalizaciones?: personalizacionesOrderByRelationAggregateInput
     proyectos_tiene?: tieneOrderByRelationAggregateInput
+    chat_tiene?: tiene_pcOrderByRelationAggregateInput
   }
 
   export type personaWhereUniqueInput = Prisma.AtLeast<{
@@ -10872,6 +13386,7 @@ export namespace Prisma {
     tareas?: TareasListRelationFilter
     personalizaciones?: PersonalizacionesListRelationFilter
     proyectos_tiene?: TieneListRelationFilter
+    chat_tiene?: Tiene_pcListRelationFilter
   }, "id" | "mail" | "usuario">
 
   export type personaOrderByWithAggregationInput = {
@@ -11196,8 +13711,9 @@ export namespace Prisma {
     limite?: StringFilter<"proyecto"> | string
     archivos?: ArchivosListRelationFilter
     tareas?: TareasListRelationFilter
-    chats?: ChatListRelationFilter
+    chat_tiene?: Tiene_rcListRelationFilter
     personas_tiene?: TieneListRelationFilter
+    chats?: ChatListRelationFilter
   }
 
   export type proyectoOrderByWithRelationInput = {
@@ -11206,8 +13722,9 @@ export namespace Prisma {
     limite?: SortOrder
     archivos?: archivosOrderByRelationAggregateInput
     tareas?: tareasOrderByRelationAggregateInput
-    chats?: chatOrderByRelationAggregateInput
+    chat_tiene?: tiene_rcOrderByRelationAggregateInput
     personas_tiene?: tieneOrderByRelationAggregateInput
+    chats?: chatOrderByRelationAggregateInput
   }
 
   export type proyectoWhereUniqueInput = Prisma.AtLeast<{
@@ -11219,8 +13736,9 @@ export namespace Prisma {
     limite?: StringFilter<"proyecto"> | string
     archivos?: ArchivosListRelationFilter
     tareas?: TareasListRelationFilter
-    chats?: ChatListRelationFilter
+    chat_tiene?: Tiene_rcListRelationFilter
     personas_tiene?: TieneListRelationFilter
+    chats?: ChatListRelationFilter
   }, "id">
 
   export type proyectoOrderByWithAggregationInput = {
@@ -11252,6 +13770,8 @@ export namespace Prisma {
     id_proyecto?: IntFilter<"chat"> | number
     proyecto?: XOR<ProyectoScalarRelationFilter, proyectoWhereInput>
     mensajes?: MensajesListRelationFilter
+    personas_tiene?: Tiene_pcListRelationFilter
+    proyectos_tiene?: Tiene_rcListRelationFilter
   }
 
   export type chatOrderByWithRelationInput = {
@@ -11260,6 +13780,8 @@ export namespace Prisma {
     id_proyecto?: SortOrder
     proyecto?: proyectoOrderByWithRelationInput
     mensajes?: mensajesOrderByRelationAggregateInput
+    personas_tiene?: tiene_pcOrderByRelationAggregateInput
+    proyectos_tiene?: tiene_rcOrderByRelationAggregateInput
   }
 
   export type chatWhereUniqueInput = Prisma.AtLeast<{
@@ -11271,6 +13793,8 @@ export namespace Prisma {
     id_proyecto?: IntFilter<"chat"> | number
     proyecto?: XOR<ProyectoScalarRelationFilter, proyectoWhereInput>
     mensajes?: MensajesListRelationFilter
+    personas_tiene?: Tiene_pcListRelationFilter
+    proyectos_tiene?: Tiene_rcListRelationFilter
   }, "id">
 
   export type chatOrderByWithAggregationInput = {
@@ -11293,6 +13817,106 @@ export namespace Prisma {
     id_proyecto?: IntWithAggregatesFilter<"chat"> | number
   }
 
+  export type tiene_pcWhereInput = {
+    AND?: tiene_pcWhereInput | tiene_pcWhereInput[]
+    OR?: tiene_pcWhereInput[]
+    NOT?: tiene_pcWhereInput | tiene_pcWhereInput[]
+    id?: IntFilter<"tiene_pc"> | number
+    id_persona?: IntFilter<"tiene_pc"> | number
+    id_chat?: IntFilter<"tiene_pc"> | number
+    persona?: XOR<PersonaScalarRelationFilter, personaWhereInput>
+    chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
+  }
+
+  export type tiene_pcOrderByWithRelationInput = {
+    id?: SortOrder
+    id_persona?: SortOrder
+    id_chat?: SortOrder
+    persona?: personaOrderByWithRelationInput
+    chat?: chatOrderByWithRelationInput
+  }
+
+  export type tiene_pcWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: tiene_pcWhereInput | tiene_pcWhereInput[]
+    OR?: tiene_pcWhereInput[]
+    NOT?: tiene_pcWhereInput | tiene_pcWhereInput[]
+    id_persona?: IntFilter<"tiene_pc"> | number
+    id_chat?: IntFilter<"tiene_pc"> | number
+    persona?: XOR<PersonaScalarRelationFilter, personaWhereInput>
+    chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
+  }, "id">
+
+  export type tiene_pcOrderByWithAggregationInput = {
+    id?: SortOrder
+    id_persona?: SortOrder
+    id_chat?: SortOrder
+    _count?: tiene_pcCountOrderByAggregateInput
+    _avg?: tiene_pcAvgOrderByAggregateInput
+    _max?: tiene_pcMaxOrderByAggregateInput
+    _min?: tiene_pcMinOrderByAggregateInput
+    _sum?: tiene_pcSumOrderByAggregateInput
+  }
+
+  export type tiene_pcScalarWhereWithAggregatesInput = {
+    AND?: tiene_pcScalarWhereWithAggregatesInput | tiene_pcScalarWhereWithAggregatesInput[]
+    OR?: tiene_pcScalarWhereWithAggregatesInput[]
+    NOT?: tiene_pcScalarWhereWithAggregatesInput | tiene_pcScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"tiene_pc"> | number
+    id_persona?: IntWithAggregatesFilter<"tiene_pc"> | number
+    id_chat?: IntWithAggregatesFilter<"tiene_pc"> | number
+  }
+
+  export type tiene_rcWhereInput = {
+    AND?: tiene_rcWhereInput | tiene_rcWhereInput[]
+    OR?: tiene_rcWhereInput[]
+    NOT?: tiene_rcWhereInput | tiene_rcWhereInput[]
+    id?: IntFilter<"tiene_rc"> | number
+    id_proyecto?: IntFilter<"tiene_rc"> | number
+    id_chat?: IntFilter<"tiene_rc"> | number
+    proyecto?: XOR<ProyectoScalarRelationFilter, proyectoWhereInput>
+    chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
+  }
+
+  export type tiene_rcOrderByWithRelationInput = {
+    id?: SortOrder
+    id_proyecto?: SortOrder
+    id_chat?: SortOrder
+    proyecto?: proyectoOrderByWithRelationInput
+    chat?: chatOrderByWithRelationInput
+  }
+
+  export type tiene_rcWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: tiene_rcWhereInput | tiene_rcWhereInput[]
+    OR?: tiene_rcWhereInput[]
+    NOT?: tiene_rcWhereInput | tiene_rcWhereInput[]
+    id_proyecto?: IntFilter<"tiene_rc"> | number
+    id_chat?: IntFilter<"tiene_rc"> | number
+    proyecto?: XOR<ProyectoScalarRelationFilter, proyectoWhereInput>
+    chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
+  }, "id">
+
+  export type tiene_rcOrderByWithAggregationInput = {
+    id?: SortOrder
+    id_proyecto?: SortOrder
+    id_chat?: SortOrder
+    _count?: tiene_rcCountOrderByAggregateInput
+    _avg?: tiene_rcAvgOrderByAggregateInput
+    _max?: tiene_rcMaxOrderByAggregateInput
+    _min?: tiene_rcMinOrderByAggregateInput
+    _sum?: tiene_rcSumOrderByAggregateInput
+  }
+
+  export type tiene_rcScalarWhereWithAggregatesInput = {
+    AND?: tiene_rcScalarWhereWithAggregatesInput | tiene_rcScalarWhereWithAggregatesInput[]
+    OR?: tiene_rcScalarWhereWithAggregatesInput[]
+    NOT?: tiene_rcScalarWhereWithAggregatesInput | tiene_rcScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"tiene_rc"> | number
+    id_proyecto?: IntWithAggregatesFilter<"tiene_rc"> | number
+    id_chat?: IntWithAggregatesFilter<"tiene_rc"> | number
+  }
+
   export type personaCreateInput = {
     mail: string
     nombre: string
@@ -11304,6 +13928,7 @@ export namespace Prisma {
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateInput = {
@@ -11318,6 +13943,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUpdateInput = {
@@ -11331,6 +13957,7 @@ export namespace Prisma {
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateInput = {
@@ -11345,6 +13972,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaCreateManyInput = {
@@ -11621,8 +14249,9 @@ export namespace Prisma {
     limite: string
     archivos?: archivosCreateNestedManyWithoutProyectoInput
     tareas?: tareasCreateNestedManyWithoutProyectoInput
-    chats?: chatCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneCreateNestedManyWithoutProyectoInput
+    chats?: chatCreateNestedManyWithoutProyectoInput
   }
 
   export type proyectoUncheckedCreateInput = {
@@ -11631,8 +14260,9 @@ export namespace Prisma {
     limite: string
     archivos?: archivosUncheckedCreateNestedManyWithoutProyectoInput
     tareas?: tareasUncheckedCreateNestedManyWithoutProyectoInput
-    chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcUncheckedCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneUncheckedCreateNestedManyWithoutProyectoInput
+    chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
   }
 
   export type proyectoUpdateInput = {
@@ -11640,8 +14270,9 @@ export namespace Prisma {
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUpdateManyWithoutProyectoNestedInput
     tareas?: tareasUpdateManyWithoutProyectoNestedInput
-    chats?: chatUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUpdateManyWithoutProyectoNestedInput
+    chats?: chatUpdateManyWithoutProyectoNestedInput
   }
 
   export type proyectoUncheckedUpdateInput = {
@@ -11650,8 +14281,9 @@ export namespace Prisma {
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUncheckedUpdateManyWithoutProyectoNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutProyectoNestedInput
-    chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUncheckedUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUncheckedUpdateManyWithoutProyectoNestedInput
+    chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
   }
 
   export type proyectoCreateManyInput = {
@@ -11675,6 +14307,8 @@ export namespace Prisma {
     nombre: string
     proyecto: proyectoCreateNestedOneWithoutChatsInput
     mensajes?: mensajesCreateNestedManyWithoutChatInput
+    personas_tiene?: tiene_pcCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcCreateNestedManyWithoutChatInput
   }
 
   export type chatUncheckedCreateInput = {
@@ -11682,12 +14316,16 @@ export namespace Prisma {
     nombre: string
     id_proyecto: number
     mensajes?: mensajesUncheckedCreateNestedManyWithoutChatInput
+    personas_tiene?: tiene_pcUncheckedCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcUncheckedCreateNestedManyWithoutChatInput
   }
 
   export type chatUpdateInput = {
     nombre?: StringFieldUpdateOperationsInput | string
     proyecto?: proyectoUpdateOneRequiredWithoutChatsNestedInput
     mensajes?: mensajesUpdateManyWithoutChatNestedInput
+    personas_tiene?: tiene_pcUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUpdateManyWithoutChatNestedInput
   }
 
   export type chatUncheckedUpdateInput = {
@@ -11695,6 +14333,8 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     id_proyecto?: IntFieldUpdateOperationsInput | number
     mensajes?: mensajesUncheckedUpdateManyWithoutChatNestedInput
+    personas_tiene?: tiene_pcUncheckedUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUncheckedUpdateManyWithoutChatNestedInput
   }
 
   export type chatCreateManyInput = {
@@ -11711,6 +14351,82 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     nombre?: StringFieldUpdateOperationsInput | string
     id_proyecto?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_pcCreateInput = {
+    persona: personaCreateNestedOneWithoutChat_tieneInput
+    chat: chatCreateNestedOneWithoutPersonas_tieneInput
+  }
+
+  export type tiene_pcUncheckedCreateInput = {
+    id?: number
+    id_persona: number
+    id_chat: number
+  }
+
+  export type tiene_pcUpdateInput = {
+    persona?: personaUpdateOneRequiredWithoutChat_tieneNestedInput
+    chat?: chatUpdateOneRequiredWithoutPersonas_tieneNestedInput
+  }
+
+  export type tiene_pcUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+    id_chat?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_pcCreateManyInput = {
+    id?: number
+    id_persona: number
+    id_chat: number
+  }
+
+  export type tiene_pcUpdateManyMutationInput = {
+
+  }
+
+  export type tiene_pcUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+    id_chat?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_rcCreateInput = {
+    proyecto: proyectoCreateNestedOneWithoutChat_tieneInput
+    chat: chatCreateNestedOneWithoutProyectos_tieneInput
+  }
+
+  export type tiene_rcUncheckedCreateInput = {
+    id?: number
+    id_proyecto: number
+    id_chat: number
+  }
+
+  export type tiene_rcUpdateInput = {
+    proyecto?: proyectoUpdateOneRequiredWithoutChat_tieneNestedInput
+    chat?: chatUpdateOneRequiredWithoutProyectos_tieneNestedInput
+  }
+
+  export type tiene_rcUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_proyecto?: IntFieldUpdateOperationsInput | number
+    id_chat?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_rcCreateManyInput = {
+    id?: number
+    id_proyecto: number
+    id_chat: number
+  }
+
+  export type tiene_rcUpdateManyMutationInput = {
+
+  }
+
+  export type tiene_rcUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_proyecto?: IntFieldUpdateOperationsInput | number
+    id_chat?: IntFieldUpdateOperationsInput | number
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -11784,6 +14500,12 @@ export namespace Prisma {
     none?: tieneWhereInput
   }
 
+  export type Tiene_pcListRelationFilter = {
+    every?: tiene_pcWhereInput
+    some?: tiene_pcWhereInput
+    none?: tiene_pcWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -11806,6 +14528,10 @@ export namespace Prisma {
   }
 
   export type tieneOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type tiene_pcOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -12100,10 +14826,20 @@ export namespace Prisma {
     id_proyecto?: SortOrder
   }
 
+  export type Tiene_rcListRelationFilter = {
+    every?: tiene_rcWhereInput
+    some?: tiene_rcWhereInput
+    none?: tiene_rcWhereInput
+  }
+
   export type ChatListRelationFilter = {
     every?: chatWhereInput
     some?: chatWhereInput
     none?: chatWhereInput
+  }
+
+  export type tiene_rcOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type chatOrderByRelationAggregateInput = {
@@ -12164,6 +14900,66 @@ export namespace Prisma {
     id_proyecto?: SortOrder
   }
 
+  export type tiene_pcCountOrderByAggregateInput = {
+    id?: SortOrder
+    id_persona?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_pcAvgOrderByAggregateInput = {
+    id?: SortOrder
+    id_persona?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_pcMaxOrderByAggregateInput = {
+    id?: SortOrder
+    id_persona?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_pcMinOrderByAggregateInput = {
+    id?: SortOrder
+    id_persona?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_pcSumOrderByAggregateInput = {
+    id?: SortOrder
+    id_persona?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_rcCountOrderByAggregateInput = {
+    id?: SortOrder
+    id_proyecto?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_rcAvgOrderByAggregateInput = {
+    id?: SortOrder
+    id_proyecto?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_rcMaxOrderByAggregateInput = {
+    id?: SortOrder
+    id_proyecto?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_rcMinOrderByAggregateInput = {
+    id?: SortOrder
+    id_proyecto?: SortOrder
+    id_chat?: SortOrder
+  }
+
+  export type tiene_rcSumOrderByAggregateInput = {
+    id?: SortOrder
+    id_proyecto?: SortOrder
+    id_chat?: SortOrder
+  }
+
   export type archivosCreateNestedManyWithoutPersonaInput = {
     create?: XOR<archivosCreateWithoutPersonaInput, archivosUncheckedCreateWithoutPersonaInput> | archivosCreateWithoutPersonaInput[] | archivosUncheckedCreateWithoutPersonaInput[]
     connectOrCreate?: archivosCreateOrConnectWithoutPersonaInput | archivosCreateOrConnectWithoutPersonaInput[]
@@ -12199,6 +14995,13 @@ export namespace Prisma {
     connect?: tieneWhereUniqueInput | tieneWhereUniqueInput[]
   }
 
+  export type tiene_pcCreateNestedManyWithoutPersonaInput = {
+    create?: XOR<tiene_pcCreateWithoutPersonaInput, tiene_pcUncheckedCreateWithoutPersonaInput> | tiene_pcCreateWithoutPersonaInput[] | tiene_pcUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutPersonaInput | tiene_pcCreateOrConnectWithoutPersonaInput[]
+    createMany?: tiene_pcCreateManyPersonaInputEnvelope
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+  }
+
   export type archivosUncheckedCreateNestedManyWithoutPersonaInput = {
     create?: XOR<archivosCreateWithoutPersonaInput, archivosUncheckedCreateWithoutPersonaInput> | archivosCreateWithoutPersonaInput[] | archivosUncheckedCreateWithoutPersonaInput[]
     connectOrCreate?: archivosCreateOrConnectWithoutPersonaInput | archivosCreateOrConnectWithoutPersonaInput[]
@@ -12232,6 +15035,13 @@ export namespace Prisma {
     connectOrCreate?: tieneCreateOrConnectWithoutPersonaInput | tieneCreateOrConnectWithoutPersonaInput[]
     createMany?: tieneCreateManyPersonaInputEnvelope
     connect?: tieneWhereUniqueInput | tieneWhereUniqueInput[]
+  }
+
+  export type tiene_pcUncheckedCreateNestedManyWithoutPersonaInput = {
+    create?: XOR<tiene_pcCreateWithoutPersonaInput, tiene_pcUncheckedCreateWithoutPersonaInput> | tiene_pcCreateWithoutPersonaInput[] | tiene_pcUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutPersonaInput | tiene_pcCreateOrConnectWithoutPersonaInput[]
+    createMany?: tiene_pcCreateManyPersonaInputEnvelope
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -12312,6 +15122,20 @@ export namespace Prisma {
     deleteMany?: tieneScalarWhereInput | tieneScalarWhereInput[]
   }
 
+  export type tiene_pcUpdateManyWithoutPersonaNestedInput = {
+    create?: XOR<tiene_pcCreateWithoutPersonaInput, tiene_pcUncheckedCreateWithoutPersonaInput> | tiene_pcCreateWithoutPersonaInput[] | tiene_pcUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutPersonaInput | tiene_pcCreateOrConnectWithoutPersonaInput[]
+    upsert?: tiene_pcUpsertWithWhereUniqueWithoutPersonaInput | tiene_pcUpsertWithWhereUniqueWithoutPersonaInput[]
+    createMany?: tiene_pcCreateManyPersonaInputEnvelope
+    set?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    disconnect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    delete?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    update?: tiene_pcUpdateWithWhereUniqueWithoutPersonaInput | tiene_pcUpdateWithWhereUniqueWithoutPersonaInput[]
+    updateMany?: tiene_pcUpdateManyWithWhereWithoutPersonaInput | tiene_pcUpdateManyWithWhereWithoutPersonaInput[]
+    deleteMany?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -12388,6 +15212,20 @@ export namespace Prisma {
     update?: tieneUpdateWithWhereUniqueWithoutPersonaInput | tieneUpdateWithWhereUniqueWithoutPersonaInput[]
     updateMany?: tieneUpdateManyWithWhereWithoutPersonaInput | tieneUpdateManyWithWhereWithoutPersonaInput[]
     deleteMany?: tieneScalarWhereInput | tieneScalarWhereInput[]
+  }
+
+  export type tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput = {
+    create?: XOR<tiene_pcCreateWithoutPersonaInput, tiene_pcUncheckedCreateWithoutPersonaInput> | tiene_pcCreateWithoutPersonaInput[] | tiene_pcUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutPersonaInput | tiene_pcCreateOrConnectWithoutPersonaInput[]
+    upsert?: tiene_pcUpsertWithWhereUniqueWithoutPersonaInput | tiene_pcUpsertWithWhereUniqueWithoutPersonaInput[]
+    createMany?: tiene_pcCreateManyPersonaInputEnvelope
+    set?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    disconnect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    delete?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    update?: tiene_pcUpdateWithWhereUniqueWithoutPersonaInput | tiene_pcUpdateWithWhereUniqueWithoutPersonaInput[]
+    updateMany?: tiene_pcUpdateManyWithWhereWithoutPersonaInput | tiene_pcUpdateManyWithWhereWithoutPersonaInput[]
+    deleteMany?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
   }
 
   export type personaCreateNestedOneWithoutArchivosInput = {
@@ -12534,11 +15372,11 @@ export namespace Prisma {
     connect?: tareasWhereUniqueInput | tareasWhereUniqueInput[]
   }
 
-  export type chatCreateNestedManyWithoutProyectoInput = {
-    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
-    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
-    createMany?: chatCreateManyProyectoInputEnvelope
-    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
+  export type tiene_rcCreateNestedManyWithoutProyectoInput = {
+    create?: XOR<tiene_rcCreateWithoutProyectoInput, tiene_rcUncheckedCreateWithoutProyectoInput> | tiene_rcCreateWithoutProyectoInput[] | tiene_rcUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutProyectoInput | tiene_rcCreateOrConnectWithoutProyectoInput[]
+    createMany?: tiene_rcCreateManyProyectoInputEnvelope
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
   }
 
   export type tieneCreateNestedManyWithoutProyectoInput = {
@@ -12546,6 +15384,13 @@ export namespace Prisma {
     connectOrCreate?: tieneCreateOrConnectWithoutProyectoInput | tieneCreateOrConnectWithoutProyectoInput[]
     createMany?: tieneCreateManyProyectoInputEnvelope
     connect?: tieneWhereUniqueInput | tieneWhereUniqueInput[]
+  }
+
+  export type chatCreateNestedManyWithoutProyectoInput = {
+    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
+    createMany?: chatCreateManyProyectoInputEnvelope
+    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
   }
 
   export type archivosUncheckedCreateNestedManyWithoutProyectoInput = {
@@ -12562,11 +15407,11 @@ export namespace Prisma {
     connect?: tareasWhereUniqueInput | tareasWhereUniqueInput[]
   }
 
-  export type chatUncheckedCreateNestedManyWithoutProyectoInput = {
-    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
-    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
-    createMany?: chatCreateManyProyectoInputEnvelope
-    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
+  export type tiene_rcUncheckedCreateNestedManyWithoutProyectoInput = {
+    create?: XOR<tiene_rcCreateWithoutProyectoInput, tiene_rcUncheckedCreateWithoutProyectoInput> | tiene_rcCreateWithoutProyectoInput[] | tiene_rcUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutProyectoInput | tiene_rcCreateOrConnectWithoutProyectoInput[]
+    createMany?: tiene_rcCreateManyProyectoInputEnvelope
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
   }
 
   export type tieneUncheckedCreateNestedManyWithoutProyectoInput = {
@@ -12574,6 +15419,13 @@ export namespace Prisma {
     connectOrCreate?: tieneCreateOrConnectWithoutProyectoInput | tieneCreateOrConnectWithoutProyectoInput[]
     createMany?: tieneCreateManyProyectoInputEnvelope
     connect?: tieneWhereUniqueInput | tieneWhereUniqueInput[]
+  }
+
+  export type chatUncheckedCreateNestedManyWithoutProyectoInput = {
+    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
+    createMany?: chatCreateManyProyectoInputEnvelope
+    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
   }
 
   export type archivosUpdateManyWithoutProyectoNestedInput = {
@@ -12604,18 +15456,18 @@ export namespace Prisma {
     deleteMany?: tareasScalarWhereInput | tareasScalarWhereInput[]
   }
 
-  export type chatUpdateManyWithoutProyectoNestedInput = {
-    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
-    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
-    upsert?: chatUpsertWithWhereUniqueWithoutProyectoInput | chatUpsertWithWhereUniqueWithoutProyectoInput[]
-    createMany?: chatCreateManyProyectoInputEnvelope
-    set?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    disconnect?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    delete?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    update?: chatUpdateWithWhereUniqueWithoutProyectoInput | chatUpdateWithWhereUniqueWithoutProyectoInput[]
-    updateMany?: chatUpdateManyWithWhereWithoutProyectoInput | chatUpdateManyWithWhereWithoutProyectoInput[]
-    deleteMany?: chatScalarWhereInput | chatScalarWhereInput[]
+  export type tiene_rcUpdateManyWithoutProyectoNestedInput = {
+    create?: XOR<tiene_rcCreateWithoutProyectoInput, tiene_rcUncheckedCreateWithoutProyectoInput> | tiene_rcCreateWithoutProyectoInput[] | tiene_rcUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutProyectoInput | tiene_rcCreateOrConnectWithoutProyectoInput[]
+    upsert?: tiene_rcUpsertWithWhereUniqueWithoutProyectoInput | tiene_rcUpsertWithWhereUniqueWithoutProyectoInput[]
+    createMany?: tiene_rcCreateManyProyectoInputEnvelope
+    set?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    disconnect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    delete?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    update?: tiene_rcUpdateWithWhereUniqueWithoutProyectoInput | tiene_rcUpdateWithWhereUniqueWithoutProyectoInput[]
+    updateMany?: tiene_rcUpdateManyWithWhereWithoutProyectoInput | tiene_rcUpdateManyWithWhereWithoutProyectoInput[]
+    deleteMany?: tiene_rcScalarWhereInput | tiene_rcScalarWhereInput[]
   }
 
   export type tieneUpdateManyWithoutProyectoNestedInput = {
@@ -12630,6 +15482,20 @@ export namespace Prisma {
     update?: tieneUpdateWithWhereUniqueWithoutProyectoInput | tieneUpdateWithWhereUniqueWithoutProyectoInput[]
     updateMany?: tieneUpdateManyWithWhereWithoutProyectoInput | tieneUpdateManyWithWhereWithoutProyectoInput[]
     deleteMany?: tieneScalarWhereInput | tieneScalarWhereInput[]
+  }
+
+  export type chatUpdateManyWithoutProyectoNestedInput = {
+    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
+    upsert?: chatUpsertWithWhereUniqueWithoutProyectoInput | chatUpsertWithWhereUniqueWithoutProyectoInput[]
+    createMany?: chatCreateManyProyectoInputEnvelope
+    set?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    disconnect?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    delete?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    update?: chatUpdateWithWhereUniqueWithoutProyectoInput | chatUpdateWithWhereUniqueWithoutProyectoInput[]
+    updateMany?: chatUpdateManyWithWhereWithoutProyectoInput | chatUpdateManyWithWhereWithoutProyectoInput[]
+    deleteMany?: chatScalarWhereInput | chatScalarWhereInput[]
   }
 
   export type archivosUncheckedUpdateManyWithoutProyectoNestedInput = {
@@ -12660,18 +15526,18 @@ export namespace Prisma {
     deleteMany?: tareasScalarWhereInput | tareasScalarWhereInput[]
   }
 
-  export type chatUncheckedUpdateManyWithoutProyectoNestedInput = {
-    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
-    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
-    upsert?: chatUpsertWithWhereUniqueWithoutProyectoInput | chatUpsertWithWhereUniqueWithoutProyectoInput[]
-    createMany?: chatCreateManyProyectoInputEnvelope
-    set?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    disconnect?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    delete?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
-    update?: chatUpdateWithWhereUniqueWithoutProyectoInput | chatUpdateWithWhereUniqueWithoutProyectoInput[]
-    updateMany?: chatUpdateManyWithWhereWithoutProyectoInput | chatUpdateManyWithWhereWithoutProyectoInput[]
-    deleteMany?: chatScalarWhereInput | chatScalarWhereInput[]
+  export type tiene_rcUncheckedUpdateManyWithoutProyectoNestedInput = {
+    create?: XOR<tiene_rcCreateWithoutProyectoInput, tiene_rcUncheckedCreateWithoutProyectoInput> | tiene_rcCreateWithoutProyectoInput[] | tiene_rcUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutProyectoInput | tiene_rcCreateOrConnectWithoutProyectoInput[]
+    upsert?: tiene_rcUpsertWithWhereUniqueWithoutProyectoInput | tiene_rcUpsertWithWhereUniqueWithoutProyectoInput[]
+    createMany?: tiene_rcCreateManyProyectoInputEnvelope
+    set?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    disconnect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    delete?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    update?: tiene_rcUpdateWithWhereUniqueWithoutProyectoInput | tiene_rcUpdateWithWhereUniqueWithoutProyectoInput[]
+    updateMany?: tiene_rcUpdateManyWithWhereWithoutProyectoInput | tiene_rcUpdateManyWithWhereWithoutProyectoInput[]
+    deleteMany?: tiene_rcScalarWhereInput | tiene_rcScalarWhereInput[]
   }
 
   export type tieneUncheckedUpdateManyWithoutProyectoNestedInput = {
@@ -12688,6 +15554,20 @@ export namespace Prisma {
     deleteMany?: tieneScalarWhereInput | tieneScalarWhereInput[]
   }
 
+  export type chatUncheckedUpdateManyWithoutProyectoNestedInput = {
+    create?: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput> | chatCreateWithoutProyectoInput[] | chatUncheckedCreateWithoutProyectoInput[]
+    connectOrCreate?: chatCreateOrConnectWithoutProyectoInput | chatCreateOrConnectWithoutProyectoInput[]
+    upsert?: chatUpsertWithWhereUniqueWithoutProyectoInput | chatUpsertWithWhereUniqueWithoutProyectoInput[]
+    createMany?: chatCreateManyProyectoInputEnvelope
+    set?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    disconnect?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    delete?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    connect?: chatWhereUniqueInput | chatWhereUniqueInput[]
+    update?: chatUpdateWithWhereUniqueWithoutProyectoInput | chatUpdateWithWhereUniqueWithoutProyectoInput[]
+    updateMany?: chatUpdateManyWithWhereWithoutProyectoInput | chatUpdateManyWithWhereWithoutProyectoInput[]
+    deleteMany?: chatScalarWhereInput | chatScalarWhereInput[]
+  }
+
   export type proyectoCreateNestedOneWithoutChatsInput = {
     create?: XOR<proyectoCreateWithoutChatsInput, proyectoUncheckedCreateWithoutChatsInput>
     connectOrCreate?: proyectoCreateOrConnectWithoutChatsInput
@@ -12701,11 +15581,39 @@ export namespace Prisma {
     connect?: mensajesWhereUniqueInput | mensajesWhereUniqueInput[]
   }
 
+  export type tiene_pcCreateNestedManyWithoutChatInput = {
+    create?: XOR<tiene_pcCreateWithoutChatInput, tiene_pcUncheckedCreateWithoutChatInput> | tiene_pcCreateWithoutChatInput[] | tiene_pcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutChatInput | tiene_pcCreateOrConnectWithoutChatInput[]
+    createMany?: tiene_pcCreateManyChatInputEnvelope
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+  }
+
+  export type tiene_rcCreateNestedManyWithoutChatInput = {
+    create?: XOR<tiene_rcCreateWithoutChatInput, tiene_rcUncheckedCreateWithoutChatInput> | tiene_rcCreateWithoutChatInput[] | tiene_rcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutChatInput | tiene_rcCreateOrConnectWithoutChatInput[]
+    createMany?: tiene_rcCreateManyChatInputEnvelope
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+  }
+
   export type mensajesUncheckedCreateNestedManyWithoutChatInput = {
     create?: XOR<mensajesCreateWithoutChatInput, mensajesUncheckedCreateWithoutChatInput> | mensajesCreateWithoutChatInput[] | mensajesUncheckedCreateWithoutChatInput[]
     connectOrCreate?: mensajesCreateOrConnectWithoutChatInput | mensajesCreateOrConnectWithoutChatInput[]
     createMany?: mensajesCreateManyChatInputEnvelope
     connect?: mensajesWhereUniqueInput | mensajesWhereUniqueInput[]
+  }
+
+  export type tiene_pcUncheckedCreateNestedManyWithoutChatInput = {
+    create?: XOR<tiene_pcCreateWithoutChatInput, tiene_pcUncheckedCreateWithoutChatInput> | tiene_pcCreateWithoutChatInput[] | tiene_pcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutChatInput | tiene_pcCreateOrConnectWithoutChatInput[]
+    createMany?: tiene_pcCreateManyChatInputEnvelope
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+  }
+
+  export type tiene_rcUncheckedCreateNestedManyWithoutChatInput = {
+    create?: XOR<tiene_rcCreateWithoutChatInput, tiene_rcUncheckedCreateWithoutChatInput> | tiene_rcCreateWithoutChatInput[] | tiene_rcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutChatInput | tiene_rcCreateOrConnectWithoutChatInput[]
+    createMany?: tiene_rcCreateManyChatInputEnvelope
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
   }
 
   export type proyectoUpdateOneRequiredWithoutChatsNestedInput = {
@@ -12730,6 +15638,34 @@ export namespace Prisma {
     deleteMany?: mensajesScalarWhereInput | mensajesScalarWhereInput[]
   }
 
+  export type tiene_pcUpdateManyWithoutChatNestedInput = {
+    create?: XOR<tiene_pcCreateWithoutChatInput, tiene_pcUncheckedCreateWithoutChatInput> | tiene_pcCreateWithoutChatInput[] | tiene_pcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutChatInput | tiene_pcCreateOrConnectWithoutChatInput[]
+    upsert?: tiene_pcUpsertWithWhereUniqueWithoutChatInput | tiene_pcUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: tiene_pcCreateManyChatInputEnvelope
+    set?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    disconnect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    delete?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    update?: tiene_pcUpdateWithWhereUniqueWithoutChatInput | tiene_pcUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: tiene_pcUpdateManyWithWhereWithoutChatInput | tiene_pcUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
+  }
+
+  export type tiene_rcUpdateManyWithoutChatNestedInput = {
+    create?: XOR<tiene_rcCreateWithoutChatInput, tiene_rcUncheckedCreateWithoutChatInput> | tiene_rcCreateWithoutChatInput[] | tiene_rcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutChatInput | tiene_rcCreateOrConnectWithoutChatInput[]
+    upsert?: tiene_rcUpsertWithWhereUniqueWithoutChatInput | tiene_rcUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: tiene_rcCreateManyChatInputEnvelope
+    set?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    disconnect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    delete?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    update?: tiene_rcUpdateWithWhereUniqueWithoutChatInput | tiene_rcUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: tiene_rcUpdateManyWithWhereWithoutChatInput | tiene_rcUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: tiene_rcScalarWhereInput | tiene_rcScalarWhereInput[]
+  }
+
   export type mensajesUncheckedUpdateManyWithoutChatNestedInput = {
     create?: XOR<mensajesCreateWithoutChatInput, mensajesUncheckedCreateWithoutChatInput> | mensajesCreateWithoutChatInput[] | mensajesUncheckedCreateWithoutChatInput[]
     connectOrCreate?: mensajesCreateOrConnectWithoutChatInput | mensajesCreateOrConnectWithoutChatInput[]
@@ -12742,6 +15678,90 @@ export namespace Prisma {
     update?: mensajesUpdateWithWhereUniqueWithoutChatInput | mensajesUpdateWithWhereUniqueWithoutChatInput[]
     updateMany?: mensajesUpdateManyWithWhereWithoutChatInput | mensajesUpdateManyWithWhereWithoutChatInput[]
     deleteMany?: mensajesScalarWhereInput | mensajesScalarWhereInput[]
+  }
+
+  export type tiene_pcUncheckedUpdateManyWithoutChatNestedInput = {
+    create?: XOR<tiene_pcCreateWithoutChatInput, tiene_pcUncheckedCreateWithoutChatInput> | tiene_pcCreateWithoutChatInput[] | tiene_pcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_pcCreateOrConnectWithoutChatInput | tiene_pcCreateOrConnectWithoutChatInput[]
+    upsert?: tiene_pcUpsertWithWhereUniqueWithoutChatInput | tiene_pcUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: tiene_pcCreateManyChatInputEnvelope
+    set?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    disconnect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    delete?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+    update?: tiene_pcUpdateWithWhereUniqueWithoutChatInput | tiene_pcUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: tiene_pcUpdateManyWithWhereWithoutChatInput | tiene_pcUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
+  }
+
+  export type tiene_rcUncheckedUpdateManyWithoutChatNestedInput = {
+    create?: XOR<tiene_rcCreateWithoutChatInput, tiene_rcUncheckedCreateWithoutChatInput> | tiene_rcCreateWithoutChatInput[] | tiene_rcUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: tiene_rcCreateOrConnectWithoutChatInput | tiene_rcCreateOrConnectWithoutChatInput[]
+    upsert?: tiene_rcUpsertWithWhereUniqueWithoutChatInput | tiene_rcUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: tiene_rcCreateManyChatInputEnvelope
+    set?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    disconnect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    delete?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    connect?: tiene_rcWhereUniqueInput | tiene_rcWhereUniqueInput[]
+    update?: tiene_rcUpdateWithWhereUniqueWithoutChatInput | tiene_rcUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: tiene_rcUpdateManyWithWhereWithoutChatInput | tiene_rcUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: tiene_rcScalarWhereInput | tiene_rcScalarWhereInput[]
+  }
+
+  export type personaCreateNestedOneWithoutChat_tieneInput = {
+    create?: XOR<personaCreateWithoutChat_tieneInput, personaUncheckedCreateWithoutChat_tieneInput>
+    connectOrCreate?: personaCreateOrConnectWithoutChat_tieneInput
+    connect?: personaWhereUniqueInput
+  }
+
+  export type chatCreateNestedOneWithoutPersonas_tieneInput = {
+    create?: XOR<chatCreateWithoutPersonas_tieneInput, chatUncheckedCreateWithoutPersonas_tieneInput>
+    connectOrCreate?: chatCreateOrConnectWithoutPersonas_tieneInput
+    connect?: chatWhereUniqueInput
+  }
+
+  export type personaUpdateOneRequiredWithoutChat_tieneNestedInput = {
+    create?: XOR<personaCreateWithoutChat_tieneInput, personaUncheckedCreateWithoutChat_tieneInput>
+    connectOrCreate?: personaCreateOrConnectWithoutChat_tieneInput
+    upsert?: personaUpsertWithoutChat_tieneInput
+    connect?: personaWhereUniqueInput
+    update?: XOR<XOR<personaUpdateToOneWithWhereWithoutChat_tieneInput, personaUpdateWithoutChat_tieneInput>, personaUncheckedUpdateWithoutChat_tieneInput>
+  }
+
+  export type chatUpdateOneRequiredWithoutPersonas_tieneNestedInput = {
+    create?: XOR<chatCreateWithoutPersonas_tieneInput, chatUncheckedCreateWithoutPersonas_tieneInput>
+    connectOrCreate?: chatCreateOrConnectWithoutPersonas_tieneInput
+    upsert?: chatUpsertWithoutPersonas_tieneInput
+    connect?: chatWhereUniqueInput
+    update?: XOR<XOR<chatUpdateToOneWithWhereWithoutPersonas_tieneInput, chatUpdateWithoutPersonas_tieneInput>, chatUncheckedUpdateWithoutPersonas_tieneInput>
+  }
+
+  export type proyectoCreateNestedOneWithoutChat_tieneInput = {
+    create?: XOR<proyectoCreateWithoutChat_tieneInput, proyectoUncheckedCreateWithoutChat_tieneInput>
+    connectOrCreate?: proyectoCreateOrConnectWithoutChat_tieneInput
+    connect?: proyectoWhereUniqueInput
+  }
+
+  export type chatCreateNestedOneWithoutProyectos_tieneInput = {
+    create?: XOR<chatCreateWithoutProyectos_tieneInput, chatUncheckedCreateWithoutProyectos_tieneInput>
+    connectOrCreate?: chatCreateOrConnectWithoutProyectos_tieneInput
+    connect?: chatWhereUniqueInput
+  }
+
+  export type proyectoUpdateOneRequiredWithoutChat_tieneNestedInput = {
+    create?: XOR<proyectoCreateWithoutChat_tieneInput, proyectoUncheckedCreateWithoutChat_tieneInput>
+    connectOrCreate?: proyectoCreateOrConnectWithoutChat_tieneInput
+    upsert?: proyectoUpsertWithoutChat_tieneInput
+    connect?: proyectoWhereUniqueInput
+    update?: XOR<XOR<proyectoUpdateToOneWithWhereWithoutChat_tieneInput, proyectoUpdateWithoutChat_tieneInput>, proyectoUncheckedUpdateWithoutChat_tieneInput>
+  }
+
+  export type chatUpdateOneRequiredWithoutProyectos_tieneNestedInput = {
+    create?: XOR<chatCreateWithoutProyectos_tieneInput, chatUncheckedCreateWithoutProyectos_tieneInput>
+    connectOrCreate?: chatCreateOrConnectWithoutProyectos_tieneInput
+    upsert?: chatUpsertWithoutProyectos_tieneInput
+    connect?: chatWhereUniqueInput
+    update?: XOR<XOR<chatUpdateToOneWithWhereWithoutProyectos_tieneInput, chatUpdateWithoutProyectos_tieneInput>, chatUncheckedUpdateWithoutProyectos_tieneInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -12983,6 +16003,25 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type tiene_pcCreateWithoutPersonaInput = {
+    chat: chatCreateNestedOneWithoutPersonas_tieneInput
+  }
+
+  export type tiene_pcUncheckedCreateWithoutPersonaInput = {
+    id?: number
+    id_chat: number
+  }
+
+  export type tiene_pcCreateOrConnectWithoutPersonaInput = {
+    where: tiene_pcWhereUniqueInput
+    create: XOR<tiene_pcCreateWithoutPersonaInput, tiene_pcUncheckedCreateWithoutPersonaInput>
+  }
+
+  export type tiene_pcCreateManyPersonaInputEnvelope = {
+    data: tiene_pcCreateManyPersonaInput | tiene_pcCreateManyPersonaInput[]
+    skipDuplicates?: boolean
+  }
+
   export type archivosUpsertWithWhereUniqueWithoutPersonaInput = {
     where: archivosWhereUniqueInput
     update: XOR<archivosUpdateWithoutPersonaInput, archivosUncheckedUpdateWithoutPersonaInput>
@@ -13116,6 +16155,31 @@ export namespace Prisma {
     id_proyecto?: IntFilter<"tiene"> | number
   }
 
+  export type tiene_pcUpsertWithWhereUniqueWithoutPersonaInput = {
+    where: tiene_pcWhereUniqueInput
+    update: XOR<tiene_pcUpdateWithoutPersonaInput, tiene_pcUncheckedUpdateWithoutPersonaInput>
+    create: XOR<tiene_pcCreateWithoutPersonaInput, tiene_pcUncheckedCreateWithoutPersonaInput>
+  }
+
+  export type tiene_pcUpdateWithWhereUniqueWithoutPersonaInput = {
+    where: tiene_pcWhereUniqueInput
+    data: XOR<tiene_pcUpdateWithoutPersonaInput, tiene_pcUncheckedUpdateWithoutPersonaInput>
+  }
+
+  export type tiene_pcUpdateManyWithWhereWithoutPersonaInput = {
+    where: tiene_pcScalarWhereInput
+    data: XOR<tiene_pcUpdateManyMutationInput, tiene_pcUncheckedUpdateManyWithoutPersonaInput>
+  }
+
+  export type tiene_pcScalarWhereInput = {
+    AND?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
+    OR?: tiene_pcScalarWhereInput[]
+    NOT?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
+    id?: IntFilter<"tiene_pc"> | number
+    id_persona?: IntFilter<"tiene_pc"> | number
+    id_chat?: IntFilter<"tiene_pc"> | number
+  }
+
   export type personaCreateWithoutArchivosInput = {
     mail: string
     nombre: string
@@ -13126,6 +16190,7 @@ export namespace Prisma {
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutArchivosInput = {
@@ -13139,6 +16204,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutArchivosInput = {
@@ -13150,8 +16216,9 @@ export namespace Prisma {
     nombre: string
     limite: string
     tareas?: tareasCreateNestedManyWithoutProyectoInput
-    chats?: chatCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneCreateNestedManyWithoutProyectoInput
+    chats?: chatCreateNestedManyWithoutProyectoInput
   }
 
   export type proyectoUncheckedCreateWithoutArchivosInput = {
@@ -13159,8 +16226,9 @@ export namespace Prisma {
     nombre: string
     limite: string
     tareas?: tareasUncheckedCreateNestedManyWithoutProyectoInput
-    chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcUncheckedCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneUncheckedCreateNestedManyWithoutProyectoInput
+    chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
   }
 
   export type proyectoCreateOrConnectWithoutArchivosInput = {
@@ -13189,6 +16257,7 @@ export namespace Prisma {
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutArchivosInput = {
@@ -13202,6 +16271,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type proyectoUpsertWithoutArchivosInput = {
@@ -13219,8 +16289,9 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     limite?: StringFieldUpdateOperationsInput | string
     tareas?: tareasUpdateManyWithoutProyectoNestedInput
-    chats?: chatUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUpdateManyWithoutProyectoNestedInput
+    chats?: chatUpdateManyWithoutProyectoNestedInput
   }
 
   export type proyectoUncheckedUpdateWithoutArchivosInput = {
@@ -13228,19 +16299,24 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     limite?: StringFieldUpdateOperationsInput | string
     tareas?: tareasUncheckedUpdateManyWithoutProyectoNestedInput
-    chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUncheckedUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUncheckedUpdateManyWithoutProyectoNestedInput
+    chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
   }
 
   export type chatCreateWithoutMensajesInput = {
     nombre: string
     proyecto: proyectoCreateNestedOneWithoutChatsInput
+    personas_tiene?: tiene_pcCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcCreateNestedManyWithoutChatInput
   }
 
   export type chatUncheckedCreateWithoutMensajesInput = {
     id?: number
     nombre: string
     id_proyecto: number
+    personas_tiene?: tiene_pcUncheckedCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcUncheckedCreateNestedManyWithoutChatInput
   }
 
   export type chatCreateOrConnectWithoutMensajesInput = {
@@ -13258,6 +16334,7 @@ export namespace Prisma {
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutMensajesInput = {
@@ -13271,6 +16348,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutMensajesInput = {
@@ -13292,12 +16370,16 @@ export namespace Prisma {
   export type chatUpdateWithoutMensajesInput = {
     nombre?: StringFieldUpdateOperationsInput | string
     proyecto?: proyectoUpdateOneRequiredWithoutChatsNestedInput
+    personas_tiene?: tiene_pcUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUpdateManyWithoutChatNestedInput
   }
 
   export type chatUncheckedUpdateWithoutMensajesInput = {
     id?: IntFieldUpdateOperationsInput | number
     nombre?: StringFieldUpdateOperationsInput | string
     id_proyecto?: IntFieldUpdateOperationsInput | number
+    personas_tiene?: tiene_pcUncheckedUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUncheckedUpdateManyWithoutChatNestedInput
   }
 
   export type personaUpsertWithoutMensajesInput = {
@@ -13321,6 +16403,7 @@ export namespace Prisma {
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutMensajesInput = {
@@ -13334,14 +16417,16 @@ export namespace Prisma {
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type proyectoCreateWithoutTareasInput = {
     nombre: string
     limite: string
     archivos?: archivosCreateNestedManyWithoutProyectoInput
-    chats?: chatCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneCreateNestedManyWithoutProyectoInput
+    chats?: chatCreateNestedManyWithoutProyectoInput
   }
 
   export type proyectoUncheckedCreateWithoutTareasInput = {
@@ -13349,8 +16434,9 @@ export namespace Prisma {
     nombre: string
     limite: string
     archivos?: archivosUncheckedCreateNestedManyWithoutProyectoInput
-    chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcUncheckedCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneUncheckedCreateNestedManyWithoutProyectoInput
+    chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
   }
 
   export type proyectoCreateOrConnectWithoutTareasInput = {
@@ -13368,6 +16454,7 @@ export namespace Prisma {
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutTareasInput = {
@@ -13381,6 +16468,7 @@ export namespace Prisma {
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutTareasInput = {
@@ -13403,8 +16491,9 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUpdateManyWithoutProyectoNestedInput
-    chats?: chatUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUpdateManyWithoutProyectoNestedInput
+    chats?: chatUpdateManyWithoutProyectoNestedInput
   }
 
   export type proyectoUncheckedUpdateWithoutTareasInput = {
@@ -13412,8 +16501,9 @@ export namespace Prisma {
     nombre?: StringFieldUpdateOperationsInput | string
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUncheckedUpdateManyWithoutProyectoNestedInput
-    chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUncheckedUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUncheckedUpdateManyWithoutProyectoNestedInput
+    chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
   }
 
   export type personaUpsertWithoutTareasInput = {
@@ -13437,6 +16527,7 @@ export namespace Prisma {
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutTareasInput = {
@@ -13450,6 +16541,7 @@ export namespace Prisma {
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaCreateWithoutPersonalizacionesInput = {
@@ -13462,6 +16554,7 @@ export namespace Prisma {
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutPersonalizacionesInput = {
@@ -13475,6 +16568,7 @@ export namespace Prisma {
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutPersonalizacionesInput = {
@@ -13503,6 +16597,7 @@ export namespace Prisma {
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutPersonalizacionesInput = {
@@ -13516,6 +16611,7 @@ export namespace Prisma {
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaCreateWithoutProyectos_tieneInput = {
@@ -13528,6 +16624,7 @@ export namespace Prisma {
     mensajes?: mensajesCreateNestedManyWithoutPersonaInput
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutProyectos_tieneInput = {
@@ -13541,6 +16638,7 @@ export namespace Prisma {
     mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutProyectos_tieneInput = {
@@ -13553,6 +16651,7 @@ export namespace Prisma {
     limite: string
     archivos?: archivosCreateNestedManyWithoutProyectoInput
     tareas?: tareasCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcCreateNestedManyWithoutProyectoInput
     chats?: chatCreateNestedManyWithoutProyectoInput
   }
 
@@ -13562,6 +16661,7 @@ export namespace Prisma {
     limite: string
     archivos?: archivosUncheckedCreateNestedManyWithoutProyectoInput
     tareas?: tareasUncheckedCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcUncheckedCreateNestedManyWithoutProyectoInput
     chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
   }
 
@@ -13591,6 +16691,7 @@ export namespace Prisma {
     mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutProyectos_tieneInput = {
@@ -13604,6 +16705,7 @@ export namespace Prisma {
     mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type proyectoUpsertWithoutPersonas_tieneInput = {
@@ -13622,6 +16724,7 @@ export namespace Prisma {
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUpdateManyWithoutProyectoNestedInput
     tareas?: tareasUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUpdateManyWithoutProyectoNestedInput
     chats?: chatUpdateManyWithoutProyectoNestedInput
   }
 
@@ -13631,6 +16734,7 @@ export namespace Prisma {
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUncheckedUpdateManyWithoutProyectoNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUncheckedUpdateManyWithoutProyectoNestedInput
     chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
   }
 
@@ -13684,24 +16788,22 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type chatCreateWithoutProyectoInput = {
-    nombre: string
-    mensajes?: mensajesCreateNestedManyWithoutChatInput
+  export type tiene_rcCreateWithoutProyectoInput = {
+    chat: chatCreateNestedOneWithoutProyectos_tieneInput
   }
 
-  export type chatUncheckedCreateWithoutProyectoInput = {
+  export type tiene_rcUncheckedCreateWithoutProyectoInput = {
     id?: number
-    nombre: string
-    mensajes?: mensajesUncheckedCreateNestedManyWithoutChatInput
+    id_chat: number
   }
 
-  export type chatCreateOrConnectWithoutProyectoInput = {
-    where: chatWhereUniqueInput
-    create: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput>
+  export type tiene_rcCreateOrConnectWithoutProyectoInput = {
+    where: tiene_rcWhereUniqueInput
+    create: XOR<tiene_rcCreateWithoutProyectoInput, tiene_rcUncheckedCreateWithoutProyectoInput>
   }
 
-  export type chatCreateManyProyectoInputEnvelope = {
-    data: chatCreateManyProyectoInput | chatCreateManyProyectoInput[]
+  export type tiene_rcCreateManyProyectoInputEnvelope = {
+    data: tiene_rcCreateManyProyectoInput | tiene_rcCreateManyProyectoInput[]
     skipDuplicates?: boolean
   }
 
@@ -13721,6 +16823,31 @@ export namespace Prisma {
 
   export type tieneCreateManyProyectoInputEnvelope = {
     data: tieneCreateManyProyectoInput | tieneCreateManyProyectoInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type chatCreateWithoutProyectoInput = {
+    nombre: string
+    mensajes?: mensajesCreateNestedManyWithoutChatInput
+    personas_tiene?: tiene_pcCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcCreateNestedManyWithoutChatInput
+  }
+
+  export type chatUncheckedCreateWithoutProyectoInput = {
+    id?: number
+    nombre: string
+    mensajes?: mensajesUncheckedCreateNestedManyWithoutChatInput
+    personas_tiene?: tiene_pcUncheckedCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcUncheckedCreateNestedManyWithoutChatInput
+  }
+
+  export type chatCreateOrConnectWithoutProyectoInput = {
+    where: chatWhereUniqueInput
+    create: XOR<chatCreateWithoutProyectoInput, chatUncheckedCreateWithoutProyectoInput>
+  }
+
+  export type chatCreateManyProyectoInputEnvelope = {
+    data: chatCreateManyProyectoInput | chatCreateManyProyectoInput[]
     skipDuplicates?: boolean
   }
 
@@ -13756,6 +16883,47 @@ export namespace Prisma {
     data: XOR<tareasUpdateManyMutationInput, tareasUncheckedUpdateManyWithoutProyectoInput>
   }
 
+  export type tiene_rcUpsertWithWhereUniqueWithoutProyectoInput = {
+    where: tiene_rcWhereUniqueInput
+    update: XOR<tiene_rcUpdateWithoutProyectoInput, tiene_rcUncheckedUpdateWithoutProyectoInput>
+    create: XOR<tiene_rcCreateWithoutProyectoInput, tiene_rcUncheckedCreateWithoutProyectoInput>
+  }
+
+  export type tiene_rcUpdateWithWhereUniqueWithoutProyectoInput = {
+    where: tiene_rcWhereUniqueInput
+    data: XOR<tiene_rcUpdateWithoutProyectoInput, tiene_rcUncheckedUpdateWithoutProyectoInput>
+  }
+
+  export type tiene_rcUpdateManyWithWhereWithoutProyectoInput = {
+    where: tiene_rcScalarWhereInput
+    data: XOR<tiene_rcUpdateManyMutationInput, tiene_rcUncheckedUpdateManyWithoutProyectoInput>
+  }
+
+  export type tiene_rcScalarWhereInput = {
+    AND?: tiene_rcScalarWhereInput | tiene_rcScalarWhereInput[]
+    OR?: tiene_rcScalarWhereInput[]
+    NOT?: tiene_rcScalarWhereInput | tiene_rcScalarWhereInput[]
+    id?: IntFilter<"tiene_rc"> | number
+    id_proyecto?: IntFilter<"tiene_rc"> | number
+    id_chat?: IntFilter<"tiene_rc"> | number
+  }
+
+  export type tieneUpsertWithWhereUniqueWithoutProyectoInput = {
+    where: tieneWhereUniqueInput
+    update: XOR<tieneUpdateWithoutProyectoInput, tieneUncheckedUpdateWithoutProyectoInput>
+    create: XOR<tieneCreateWithoutProyectoInput, tieneUncheckedCreateWithoutProyectoInput>
+  }
+
+  export type tieneUpdateWithWhereUniqueWithoutProyectoInput = {
+    where: tieneWhereUniqueInput
+    data: XOR<tieneUpdateWithoutProyectoInput, tieneUncheckedUpdateWithoutProyectoInput>
+  }
+
+  export type tieneUpdateManyWithWhereWithoutProyectoInput = {
+    where: tieneScalarWhereInput
+    data: XOR<tieneUpdateManyMutationInput, tieneUncheckedUpdateManyWithoutProyectoInput>
+  }
+
   export type chatUpsertWithWhereUniqueWithoutProyectoInput = {
     where: chatWhereUniqueInput
     update: XOR<chatUpdateWithoutProyectoInput, chatUncheckedUpdateWithoutProyectoInput>
@@ -13781,27 +16949,12 @@ export namespace Prisma {
     id_proyecto?: IntFilter<"chat"> | number
   }
 
-  export type tieneUpsertWithWhereUniqueWithoutProyectoInput = {
-    where: tieneWhereUniqueInput
-    update: XOR<tieneUpdateWithoutProyectoInput, tieneUncheckedUpdateWithoutProyectoInput>
-    create: XOR<tieneCreateWithoutProyectoInput, tieneUncheckedCreateWithoutProyectoInput>
-  }
-
-  export type tieneUpdateWithWhereUniqueWithoutProyectoInput = {
-    where: tieneWhereUniqueInput
-    data: XOR<tieneUpdateWithoutProyectoInput, tieneUncheckedUpdateWithoutProyectoInput>
-  }
-
-  export type tieneUpdateManyWithWhereWithoutProyectoInput = {
-    where: tieneScalarWhereInput
-    data: XOR<tieneUpdateManyMutationInput, tieneUncheckedUpdateManyWithoutProyectoInput>
-  }
-
   export type proyectoCreateWithoutChatsInput = {
     nombre: string
     limite: string
     archivos?: archivosCreateNestedManyWithoutProyectoInput
     tareas?: tareasCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneCreateNestedManyWithoutProyectoInput
   }
 
@@ -13811,6 +16964,7 @@ export namespace Prisma {
     limite: string
     archivos?: archivosUncheckedCreateNestedManyWithoutProyectoInput
     tareas?: tareasUncheckedCreateNestedManyWithoutProyectoInput
+    chat_tiene?: tiene_rcUncheckedCreateNestedManyWithoutProyectoInput
     personas_tiene?: tieneUncheckedCreateNestedManyWithoutProyectoInput
   }
 
@@ -13842,6 +16996,44 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type tiene_pcCreateWithoutChatInput = {
+    persona: personaCreateNestedOneWithoutChat_tieneInput
+  }
+
+  export type tiene_pcUncheckedCreateWithoutChatInput = {
+    id?: number
+    id_persona: number
+  }
+
+  export type tiene_pcCreateOrConnectWithoutChatInput = {
+    where: tiene_pcWhereUniqueInput
+    create: XOR<tiene_pcCreateWithoutChatInput, tiene_pcUncheckedCreateWithoutChatInput>
+  }
+
+  export type tiene_pcCreateManyChatInputEnvelope = {
+    data: tiene_pcCreateManyChatInput | tiene_pcCreateManyChatInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type tiene_rcCreateWithoutChatInput = {
+    proyecto: proyectoCreateNestedOneWithoutChat_tieneInput
+  }
+
+  export type tiene_rcUncheckedCreateWithoutChatInput = {
+    id?: number
+    id_proyecto: number
+  }
+
+  export type tiene_rcCreateOrConnectWithoutChatInput = {
+    where: tiene_rcWhereUniqueInput
+    create: XOR<tiene_rcCreateWithoutChatInput, tiene_rcUncheckedCreateWithoutChatInput>
+  }
+
+  export type tiene_rcCreateManyChatInputEnvelope = {
+    data: tiene_rcCreateManyChatInput | tiene_rcCreateManyChatInput[]
+    skipDuplicates?: boolean
+  }
+
   export type proyectoUpsertWithoutChatsInput = {
     update: XOR<proyectoUpdateWithoutChatsInput, proyectoUncheckedUpdateWithoutChatsInput>
     create: XOR<proyectoCreateWithoutChatsInput, proyectoUncheckedCreateWithoutChatsInput>
@@ -13858,6 +17050,7 @@ export namespace Prisma {
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUpdateManyWithoutProyectoNestedInput
     tareas?: tareasUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUpdateManyWithoutProyectoNestedInput
   }
 
@@ -13867,6 +17060,7 @@ export namespace Prisma {
     limite?: StringFieldUpdateOperationsInput | string
     archivos?: archivosUncheckedUpdateManyWithoutProyectoNestedInput
     tareas?: tareasUncheckedUpdateManyWithoutProyectoNestedInput
+    chat_tiene?: tiene_rcUncheckedUpdateManyWithoutProyectoNestedInput
     personas_tiene?: tieneUncheckedUpdateManyWithoutProyectoNestedInput
   }
 
@@ -13884,6 +17078,254 @@ export namespace Prisma {
   export type mensajesUpdateManyWithWhereWithoutChatInput = {
     where: mensajesScalarWhereInput
     data: XOR<mensajesUpdateManyMutationInput, mensajesUncheckedUpdateManyWithoutChatInput>
+  }
+
+  export type tiene_pcUpsertWithWhereUniqueWithoutChatInput = {
+    where: tiene_pcWhereUniqueInput
+    update: XOR<tiene_pcUpdateWithoutChatInput, tiene_pcUncheckedUpdateWithoutChatInput>
+    create: XOR<tiene_pcCreateWithoutChatInput, tiene_pcUncheckedCreateWithoutChatInput>
+  }
+
+  export type tiene_pcUpdateWithWhereUniqueWithoutChatInput = {
+    where: tiene_pcWhereUniqueInput
+    data: XOR<tiene_pcUpdateWithoutChatInput, tiene_pcUncheckedUpdateWithoutChatInput>
+  }
+
+  export type tiene_pcUpdateManyWithWhereWithoutChatInput = {
+    where: tiene_pcScalarWhereInput
+    data: XOR<tiene_pcUpdateManyMutationInput, tiene_pcUncheckedUpdateManyWithoutChatInput>
+  }
+
+  export type tiene_rcUpsertWithWhereUniqueWithoutChatInput = {
+    where: tiene_rcWhereUniqueInput
+    update: XOR<tiene_rcUpdateWithoutChatInput, tiene_rcUncheckedUpdateWithoutChatInput>
+    create: XOR<tiene_rcCreateWithoutChatInput, tiene_rcUncheckedCreateWithoutChatInput>
+  }
+
+  export type tiene_rcUpdateWithWhereUniqueWithoutChatInput = {
+    where: tiene_rcWhereUniqueInput
+    data: XOR<tiene_rcUpdateWithoutChatInput, tiene_rcUncheckedUpdateWithoutChatInput>
+  }
+
+  export type tiene_rcUpdateManyWithWhereWithoutChatInput = {
+    where: tiene_rcScalarWhereInput
+    data: XOR<tiene_rcUpdateManyMutationInput, tiene_rcUncheckedUpdateManyWithoutChatInput>
+  }
+
+  export type personaCreateWithoutChat_tieneInput = {
+    mail: string
+    nombre: string
+    contrasenia: string
+    usuario: string
+    googleRefreshToken?: string | null
+    archivos?: archivosCreateNestedManyWithoutPersonaInput
+    mensajes?: mensajesCreateNestedManyWithoutPersonaInput
+    tareas?: tareasCreateNestedManyWithoutPersonaInput
+    personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
+    proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+  }
+
+  export type personaUncheckedCreateWithoutChat_tieneInput = {
+    id?: number
+    mail: string
+    nombre: string
+    contrasenia: string
+    usuario: string
+    googleRefreshToken?: string | null
+    archivos?: archivosUncheckedCreateNestedManyWithoutPersonaInput
+    mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
+    tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
+    personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
+    proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+  }
+
+  export type personaCreateOrConnectWithoutChat_tieneInput = {
+    where: personaWhereUniqueInput
+    create: XOR<personaCreateWithoutChat_tieneInput, personaUncheckedCreateWithoutChat_tieneInput>
+  }
+
+  export type chatCreateWithoutPersonas_tieneInput = {
+    nombre: string
+    proyecto: proyectoCreateNestedOneWithoutChatsInput
+    mensajes?: mensajesCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcCreateNestedManyWithoutChatInput
+  }
+
+  export type chatUncheckedCreateWithoutPersonas_tieneInput = {
+    id?: number
+    nombre: string
+    id_proyecto: number
+    mensajes?: mensajesUncheckedCreateNestedManyWithoutChatInput
+    proyectos_tiene?: tiene_rcUncheckedCreateNestedManyWithoutChatInput
+  }
+
+  export type chatCreateOrConnectWithoutPersonas_tieneInput = {
+    where: chatWhereUniqueInput
+    create: XOR<chatCreateWithoutPersonas_tieneInput, chatUncheckedCreateWithoutPersonas_tieneInput>
+  }
+
+  export type personaUpsertWithoutChat_tieneInput = {
+    update: XOR<personaUpdateWithoutChat_tieneInput, personaUncheckedUpdateWithoutChat_tieneInput>
+    create: XOR<personaCreateWithoutChat_tieneInput, personaUncheckedCreateWithoutChat_tieneInput>
+    where?: personaWhereInput
+  }
+
+  export type personaUpdateToOneWithWhereWithoutChat_tieneInput = {
+    where?: personaWhereInput
+    data: XOR<personaUpdateWithoutChat_tieneInput, personaUncheckedUpdateWithoutChat_tieneInput>
+  }
+
+  export type personaUpdateWithoutChat_tieneInput = {
+    mail?: StringFieldUpdateOperationsInput | string
+    nombre?: StringFieldUpdateOperationsInput | string
+    contrasenia?: StringFieldUpdateOperationsInput | string
+    usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
+    archivos?: archivosUpdateManyWithoutPersonaNestedInput
+    mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
+    tareas?: tareasUpdateManyWithoutPersonaNestedInput
+    personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
+    proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+  }
+
+  export type personaUncheckedUpdateWithoutChat_tieneInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    mail?: StringFieldUpdateOperationsInput | string
+    nombre?: StringFieldUpdateOperationsInput | string
+    contrasenia?: StringFieldUpdateOperationsInput | string
+    usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
+    archivos?: archivosUncheckedUpdateManyWithoutPersonaNestedInput
+    mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
+    tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
+    personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
+    proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+  }
+
+  export type chatUpsertWithoutPersonas_tieneInput = {
+    update: XOR<chatUpdateWithoutPersonas_tieneInput, chatUncheckedUpdateWithoutPersonas_tieneInput>
+    create: XOR<chatCreateWithoutPersonas_tieneInput, chatUncheckedCreateWithoutPersonas_tieneInput>
+    where?: chatWhereInput
+  }
+
+  export type chatUpdateToOneWithWhereWithoutPersonas_tieneInput = {
+    where?: chatWhereInput
+    data: XOR<chatUpdateWithoutPersonas_tieneInput, chatUncheckedUpdateWithoutPersonas_tieneInput>
+  }
+
+  export type chatUpdateWithoutPersonas_tieneInput = {
+    nombre?: StringFieldUpdateOperationsInput | string
+    proyecto?: proyectoUpdateOneRequiredWithoutChatsNestedInput
+    mensajes?: mensajesUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUpdateManyWithoutChatNestedInput
+  }
+
+  export type chatUncheckedUpdateWithoutPersonas_tieneInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+    id_proyecto?: IntFieldUpdateOperationsInput | number
+    mensajes?: mensajesUncheckedUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUncheckedUpdateManyWithoutChatNestedInput
+  }
+
+  export type proyectoCreateWithoutChat_tieneInput = {
+    nombre: string
+    limite: string
+    archivos?: archivosCreateNestedManyWithoutProyectoInput
+    tareas?: tareasCreateNestedManyWithoutProyectoInput
+    personas_tiene?: tieneCreateNestedManyWithoutProyectoInput
+    chats?: chatCreateNestedManyWithoutProyectoInput
+  }
+
+  export type proyectoUncheckedCreateWithoutChat_tieneInput = {
+    id?: number
+    nombre: string
+    limite: string
+    archivos?: archivosUncheckedCreateNestedManyWithoutProyectoInput
+    tareas?: tareasUncheckedCreateNestedManyWithoutProyectoInput
+    personas_tiene?: tieneUncheckedCreateNestedManyWithoutProyectoInput
+    chats?: chatUncheckedCreateNestedManyWithoutProyectoInput
+  }
+
+  export type proyectoCreateOrConnectWithoutChat_tieneInput = {
+    where: proyectoWhereUniqueInput
+    create: XOR<proyectoCreateWithoutChat_tieneInput, proyectoUncheckedCreateWithoutChat_tieneInput>
+  }
+
+  export type chatCreateWithoutProyectos_tieneInput = {
+    nombre: string
+    proyecto: proyectoCreateNestedOneWithoutChatsInput
+    mensajes?: mensajesCreateNestedManyWithoutChatInput
+    personas_tiene?: tiene_pcCreateNestedManyWithoutChatInput
+  }
+
+  export type chatUncheckedCreateWithoutProyectos_tieneInput = {
+    id?: number
+    nombre: string
+    id_proyecto: number
+    mensajes?: mensajesUncheckedCreateNestedManyWithoutChatInput
+    personas_tiene?: tiene_pcUncheckedCreateNestedManyWithoutChatInput
+  }
+
+  export type chatCreateOrConnectWithoutProyectos_tieneInput = {
+    where: chatWhereUniqueInput
+    create: XOR<chatCreateWithoutProyectos_tieneInput, chatUncheckedCreateWithoutProyectos_tieneInput>
+  }
+
+  export type proyectoUpsertWithoutChat_tieneInput = {
+    update: XOR<proyectoUpdateWithoutChat_tieneInput, proyectoUncheckedUpdateWithoutChat_tieneInput>
+    create: XOR<proyectoCreateWithoutChat_tieneInput, proyectoUncheckedCreateWithoutChat_tieneInput>
+    where?: proyectoWhereInput
+  }
+
+  export type proyectoUpdateToOneWithWhereWithoutChat_tieneInput = {
+    where?: proyectoWhereInput
+    data: XOR<proyectoUpdateWithoutChat_tieneInput, proyectoUncheckedUpdateWithoutChat_tieneInput>
+  }
+
+  export type proyectoUpdateWithoutChat_tieneInput = {
+    nombre?: StringFieldUpdateOperationsInput | string
+    limite?: StringFieldUpdateOperationsInput | string
+    archivos?: archivosUpdateManyWithoutProyectoNestedInput
+    tareas?: tareasUpdateManyWithoutProyectoNestedInput
+    personas_tiene?: tieneUpdateManyWithoutProyectoNestedInput
+    chats?: chatUpdateManyWithoutProyectoNestedInput
+  }
+
+  export type proyectoUncheckedUpdateWithoutChat_tieneInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+    limite?: StringFieldUpdateOperationsInput | string
+    archivos?: archivosUncheckedUpdateManyWithoutProyectoNestedInput
+    tareas?: tareasUncheckedUpdateManyWithoutProyectoNestedInput
+    personas_tiene?: tieneUncheckedUpdateManyWithoutProyectoNestedInput
+    chats?: chatUncheckedUpdateManyWithoutProyectoNestedInput
+  }
+
+  export type chatUpsertWithoutProyectos_tieneInput = {
+    update: XOR<chatUpdateWithoutProyectos_tieneInput, chatUncheckedUpdateWithoutProyectos_tieneInput>
+    create: XOR<chatCreateWithoutProyectos_tieneInput, chatUncheckedCreateWithoutProyectos_tieneInput>
+    where?: chatWhereInput
+  }
+
+  export type chatUpdateToOneWithWhereWithoutProyectos_tieneInput = {
+    where?: chatWhereInput
+    data: XOR<chatUpdateWithoutProyectos_tieneInput, chatUncheckedUpdateWithoutProyectos_tieneInput>
+  }
+
+  export type chatUpdateWithoutProyectos_tieneInput = {
+    nombre?: StringFieldUpdateOperationsInput | string
+    proyecto?: proyectoUpdateOneRequiredWithoutChatsNestedInput
+    mensajes?: mensajesUpdateManyWithoutChatNestedInput
+    personas_tiene?: tiene_pcUpdateManyWithoutChatNestedInput
+  }
+
+  export type chatUncheckedUpdateWithoutProyectos_tieneInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+    id_proyecto?: IntFieldUpdateOperationsInput | number
+    mensajes?: mensajesUncheckedUpdateManyWithoutChatNestedInput
+    personas_tiene?: tiene_pcUncheckedUpdateManyWithoutChatNestedInput
   }
 
   export type archivosCreateManyPersonaInput = {
@@ -13917,6 +17359,11 @@ export namespace Prisma {
   export type tieneCreateManyPersonaInput = {
     id?: number
     id_proyecto: number
+  }
+
+  export type tiene_pcCreateManyPersonaInput = {
+    id?: number
+    id_chat: number
   }
 
   export type archivosUpdateWithoutPersonaInput = {
@@ -14013,6 +17460,20 @@ export namespace Prisma {
     id_proyecto?: IntFieldUpdateOperationsInput | number
   }
 
+  export type tiene_pcUpdateWithoutPersonaInput = {
+    chat?: chatUpdateOneRequiredWithoutPersonas_tieneNestedInput
+  }
+
+  export type tiene_pcUncheckedUpdateWithoutPersonaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_chat?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_pcUncheckedUpdateManyWithoutPersonaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_chat?: IntFieldUpdateOperationsInput | number
+  }
+
   export type archivosCreateManyProyectoInput = {
     formato: string
     archivo: Uint8Array
@@ -14029,14 +17490,19 @@ export namespace Prisma {
     limite: string
   }
 
-  export type chatCreateManyProyectoInput = {
+  export type tiene_rcCreateManyProyectoInput = {
     id?: number
-    nombre: string
+    id_chat: number
   }
 
   export type tieneCreateManyProyectoInput = {
     id?: number
     id_persona: number
+  }
+
+  export type chatCreateManyProyectoInput = {
+    id?: number
+    nombre: string
   }
 
   export type archivosUpdateWithoutProyectoInput = {
@@ -14085,20 +17551,18 @@ export namespace Prisma {
     limite?: StringFieldUpdateOperationsInput | string
   }
 
-  export type chatUpdateWithoutProyectoInput = {
-    nombre?: StringFieldUpdateOperationsInput | string
-    mensajes?: mensajesUpdateManyWithoutChatNestedInput
+  export type tiene_rcUpdateWithoutProyectoInput = {
+    chat?: chatUpdateOneRequiredWithoutProyectos_tieneNestedInput
   }
 
-  export type chatUncheckedUpdateWithoutProyectoInput = {
+  export type tiene_rcUncheckedUpdateWithoutProyectoInput = {
     id?: IntFieldUpdateOperationsInput | number
-    nombre?: StringFieldUpdateOperationsInput | string
-    mensajes?: mensajesUncheckedUpdateManyWithoutChatNestedInput
+    id_chat?: IntFieldUpdateOperationsInput | number
   }
 
-  export type chatUncheckedUpdateManyWithoutProyectoInput = {
+  export type tiene_rcUncheckedUpdateManyWithoutProyectoInput = {
     id?: IntFieldUpdateOperationsInput | number
-    nombre?: StringFieldUpdateOperationsInput | string
+    id_chat?: IntFieldUpdateOperationsInput | number
   }
 
   export type tieneUpdateWithoutProyectoInput = {
@@ -14115,11 +17579,41 @@ export namespace Prisma {
     id_persona?: IntFieldUpdateOperationsInput | number
   }
 
+  export type chatUpdateWithoutProyectoInput = {
+    nombre?: StringFieldUpdateOperationsInput | string
+    mensajes?: mensajesUpdateManyWithoutChatNestedInput
+    personas_tiene?: tiene_pcUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUpdateManyWithoutChatNestedInput
+  }
+
+  export type chatUncheckedUpdateWithoutProyectoInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+    mensajes?: mensajesUncheckedUpdateManyWithoutChatNestedInput
+    personas_tiene?: tiene_pcUncheckedUpdateManyWithoutChatNestedInput
+    proyectos_tiene?: tiene_rcUncheckedUpdateManyWithoutChatNestedInput
+  }
+
+  export type chatUncheckedUpdateManyWithoutProyectoInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+  }
+
   export type mensajesCreateManyChatInput = {
     id_persona: number
     mensaje: string
     estado: string
     id?: number
+  }
+
+  export type tiene_pcCreateManyChatInput = {
+    id?: number
+    id_persona: number
+  }
+
+  export type tiene_rcCreateManyChatInput = {
+    id?: number
+    id_proyecto: number
   }
 
   export type mensajesUpdateWithoutChatInput = {
@@ -14140,6 +17634,34 @@ export namespace Prisma {
     mensaje?: StringFieldUpdateOperationsInput | string
     estado?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_pcUpdateWithoutChatInput = {
+    persona?: personaUpdateOneRequiredWithoutChat_tieneNestedInput
+  }
+
+  export type tiene_pcUncheckedUpdateWithoutChatInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_pcUncheckedUpdateManyWithoutChatInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_rcUpdateWithoutChatInput = {
+    proyecto?: proyectoUpdateOneRequiredWithoutChat_tieneNestedInput
+  }
+
+  export type tiene_rcUncheckedUpdateWithoutChatInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_proyecto?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type tiene_rcUncheckedUpdateManyWithoutChatInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_proyecto?: IntFieldUpdateOperationsInput | number
   }
 
 
