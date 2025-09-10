@@ -81,13 +81,14 @@ def createJson(prompt, img_path="image.jpg"):
             tools=[grounding_tool]
         )
     )
-    print("response de tabla hecho")
+    print("Response de tabla hecho")
 
     prompt_board = response.text
 
     with open(img_path, "rb") as f:
         inserted_img = f.read()
 
+#hacer tablita
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=[
@@ -129,7 +130,7 @@ def createJson(prompt, img_path="image.jpg"):
     else:
         conclusion = " ".join(df.iloc[-1].dropna().tolist())
 
-    print("Conclusión detectada:", conclusion)
+    print("Conclusión hecha")
 
     if conclusion:
         createImgSearching(conclusion, img_path)
@@ -184,7 +185,7 @@ def createImgSearching(prompt, img_path=None):
             tools=[grounding_tool]
         )
     )
-    print("response de img hecho")
+    print("Response de img hecho")
 
     prompt_img = response.text
 
@@ -212,7 +213,7 @@ createJson("Generate a comparison table with the following exact columns: Websit
 "and the website shown in the provided image. These 3 websites have to be relationated to the topic SOCIAL MEDIA. There should be exactly 10 rows in total (one per topic/criterion). Each row "
 "must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion "
 "column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with each site, "
-"but detect with things should it improve (without mentioning the others websites). Avoid starting sentences with the exact name of the websites. "
+"but detect with things should it improve (without mentioning the others websites neither the one to upgrade). Avoid starting sentences with the exact name of the websites. "
 "Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format. Write "
 "correctly the words ant letters, not just simbols On te top of each column, where you put the name of each website, also put an extremely breve descripction of each one.")
 
@@ -220,4 +221,4 @@ createJson("Generate a comparison table with the following exact columns: Websit
 
 #createImgSearching("Crea una img de un chico de 16 años, de piel muuuy blanca y tomando mate. debe estar en uruguay, y tener una camiseta del país")
 
-#createImg("create an image of a happy dog jumping on the grass")
+#createImg("")

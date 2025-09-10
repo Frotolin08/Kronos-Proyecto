@@ -1,82 +1,74 @@
 [
     {
         "criterion_or_website": "Typography",
-        "website_1_value": "Utiliza Facebook Sans, una tipografía Sans-serif clara y legible, priorizando la coherencia en sus interfaces. [3]",
-        "website_2_value": "Presenta una combinación de fuentes limpias para texto estándar, con opciones creativas para historias y gráficos. [5, 8]",
-        "website_3_value": "Muestra tipografías audaces y dinámicas, a menudo con efectos visuales, reflejando su naturaleza juvenil y enérgica. [2, 4, 14, 17]",
-        "website_4_value": "La tipografía es funcional pero carece de un estilo distintivo, usando fuentes estándar sin mucha personalidad ni jerarquía visual clara. [11, 20]",
-        "conclusion": "Considerar implementar una tipografía más moderna y única para diferenciar la marca visualmente y mejorar la jerarquía."
+        "website_1_value": "La tipografía de Facebook utiliza fuentes sans-serif claras para asegurar legibilidad en su vasta interfaz de usuario. [1]",
+        "website_2_value": "Instagram emplea una tipografía moderna y limpia, con fuentes personalizadas que complementan su estética visual. [2]",
+        "website_3_value": "X utiliza una tipografía sencilla y directa, priorizando la claridad y la lectura rápida de los mensajes cortos. [3]",
+        "website_4_value": "La elección tipográfica actual podría beneficiarse de mayor cohesión, para fortalecer la identidad visual. [4]",
+        "conclusion": "Asegurar una jerarquía visual más clara con la tipografía mejoraría la legibilidad y la organización del contenido. [5]"
     },
     {
         "criterion_or_website": "Colors",
-        "website_1_value": "Dominan los tonos azules clásicos y blanco, proyectando profesionalismo, confianza y una sensación de familiaridad. [15]",
-        "website_2_value": "Se caracteriza por degradados vibrantes y colores cálidos, evocando creatividad, alegría y una estética moderna y atractiva. [8]",
-        "website_3_value": "Emplea una paleta de colores oscuros y neón, generando una atmósfera moderna, juvenil y energéticamente estimulante. [1]",
-        "website_4_value": "La paleta de colores es básica y monocromática, lo que resulta en una apariencia algo genérica, plana y sin vida. [7, 11]",
-        "conclusion": "Introducir una paleta de colores más rica y atractiva que refuerce la identidad de la plataforma y el contraste."
+        "website_1_value": "Facebook se caracteriza por su distintivo azul y blanco, creando una identidad de marca reconocida globalmente. [1]",
+        "website_2_value": "La paleta de colores de Instagram es vibrante y diversa, reflejando su enfoque en el contenido visual creativo. [2]",
+        "website_3_value": "X emplea un esquema de colores minimalista, predominantemente blanco y negro con acentos azules. [3]",
+        "website_4_value": "La combinación de colores en el sitio parece algo limitada y podría no evocar suficiente entusiasmo. [4]",
+        "conclusion": "Considerar una paleta más audaz o temática podría hacer que el entorno visual sea más atractivo para usuarios. [5]"
     },
     {
         "criterion_or_website": "Formal vs. Informal",
-        "website_1_value": "Adopta un tono predominantemente semi-formal, adecuado para conexiones personales, profesionales y comunicados oficiales. [13, 19]",
-        "website_2_value": "Mantiene un estilo informal y visualmente atractivo, fomentando la expresión personal y la interacción casual entre usuarios. [5, 8]",
-        "website_3_value": "Opera en un registro marcadamente informal y lúdico, celebrando la espontaneidad y el entretenimiento sin filtros. [2, 14]",
-        "website_4_value": "El lenguaje y el diseño son neutrales, cayendo en un rango formal que puede percibirse como poco cercano para el usuario. [6, 7]",
-        "conclusion": "Evaluar un enfoque más informal en el lenguaje y diseño para fomentar mayor cercanía y participación activa de la audiencia."
+        "website_1_value": "Facebook mantiene un tono generalmente informal y personal, aunque adaptable a interacciones profesionales. [1]",
+        "website_2_value": "El tono de Instagram es marcadamente informal y aspiracional, invitando a la expresión personal y artística. [2]",
+        "website_3_value": "X ofrece un tono versátil, permitiendo desde interacciones casuales hasta debates informativos y formales. [3]",
+        "website_4_value": "El ambiente del sitio podría ser más acogedor y cercano para fomentar una comunidad de aficionados activa. [4]",
+        "conclusion": "Establecer una voz más consistente, que refleje la pasión por los hobbies, ayudaría a la conexión emocional. [5]"
     },
     {
         "criterion_or_website": "Characters / Icons / Emblems",
-        "website_1_value": "Usa iconos planos y reconocibles universalmente, junto a un logo 'f' icónico y reacciones emotivas en el contenido. [12, 13, 15]",
-        "website_2_value": "Destaca por sus iconos minimalistas, el logo de la cámara fotográfica retro y elementos visuales para historias y reels. [5, 8]",
-        "website_3_value": "Presenta iconos dinámicos y un emblema vibrante que resuenan con su audiencia joven y la cultura de videos cortos. [1]",
-        "website_4_value": "Los iconos son genéricos y poco memorables, careciendo de un estilo unificado o elementos emblemáticos propios. [7]",
-        "conclusion": "Desarrollar un conjunto de iconos personalizados y un emblema único que reflejen mejor la personalidad del sitio."
+        "website_1_value": "Facebook utiliza iconos universales y un logo simple (la 'f') que son instantáneamente reconocibles. [1]",
+        "website_2_value": "Instagram destaca por sus iconos minimalistas y su logo de cámara retro, símbolos de su identidad visual. [2]",
+        "website_3_value": "X ha evolucionado su emblema a una 'X' estilizada, manteniendo iconos funcionales para acciones rápidas. [3]",
+        "website_4_value": "Se podrían incorporar más elementos gráficos únicos para reforzar la identidad y el tema de los hobbies. [4]",
+        "conclusion": "Desarrollar un conjunto de iconos o mascotas distintivos podría aumentar el reconocimiento de la plataforma. [5]"
     },
     {
         "criterion_or_website": "Accessibility",
-        "website_1_value": "Ofrece múltiples funciones de accesibilidad, incluyendo lectores de pantalla y opciones de contraste para usuarios. [12]",
-        "website_2_value": "Ha mejorado su accesibilidad con texto alternativo para imágenes y subtítulos, aunque tiene áreas de oportunidad. [5, 8, 18]",
-        "website_3_value": "Continúa mejorando características de accesibilidad como subtítulos automáticos y ajustes de texto para inclusión plena. [1]",
-        "website_4_value": "La accesibilidad es básica, con limitaciones en opciones de contraste, texto alternativo y navegación por teclado, dificultando el acceso. [10, 11]",
-        "conclusion": "Implementar un conjunto robusto de características de accesibilidad para garantizar un uso inclusivo para todos."
+        "website_1_value": "Facebook ofrece herramientas de accesibilidad, como lectores de pantalla y subtítulos, para una inclusión amplia. [1]",
+        "website_2_value": "Instagram ha mejorado su accesibilidad con descripciones de imágenes y controles intuitivos para todos los usuarios. [2]",
+        "website_3_value": "X trabaja en ofrecer funciones de accesibilidad, como textos alternativos, para mejorar la experiencia de usuario. [3]",
+        "website_4_value": "Algunas funciones del sitio no parecen ser totalmente accesibles para usuarios con diferentes capacidades. [4]",
+        "conclusion": "Implementar pautas de diseño inclusivo garantizaría que todos los miembros puedan interactuar sin barreras. [5]"
     },
     {
         "criterion_or_website": "Navigation (important buttons)",
-        "website_1_value": "Posee una barra de navegación superior clara con accesos directos intuitivos a inicio, amigos y notificaciones. [19]",
-        "website_2_value": "Cuenta con una barra inferior prominente para inicio, búsqueda, reels, tienda y perfil, facilitando el acceso rápido. [5]",
-        "website_3_value": "Su navegación se centra en un feed vertical infinito, con botones clave de inicio, seguir, crear y perfil. [1]",
-        "website_4_value": "Los botones de navegación son estándar y su jerarquía no es siempre clara, lo que puede confundir al usuario. [6, 7, 10]",
-        "conclusion": "Rediseñar la navegación para que los botones importantes sean más intuitivos, visibles y con una jerarquía clara."
+        "website_1_value": "La navegación de Facebook se centra en una barra superior con botones clave para inicio, notificaciones y perfil. [1]",
+        "website_2_value": "Instagram prioriza una barra inferior con acceso directo a inicio, búsqueda, 'reels', compras y perfil. [2]",
+        "website_3_value": "X ofrece una navegación clara con botones principales para el 'feed', explorar, notificaciones y mensajes. [3]",
+        "website_4_value": "Los botones esenciales para la gestión del perfil o la búsqueda de grupos no siempre son fácilmente visibles. [4]",
+        "conclusion": "Reorganizar la disposición de los botones de navegación principales facilitaría enormemente la interacción del usuario. [5]"
     },
     {
         "criterion_or_website": "Organization",
-        "website_1_value": "Estructura el contenido en un feed central y barras laterales para amigos/grupos, manteniendo la información organizada. [19]",
-        "website_2_value": "Organiza el contenido de forma visual, priorizando cuadrículas de fotos, historias efímeras y reels de videos cortos. [5]",
-        "website_3_value": "Su organización se basa en un algoritmo que personaliza el feed, presentando videos relevantes sin estructura rígida. [1]",
-        "website_4_value": "La organización del contenido es lineal y predecible, careciendo de dinamismo o personalización para el usuario. [7, 11]",
-        "conclusion": "Explorar nuevas formas de organizar el contenido, quizás con personalización, para mejorar la experiencia del usuario."
+        "website_1_value": "La organización de Facebook se basa en un feed de noticias personalizado y grupos temáticos estructurados. [1]",
+        "website_2_value": "Instagram organiza el contenido por feed, historias, y explorador, fomentando el descubrimiento visual. [2]",
+        "website_3_value": "X estructura la información en un timeline cronológico o algorítmico, con hilos y trending topics. [3]",
+        "website_4_value": "La categorización del contenido de hobbies podría ser más intuitiva para encontrar intereses específicos rápidamente. [4]",
+        "conclusion": "Mejorar la clasificación de contenidos y foros ayudaría a los usuarios a navegar y encontrar sus pasiones. [5]"
     },
     {
         "criterion_or_website": "Extra features",
-        "website_1_value": "Ofrece Marketplace, Grupos, Eventos y Páginas, enriqueciendo la interacción y expandiendo las funcionalidades. [19]",
-        "website_2_value": "Incluye Stories, Reels, IGTV y la posibilidad de comprar directamente desde la aplicación, diversificando la experiencia. [5]",
-        "website_3_value": "Destaca por sus herramientas de edición de video, filtros creativos, efectos AR y duetos interactivos para usuarios. [1]",
-        "website_4_value": "Las características adicionales son mínimas o inexistentes, limitando la profundidad y la variedad de interacción del usuario.",
-        "conclusion": "Desarrollar e integrar características adicionales innovadoras que aporten valor y diferenciación a la plataforma."
+        "website_1_value": "Facebook incluye Marketplace, eventos, grupos, videollamadas y juegos, ofreciendo una amplia gama de funciones. [1]",
+        "website_2_value": "Instagram integra 'Stories', 'Reels', compras, mensajes directos y filtros avanzados, enriqueciendo la experiencia. [2]",
+        "website_3_value": "X cuenta con 'Spaces', comunidades, temas de tendencia y 'Blue' para funciones avanzadas de usuario. [3]",
+        "website_4_value": "Las funcionalidades adicionales para la interacción entre aficionados o la organización de eventos son limitadas. [4]",
+        "conclusion": "La adición de herramientas como calendarios de eventos o gestores de proyectos de hobbies potenciaría la comunidad. [5]"
     },
     {
         "criterion_or_website": "Tutorials or Instructions",
-        "website_1_value": "Proporciona secciones de ayuda extensas y guías paso a paso para todas sus funcionalidades y herramientas complejas. [19]",
-        "website_2_value": "Ofrece tutoriales integrados para nuevas funciones y un centro de ayuda robusto con preguntas frecuentes claras. [5, 8]",
-        "website_3_value": "Brinda guías visuales y consejos en la aplicación, ayudando a los usuarios a dominar rápidamente sus herramientas creativas. [1]",
-        "website_4_value": "Las instrucciones son escasas y no siempre fáciles de encontrar, lo que dificulta el aprendizaje de nuevas funciones.",
-        "conclusion": "Crear tutoriales claros, accesibles y bien organizados, junto con un centro de ayuda intuitivo para usuarios."
-    },
-    {
-        "criterion_or_website": "Conclusion",
-        "website_1_value": "Una plataforma madura que equilibra comunicación personal con herramientas empresariales, manteniendo su relevancia global. [19]",
-        "website_2_value": "Se consolidó como líder visual, evolucionando constantemente para satisfacer las demandas de creadores y usuarios. [5]",
-        "website_3_value": "Revolucionó el contenido de video corto, creando una cultura vibrante y una experiencia de usuario altamente adictiva. [1]",
-        "website_4_value": "Este sitio ofrece una base sólida, pero con un potencial inmenso para mejorar su atractivo visual y funcionalidad. [6, 7]",
-        "conclusion": "En general, el sitio podría beneficiarse enormemente de una renovación estética y funcional integral para destacar."
+        "website_1_value": "Facebook provee un centro de ayuda robusto con tutoriales y guías detalladas para sus múltiples funciones. [1]",
+        "website_2_value": "Instagram ofrece guías de uso en su sección de ayuda y consejos emergentes para nuevas funcionalidades. [2]",
+        "website_3_value": "X facilita una sección de soporte completa con instrucciones claras para resolver dudas y aprender. [3]",
+        "website_4_value": "Los recursos de aprendizaje para nuevos usuarios o para entender todas las características parecen escasos. [4]",
+        "conclusion": "Crear una sección de tutoriales interactivos o videos explicativos guiaría mejor a los nuevos miembros. [5]"
     }
 ]
