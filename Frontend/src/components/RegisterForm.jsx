@@ -35,10 +35,10 @@ return(
 
 <>
 {email && <div className='gmailIngresado'>
-  <span id="userNameIco" class="material-symbols-outlined">account_circle</span>
+  <span id="userNameIco" className="material-symbols-outlined">account_circle</span>
         <p>Te registraste como {email}</p>
         
-        <span onClick={resetAll} style={{cursor: "pointer"}}class="material-symbols-outlined">cancel</span>
+        <span onClick={resetAll} style={{cursor: "pointer"}}className="material-symbols-outlined">cancel</span>
         
         </div>}
 <form onSubmit={handleSubmit(onSubmit)} className={props.class}>
