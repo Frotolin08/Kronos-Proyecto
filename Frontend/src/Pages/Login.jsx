@@ -1,6 +1,7 @@
 import FancyTitle from "../components/FancyTitle";
 import SplitForm from "../components/loginForm";
-import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar';
+import {login} from '../../api/auth'
 export default function Login() {
 const fields= [{name: 'username',
 requireMsg: 'Mail incorrecto o inexistente. Intenta de nuevo o cliquea aqui para ',
@@ -20,7 +21,7 @@ return(
 <div className='loginPage'>
     <FancyTitle class='loginTitle'text='Bienvenido a KRONOS' subTitle='Para comenzar, iniciar sesion'/>
     
-<SplitForm fields={fields} class='login' submitBtn='Inicia Sesion'/>
+<SplitForm fields={fields} onSubmit={login} class='login' submitBtn='Inicia Sesion'/>
 </div>
 </>)
 }

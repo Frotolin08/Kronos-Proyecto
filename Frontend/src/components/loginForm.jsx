@@ -26,8 +26,13 @@ export default function(props) {
            }
           else {
         console.log(data);
-        props.onSubmit && await props.onSubmit(data.username, data.password)
-         navigate('/')
+        try {
+       const bege = await props.onSubmit(data.username, data.password)
+       console.log(bege)
+         navigate('/')}
+         catch(e) {
+           alert("error")
+         }
     }
     }
         const currentField = formFields[step]
@@ -37,7 +42,7 @@ return(
 <>
 <form onSubmit={handleSubmit(onSubmit)} className={props.class}>
   {email && <div className='gmailIngresado'>
-  <span id="userNameIco" class="material-symbols-outlined">account_circle</span>
+  <span id="userNameIco" className="material-symbols-outlined">account_circle</span>
         <p>{email}</p>
         
         <span onClick={resetAll} style={{cursor: "pointer"}}class="material-symbols-outlined">cancel</span>
