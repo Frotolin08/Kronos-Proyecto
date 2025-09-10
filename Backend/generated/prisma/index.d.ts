@@ -63,6 +63,11 @@ export type tiene_pc = $Result.DefaultSelection<Prisma.$tiene_pcPayload>
  * 
  */
 export type tiene_rc = $Result.DefaultSelection<Prisma.$tiene_rcPayload>
+/**
+ * Model leido
+ * 
+ */
+export type leido = $Result.DefaultSelection<Prisma.$leidoPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -281,6 +286,16 @@ export class PrismaClient<
     * ```
     */
   get tiene_rc(): Prisma.tiene_rcDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.leido`: Exposes CRUD operations for the **leido** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Leidos
+    * const leidos = await prisma.leido.findMany()
+    * ```
+    */
+  get leido(): Prisma.leidoDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -730,7 +745,8 @@ export namespace Prisma {
     proyecto: 'proyecto',
     chat: 'chat',
     tiene_pc: 'tiene_pc',
-    tiene_rc: 'tiene_rc'
+    tiene_rc: 'tiene_rc',
+    leido: 'leido'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -749,7 +765,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "persona" | "archivos" | "mensajes" | "tareas" | "personalizaciones" | "tiene" | "proyecto" | "chat" | "tiene_pc" | "tiene_rc"
+      modelProps: "persona" | "archivos" | "mensajes" | "tareas" | "personalizaciones" | "tiene" | "proyecto" | "chat" | "tiene_pc" | "tiene_rc" | "leido"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1493,6 +1509,80 @@ export namespace Prisma {
           }
         }
       }
+      leido: {
+        payload: Prisma.$leidoPayload<ExtArgs>
+        fields: Prisma.leidoFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.leidoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.leidoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>
+          }
+          findFirst: {
+            args: Prisma.leidoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.leidoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>
+          }
+          findMany: {
+            args: Prisma.leidoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>[]
+          }
+          create: {
+            args: Prisma.leidoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>
+          }
+          createMany: {
+            args: Prisma.leidoCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.leidoCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>[]
+          }
+          delete: {
+            args: Prisma.leidoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>
+          }
+          update: {
+            args: Prisma.leidoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>
+          }
+          deleteMany: {
+            args: Prisma.leidoDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.leidoUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.leidoUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>[]
+          }
+          upsert: {
+            args: Prisma.leidoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$leidoPayload>
+          }
+          aggregate: {
+            args: Prisma.LeidoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLeido>
+          }
+          groupBy: {
+            args: Prisma.leidoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LeidoGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.leidoCountArgs<ExtArgs>
+            result: $Utils.Optional<LeidoCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1595,6 +1685,7 @@ export namespace Prisma {
     chat?: chatOmit
     tiene_pc?: tiene_pcOmit
     tiene_rc?: tiene_rcOmit
+    leido?: leidoOmit
   }
 
   /* Types for Logging */
@@ -1681,6 +1772,7 @@ export namespace Prisma {
     personalizaciones: number
     proyectos_tiene: number
     chat_tiene: number
+    leido_mensajes: number
   }
 
   export type PersonaCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1690,6 +1782,7 @@ export namespace Prisma {
     personalizaciones?: boolean | PersonaCountOutputTypeCountPersonalizacionesArgs
     proyectos_tiene?: boolean | PersonaCountOutputTypeCountProyectos_tieneArgs
     chat_tiene?: boolean | PersonaCountOutputTypeCountChat_tieneArgs
+    leido_mensajes?: boolean | PersonaCountOutputTypeCountLeido_mensajesArgs
   }
 
   // Custom InputTypes
@@ -1743,6 +1836,44 @@ export namespace Prisma {
    */
   export type PersonaCountOutputTypeCountChat_tieneArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: tiene_pcWhereInput
+  }
+
+  /**
+   * PersonaCountOutputType without action
+   */
+  export type PersonaCountOutputTypeCountLeido_mensajesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: leidoWhereInput
+  }
+
+
+  /**
+   * Count Type MensajesCountOutputType
+   */
+
+  export type MensajesCountOutputType = {
+    leidopor: number
+  }
+
+  export type MensajesCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    leidopor?: boolean | MensajesCountOutputTypeCountLeidoporArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * MensajesCountOutputType without action
+   */
+  export type MensajesCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MensajesCountOutputType
+     */
+    select?: MensajesCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * MensajesCountOutputType without action
+   */
+  export type MensajesCountOutputTypeCountLeidoporArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: leidoWhereInput
   }
 
 
@@ -2078,6 +2209,7 @@ export namespace Prisma {
     personalizaciones?: boolean | persona$personalizacionesArgs<ExtArgs>
     proyectos_tiene?: boolean | persona$proyectos_tieneArgs<ExtArgs>
     chat_tiene?: boolean | persona$chat_tieneArgs<ExtArgs>
+    leido_mensajes?: boolean | persona$leido_mensajesArgs<ExtArgs>
     _count?: boolean | PersonaCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["persona"]>
 
@@ -2116,6 +2248,7 @@ export namespace Prisma {
     personalizaciones?: boolean | persona$personalizacionesArgs<ExtArgs>
     proyectos_tiene?: boolean | persona$proyectos_tieneArgs<ExtArgs>
     chat_tiene?: boolean | persona$chat_tieneArgs<ExtArgs>
+    leido_mensajes?: boolean | persona$leido_mensajesArgs<ExtArgs>
     _count?: boolean | PersonaCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type personaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -2130,6 +2263,7 @@ export namespace Prisma {
       personalizaciones: Prisma.$personalizacionesPayload<ExtArgs>[]
       proyectos_tiene: Prisma.$tienePayload<ExtArgs>[]
       chat_tiene: Prisma.$tiene_pcPayload<ExtArgs>[]
+      leido_mensajes: Prisma.$leidoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2538,6 +2672,7 @@ export namespace Prisma {
     personalizaciones<T extends persona$personalizacionesArgs<ExtArgs> = {}>(args?: Subset<T, persona$personalizacionesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$personalizacionesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     proyectos_tiene<T extends persona$proyectos_tieneArgs<ExtArgs> = {}>(args?: Subset<T, persona$proyectos_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tienePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     chat_tiene<T extends persona$chat_tieneArgs<ExtArgs> = {}>(args?: Subset<T, persona$chat_tieneArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tiene_pcPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    leido_mensajes<T extends persona$leido_mensajesArgs<ExtArgs> = {}>(args?: Subset<T, persona$leido_mensajesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3102,6 +3237,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: Tiene_pcScalarFieldEnum | Tiene_pcScalarFieldEnum[]
+  }
+
+  /**
+   * persona.leido_mensajes
+   */
+  export type persona$leido_mensajesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    where?: leidoWhereInput
+    orderBy?: leidoOrderByWithRelationInput | leidoOrderByWithRelationInput[]
+    cursor?: leidoWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LeidoScalarFieldEnum | LeidoScalarFieldEnum[]
   }
 
   /**
@@ -4452,6 +4611,8 @@ export namespace Prisma {
     id?: boolean
     chat?: boolean | chatDefaultArgs<ExtArgs>
     persona?: boolean | personaDefaultArgs<ExtArgs>
+    leidopor?: boolean | mensajes$leidoporArgs<ExtArgs>
+    _count?: boolean | MensajesCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["mensajes"]>
 
   export type mensajesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4486,6 +4647,8 @@ export namespace Prisma {
   export type mensajesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     chat?: boolean | chatDefaultArgs<ExtArgs>
     persona?: boolean | personaDefaultArgs<ExtArgs>
+    leidopor?: boolean | mensajes$leidoporArgs<ExtArgs>
+    _count?: boolean | MensajesCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type mensajesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     chat?: boolean | chatDefaultArgs<ExtArgs>
@@ -4501,6 +4664,7 @@ export namespace Prisma {
     objects: {
       chat: Prisma.$chatPayload<ExtArgs>
       persona: Prisma.$personaPayload<ExtArgs>
+      leidopor: Prisma.$leidoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id_chat: number
@@ -4904,6 +5068,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     chat<T extends chatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, chatDefaultArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     persona<T extends personaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, personaDefaultArgs<ExtArgs>>): Prisma__personaClient<$Result.GetResult<Prisma.$personaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    leidopor<T extends mensajes$leidoporArgs<ExtArgs> = {}>(args?: Subset<T, mensajes$leidoporArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5331,6 +5496,30 @@ export namespace Prisma {
      * Limit how many mensajes to delete.
      */
     limit?: number
+  }
+
+  /**
+   * mensajes.leidopor
+   */
+  export type mensajes$leidoporArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    where?: leidoWhereInput
+    orderBy?: leidoOrderByWithRelationInput | leidoOrderByWithRelationInput[]
+    cursor?: leidoWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LeidoScalarFieldEnum | LeidoScalarFieldEnum[]
   }
 
   /**
@@ -13136,6 +13325,1088 @@ export namespace Prisma {
 
 
   /**
+   * Model leido
+   */
+
+  export type AggregateLeido = {
+    _count: LeidoCountAggregateOutputType | null
+    _avg: LeidoAvgAggregateOutputType | null
+    _sum: LeidoSumAggregateOutputType | null
+    _min: LeidoMinAggregateOutputType | null
+    _max: LeidoMaxAggregateOutputType | null
+  }
+
+  export type LeidoAvgAggregateOutputType = {
+    id: number | null
+    id_mensaje: number | null
+    id_persona: number | null
+  }
+
+  export type LeidoSumAggregateOutputType = {
+    id: number | null
+    id_mensaje: number | null
+    id_persona: number | null
+  }
+
+  export type LeidoMinAggregateOutputType = {
+    id: number | null
+    id_mensaje: number | null
+    id_persona: number | null
+  }
+
+  export type LeidoMaxAggregateOutputType = {
+    id: number | null
+    id_mensaje: number | null
+    id_persona: number | null
+  }
+
+  export type LeidoCountAggregateOutputType = {
+    id: number
+    id_mensaje: number
+    id_persona: number
+    _all: number
+  }
+
+
+  export type LeidoAvgAggregateInputType = {
+    id?: true
+    id_mensaje?: true
+    id_persona?: true
+  }
+
+  export type LeidoSumAggregateInputType = {
+    id?: true
+    id_mensaje?: true
+    id_persona?: true
+  }
+
+  export type LeidoMinAggregateInputType = {
+    id?: true
+    id_mensaje?: true
+    id_persona?: true
+  }
+
+  export type LeidoMaxAggregateInputType = {
+    id?: true
+    id_mensaje?: true
+    id_persona?: true
+  }
+
+  export type LeidoCountAggregateInputType = {
+    id?: true
+    id_mensaje?: true
+    id_persona?: true
+    _all?: true
+  }
+
+  export type LeidoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which leido to aggregate.
+     */
+    where?: leidoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of leidos to fetch.
+     */
+    orderBy?: leidoOrderByWithRelationInput | leidoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: leidoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` leidos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` leidos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned leidos
+    **/
+    _count?: true | LeidoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: LeidoAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: LeidoSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LeidoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LeidoMaxAggregateInputType
+  }
+
+  export type GetLeidoAggregateType<T extends LeidoAggregateArgs> = {
+        [P in keyof T & keyof AggregateLeido]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLeido[P]>
+      : GetScalarType<T[P], AggregateLeido[P]>
+  }
+
+
+
+
+  export type leidoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: leidoWhereInput
+    orderBy?: leidoOrderByWithAggregationInput | leidoOrderByWithAggregationInput[]
+    by: LeidoScalarFieldEnum[] | LeidoScalarFieldEnum
+    having?: leidoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LeidoCountAggregateInputType | true
+    _avg?: LeidoAvgAggregateInputType
+    _sum?: LeidoSumAggregateInputType
+    _min?: LeidoMinAggregateInputType
+    _max?: LeidoMaxAggregateInputType
+  }
+
+  export type LeidoGroupByOutputType = {
+    id: number
+    id_mensaje: number
+    id_persona: number
+    _count: LeidoCountAggregateOutputType | null
+    _avg: LeidoAvgAggregateOutputType | null
+    _sum: LeidoSumAggregateOutputType | null
+    _min: LeidoMinAggregateOutputType | null
+    _max: LeidoMaxAggregateOutputType | null
+  }
+
+  type GetLeidoGroupByPayload<T extends leidoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LeidoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LeidoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LeidoGroupByOutputType[P]>
+            : GetScalarType<T[P], LeidoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type leidoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_mensaje?: boolean
+    id_persona?: boolean
+    mensaje?: boolean | mensajesDefaultArgs<ExtArgs>
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leido"]>
+
+  export type leidoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_mensaje?: boolean
+    id_persona?: boolean
+    mensaje?: boolean | mensajesDefaultArgs<ExtArgs>
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leido"]>
+
+  export type leidoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    id_mensaje?: boolean
+    id_persona?: boolean
+    mensaje?: boolean | mensajesDefaultArgs<ExtArgs>
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leido"]>
+
+  export type leidoSelectScalar = {
+    id?: boolean
+    id_mensaje?: boolean
+    id_persona?: boolean
+  }
+
+  export type leidoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_mensaje" | "id_persona", ExtArgs["result"]["leido"]>
+  export type leidoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    mensaje?: boolean | mensajesDefaultArgs<ExtArgs>
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+  }
+  export type leidoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    mensaje?: boolean | mensajesDefaultArgs<ExtArgs>
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+  }
+  export type leidoIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    mensaje?: boolean | mensajesDefaultArgs<ExtArgs>
+    persona?: boolean | personaDefaultArgs<ExtArgs>
+  }
+
+  export type $leidoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "leido"
+    objects: {
+      mensaje: Prisma.$mensajesPayload<ExtArgs>
+      persona: Prisma.$personaPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      id_mensaje: number
+      id_persona: number
+    }, ExtArgs["result"]["leido"]>
+    composites: {}
+  }
+
+  type leidoGetPayload<S extends boolean | null | undefined | leidoDefaultArgs> = $Result.GetResult<Prisma.$leidoPayload, S>
+
+  type leidoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<leidoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LeidoCountAggregateInputType | true
+    }
+
+  export interface leidoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['leido'], meta: { name: 'leido' } }
+    /**
+     * Find zero or one Leido that matches the filter.
+     * @param {leidoFindUniqueArgs} args - Arguments to find a Leido
+     * @example
+     * // Get one Leido
+     * const leido = await prisma.leido.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends leidoFindUniqueArgs>(args: SelectSubset<T, leidoFindUniqueArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Leido that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {leidoFindUniqueOrThrowArgs} args - Arguments to find a Leido
+     * @example
+     * // Get one Leido
+     * const leido = await prisma.leido.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends leidoFindUniqueOrThrowArgs>(args: SelectSubset<T, leidoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Leido that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {leidoFindFirstArgs} args - Arguments to find a Leido
+     * @example
+     * // Get one Leido
+     * const leido = await prisma.leido.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends leidoFindFirstArgs>(args?: SelectSubset<T, leidoFindFirstArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Leido that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {leidoFindFirstOrThrowArgs} args - Arguments to find a Leido
+     * @example
+     * // Get one Leido
+     * const leido = await prisma.leido.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends leidoFindFirstOrThrowArgs>(args?: SelectSubset<T, leidoFindFirstOrThrowArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Leidos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {leidoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Leidos
+     * const leidos = await prisma.leido.findMany()
+     * 
+     * // Get first 10 Leidos
+     * const leidos = await prisma.leido.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const leidoWithIdOnly = await prisma.leido.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends leidoFindManyArgs>(args?: SelectSubset<T, leidoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Leido.
+     * @param {leidoCreateArgs} args - Arguments to create a Leido.
+     * @example
+     * // Create one Leido
+     * const Leido = await prisma.leido.create({
+     *   data: {
+     *     // ... data to create a Leido
+     *   }
+     * })
+     * 
+     */
+    create<T extends leidoCreateArgs>(args: SelectSubset<T, leidoCreateArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Leidos.
+     * @param {leidoCreateManyArgs} args - Arguments to create many Leidos.
+     * @example
+     * // Create many Leidos
+     * const leido = await prisma.leido.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends leidoCreateManyArgs>(args?: SelectSubset<T, leidoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Leidos and returns the data saved in the database.
+     * @param {leidoCreateManyAndReturnArgs} args - Arguments to create many Leidos.
+     * @example
+     * // Create many Leidos
+     * const leido = await prisma.leido.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Leidos and only return the `id`
+     * const leidoWithIdOnly = await prisma.leido.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends leidoCreateManyAndReturnArgs>(args?: SelectSubset<T, leidoCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Leido.
+     * @param {leidoDeleteArgs} args - Arguments to delete one Leido.
+     * @example
+     * // Delete one Leido
+     * const Leido = await prisma.leido.delete({
+     *   where: {
+     *     // ... filter to delete one Leido
+     *   }
+     * })
+     * 
+     */
+    delete<T extends leidoDeleteArgs>(args: SelectSubset<T, leidoDeleteArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Leido.
+     * @param {leidoUpdateArgs} args - Arguments to update one Leido.
+     * @example
+     * // Update one Leido
+     * const leido = await prisma.leido.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends leidoUpdateArgs>(args: SelectSubset<T, leidoUpdateArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Leidos.
+     * @param {leidoDeleteManyArgs} args - Arguments to filter Leidos to delete.
+     * @example
+     * // Delete a few Leidos
+     * const { count } = await prisma.leido.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends leidoDeleteManyArgs>(args?: SelectSubset<T, leidoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Leidos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {leidoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Leidos
+     * const leido = await prisma.leido.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends leidoUpdateManyArgs>(args: SelectSubset<T, leidoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Leidos and returns the data updated in the database.
+     * @param {leidoUpdateManyAndReturnArgs} args - Arguments to update many Leidos.
+     * @example
+     * // Update many Leidos
+     * const leido = await prisma.leido.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Leidos and only return the `id`
+     * const leidoWithIdOnly = await prisma.leido.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends leidoUpdateManyAndReturnArgs>(args: SelectSubset<T, leidoUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Leido.
+     * @param {leidoUpsertArgs} args - Arguments to update or create a Leido.
+     * @example
+     * // Update or create a Leido
+     * const leido = await prisma.leido.upsert({
+     *   create: {
+     *     // ... data to create a Leido
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Leido we want to update
+     *   }
+     * })
+     */
+    upsert<T extends leidoUpsertArgs>(args: SelectSubset<T, leidoUpsertArgs<ExtArgs>>): Prisma__leidoClient<$Result.GetResult<Prisma.$leidoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Leidos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {leidoCountArgs} args - Arguments to filter Leidos to count.
+     * @example
+     * // Count the number of Leidos
+     * const count = await prisma.leido.count({
+     *   where: {
+     *     // ... the filter for the Leidos we want to count
+     *   }
+     * })
+    **/
+    count<T extends leidoCountArgs>(
+      args?: Subset<T, leidoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LeidoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Leido.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeidoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LeidoAggregateArgs>(args: Subset<T, LeidoAggregateArgs>): Prisma.PrismaPromise<GetLeidoAggregateType<T>>
+
+    /**
+     * Group by Leido.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {leidoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends leidoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: leidoGroupByArgs['orderBy'] }
+        : { orderBy?: leidoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, leidoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLeidoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the leido model
+   */
+  readonly fields: leidoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for leido.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__leidoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    mensaje<T extends mensajesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, mensajesDefaultArgs<ExtArgs>>): Prisma__mensajesClient<$Result.GetResult<Prisma.$mensajesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    persona<T extends personaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, personaDefaultArgs<ExtArgs>>): Prisma__personaClient<$Result.GetResult<Prisma.$personaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the leido model
+   */
+  interface leidoFieldRefs {
+    readonly id: FieldRef<"leido", 'Int'>
+    readonly id_mensaje: FieldRef<"leido", 'Int'>
+    readonly id_persona: FieldRef<"leido", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * leido findUnique
+   */
+  export type leidoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * Filter, which leido to fetch.
+     */
+    where: leidoWhereUniqueInput
+  }
+
+  /**
+   * leido findUniqueOrThrow
+   */
+  export type leidoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * Filter, which leido to fetch.
+     */
+    where: leidoWhereUniqueInput
+  }
+
+  /**
+   * leido findFirst
+   */
+  export type leidoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * Filter, which leido to fetch.
+     */
+    where?: leidoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of leidos to fetch.
+     */
+    orderBy?: leidoOrderByWithRelationInput | leidoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for leidos.
+     */
+    cursor?: leidoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` leidos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` leidos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of leidos.
+     */
+    distinct?: LeidoScalarFieldEnum | LeidoScalarFieldEnum[]
+  }
+
+  /**
+   * leido findFirstOrThrow
+   */
+  export type leidoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * Filter, which leido to fetch.
+     */
+    where?: leidoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of leidos to fetch.
+     */
+    orderBy?: leidoOrderByWithRelationInput | leidoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for leidos.
+     */
+    cursor?: leidoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` leidos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` leidos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of leidos.
+     */
+    distinct?: LeidoScalarFieldEnum | LeidoScalarFieldEnum[]
+  }
+
+  /**
+   * leido findMany
+   */
+  export type leidoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * Filter, which leidos to fetch.
+     */
+    where?: leidoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of leidos to fetch.
+     */
+    orderBy?: leidoOrderByWithRelationInput | leidoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing leidos.
+     */
+    cursor?: leidoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` leidos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` leidos.
+     */
+    skip?: number
+    distinct?: LeidoScalarFieldEnum | LeidoScalarFieldEnum[]
+  }
+
+  /**
+   * leido create
+   */
+  export type leidoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * The data needed to create a leido.
+     */
+    data: XOR<leidoCreateInput, leidoUncheckedCreateInput>
+  }
+
+  /**
+   * leido createMany
+   */
+  export type leidoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many leidos.
+     */
+    data: leidoCreateManyInput | leidoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * leido createManyAndReturn
+   */
+  export type leidoCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * The data used to create many leidos.
+     */
+    data: leidoCreateManyInput | leidoCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * leido update
+   */
+  export type leidoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * The data needed to update a leido.
+     */
+    data: XOR<leidoUpdateInput, leidoUncheckedUpdateInput>
+    /**
+     * Choose, which leido to update.
+     */
+    where: leidoWhereUniqueInput
+  }
+
+  /**
+   * leido updateMany
+   */
+  export type leidoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update leidos.
+     */
+    data: XOR<leidoUpdateManyMutationInput, leidoUncheckedUpdateManyInput>
+    /**
+     * Filter which leidos to update
+     */
+    where?: leidoWhereInput
+    /**
+     * Limit how many leidos to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * leido updateManyAndReturn
+   */
+  export type leidoUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * The data used to update leidos.
+     */
+    data: XOR<leidoUpdateManyMutationInput, leidoUncheckedUpdateManyInput>
+    /**
+     * Filter which leidos to update
+     */
+    where?: leidoWhereInput
+    /**
+     * Limit how many leidos to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * leido upsert
+   */
+  export type leidoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * The filter to search for the leido to update in case it exists.
+     */
+    where: leidoWhereUniqueInput
+    /**
+     * In case the leido found by the `where` argument doesn't exist, create a new leido with this data.
+     */
+    create: XOR<leidoCreateInput, leidoUncheckedCreateInput>
+    /**
+     * In case the leido was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<leidoUpdateInput, leidoUncheckedUpdateInput>
+  }
+
+  /**
+   * leido delete
+   */
+  export type leidoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+    /**
+     * Filter which leido to delete.
+     */
+    where: leidoWhereUniqueInput
+  }
+
+  /**
+   * leido deleteMany
+   */
+  export type leidoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which leidos to delete
+     */
+    where?: leidoWhereInput
+    /**
+     * Limit how many leidos to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * leido without action
+   */
+  export type leidoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the leido
+     */
+    select?: leidoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the leido
+     */
+    omit?: leidoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: leidoInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -13250,6 +14521,15 @@ export namespace Prisma {
   export type Tiene_rcScalarFieldEnum = (typeof Tiene_rcScalarFieldEnum)[keyof typeof Tiene_rcScalarFieldEnum]
 
 
+  export const LeidoScalarFieldEnum: {
+    id: 'id',
+    id_mensaje: 'id_mensaje',
+    id_persona: 'id_persona'
+  };
+
+  export type LeidoScalarFieldEnum = (typeof LeidoScalarFieldEnum)[keyof typeof LeidoScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -13354,6 +14634,7 @@ export namespace Prisma {
     personalizaciones?: PersonalizacionesListRelationFilter
     proyectos_tiene?: TieneListRelationFilter
     chat_tiene?: Tiene_pcListRelationFilter
+    leido_mensajes?: LeidoListRelationFilter
   }
 
   export type personaOrderByWithRelationInput = {
@@ -13369,6 +14650,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesOrderByRelationAggregateInput
     proyectos_tiene?: tieneOrderByRelationAggregateInput
     chat_tiene?: tiene_pcOrderByRelationAggregateInput
+    leido_mensajes?: leidoOrderByRelationAggregateInput
   }
 
   export type personaWhereUniqueInput = Prisma.AtLeast<{
@@ -13387,6 +14669,7 @@ export namespace Prisma {
     personalizaciones?: PersonalizacionesListRelationFilter
     proyectos_tiene?: TieneListRelationFilter
     chat_tiene?: Tiene_pcListRelationFilter
+    leido_mensajes?: LeidoListRelationFilter
   }, "id" | "mail" | "usuario">
 
   export type personaOrderByWithAggregationInput = {
@@ -13491,6 +14774,7 @@ export namespace Prisma {
     id?: IntFilter<"mensajes"> | number
     chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
     persona?: XOR<PersonaScalarRelationFilter, personaWhereInput>
+    leidopor?: LeidoListRelationFilter
   }
 
   export type mensajesOrderByWithRelationInput = {
@@ -13501,6 +14785,7 @@ export namespace Prisma {
     id?: SortOrder
     chat?: chatOrderByWithRelationInput
     persona?: personaOrderByWithRelationInput
+    leidopor?: leidoOrderByRelationAggregateInput
   }
 
   export type mensajesWhereUniqueInput = Prisma.AtLeast<{
@@ -13514,6 +14799,7 @@ export namespace Prisma {
     estado?: StringFilter<"mensajes"> | string
     chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
     persona?: XOR<PersonaScalarRelationFilter, personaWhereInput>
+    leidopor?: LeidoListRelationFilter
   }, "id">
 
   export type mensajesOrderByWithAggregationInput = {
@@ -13917,6 +15203,57 @@ export namespace Prisma {
     id_chat?: IntWithAggregatesFilter<"tiene_rc"> | number
   }
 
+  export type leidoWhereInput = {
+    AND?: leidoWhereInput | leidoWhereInput[]
+    OR?: leidoWhereInput[]
+    NOT?: leidoWhereInput | leidoWhereInput[]
+    id?: IntFilter<"leido"> | number
+    id_mensaje?: IntFilter<"leido"> | number
+    id_persona?: IntFilter<"leido"> | number
+    mensaje?: XOR<MensajesScalarRelationFilter, mensajesWhereInput>
+    persona?: XOR<PersonaScalarRelationFilter, personaWhereInput>
+  }
+
+  export type leidoOrderByWithRelationInput = {
+    id?: SortOrder
+    id_mensaje?: SortOrder
+    id_persona?: SortOrder
+    mensaje?: mensajesOrderByWithRelationInput
+    persona?: personaOrderByWithRelationInput
+  }
+
+  export type leidoWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    id_mensaje_id_persona?: leidoId_mensajeId_personaCompoundUniqueInput
+    AND?: leidoWhereInput | leidoWhereInput[]
+    OR?: leidoWhereInput[]
+    NOT?: leidoWhereInput | leidoWhereInput[]
+    id_mensaje?: IntFilter<"leido"> | number
+    id_persona?: IntFilter<"leido"> | number
+    mensaje?: XOR<MensajesScalarRelationFilter, mensajesWhereInput>
+    persona?: XOR<PersonaScalarRelationFilter, personaWhereInput>
+  }, "id" | "id_mensaje_id_persona">
+
+  export type leidoOrderByWithAggregationInput = {
+    id?: SortOrder
+    id_mensaje?: SortOrder
+    id_persona?: SortOrder
+    _count?: leidoCountOrderByAggregateInput
+    _avg?: leidoAvgOrderByAggregateInput
+    _max?: leidoMaxOrderByAggregateInput
+    _min?: leidoMinOrderByAggregateInput
+    _sum?: leidoSumOrderByAggregateInput
+  }
+
+  export type leidoScalarWhereWithAggregatesInput = {
+    AND?: leidoScalarWhereWithAggregatesInput | leidoScalarWhereWithAggregatesInput[]
+    OR?: leidoScalarWhereWithAggregatesInput[]
+    NOT?: leidoScalarWhereWithAggregatesInput | leidoScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"leido"> | number
+    id_mensaje?: IntWithAggregatesFilter<"leido"> | number
+    id_persona?: IntWithAggregatesFilter<"leido"> | number
+  }
+
   export type personaCreateInput = {
     mail: string
     nombre: string
@@ -13929,6 +15266,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateInput = {
@@ -13944,6 +15282,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUpdateInput = {
@@ -13958,6 +15297,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateInput = {
@@ -13973,6 +15313,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaCreateManyInput = {
@@ -14064,6 +15405,7 @@ export namespace Prisma {
     estado: string
     chat: chatCreateNestedOneWithoutMensajesInput
     persona: personaCreateNestedOneWithoutMensajesInput
+    leidopor?: leidoCreateNestedManyWithoutMensajeInput
   }
 
   export type mensajesUncheckedCreateInput = {
@@ -14072,6 +15414,7 @@ export namespace Prisma {
     mensaje: string
     estado: string
     id?: number
+    leidopor?: leidoUncheckedCreateNestedManyWithoutMensajeInput
   }
 
   export type mensajesUpdateInput = {
@@ -14079,6 +15422,7 @@ export namespace Prisma {
     estado?: StringFieldUpdateOperationsInput | string
     chat?: chatUpdateOneRequiredWithoutMensajesNestedInput
     persona?: personaUpdateOneRequiredWithoutMensajesNestedInput
+    leidopor?: leidoUpdateManyWithoutMensajeNestedInput
   }
 
   export type mensajesUncheckedUpdateInput = {
@@ -14087,6 +15431,7 @@ export namespace Prisma {
     mensaje?: StringFieldUpdateOperationsInput | string
     estado?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
+    leidopor?: leidoUncheckedUpdateManyWithoutMensajeNestedInput
   }
 
   export type mensajesCreateManyInput = {
@@ -14429,6 +15774,44 @@ export namespace Prisma {
     id_chat?: IntFieldUpdateOperationsInput | number
   }
 
+  export type leidoCreateInput = {
+    mensaje: mensajesCreateNestedOneWithoutLeidoporInput
+    persona: personaCreateNestedOneWithoutLeido_mensajesInput
+  }
+
+  export type leidoUncheckedCreateInput = {
+    id?: number
+    id_mensaje: number
+    id_persona: number
+  }
+
+  export type leidoUpdateInput = {
+    mensaje?: mensajesUpdateOneRequiredWithoutLeidoporNestedInput
+    persona?: personaUpdateOneRequiredWithoutLeido_mensajesNestedInput
+  }
+
+  export type leidoUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_mensaje?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type leidoCreateManyInput = {
+    id?: number
+    id_mensaje: number
+    id_persona: number
+  }
+
+  export type leidoUpdateManyMutationInput = {
+
+  }
+
+  export type leidoUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_mensaje?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -14506,6 +15889,12 @@ export namespace Prisma {
     none?: tiene_pcWhereInput
   }
 
+  export type LeidoListRelationFilter = {
+    every?: leidoWhereInput
+    some?: leidoWhereInput
+    none?: leidoWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -14532,6 +15921,10 @@ export namespace Prisma {
   }
 
   export type tiene_pcOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type leidoOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -14960,6 +16353,46 @@ export namespace Prisma {
     id_chat?: SortOrder
   }
 
+  export type MensajesScalarRelationFilter = {
+    is?: mensajesWhereInput
+    isNot?: mensajesWhereInput
+  }
+
+  export type leidoId_mensajeId_personaCompoundUniqueInput = {
+    id_mensaje: number
+    id_persona: number
+  }
+
+  export type leidoCountOrderByAggregateInput = {
+    id?: SortOrder
+    id_mensaje?: SortOrder
+    id_persona?: SortOrder
+  }
+
+  export type leidoAvgOrderByAggregateInput = {
+    id?: SortOrder
+    id_mensaje?: SortOrder
+    id_persona?: SortOrder
+  }
+
+  export type leidoMaxOrderByAggregateInput = {
+    id?: SortOrder
+    id_mensaje?: SortOrder
+    id_persona?: SortOrder
+  }
+
+  export type leidoMinOrderByAggregateInput = {
+    id?: SortOrder
+    id_mensaje?: SortOrder
+    id_persona?: SortOrder
+  }
+
+  export type leidoSumOrderByAggregateInput = {
+    id?: SortOrder
+    id_mensaje?: SortOrder
+    id_persona?: SortOrder
+  }
+
   export type archivosCreateNestedManyWithoutPersonaInput = {
     create?: XOR<archivosCreateWithoutPersonaInput, archivosUncheckedCreateWithoutPersonaInput> | archivosCreateWithoutPersonaInput[] | archivosUncheckedCreateWithoutPersonaInput[]
     connectOrCreate?: archivosCreateOrConnectWithoutPersonaInput | archivosCreateOrConnectWithoutPersonaInput[]
@@ -15002,6 +16435,13 @@ export namespace Prisma {
     connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
   }
 
+  export type leidoCreateNestedManyWithoutPersonaInput = {
+    create?: XOR<leidoCreateWithoutPersonaInput, leidoUncheckedCreateWithoutPersonaInput> | leidoCreateWithoutPersonaInput[] | leidoUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutPersonaInput | leidoCreateOrConnectWithoutPersonaInput[]
+    createMany?: leidoCreateManyPersonaInputEnvelope
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+  }
+
   export type archivosUncheckedCreateNestedManyWithoutPersonaInput = {
     create?: XOR<archivosCreateWithoutPersonaInput, archivosUncheckedCreateWithoutPersonaInput> | archivosCreateWithoutPersonaInput[] | archivosUncheckedCreateWithoutPersonaInput[]
     connectOrCreate?: archivosCreateOrConnectWithoutPersonaInput | archivosCreateOrConnectWithoutPersonaInput[]
@@ -15042,6 +16482,13 @@ export namespace Prisma {
     connectOrCreate?: tiene_pcCreateOrConnectWithoutPersonaInput | tiene_pcCreateOrConnectWithoutPersonaInput[]
     createMany?: tiene_pcCreateManyPersonaInputEnvelope
     connect?: tiene_pcWhereUniqueInput | tiene_pcWhereUniqueInput[]
+  }
+
+  export type leidoUncheckedCreateNestedManyWithoutPersonaInput = {
+    create?: XOR<leidoCreateWithoutPersonaInput, leidoUncheckedCreateWithoutPersonaInput> | leidoCreateWithoutPersonaInput[] | leidoUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutPersonaInput | leidoCreateOrConnectWithoutPersonaInput[]
+    createMany?: leidoCreateManyPersonaInputEnvelope
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -15136,6 +16583,20 @@ export namespace Prisma {
     deleteMany?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
   }
 
+  export type leidoUpdateManyWithoutPersonaNestedInput = {
+    create?: XOR<leidoCreateWithoutPersonaInput, leidoUncheckedCreateWithoutPersonaInput> | leidoCreateWithoutPersonaInput[] | leidoUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutPersonaInput | leidoCreateOrConnectWithoutPersonaInput[]
+    upsert?: leidoUpsertWithWhereUniqueWithoutPersonaInput | leidoUpsertWithWhereUniqueWithoutPersonaInput[]
+    createMany?: leidoCreateManyPersonaInputEnvelope
+    set?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    disconnect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    delete?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    update?: leidoUpdateWithWhereUniqueWithoutPersonaInput | leidoUpdateWithWhereUniqueWithoutPersonaInput[]
+    updateMany?: leidoUpdateManyWithWhereWithoutPersonaInput | leidoUpdateManyWithWhereWithoutPersonaInput[]
+    deleteMany?: leidoScalarWhereInput | leidoScalarWhereInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -15228,6 +16689,20 @@ export namespace Prisma {
     deleteMany?: tiene_pcScalarWhereInput | tiene_pcScalarWhereInput[]
   }
 
+  export type leidoUncheckedUpdateManyWithoutPersonaNestedInput = {
+    create?: XOR<leidoCreateWithoutPersonaInput, leidoUncheckedCreateWithoutPersonaInput> | leidoCreateWithoutPersonaInput[] | leidoUncheckedCreateWithoutPersonaInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutPersonaInput | leidoCreateOrConnectWithoutPersonaInput[]
+    upsert?: leidoUpsertWithWhereUniqueWithoutPersonaInput | leidoUpsertWithWhereUniqueWithoutPersonaInput[]
+    createMany?: leidoCreateManyPersonaInputEnvelope
+    set?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    disconnect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    delete?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    update?: leidoUpdateWithWhereUniqueWithoutPersonaInput | leidoUpdateWithWhereUniqueWithoutPersonaInput[]
+    updateMany?: leidoUpdateManyWithWhereWithoutPersonaInput | leidoUpdateManyWithWhereWithoutPersonaInput[]
+    deleteMany?: leidoScalarWhereInput | leidoScalarWhereInput[]
+  }
+
   export type personaCreateNestedOneWithoutArchivosInput = {
     create?: XOR<personaCreateWithoutArchivosInput, personaUncheckedCreateWithoutArchivosInput>
     connectOrCreate?: personaCreateOrConnectWithoutArchivosInput
@@ -15272,6 +16747,20 @@ export namespace Prisma {
     connect?: personaWhereUniqueInput
   }
 
+  export type leidoCreateNestedManyWithoutMensajeInput = {
+    create?: XOR<leidoCreateWithoutMensajeInput, leidoUncheckedCreateWithoutMensajeInput> | leidoCreateWithoutMensajeInput[] | leidoUncheckedCreateWithoutMensajeInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutMensajeInput | leidoCreateOrConnectWithoutMensajeInput[]
+    createMany?: leidoCreateManyMensajeInputEnvelope
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+  }
+
+  export type leidoUncheckedCreateNestedManyWithoutMensajeInput = {
+    create?: XOR<leidoCreateWithoutMensajeInput, leidoUncheckedCreateWithoutMensajeInput> | leidoCreateWithoutMensajeInput[] | leidoUncheckedCreateWithoutMensajeInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutMensajeInput | leidoCreateOrConnectWithoutMensajeInput[]
+    createMany?: leidoCreateManyMensajeInputEnvelope
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+  }
+
   export type chatUpdateOneRequiredWithoutMensajesNestedInput = {
     create?: XOR<chatCreateWithoutMensajesInput, chatUncheckedCreateWithoutMensajesInput>
     connectOrCreate?: chatCreateOrConnectWithoutMensajesInput
@@ -15286,6 +16775,34 @@ export namespace Prisma {
     upsert?: personaUpsertWithoutMensajesInput
     connect?: personaWhereUniqueInput
     update?: XOR<XOR<personaUpdateToOneWithWhereWithoutMensajesInput, personaUpdateWithoutMensajesInput>, personaUncheckedUpdateWithoutMensajesInput>
+  }
+
+  export type leidoUpdateManyWithoutMensajeNestedInput = {
+    create?: XOR<leidoCreateWithoutMensajeInput, leidoUncheckedCreateWithoutMensajeInput> | leidoCreateWithoutMensajeInput[] | leidoUncheckedCreateWithoutMensajeInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutMensajeInput | leidoCreateOrConnectWithoutMensajeInput[]
+    upsert?: leidoUpsertWithWhereUniqueWithoutMensajeInput | leidoUpsertWithWhereUniqueWithoutMensajeInput[]
+    createMany?: leidoCreateManyMensajeInputEnvelope
+    set?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    disconnect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    delete?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    update?: leidoUpdateWithWhereUniqueWithoutMensajeInput | leidoUpdateWithWhereUniqueWithoutMensajeInput[]
+    updateMany?: leidoUpdateManyWithWhereWithoutMensajeInput | leidoUpdateManyWithWhereWithoutMensajeInput[]
+    deleteMany?: leidoScalarWhereInput | leidoScalarWhereInput[]
+  }
+
+  export type leidoUncheckedUpdateManyWithoutMensajeNestedInput = {
+    create?: XOR<leidoCreateWithoutMensajeInput, leidoUncheckedCreateWithoutMensajeInput> | leidoCreateWithoutMensajeInput[] | leidoUncheckedCreateWithoutMensajeInput[]
+    connectOrCreate?: leidoCreateOrConnectWithoutMensajeInput | leidoCreateOrConnectWithoutMensajeInput[]
+    upsert?: leidoUpsertWithWhereUniqueWithoutMensajeInput | leidoUpsertWithWhereUniqueWithoutMensajeInput[]
+    createMany?: leidoCreateManyMensajeInputEnvelope
+    set?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    disconnect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    delete?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    connect?: leidoWhereUniqueInput | leidoWhereUniqueInput[]
+    update?: leidoUpdateWithWhereUniqueWithoutMensajeInput | leidoUpdateWithWhereUniqueWithoutMensajeInput[]
+    updateMany?: leidoUpdateManyWithWhereWithoutMensajeInput | leidoUpdateManyWithWhereWithoutMensajeInput[]
+    deleteMany?: leidoScalarWhereInput | leidoScalarWhereInput[]
   }
 
   export type proyectoCreateNestedOneWithoutTareasInput = {
@@ -15764,6 +17281,34 @@ export namespace Prisma {
     update?: XOR<XOR<chatUpdateToOneWithWhereWithoutProyectos_tieneInput, chatUpdateWithoutProyectos_tieneInput>, chatUncheckedUpdateWithoutProyectos_tieneInput>
   }
 
+  export type mensajesCreateNestedOneWithoutLeidoporInput = {
+    create?: XOR<mensajesCreateWithoutLeidoporInput, mensajesUncheckedCreateWithoutLeidoporInput>
+    connectOrCreate?: mensajesCreateOrConnectWithoutLeidoporInput
+    connect?: mensajesWhereUniqueInput
+  }
+
+  export type personaCreateNestedOneWithoutLeido_mensajesInput = {
+    create?: XOR<personaCreateWithoutLeido_mensajesInput, personaUncheckedCreateWithoutLeido_mensajesInput>
+    connectOrCreate?: personaCreateOrConnectWithoutLeido_mensajesInput
+    connect?: personaWhereUniqueInput
+  }
+
+  export type mensajesUpdateOneRequiredWithoutLeidoporNestedInput = {
+    create?: XOR<mensajesCreateWithoutLeidoporInput, mensajesUncheckedCreateWithoutLeidoporInput>
+    connectOrCreate?: mensajesCreateOrConnectWithoutLeidoporInput
+    upsert?: mensajesUpsertWithoutLeidoporInput
+    connect?: mensajesWhereUniqueInput
+    update?: XOR<XOR<mensajesUpdateToOneWithWhereWithoutLeidoporInput, mensajesUpdateWithoutLeidoporInput>, mensajesUncheckedUpdateWithoutLeidoporInput>
+  }
+
+  export type personaUpdateOneRequiredWithoutLeido_mensajesNestedInput = {
+    create?: XOR<personaCreateWithoutLeido_mensajesInput, personaUncheckedCreateWithoutLeido_mensajesInput>
+    connectOrCreate?: personaCreateOrConnectWithoutLeido_mensajesInput
+    upsert?: personaUpsertWithoutLeido_mensajesInput
+    connect?: personaWhereUniqueInput
+    update?: XOR<XOR<personaUpdateToOneWithWhereWithoutLeido_mensajesInput, personaUpdateWithoutLeido_mensajesInput>, personaUncheckedUpdateWithoutLeido_mensajesInput>
+  }
+
   export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -15921,6 +17466,7 @@ export namespace Prisma {
     mensaje: string
     estado: string
     chat: chatCreateNestedOneWithoutMensajesInput
+    leidopor?: leidoCreateNestedManyWithoutMensajeInput
   }
 
   export type mensajesUncheckedCreateWithoutPersonaInput = {
@@ -15928,6 +17474,7 @@ export namespace Prisma {
     mensaje: string
     estado: string
     id?: number
+    leidopor?: leidoUncheckedCreateNestedManyWithoutMensajeInput
   }
 
   export type mensajesCreateOrConnectWithoutPersonaInput = {
@@ -16019,6 +17566,25 @@ export namespace Prisma {
 
   export type tiene_pcCreateManyPersonaInputEnvelope = {
     data: tiene_pcCreateManyPersonaInput | tiene_pcCreateManyPersonaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type leidoCreateWithoutPersonaInput = {
+    mensaje: mensajesCreateNestedOneWithoutLeidoporInput
+  }
+
+  export type leidoUncheckedCreateWithoutPersonaInput = {
+    id?: number
+    id_mensaje: number
+  }
+
+  export type leidoCreateOrConnectWithoutPersonaInput = {
+    where: leidoWhereUniqueInput
+    create: XOR<leidoCreateWithoutPersonaInput, leidoUncheckedCreateWithoutPersonaInput>
+  }
+
+  export type leidoCreateManyPersonaInputEnvelope = {
+    data: leidoCreateManyPersonaInput | leidoCreateManyPersonaInput[]
     skipDuplicates?: boolean
   }
 
@@ -16180,6 +17746,31 @@ export namespace Prisma {
     id_chat?: IntFilter<"tiene_pc"> | number
   }
 
+  export type leidoUpsertWithWhereUniqueWithoutPersonaInput = {
+    where: leidoWhereUniqueInput
+    update: XOR<leidoUpdateWithoutPersonaInput, leidoUncheckedUpdateWithoutPersonaInput>
+    create: XOR<leidoCreateWithoutPersonaInput, leidoUncheckedCreateWithoutPersonaInput>
+  }
+
+  export type leidoUpdateWithWhereUniqueWithoutPersonaInput = {
+    where: leidoWhereUniqueInput
+    data: XOR<leidoUpdateWithoutPersonaInput, leidoUncheckedUpdateWithoutPersonaInput>
+  }
+
+  export type leidoUpdateManyWithWhereWithoutPersonaInput = {
+    where: leidoScalarWhereInput
+    data: XOR<leidoUpdateManyMutationInput, leidoUncheckedUpdateManyWithoutPersonaInput>
+  }
+
+  export type leidoScalarWhereInput = {
+    AND?: leidoScalarWhereInput | leidoScalarWhereInput[]
+    OR?: leidoScalarWhereInput[]
+    NOT?: leidoScalarWhereInput | leidoScalarWhereInput[]
+    id?: IntFilter<"leido"> | number
+    id_mensaje?: IntFilter<"leido"> | number
+    id_persona?: IntFilter<"leido"> | number
+  }
+
   export type personaCreateWithoutArchivosInput = {
     mail: string
     nombre: string
@@ -16191,6 +17782,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutArchivosInput = {
@@ -16205,6 +17797,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutArchivosInput = {
@@ -16258,6 +17851,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutArchivosInput = {
@@ -16272,6 +17866,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type proyectoUpsertWithoutArchivosInput = {
@@ -16335,6 +17930,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutMensajesInput = {
@@ -16349,11 +17945,31 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutMensajesInput = {
     where: personaWhereUniqueInput
     create: XOR<personaCreateWithoutMensajesInput, personaUncheckedCreateWithoutMensajesInput>
+  }
+
+  export type leidoCreateWithoutMensajeInput = {
+    persona: personaCreateNestedOneWithoutLeido_mensajesInput
+  }
+
+  export type leidoUncheckedCreateWithoutMensajeInput = {
+    id?: number
+    id_persona: number
+  }
+
+  export type leidoCreateOrConnectWithoutMensajeInput = {
+    where: leidoWhereUniqueInput
+    create: XOR<leidoCreateWithoutMensajeInput, leidoUncheckedCreateWithoutMensajeInput>
+  }
+
+  export type leidoCreateManyMensajeInputEnvelope = {
+    data: leidoCreateManyMensajeInput | leidoCreateManyMensajeInput[]
+    skipDuplicates?: boolean
   }
 
   export type chatUpsertWithoutMensajesInput = {
@@ -16404,6 +18020,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutMensajesInput = {
@@ -16418,6 +18035,23 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUncheckedUpdateManyWithoutPersonaNestedInput
+  }
+
+  export type leidoUpsertWithWhereUniqueWithoutMensajeInput = {
+    where: leidoWhereUniqueInput
+    update: XOR<leidoUpdateWithoutMensajeInput, leidoUncheckedUpdateWithoutMensajeInput>
+    create: XOR<leidoCreateWithoutMensajeInput, leidoUncheckedCreateWithoutMensajeInput>
+  }
+
+  export type leidoUpdateWithWhereUniqueWithoutMensajeInput = {
+    where: leidoWhereUniqueInput
+    data: XOR<leidoUpdateWithoutMensajeInput, leidoUncheckedUpdateWithoutMensajeInput>
+  }
+
+  export type leidoUpdateManyWithWhereWithoutMensajeInput = {
+    where: leidoScalarWhereInput
+    data: XOR<leidoUpdateManyMutationInput, leidoUncheckedUpdateManyWithoutMensajeInput>
   }
 
   export type proyectoCreateWithoutTareasInput = {
@@ -16455,6 +18089,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutTareasInput = {
@@ -16469,6 +18104,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutTareasInput = {
@@ -16528,6 +18164,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutTareasInput = {
@@ -16542,6 +18179,7 @@ export namespace Prisma {
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaCreateWithoutPersonalizacionesInput = {
@@ -16555,6 +18193,7 @@ export namespace Prisma {
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutPersonalizacionesInput = {
@@ -16569,6 +18208,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutPersonalizacionesInput = {
@@ -16598,6 +18238,7 @@ export namespace Prisma {
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutPersonalizacionesInput = {
@@ -16612,6 +18253,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaCreateWithoutProyectos_tieneInput = {
@@ -16625,6 +18267,7 @@ export namespace Prisma {
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutProyectos_tieneInput = {
@@ -16639,6 +18282,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutProyectos_tieneInput = {
@@ -16692,6 +18336,7 @@ export namespace Prisma {
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutProyectos_tieneInput = {
@@ -16706,6 +18351,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type proyectoUpsertWithoutPersonas_tieneInput = {
@@ -16977,6 +18623,7 @@ export namespace Prisma {
     mensaje: string
     estado: string
     persona: personaCreateNestedOneWithoutMensajesInput
+    leidopor?: leidoCreateNestedManyWithoutMensajeInput
   }
 
   export type mensajesUncheckedCreateWithoutChatInput = {
@@ -16984,6 +18631,7 @@ export namespace Prisma {
     mensaje: string
     estado: string
     id?: number
+    leidopor?: leidoUncheckedCreateNestedManyWithoutMensajeInput
   }
 
   export type mensajesCreateOrConnectWithoutChatInput = {
@@ -17123,6 +18771,7 @@ export namespace Prisma {
     tareas?: tareasCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoCreateNestedManyWithoutPersonaInput
   }
 
   export type personaUncheckedCreateWithoutChat_tieneInput = {
@@ -17137,6 +18786,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
     personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
     proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+    leido_mensajes?: leidoUncheckedCreateNestedManyWithoutPersonaInput
   }
 
   export type personaCreateOrConnectWithoutChat_tieneInput = {
@@ -17186,6 +18836,7 @@ export namespace Prisma {
     tareas?: tareasUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUpdateManyWithoutPersonaNestedInput
   }
 
   export type personaUncheckedUpdateWithoutChat_tieneInput = {
@@ -17200,6 +18851,7 @@ export namespace Prisma {
     tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
     personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
     proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+    leido_mensajes?: leidoUncheckedUpdateManyWithoutPersonaNestedInput
   }
 
   export type chatUpsertWithoutPersonas_tieneInput = {
@@ -17328,6 +18980,126 @@ export namespace Prisma {
     personas_tiene?: tiene_pcUncheckedUpdateManyWithoutChatNestedInput
   }
 
+  export type mensajesCreateWithoutLeidoporInput = {
+    mensaje: string
+    estado: string
+    chat: chatCreateNestedOneWithoutMensajesInput
+    persona: personaCreateNestedOneWithoutMensajesInput
+  }
+
+  export type mensajesUncheckedCreateWithoutLeidoporInput = {
+    id_chat: number
+    id_persona: number
+    mensaje: string
+    estado: string
+    id?: number
+  }
+
+  export type mensajesCreateOrConnectWithoutLeidoporInput = {
+    where: mensajesWhereUniqueInput
+    create: XOR<mensajesCreateWithoutLeidoporInput, mensajesUncheckedCreateWithoutLeidoporInput>
+  }
+
+  export type personaCreateWithoutLeido_mensajesInput = {
+    mail: string
+    nombre: string
+    contrasenia: string
+    usuario: string
+    googleRefreshToken?: string | null
+    archivos?: archivosCreateNestedManyWithoutPersonaInput
+    mensajes?: mensajesCreateNestedManyWithoutPersonaInput
+    tareas?: tareasCreateNestedManyWithoutPersonaInput
+    personalizaciones?: personalizacionesCreateNestedManyWithoutPersonaInput
+    proyectos_tiene?: tieneCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcCreateNestedManyWithoutPersonaInput
+  }
+
+  export type personaUncheckedCreateWithoutLeido_mensajesInput = {
+    id?: number
+    mail: string
+    nombre: string
+    contrasenia: string
+    usuario: string
+    googleRefreshToken?: string | null
+    archivos?: archivosUncheckedCreateNestedManyWithoutPersonaInput
+    mensajes?: mensajesUncheckedCreateNestedManyWithoutPersonaInput
+    tareas?: tareasUncheckedCreateNestedManyWithoutPersonaInput
+    personalizaciones?: personalizacionesUncheckedCreateNestedManyWithoutPersonaInput
+    proyectos_tiene?: tieneUncheckedCreateNestedManyWithoutPersonaInput
+    chat_tiene?: tiene_pcUncheckedCreateNestedManyWithoutPersonaInput
+  }
+
+  export type personaCreateOrConnectWithoutLeido_mensajesInput = {
+    where: personaWhereUniqueInput
+    create: XOR<personaCreateWithoutLeido_mensajesInput, personaUncheckedCreateWithoutLeido_mensajesInput>
+  }
+
+  export type mensajesUpsertWithoutLeidoporInput = {
+    update: XOR<mensajesUpdateWithoutLeidoporInput, mensajesUncheckedUpdateWithoutLeidoporInput>
+    create: XOR<mensajesCreateWithoutLeidoporInput, mensajesUncheckedCreateWithoutLeidoporInput>
+    where?: mensajesWhereInput
+  }
+
+  export type mensajesUpdateToOneWithWhereWithoutLeidoporInput = {
+    where?: mensajesWhereInput
+    data: XOR<mensajesUpdateWithoutLeidoporInput, mensajesUncheckedUpdateWithoutLeidoporInput>
+  }
+
+  export type mensajesUpdateWithoutLeidoporInput = {
+    mensaje?: StringFieldUpdateOperationsInput | string
+    estado?: StringFieldUpdateOperationsInput | string
+    chat?: chatUpdateOneRequiredWithoutMensajesNestedInput
+    persona?: personaUpdateOneRequiredWithoutMensajesNestedInput
+  }
+
+  export type mensajesUncheckedUpdateWithoutLeidoporInput = {
+    id_chat?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+    mensaje?: StringFieldUpdateOperationsInput | string
+    estado?: StringFieldUpdateOperationsInput | string
+    id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type personaUpsertWithoutLeido_mensajesInput = {
+    update: XOR<personaUpdateWithoutLeido_mensajesInput, personaUncheckedUpdateWithoutLeido_mensajesInput>
+    create: XOR<personaCreateWithoutLeido_mensajesInput, personaUncheckedCreateWithoutLeido_mensajesInput>
+    where?: personaWhereInput
+  }
+
+  export type personaUpdateToOneWithWhereWithoutLeido_mensajesInput = {
+    where?: personaWhereInput
+    data: XOR<personaUpdateWithoutLeido_mensajesInput, personaUncheckedUpdateWithoutLeido_mensajesInput>
+  }
+
+  export type personaUpdateWithoutLeido_mensajesInput = {
+    mail?: StringFieldUpdateOperationsInput | string
+    nombre?: StringFieldUpdateOperationsInput | string
+    contrasenia?: StringFieldUpdateOperationsInput | string
+    usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
+    archivos?: archivosUpdateManyWithoutPersonaNestedInput
+    mensajes?: mensajesUpdateManyWithoutPersonaNestedInput
+    tareas?: tareasUpdateManyWithoutPersonaNestedInput
+    personalizaciones?: personalizacionesUpdateManyWithoutPersonaNestedInput
+    proyectos_tiene?: tieneUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUpdateManyWithoutPersonaNestedInput
+  }
+
+  export type personaUncheckedUpdateWithoutLeido_mensajesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    mail?: StringFieldUpdateOperationsInput | string
+    nombre?: StringFieldUpdateOperationsInput | string
+    contrasenia?: StringFieldUpdateOperationsInput | string
+    usuario?: StringFieldUpdateOperationsInput | string
+    googleRefreshToken?: NullableStringFieldUpdateOperationsInput | string | null
+    archivos?: archivosUncheckedUpdateManyWithoutPersonaNestedInput
+    mensajes?: mensajesUncheckedUpdateManyWithoutPersonaNestedInput
+    tareas?: tareasUncheckedUpdateManyWithoutPersonaNestedInput
+    personalizaciones?: personalizacionesUncheckedUpdateManyWithoutPersonaNestedInput
+    proyectos_tiene?: tieneUncheckedUpdateManyWithoutPersonaNestedInput
+    chat_tiene?: tiene_pcUncheckedUpdateManyWithoutPersonaNestedInput
+  }
+
   export type archivosCreateManyPersonaInput = {
     formato: string
     archivo: Uint8Array
@@ -17366,6 +19138,11 @@ export namespace Prisma {
     id_chat: number
   }
 
+  export type leidoCreateManyPersonaInput = {
+    id?: number
+    id_mensaje: number
+  }
+
   export type archivosUpdateWithoutPersonaInput = {
     formato?: StringFieldUpdateOperationsInput | string
     archivo?: BytesFieldUpdateOperationsInput | Uint8Array
@@ -17393,6 +19170,7 @@ export namespace Prisma {
     mensaje?: StringFieldUpdateOperationsInput | string
     estado?: StringFieldUpdateOperationsInput | string
     chat?: chatUpdateOneRequiredWithoutMensajesNestedInput
+    leidopor?: leidoUpdateManyWithoutMensajeNestedInput
   }
 
   export type mensajesUncheckedUpdateWithoutPersonaInput = {
@@ -17400,6 +19178,7 @@ export namespace Prisma {
     mensaje?: StringFieldUpdateOperationsInput | string
     estado?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
+    leidopor?: leidoUncheckedUpdateManyWithoutMensajeNestedInput
   }
 
   export type mensajesUncheckedUpdateManyWithoutPersonaInput = {
@@ -17472,6 +19251,39 @@ export namespace Prisma {
   export type tiene_pcUncheckedUpdateManyWithoutPersonaInput = {
     id?: IntFieldUpdateOperationsInput | number
     id_chat?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type leidoUpdateWithoutPersonaInput = {
+    mensaje?: mensajesUpdateOneRequiredWithoutLeidoporNestedInput
+  }
+
+  export type leidoUncheckedUpdateWithoutPersonaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_mensaje?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type leidoUncheckedUpdateManyWithoutPersonaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_mensaje?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type leidoCreateManyMensajeInput = {
+    id?: number
+    id_persona: number
+  }
+
+  export type leidoUpdateWithoutMensajeInput = {
+    persona?: personaUpdateOneRequiredWithoutLeido_mensajesNestedInput
+  }
+
+  export type leidoUncheckedUpdateWithoutMensajeInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type leidoUncheckedUpdateManyWithoutMensajeInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    id_persona?: IntFieldUpdateOperationsInput | number
   }
 
   export type archivosCreateManyProyectoInput = {
@@ -17620,6 +19432,7 @@ export namespace Prisma {
     mensaje?: StringFieldUpdateOperationsInput | string
     estado?: StringFieldUpdateOperationsInput | string
     persona?: personaUpdateOneRequiredWithoutMensajesNestedInput
+    leidopor?: leidoUpdateManyWithoutMensajeNestedInput
   }
 
   export type mensajesUncheckedUpdateWithoutChatInput = {
@@ -17627,6 +19440,7 @@ export namespace Prisma {
     mensaje?: StringFieldUpdateOperationsInput | string
     estado?: StringFieldUpdateOperationsInput | string
     id?: IntFieldUpdateOperationsInput | number
+    leidopor?: leidoUncheckedUpdateManyWithoutMensajeNestedInput
   }
 
   export type mensajesUncheckedUpdateManyWithoutChatInput = {
