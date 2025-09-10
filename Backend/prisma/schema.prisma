@@ -47,6 +47,7 @@ model mensajes {
 
   chat          chat     @relation(fields: [id_chat], references: [id])
   persona       persona  @relation(fields: [id_persona], references: [id])
+  leidopor leido[]
 }
 
 model tareas {
@@ -117,4 +118,15 @@ model tiene_rc {
   
   proyecto    proyecto @relation(fields: [id_proyecto], references: [id])
   chat        chat     @relation(fields: [id_chat], references: [id])
+}
+
+//
+model leido {
+  id Int @id @default(autoincrement())
+  id_mensaje Int
+  id_persona Int
+
+  mensaje mensajes @relation(fields: [id_mensaje], references: [id])
+  persona persona @relation(fields: [id_persona], references: [id])
+  @@unique([id_mensaje, id_persona])
 }
