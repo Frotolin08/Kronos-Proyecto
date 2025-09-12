@@ -1,8 +1,6 @@
 // middleware de autentificación
 
-const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET || 'contrasenia-jeje';
-
+import jwt from 'jsonwebtoken';
 const setupautenticacion = (JWT_SECRET) => {
 
     const authentication = (req, res, next) => {
@@ -22,8 +20,7 @@ const setupautenticacion = (JWT_SECRET) => {
         }
     };
 
-    return authentication;
-
+    return { authentication }; 
 };
 
-module.exports = setupautenticacion;
+export default setupautenticacion;

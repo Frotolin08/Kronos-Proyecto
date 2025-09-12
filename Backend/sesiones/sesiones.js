@@ -1,46 +1,37 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+import argon2 from 'argon2';
+import jwt from 'jsonwebtoken';
 const prisma = new PrismaClient();
-const argon2 = require('argon2');
-const jwt = require('jsonwebtoken');
 
 const setupsesiones = (JWT_SECRET) => {
 
     const login = async (req, res) => {
-
         const {usuarioI, mailI, contraseniaP} = req.body;
         let persona;
         
         try {
+            if (mailI) {
+                persona = await prisma.persona.findUnique({ 
+                    where: { mail: mailI } 
+                });
+            } else if (usuarioI) {
+                persona = await prisma.persona.findUnique({ 
+                    where: { usuario: usuarioI } 
+                });
+            }
 
-                if (mailI) {
-        persona = await prisma.persona.findUnique({ 
-            where: { 
-                mail: mailI 
-            } 
-        });
-        }
+            if (!persona || !contraseniaP) {
+            return res.status(401).json({ error: "Wrong data" });
+            }
 
-        if (!persona && usuarioI) {
-        persona = await prisma.persona.findUnique({ 
-            where: { 
-                usuario: usuarioI 
-            } 
-        });
-        }
-        
-        if (!persona || !contraseniaP) {
-        return res.status(401).json({ error: "Wrong data" });
-        }
+            const contraseniaI = await argon2.verify(persona.contrasenia, contraseniaP);
+            if (!contraseniaI) {
+                return res.status(401).json({ error: "Wrong data" });
+            }
 
-        
-        const contraseniaI = await argon2.verify(persona.contrasenia, contraseniaP);
-        if (!contraseniaI) {
-        return res.status(401).json({ error: "Wrong data" });
-        }
-        
             const token = jwt.sign({ 
                 personaId: persona.id, 
-                mail: persona.email 
+                mail: persona.mail 
             }, JWT_SECRET, { 
                 expiresIn: '8h' 
             });
@@ -49,12 +40,13 @@ const setupsesiones = (JWT_SECRET) => {
                 message: "Logged in successfully", 
                 token 
             });
-            
+
         } catch (error) {
             console.error("unsuccessful login", error);
+            res.status(500).json({ error: "Internal Server Error" });
         }
         
-    };
+    }
 
     const signup = async (req, res) => {
         const {usuario, nombre, mail, contraseniaPrior} = req.body;
@@ -62,7 +54,7 @@ const setupsesiones = (JWT_SECRET) => {
         try {
 
             if (!usuario || !nombre || !mail || !contraseniaPrior) {
-                return res.status(400).json(error, "Email and password required");
+                return res.status(400).json(error, "All fields are required");
             }
 
             const contrasenia = await argon2.hash(contraseniaPrior);
@@ -88,7 +80,7 @@ const setupsesiones = (JWT_SECRET) => {
 
         } catch (error){
             if (error.code === 'P2002') {
-                return res.status(409).json({ error: "Email already used" });
+                return res.status(409).json({ error: "User already exists" });
             }
             console.error("error signing up", error);
             res.status(500).json({ error: "Internal Server Error" });
@@ -98,4 +90,4 @@ const setupsesiones = (JWT_SECRET) => {
     return {login, signup};
 };
 
-module.exports = setupsesiones;
+export default setupsesiones;
