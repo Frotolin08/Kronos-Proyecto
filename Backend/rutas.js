@@ -15,9 +15,9 @@ const setuprouter = ({ login, signup, authentication, getevents, permision, redi
     router.put("/api/calendar/events/:eventId", authentication, updateevents);
     router.get("/api/files/:nombrearchivo", authentication, seefile);
     router.post("/api/files", authentication, uploadfile);
-    router.post("/chat/create", autenticacion, createchat);
-    router.get("/chat/:chatId/messages", autenticacion, getchatmessages);
-    router.put("/messages/:messageId/read", autenticacion, updatemessagestatus);
+    router.post("/chat/create", authentication, createchat);
+    router.get("/chat/:chatId/messages", authentication, getchatmessages);
+    router.put("/messages/:messageId/read", authentication, updatemessagestatus);
 
 
     return router;

@@ -17,12 +17,13 @@ client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
 
 
 #modelo de la tabla
+class WebsiteValue(BaseModel):
+    name: str
+    description: str
+
 class TableRow(BaseModel):
     criterion_or_website: str
-    website_1_value: str = None
-    website_2_value: str = None
-    website_3_value: str = None
-    website_4_value: str = None
+    websites: List[WebsiteValue]
     conclusion: str = None
 
 class TableData(BaseModel):
@@ -104,8 +105,18 @@ def createJson(prompt, img_path="image.jpg"):
         },
     )
 
-    rows = [row.model_dump() for row in response.parsed.table_data]
-    df = pd.DataFrame(rows)
+
+#ajustar los datos a las filas y columnas
+    rows = []
+    for row in response.parsed.table_data:
+        row_dict = row.model_dump()
+        websites_raw = row_dict.get("websites", [])
+        websites_dict = {w["name"]: w["description"] for w in websites_raw}
+        row_dict.pop("websites", None)
+        row_dict.update(websites_dict)
+        rows.append(row_dict)
+
+    df = pd.DataFrame(rows)    
 
     # Guardar JSON
     json_path = os.path.join(SAVE_DIR, "tablita.json")
@@ -198,19 +209,26 @@ def createImgSearching(prompt, img_path=None):
         )
     )
 
-    for part in response_img.candidates[0].content.parts:
-        if part.text is not None:
-            print(part.text)
-        elif part.inline_data is not None:
-            image = Image.open(BytesIO((part.inline_data.data)))
-            image.save("gemini-image.png", overwrite=True)
-            image.show()
+    print(response_img)
+
+    if response_img.candidates and response_img.candidates[0].content:
+        for part in response_img.candidates[0].content.parts:
+            if part.text is not None:
+                print(part.text)
+            elif part.inline_data is not None:
+                image = Image.open(BytesIO(part.inline_data.data))
+                image.save("gemini-image.png", overwrite=True)
+                image.show()
+    else:
+        print("No se generó ninguna imagen para este prompt.")
+
+
 
 
 createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, "
 "Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, "
 "Extra features, Tutorials or Instructions, Conclusion. The table must include rows for 3 different websites that you will choose, "
-"and the website shown in the provided image. These 3 websites have to be relationated to the topic SOCIAL MEDIA. There should be exactly 10 rows in total (one per topic/criterion). Each row "
+"and the website shown in the provided image. These 3 websites have to be the most popular relationated to the topic SOCIAL MEDIA. There should be exactly 10 rows in total (one per topic/criterion). Each row "
 "must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion "
 "column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with each site, "
 "but detect with things should it improve (without mentioning the others websites neither the one to upgrade). Avoid starting sentences with the exact name of the websites. "
