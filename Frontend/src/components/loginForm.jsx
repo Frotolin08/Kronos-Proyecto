@@ -13,6 +13,7 @@ export default function(props) {
         setValue,
         formState: { errors },
         reset,
+        setError
       } = useForm();
       const resetAll = ()=> { 
         reset();
@@ -31,7 +32,7 @@ export default function(props) {
        console.log(bege)
          navigate('/')}
          catch(e) {
-           alert("error")
+           setError("password",{type: "500", message:e.message})
          }
     }
     }
@@ -45,7 +46,7 @@ return(
   <span id="userNameIco" className="material-symbols-outlined">account_circle</span>
         <p>{email}</p>
         
-        <span onClick={resetAll} style={{cursor: "pointer"}}class="material-symbols-outlined">cancel</span>
+        <span onClick={resetAll} style={{cursor: "pointer"}}className="material-symbols-outlined">cancel</span>
         
         </div>}
         <label style={errors[currentField.name] && {color: "#B20000"}}>{currentField.label}</label>
