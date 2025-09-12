@@ -1,29 +1,22 @@
-import axios from 'axios'
-
-export const login = (email, pass) => { axios({
-
-method: 'post',
-url:  '/login',
-data: {
-email: email,
-password: pass,
-
-}
-}) 
-console.log('login sent') }
 
 
+export const login = (email,pass)=> {fetch('http://localhost:3000/users/login', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json'},
+body: JSON.stringify({mailI: email, 
+    constraseniaI: pass })
+})
+.then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json()
+})
+.then(responseData => {
+    console.log('Success:', responseData); 
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });}
 
-export const register = (email, pfp, name, pass,) => { axios({
-
-method: 'post',
-url:  '/register',
-data: {
-email: email,
-pfp: pfp,
-name: name,
-password: pass,
-
-}
-}) 
-console.log('register sent') }
+  export const register = (nombre, email, pass, foto)
