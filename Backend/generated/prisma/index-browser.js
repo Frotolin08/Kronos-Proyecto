@@ -143,7 +143,8 @@ exports.Prisma.MensajesScalarFieldEnum = {
   id_persona: 'id_persona',
   mensaje: 'mensaje',
   estado: 'estado',
-  id: 'id'
+  id: 'id',
+  fecha_envio: 'fecha_envio'
 };
 
 exports.Prisma.TareasScalarFieldEnum = {
@@ -185,12 +186,6 @@ exports.Prisma.Tiene_pcScalarFieldEnum = {
   id_chat: 'id_chat'
 };
 
-exports.Prisma.Tiene_rcScalarFieldEnum = {
-  id: 'id',
-  id_proyecto: 'id_proyecto',
-  id_chat: 'id_chat'
-};
-
 exports.Prisma.LeidoScalarFieldEnum = {
   id: 'id',
   id_mensaje: 'id_mensaje',
@@ -223,7 +218,6 @@ exports.Prisma.ModelName = {
   proyecto: 'proyecto',
   chat: 'chat',
   tiene_pc: 'tiene_pc',
-  tiene_rc: 'tiene_rc',
   leido: 'leido'
 };
 

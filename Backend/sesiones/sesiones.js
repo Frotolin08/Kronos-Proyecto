@@ -71,7 +71,7 @@ const setupsesiones = (JWT_SECRET) => {
 
             const token = jwt.sign({ 
                 personaId: persona.id, 
-                mail: persona.email 
+                mail: persona.mail 
             }, JWT_SECRET, { 
                 expiresIn: '8h' 
             });

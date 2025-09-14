@@ -20,7 +20,9 @@ const setuparchivos = () => {
                 include: {
                     proyecto: {
                         include: {
-                            personas: true
+                            personas_tiene: {
+                                where: { id_persona: personaId }
+                            }
                         }
                     }
                 }
@@ -31,9 +33,7 @@ const setuparchivos = () => {
             }
 
             const isowner = archivo.id_persona === personaId;
-            const isprojectmember = archivo.proyecto?.personas.some(
-                (persona) => persona.id === personaId
-            );
+            const isProjectMember = archivo.proyecto?.personas_tiene.length > 0;
 
             if (!isowner && !isprojectmember) {
                 return res.status(403).json({ error: "No permission to view this file" });

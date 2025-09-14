@@ -39,11 +39,12 @@ model archivos {
 }
 
 model mensajes {
-  id_chat    Int
-  id_persona Int
-  mensaje    String
-  estado     String
-  id         Int    @id @default(autoincrement())
+  id_chat     Int
+  id_persona  Int
+  mensaje     String
+  estado      String
+  id          Int      @id @default(autoincrement())
+  fecha_envio DateTime @default(now())
 
   chat     chat    @relation(fields: [id_chat], references: [id])
   persona  persona @relation(fields: [id_persona], references: [id])
@@ -86,7 +87,6 @@ model proyecto {
 
   archivos       archivos[]
   tareas         tareas[]
-  chat_tiene     tiene_rc[]
   personas_tiene tiene[]
   chats          chat[]
 }
@@ -95,11 +95,10 @@ model chat {
   id     Int    @id @default(autoincrement())
   nombre String
 
-  id_proyecto     Int
-  proyecto        proyecto   @relation(fields: [id_proyecto], references: [id])
-  mensajes        mensajes[]
-  personas_tiene  tiene_pc[]
-  proyectos_tiene tiene_rc[]
+  id_proyecto    Int
+  proyecto       proyecto   @relation(fields: [id_proyecto], references: [id])
+  mensajes       mensajes[]
+  personas_tiene tiene_pc[]
 }
 
 model tiene_pc {
@@ -109,15 +108,6 @@ model tiene_pc {
 
   persona persona @relation(fields: [id_persona], references: [id])
   chat    chat    @relation(fields: [id_chat], references: [id])
-}
-
-model tiene_rc {
-  id          Int @id @default(autoincrement())
-  id_proyecto Int
-  id_chat     Int
-
-  proyecto proyecto @relation(fields: [id_proyecto], references: [id])
-  chat     chat     @relation(fields: [id_chat], references: [id])
 }
 
 //
