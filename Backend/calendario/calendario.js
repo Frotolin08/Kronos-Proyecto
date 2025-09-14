@@ -1,6 +1,9 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+import { google } from 'googleapis';
+import dotenv from 'dotenv';
+dotenv.config();
 const prisma = new PrismaClient();
-const { google } = require('googleapis');
+
 
 const oAuth2Client = new google.auth.OAuth2(
   process.env.GOOGLE_CLIENT_ID,
@@ -27,6 +30,7 @@ const setupcalendario = () => {
           
           if (!tokens.refresh_token) {
           console.error('No refresh token received');
+          throw new Error('No refresh token provided by Google.');
           }
       
           await prisma.persona.update({ 
@@ -41,18 +45,20 @@ const setupcalendario = () => {
 
       } catch (error) {
           console.error('Error taking tokens', error);
+          throw error;
       }
   };
 
   const lookfortoken = async (tokenrenewed) => {
     if (!tokenrenewed) {
-    console.log("U need a token for this");
+    console.error("No refresh token provided for calendar access.");
     throw new Error("No token provided");
     }
     
     oAuth2Client.setCredentials({
       refresh_token: tokenrenewed,
     });
+    await oAuth2Client.getAccessToken();
 
     const calendar = google.calendar({ version: 'v3', auth: oAuth2Client });
     return calendar;
@@ -68,9 +74,10 @@ const setupcalendario = () => {
     
     try {
       await getatoken(code, personaId);
-      res.send('Authorization successful');
+      res.json({ message: 'Authorization successful' });
     } catch (error) {
-      res.status(500).send('Authorization failed.');
+      console.error('Authorization failed:', error);
+      res.status(500).json({ error: 'Authorization failed.' });
     } 
 
   };
@@ -98,7 +105,7 @@ const setupcalendario = () => {
 
     } catch (error) {
       console.error('Failed to get events:', error);
-      res.status(500).send('Failed to get events');
+      res.status(500).json({ error: 'Failed to get events'});
     }
   };
 
@@ -106,23 +113,27 @@ const setupcalendario = () => {
     const url = authorization();
     res.redirect(url);
   };
-  
+ 
   const createevents = async (req, res) => {
     try {
       const personaId = req.personaId;
       const eventdetails = req.body;
 
       if (!eventdetails) {
-        return res.status(400).send('No event details provided');
+        return res.status(400).json({ error: 'No event details provided'});
       }
 
       const persona = await prisma.persona.findUnique({
-        where: { id: personaId },
-        select: { googleRefreshToken: true }
+        where: { 
+          id: personaId 
+        },
+        select: { 
+          googleRefreshToken: true 
+        }
       });
 
       if (!persona || !persona.googleRefreshToken) {
-        return res.status(401).send('User not linked to a Google account');
+        return res.status(401).json({ error: 'User not linked to a Google account' });
       }
 
       const calendar = await lookfortoken(persona.googleRefreshToken);
@@ -134,7 +145,7 @@ const setupcalendario = () => {
 
     } catch (error) {
       console.error('Failed to create event:', error);
-      res.status(500).send('Failed to create event');
+      res.status(500).json({ error: 'Failed to create event' });
     }
   };
 
@@ -161,7 +172,7 @@ const setupcalendario = () => {
       res.status(204).send();
     } catch (error) {
       console.error('Failed to delete event:', error);
-      res.status(500).send('Failed to delete event');
+      res.status(500).json({ error: 'Failed to delete event' });
     }
   };
 
@@ -208,4 +219,4 @@ const setupcalendario = () => {
   };
 };
 
-module.exports = setupcalendario;
+export default setupcalendario;

@@ -1,9 +1,7 @@
 import { Router } from 'express';
-import setupchat from './chat.js';
 
-const setuprouter = ({ login, signup, authentication, getevents, permision, redirectwithgoogle, createevents, deleteevents, updateevents, seefile, uploadfile}) => {
+const setuprouter = ({ login, signup, authentication, getevents, permision, redirectwithgoogle, createevents, deleteevents, updateevents, seefile, uploadfile, createchat, getchatmessages, updatemessagestatus, getchatperperson, getchatmembers}) => {
     const router = Router();
-    const { createchat, getchatmessages, updatemessagestatus } = setupchat();
 
     router.post("/users/login", login);
     router.post("/users/signup", signup);
@@ -15,10 +13,11 @@ const setuprouter = ({ login, signup, authentication, getevents, permision, redi
     router.put("/api/calendar/events/:eventId", authentication, updateevents);
     router.get("/api/files/:nombrearchivo", authentication, seefile);
     router.post("/api/files", authentication, uploadfile);
-    router.post("/chat/create", authentication, createchat);
+    router.post("/projects/:proyectoId/chat/create", authentication, createchat);
     router.get("/chat/:chatId/messages", authentication, getchatmessages);
     router.put("/messages/:messageId/read", authentication, updatemessagestatus);
-
+    router.get("/chats", authentication, getchatperperson);
+    router.get("/chat/:chatId/members", authentication, getchatmembers);
 
     return router;
 };

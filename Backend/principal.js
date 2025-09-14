@@ -23,12 +23,13 @@ const { login, signup } = setupsesiones(JWT_SECRET);
 const { authentication } = setupautenticacion(JWT_SECRET);
 const { authorization, getatoken, lookfortoken, permision, getevents, redirectwithgoogle, createevents, deleteevents, updateevents } = setupcalendario();
 const { seefile, uploadfile } = setuparchivos();
-const router = setuprouter({ login, signup, authentication, getevents, permision, redirectwithgoogle, createevents, deleteevents, updateevents, seefile, uploadfile });
+const { createchat, getchatmessages, updatemessagestatus, getchatperperson, getchatmembers } = setupchat(prisma);
+const router = setuprouter({ login, signup, authentication, getevents, permision, redirectwithgoogle, createevents, deleteevents, updateevents, seefile, uploadfile, createchat, getchatmessages, updatemessagestatus, getchatperperson, getchatmembers });
 
 app.use(express.json());
 app.use(router);
 
-setupwebsocketserver(wss);
+setupwebsocketserver(wss, JWT_SECRET, prisma);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

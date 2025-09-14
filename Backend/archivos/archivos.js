@@ -1,10 +1,11 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+import { file } from 'googleapis/build/src/apis/file';
 const prisma = new PrismaClient();
 
 const setuparchivos = () => {
 
     const seefile = async (req, res) => {
-        const {nombrearchivo} = req.body;
+        const {nombrearchivo} = req.params;
         const personaId = req.personaId;
 
         try {
@@ -54,7 +55,7 @@ const setuparchivos = () => {
         try {
 
             if (!formato || !archivo || !nombrearchivo) {
-                return res.status(400).json({error: "completar todos los datos"});
+                return res.status(400).json({error: "missing data"});
             }
 
             await prisma.archivos.create({
@@ -81,4 +82,4 @@ const setuparchivos = () => {
     return {seefile, uploadfile};
 };
 
-module.exports = setuparchivos;
+export default setuparchivos;
