@@ -12,6 +12,8 @@ import pandas as pd
 import datetime
 from tabulate import tabulate
 import json
+import time
+import random
 
 client = genai.Client(api_key="AIzaSyAkiW5YQ7ONHn8i4qadg0KTzXRPRfy3r3E")
 
@@ -141,7 +143,7 @@ def createJson(prompt, img_path="image.jpg"):
     else:
         conclusion = " ".join(df.iloc[-1].dropna().tolist())
 
-    print("Conclusión hecha")
+    print("Conclusión de tabla hecha")
 
     if conclusion:
         createImgSearching(conclusion, img_path)
@@ -176,7 +178,7 @@ def createImgSearching(prompt, img_path=None):
             "- Reorganizar botones importantes para navegación más intuitiva."
             "- Añadir iconos y elementos visuales que mejoren la experiencia."
             "- Mantener el estilo general del sitio original."
-            "No inventes nuevos elementos, solo mejora lo que ya existe. La imagen debe mostrar claramente los cambios sugeridos."
+            "No inventes nuevos elementos, solo mejora lo que ya existe. La imagen debe mostrar claramente los cambios sugeridos. Mantiene las dimensiones de la img original"
             f"Tema: {prompt}"
         )}]}
     ]
@@ -225,15 +227,23 @@ def createImgSearching(prompt, img_path=None):
 
 
 
-createJson("Generate a comparison table with the following exact columns: Website, Typography, Colors, "
-"Formal vs. Informal, Characters / Icons / Emblems, Accessibility, Navigation (important buttons), Organization, "
-"Extra features, Tutorials or Instructions, Conclusion. The table must include rows for 3 different websites that you will choose, "
-"and the website shown in the provided image. These 3 websites have to be the most popular relationated to the topic SOCIAL MEDIA. There should be exactly 10 rows in total (one per topic/criterion). Each row "
-"must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15–20 words. In the Conclusion "
-"column, write specific improvement suggestions only for the last website (the one from the image). Do NOT compare it directly with each site, "
-"but detect with things should it improve (without mentioning the others websites neither the one to upgrade). Avoid starting sentences with the exact name of the websites. "
-"Just state clearly what could be improved in the last site. Output must be structured, consistent, and in JSON schema format. Write "
-"correctly the words ant letters, not just simbols On te top of each column, where you put the name of each website, also put an extremely breve descripction of each one.")
+createJson("""Generate a comparison table with 9 rows (criteria) and 5 columns: 3 widely used websites relevant to the topic (you choose), the website from the image, and a Conclusion.
+
+Columns:
+- Criterion
+- Website 1 (name + brief 5–7 word description)
+- Website 2
+- Website 3
+- Website from image
+- Conclusion
+
+Criteria in this exact order: Typography, Colors, Formal vs. Informal, Characters/Icons/Emblems, Accessibility, Navigation (important buttons), Organization, Extra features, Tutorials/Instructions.
+
+Content rules:
+- Each cell (except Criterion) must be a single descriptive sentence, 20–30 words long.
+- The Conclusion column must give 2–3 specific, actionable improvements only for the image website, in complete sentences, without mentioning other sites.
+
+""")
 
 #createTxt("como son los diseños de las páginas web de mercado libre, pedido ya y amazon? hazme una descripción teniendo en cuenta: Sitio Web, Tipografía, Colores, Formal o informal, Personajes-iconos-emblemas, Accesibilidad, Capacidad de navegación, Organización (botones importantes), Funciones extras, Tutoriales o instrucciones")
 
