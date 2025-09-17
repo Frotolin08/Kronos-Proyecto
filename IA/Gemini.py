@@ -34,11 +34,6 @@ class TableData(BaseModel):
 SAVE_DIR = "tablas_generadas"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
-
-#ingreso de img
-with open('image.jpg','rb') as f:
-    inserted_img = f.read()
-
 #acceso a buscar en google
 grounding_tool = types.Tool(
     google_search=types.GoogleSearch()
@@ -63,7 +58,8 @@ def retry_request(func, *args, **kwargs):
 
 #crear texto
 def createTxt(prompt):
-    response = client.models.generate_content(
+    response = retry_request(
+        client.models.generate_content,
         model="gemini-2.5-flash",
         contents=prompt,
         config = types.GenerateContentConfig(
@@ -75,7 +71,8 @@ def createTxt(prompt):
 
 #crear tabla e img buscando en internet
 def createJson(prompt, img_path="image.jpg"):
-    response = client.models.generate_content(
+    response = retry_request(
+        client.models.generate_content,
         model="gemini-2.5-flash",
         contents=(
             "Crea un prompt en base a tu función de busqueda en internet para poder conseguir información acerca del siguiente prompt y darselo a otra IA generadora de tablas " + prompt
@@ -92,7 +89,8 @@ def createJson(prompt, img_path="image.jpg"):
         inserted_img = f.read()
 
 #hacer tablita
-    response = client.models.generate_content(
+    response = retry_request(
+        client.models.generate_content,
         model="gemini-2.5-flash",
         contents=[
             prompt_board,
@@ -157,7 +155,8 @@ def createJson(prompt, img_path="image.jpg"):
 
 #crear img
 def createImg(prompt):
-    response = client.models.generate_content(
+    response = retry_request(
+        client.models.generate_content,
         model="gemini-2.0-flash-preview-image-generation",
         contents=[
             {"role": "user", "parts": [{"text": prompt}]}
@@ -196,7 +195,8 @@ def createImgSearching(prompt, img_path=None):
             types.Part.from_bytes(data=inserted_img, mime_type="image/jpeg")
         )
 
-    response = client.models.generate_content(
+    response = retry_request(
+        client.models.generate_content,
         model="gemini-2.5-flash",
         contents=contents,
         config=types.GenerateContentConfig(
@@ -208,7 +208,8 @@ def createImgSearching(prompt, img_path=None):
     prompt_img = response.text
 
     # Generar img final
-    response_img = client.models.generate_content(
+    response_img = retry_request(
+        client.models.generate_content,
         model="gemini-2.0-flash-preview-image-generation",
         contents=[{"role": "user", "parts": [{"text": prompt_img}]}],
         config=types.GenerateContentConfig(
@@ -234,7 +235,7 @@ createJson("""
 Generate a comparison table with the following exact columns: 
 Website, Typography & Readability, Colors & Branding, Visual Elements, Navigation & UX, Organization & Structure, Accessibility, Functionality & Interactivity. 
 The table must include rows for the 3 most popular websites related to the topic PC MARKETS, plus the website shown in the provided image. There should be exactly 10 rows in total (one per topic/criterion). 
-Each row must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 15 - 25 words. 
+Each row must have 5 cells (4 websites + 1 Conclusion). Each cell must contain a descriptive sentence of 20 - 30 words. 
 In the Conclusion column (shown as the last one), write specific improvement suggestions only for the last website (the one from the image) comparing it to the other 3 websites. Do NOT compare it directly, but identify things what could be improved. Avoid mentioning the names of any websites in the improvement suggestions. 
 Output must be structured, consistent, and in JSON schema format. Write all words and letters correctly, avoid using just symbols. 
 On the top of each website column, also provide a very brief description of each website.
