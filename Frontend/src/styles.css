@@ -6,13 +6,14 @@
     --textColor: rgb(255, 255, 255);
     --font: 'inter';
     --classyFont: 'Castoro Titling';
+    --smallerHeaderSize: .7rem;
     --headerSize: 1.3rem;
     --biggerHeaderSize: 2.5rem;
     --defaultFontWeight: 300;
     --decal: #575F1082;
     --errorColor: #B20000;
     --linkColor: #4240BE;
-    --textSize: 
+    --easeTransition: ease .1s all;
   }
   body {
 
@@ -107,7 +108,7 @@
 
   background-color: var(--tertiaryColor);
   padding: 0.5rem;
-  color: var(--textColor);
+  color: (var(--textColor));
   font-size: var(--headerSize);
   font-weight: var(--defaultFontWeight);
     }
@@ -529,3 +530,57 @@
     #rightIcons {
       gap: 1vw
     }
+
+    .sideBar {
+position: relative;
+top: 4rem;
+font-family: var(--font);
+background-color: var(--secondaryColor);
+width: fit-content;
+height: 100%;
+color: var(--textColor);
+padding: 3%;
+}
+.invitarBtn span {
+  color: var(--textColor)
+}
+.tabs {
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+gap: .5vh;
+padding-left: 0px;
+}
+.tabs div {
+  width: 100%;
+  box-sizing: border-box ;
+  font-size: var(--smallerheaderSize);
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: 2%;
+  padding: 5%;
+  border-radius: 25px;
+  transition: var(--easeTransition);
+}
+.tabs div:hover {
+background-color: #e6e6e6;
+}
+.tabs span {
+  font-size: calc(var(--biggerHeaderSize)*.9);
+}
+#addBtn {
+background-color: var(--tertiaryColor);
+width: min-content
+
+}
+.separator {
+border: none;
+border-top: inset .1rem black;
+}
+
+.proyectosTitle {
+font-size: var(--smallerHeaderSize);
+font-family: var(--font);
+}
