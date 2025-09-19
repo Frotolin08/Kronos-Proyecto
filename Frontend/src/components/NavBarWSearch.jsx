@@ -9,7 +9,7 @@ export default function NavBarWSearch(props) {
 return(
     <div className="NavSearch">
         <div id='leftIcons'>
-        <span className='material-symbols-outlined'>menu</span>
+        <span onClick={props.menuFunc} className='material-symbols-outlined'>menu</span>
         <p>Kronos</p>
         </div>
         <SearchBar/>
