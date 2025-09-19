@@ -1,5 +1,5 @@
-export default function Separator() {
+export default function Separator(props) {
 
 
-    return <hr className='separator'/>
+    return <hr style={props.style} className='separator'/>
 }

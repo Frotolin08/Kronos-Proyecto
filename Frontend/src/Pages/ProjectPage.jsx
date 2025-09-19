@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavBarWSearch from "../components/NavBarWSearch";
 import SideBar from "../components/SideBar";
 import ErrorPage from "./ErrorPage";
+import ProjectPageContent from "../components/ProjectPageContent";
 
 
 export default function ProjectPage() {
@@ -15,6 +16,7 @@ return(
 params.id? <>
 <NavBarWSearch menuFunc={() => setSbStatus(!sbStatus)}/>
 <SideBar style={style}/>
+<ProjectPageContent SbOpen={sbStatus    }/>
 </> : <ErrorPage/>
 )
 }

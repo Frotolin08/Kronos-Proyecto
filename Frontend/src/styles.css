@@ -4,6 +4,7 @@
     --mainColor: white;
     --fontContrast: #000;
     --tertiaryColor: #A2A2A2;
+    --darkerTertiaryColor: #898585;
     --textColor: rgb(255, 255, 255);
     --font: 'inter';
     --classyFont: 'Castoro Titling';
@@ -14,7 +15,7 @@
     --decal: #575F1082;
     --errorColor: #B20000;
     --linkColor: #4240BE;
-    --easeTransition: ease .1s all;
+    --easeTransition: ease .15s all;
     --slowerTransition: ease .3s all;
   }
   body {
@@ -540,7 +541,7 @@ position: fixed;
 top: 12.5vh;
 font-family: var(--font);
 background-color: var(--secondaryColor);
-width: fit-content;
+width: 22.5%;
 height: calc(100vh - 12.5vh);
 box-sizing: border-box;
 color: var(--fontContrast);
@@ -600,7 +601,7 @@ padding: 0 2% 0 2%;
 .separator {
 margin: 0%;
 border: none;
-border-top: inset .1rem black;
+border-top: inset .1rem black !important;
 }
 
 .proyectosTitle {
@@ -617,4 +618,57 @@ font-family: var(--font);
 .titleSbContainer span {
 cursor: pointer;
 
+}
+
+.topMenuPgContent {
+  transition: var(--easeTransition);
+  position: relative;
+margin-top: 12.5vh;
+margin-left: 22.5%;
+width: calc(100% - 22.5%);
+background-color: var(--mainColor);
+padding: 1%;
+box-sizing: border-box;
+height: 15vh;
+}
+.topMenuPgContent div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#topMenuContentTitle {
+gap: 60%
+}
+#topMenuPgContentList {
+
+
+font-family: var(--font);
+
+}
+#topMenuPgContentList p {
+cursor: pointer;
+transition: var(--easeTransition);
+padding: 1%;
+margin-bottom: .25%;
+border-radius: 15px;
+width: 15%;
+text-align: center;
+}
+#topMenuPgContentList p:hover {
+background-color: var(--secondaryColor);
+
+}
+.compartirBtn {
+  align-items: center;
+  display: flex;
+background-color: var(--darkerTertiaryColor);
+color: var(--textColor);
+padding: 1%;
+width: min-content;
+border-radius: 15px;
+}
+.compartirBtn button {
+  color: inherit;
+  font-family: var(--font);
+  font-size: var(--HeaderSize);
 }
